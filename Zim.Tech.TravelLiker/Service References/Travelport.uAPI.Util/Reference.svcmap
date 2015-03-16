@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b9bb6389-8be4-4f41-8e89-d3182b1162ca" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="E:\Job\Zim-Tech\Travelpot\Travelport Universal API\Sample\uAPI_SOAP_Demo_Project\uAPI_6.0\util_v25_0\Util.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Util.xsd" MetadataType="Schema" ID="dacb39ff-f107-4b80-9da8-d686e411d1bf" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/Travelport Universal API/Sample/uAPI_SOAP_Demo_Project/uAPI_6.0/util_v25_0/Util.xsd" />
+    <MetadataFile FileName="UtilService.wsdl" MetadataType="Wsdl" ID="4f48d8af-cf61-4529-af9a-f1fecc3fb862" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/Travelport Universal API/Sample/uAPI_SOAP_Demo_Project/uAPI_6.0/util_v25_0/UtilAbstract.wsdl" />
+    <MetadataFile FileName="CommonReqRsp.xsd" MetadataType="Schema" ID="e4c70310-c8eb-4281-a844-0adc31498111" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/Travelport Universal API/Sample/uAPI_SOAP_Demo_Project/uAPI_6.0/common_v25_0/CommonReqRsp.xsd" />
+    <MetadataFile FileName="UtilService1.wsdl" MetadataType="Wsdl" ID="f04a7e25-b0e2-4513-8a0c-2d4ff02966c6" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/Travelport Universal API/Sample/uAPI_SOAP_Demo_Project/uAPI_6.0/util_v25_0/Util.wsdl" />
+    <MetadataFile FileName="Common.xsd" MetadataType="Schema" ID="6240e423-e77e-4b9e-b2f7-4365ceb7fae5" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/Travelport Universal API/Sample/uAPI_SOAP_Demo_Project/uAPI_6.0/common_v25_0/Common.xsd" />
+    <MetadataFile FileName="Air.xsd" MetadataType="Schema" ID="a1f288c7-6716-449d-b524-25ee85db6fa2" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/Travelport Universal API/Sample/uAPI_SOAP_Demo_Project/uAPI_6.0/air_v25_0/Air.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
