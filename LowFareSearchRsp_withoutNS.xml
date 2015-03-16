@@ -1,0 +1,9 @@
+<LowFareSearchRsp TraceId="trace" TransactionId="24162C5B0A0764783C7A4C4F19770372" ResponseTime="17104" DistanceUnits="MI" CurrencyType="HKD">
+  <FlightDetailsList>
+    <FlightDetails Key="B0BM2tt5QaOVC96CS9pceQ==" Origin="HKG" Destination="TPE" DepartureTime="2015-03-24T17:40:00.000+08:00" ArrivalTime="2015-03-24T19:25:00.000+08:00" FlightTime="105" TravelTime="105" Equipment="332" OriginTerminal="1" DestinationTerminal="2" />
+    <FlightDetails Key="/QTZw1DISjW+0ck5YYew+Q==" Origin="TPE" Destination="HKG" DepartureTime="2015-03-29T12:45:00.000+08:00" ArrivalTime="2015-03-29T14:20:00.000+08:00" FlightTime="95" TravelTime="95" Equipment="333" OriginTerminal="2" DestinationTerminal="1" />
+    <FlightDetails Key="J7PohH8YQfSluw9hxzCCZQ==" Origin="HKG" Destination="TPE" DepartureTime="2015-03-24T22:50:00.000+08:00" ArrivalTime="2015-03-25T00:40:00.000+08:00" FlightTime="110" TravelTime="110" Equipment="333" OriginTerminal="1" DestinationTerminal="2" />
+    <FlightDetails Key="jbLbpG7qSs+rPUIifmM+Hw==" Origin="TPE" Destination="HKG" DepartureTime="2015-03-29T20:30:00.000+08:00" ArrivalTime="2015-03-29T22:15:00.000+08:00" FlightTime="105" TravelTime="105" Equipment="333" OriginTerminal="2" DestinationTerminal="1" />
+    <FlightDetails Key="tk5JIEdKQPGPKqAOyO555Q==" Origin="TPE" Destination="HKG" DepartureTime="2015-03-29T14:50:00.000+08:00" ArrivalTime="2015-03-29T16:40:00.000+08:00" FlightTime="110" TravelTime="110" Equipment="333" OriginTerminal="2" DestinationTerminal="1" />
+  </FlightDetailsList>
+</LowFareSearchRsp>

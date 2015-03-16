@@ -1,0 +1,9 @@
+xsd E:\Job\Zim-Tech\Travelpot\TravelLiker\SourceCode\Zim.Tech.TravelLiker\LowFareSearchRsp.xml /outputdir:E:\Job\Zim-Tech\Travelpot\TravelLiker\SourceCode\Zim.Tech.TravelLiker\
+xsd E:\Job\Zim-Tech\Travelpot\TravelLiker\SourceCode\Zim.Tech.TravelLiker\LowFareSearchRsp.xsd /classes /outputdir:E:\Job\Zim-Tech\Travelpot\TravelLiker\SourceCode\Zim.Tech.TravelLiker\
+
+
+xsd LowFareSearchRsp.xml /outputdir:E:\Job\Zim-Tech\Travelpot\TravelLiker\SourceCode\Zim.Tech.TravelLiker\
+xsd LowFareSearchRsp.xsd /classes /outputdir:E:\Job\Zim-Tech\Travelpot\TravelLiker\SourceCode\Zim.Tech.TravelLiker\ /n:
+
+xsd LowFareSearchRsp_withoutNS.xml /outputdir:E:\Job\Zim-Tech\Travelpot\TravelLiker\SourceCode\Zim.Tech.TravelLiker\
+xsd LowFareSearchRsp_withoutNS.xsd /classes /outputdir:E:\Job\Zim-Tech\Travelpot\TravelLiker\SourceCode\Zim.Tech.TravelLiker\

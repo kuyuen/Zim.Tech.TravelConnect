@@ -16,6 +16,7 @@ using Zim.Tech.TravelLiker.Common;
 using Zim.Tech.TravelLiker.Travelport.uAPI;
 using uAPIUnit = Zim.Tech.TravelLiker.Travelport.uAPI.Util;
 using uAPIFlight = Zim.Tech.TravelLiker.Travelport.uAPI.Air;
+using uAPIFlightNS = Zim.Tech.TravelLiker.Travelport.uAPI.Air;
 using Zim.Tech.TravelLiker.Travelport.uAPI.Air;
 
 namespace Zim.Tech.TravelLiker.UnitTest
@@ -105,14 +106,40 @@ namespace Zim.Tech.TravelLiker.UnitTest
             string xmlFile = Path.Combine(sDllPath, "LowFareSearchRsp.xml");
             string xmlcontents = System.IO.File.ReadAllText(xmlFile);
             uAPIFlight.LowFareSearchRsp xResp = Serialize<uAPIFlight.LowFareSearchRsp>.DeserializeXmlFromStringWithoutNamespace(xmlcontents);
+            if (xResp != null)
+                CurrencyType = xResp.CurrencyType;
+
+
+            XElement xRoot = XDocument.Parse(xmlcontents).Root;
+            xmlcontents = Serialize<uAPIFlight.LowFareSearchRsp>.RemoveAllNamespaces(xRoot).ToString();
+
+            //string xmlFile2 = Path.Combine(sDllPath, "LowFareSearchRsp_withoutNS.xml");
+            //File.WriteAllText(xmlFile2, xmlcontents);
+
             //XmlDocument doc = new XmlDocument();
             //doc.PreserveWhitespace = true;
             //doc.Load(xmlFile);
             //xmlcontents = doc.InnerXml;
 
-            //uAPIFlight.LowFareSearchRsp xResp = Serialize<uAPIFlight.LowFareSearchRsp>.DeSerializeXmlFromFile(xmlFile);
-            if (xResp != null)
-                CurrencyType = xResp.CurrencyType;
+            
+              Type [] extraTypes= new Type[6];
+              extraTypes[0] = typeof(uAPIUnit.ResponseMessage[]);
+              extraTypes[1] = typeof(uAPIFlight.FlightDetails[]);
+              extraTypes[2] = typeof(uAPIFlight.typeBaseAirSegment[]);
+              extraTypes[3] = typeof(uAPIFlight.FareInfo[]);
+              extraTypes[4] = typeof(uAPIFlight.Route[]);
+              extraTypes[5] = typeof(uAPIFlight.AirPricingSolution);
+
+              xmlFile = Path.Combine(sDllPath, "LowFareSearchRsp_withoutNS.xml");
+              xmlcontents = System.IO.File.ReadAllText(xmlFile);
+              //uAPIFlight.LowFareSearchRsp xResp2 = Serialize<uAPIFlight.LowFareSearchRsp>.DeserializeXmlFromStringWithoutNamespace(xmlcontents, extraTypes);
+              //uAPIFlightNS.LowFareSearchRsp xResp2 = Serialize<uAPIFlightNS.LowFareSearchRsp>.DeserializeXmlFromString(xmlcontents, extraTypes);
+              uAPIFlightNS.LowFareSearchRsp xResp2 = Serialize<uAPIFlightNS.LowFareSearchRsp>.DeserializeXmlFromStringWithoutNamespace(xmlcontents);
+              if (xResp2 != null)
+              {
+                  CurrencyType = xResp.CurrencyType;
+                  int i = xResp.FareNoteList.Count();
+              }
         }
     }
 }

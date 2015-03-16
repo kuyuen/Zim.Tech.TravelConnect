@@ -60,6 +60,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Travelport.uAPI.Air\LowFareSearchRsp_withoutNS.cs" />
     <Compile Include="UniversalApiConnection.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -403,6 +404,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,0 +1,3 @@
+<util:ReferenceDataRetrieveReq TraceId="trace" AuthorizedBy="Universal API/uAPI6768275016-96b0fd84" TargetBranch="P7009887" TypeCode="City" xmlns:util="http://www.travelport.com/schema/util_v25_0">
+  <BillingPointOfSaleInfo OriginApplication="UAPI" xmlns="http://www.travelport.com/schema/common_v25_0" />
+</util:ReferenceDataRetrieveReq>

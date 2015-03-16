@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="LowFareSearchRsp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ResponseMessage" nillable="true" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:simpleContent msdata:ColumnName="ResponseMessage_Text" msdata:Ordinal="4">
+              <xs:extension base="xs:string">
+                <xs:attribute name="Code" type="xs:string" />
+                <xs:attribute name="Type" type="xs:string" />
+                <xs:attribute name="ProviderCode" type="xs:string" />
+                <xs:attribute name="SupplierCode" type="xs:string" />
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FlightDetailsList" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FlightDetails" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="Key" type="xs:string" />
+                  <xs:attribute name="Origin" type="xs:string" />
+                  <xs:attribute name="Destination" type="xs:string" />
+                  <xs:attribute name="DepartureTime" type="xs:string" />
+                  <xs:attribute name="ArrivalTime" type="xs:string" />
+                  <xs:attribute name="FlightTime" type="xs:string" />
+                  <xs:attribute name="TravelTime" type="xs:string" />
+                  <xs:attribute name="Equipment" type="xs:string" />
+                  <xs:attribute name="OriginTerminal" type="xs:string" />
+                  <xs:attribute name="DestinationTerminal" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AirSegmentList" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AirSegment" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="AirAvailInfo" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="BookingCodeInfo" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:attribute name="BookingCounts" type="xs:string" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="ProviderCode" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FlightDetailsRef" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="Key" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Key" type="xs:string" />
+                  <xs:attribute name="Group" type="xs:string" />
+                  <xs:attribute name="Carrier" type="xs:string" />
+                  <xs:attribute name="FlightNumber" type="xs:string" />
+                  <xs:attribute name="Origin" type="xs:string" />
+                  <xs:attribute name="Destination" type="xs:string" />
+                  <xs:attribute name="DepartureTime" type="xs:string" />
+                  <xs:attribute name="ArrivalTime" type="xs:string" />
+                  <xs:attribute name="FlightTime" type="xs:string" />
+                  <xs:attribute name="Distance" type="xs:string" />
+                  <xs:attribute name="ETicketability" type="xs:string" />
+                  <xs:attribute name="Equipment" type="xs:string" />
+                  <xs:attribute name="ChangeOfPlane" type="xs:string" />
+                  <xs:attribute name="ParticipantLevel" type="xs:string" />
+                  <xs:attribute name="LinkAvailability" type="xs:string" />
+                  <xs:attribute name="PolledAvailabilityOption" type="xs:string" />
+                  <xs:attribute name="OptionalServicesIndicator" type="xs:string" />
+                  <xs:attribute name="AvailabilitySource" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FareInfoList" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FareInfo" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="FareSurcharge" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="Key" type="xs:string" />
+                        <xs:attribute name="Type" type="xs:string" />
+                        <xs:attribute name="Amount" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="BaggageAllowance" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="MaxWeight" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:attribute name="Value" type="xs:string" />
+                              <xs:attribute name="Unit" type="xs:string" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FareRuleKey" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:simpleContent msdata:ColumnName="FareRuleKey_Text" msdata:Ordinal="2">
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="FareInfoRef" type="xs:string" />
+                            <xs:attribute name="ProviderCode" type="xs:string" />
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Key" type="xs:string" />
+                  <xs:attribute name="FareBasis" type="xs:string" />
+                  <xs:attribute name="PassengerTypeCode" type="xs:string" />
+                  <xs:attribute name="Origin" type="xs:string" />
+                  <xs:attribute name="Destination" type="xs:string" />
+                  <xs:attribute name="EffectiveDate" type="xs:string" />
+                  <xs:attribute name="DepartureDate" type="xs:string" />
+                  <xs:attribute name="Amount" type="xs:string" />
+                  <xs:attribute name="NegotiatedFare" type="xs:string" />
+                  <xs:attribute name="NotValidBefore" type="xs:string" />
+                  <xs:attribute name="NotValidAfter" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RouteList" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Route" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Leg" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="Key" type="xs:string" />
+                        <xs:attribute name="Group" type="xs:string" />
+                        <xs:attribute name="Origin" type="xs:string" />
+                        <xs:attribute name="Destination" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Key" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AirPricingSolution" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Journey" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="AirSegmentRef" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="Key" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="TravelTime" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="LegRef" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="Key" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="AirPricingInfo" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="FareCalc" type="xs:string" minOccurs="0" msdata:Ordinal="1" />
+                    <xs:element name="FareInfoRef" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="Key" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="BookingInfo" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="BookingCode" type="xs:string" />
+                        <xs:attribute name="CabinClass" type="xs:string" />
+                        <xs:attribute name="FareInfoRef" type="xs:string" />
+                        <xs:attribute name="SegmentRef" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="TaxInfo" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="Category" type="xs:string" />
+                        <xs:attribute name="Amount" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="PassengerType" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="Code" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ChangePenalty" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Amount" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="CancelPenalty" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Amount" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Key" type="xs:string" />
+                  <xs:attribute name="TotalPrice" type="xs:string" />
+                  <xs:attribute name="BasePrice" type="xs:string" />
+                  <xs:attribute name="ApproximateTotalPrice" type="xs:string" />
+                  <xs:attribute name="ApproximateBasePrice" type="xs:string" />
+                  <xs:attribute name="Taxes" type="xs:string" />
+                  <xs:attribute name="LatestTicketingTime" type="xs:string" />
+                  <xs:attribute name="PricingMethod" type="xs:string" />
+                  <xs:attribute name="Refundable" type="xs:string" />
+                  <xs:attribute name="ETicketability" type="xs:string" />
+                  <xs:attribute name="PlatingCarrier" type="xs:string" />
+                  <xs:attribute name="ProviderCode" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="Key" type="xs:string" />
+            <xs:attribute name="TotalPrice" type="xs:string" />
+            <xs:attribute name="BasePrice" type="xs:string" />
+            <xs:attribute name="ApproximateTotalPrice" type="xs:string" />
+            <xs:attribute name="ApproximateBasePrice" type="xs:string" />
+            <xs:attribute name="Taxes" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="TraceId" type="xs:string" />
+      <xs:attribute name="TransactionId" type="xs:string" />
+      <xs:attribute name="ResponseTime" type="xs:string" />
+      <xs:attribute name="DistanceUnits" type="xs:string" />
+      <xs:attribute name="CurrencyType" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="LowFareSearchRsp" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

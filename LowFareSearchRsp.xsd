@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NewDataSet" targetNamespace="http://www.travelport.com/schema/air_v25_0" xmlns:mstns="http://www.travelport.com/schema/air_v25_0" xmlns="http://www.travelport.com/schema/air_v25_0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified" xmlns:app1="http://www.travelport.com/schema/common_v25_0">
+  <xs:import namespace="http://www.travelport.com/schema/common_v25_0" schemaLocation="LowFareSearchRsp_app1.xsd" />
+  <xs:element name="LowFareSearchRsp" msdata:Prefix="air">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="app1:ResponseMessage" />
+        <xs:element name="FlightDetailsList" msdata:Prefix="air" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FlightDetails" msdata:Prefix="air" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="Key" form="unqualified" type="xs:string" />
+                  <xs:attribute name="Origin" form="unqualified" type="xs:string" />
+                  <xs:attribute name="Destination" form="unqualified" type="xs:string" />
+                  <xs:attribute name="DepartureTime" form="unqualified" type="xs:string" />
+                  <xs:attribute name="ArrivalTime" form="unqualified" type="xs:string" />
+                  <xs:attribute name="FlightTime" form="unqualified" type="xs:string" />
+                  <xs:attribute name="TravelTime" form="unqualified" type="xs:string" />
+                  <xs:attribute name="Equipment" form="unqualified" type="xs:string" />
+                  <xs:attribute name="OriginTerminal" form="unqualified" type="xs:string" />
+                  <xs:attribute name="DestinationTerminal" form="unqualified" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AirSegmentList" msdata:Prefix="air" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AirSegment" msdata:Prefix="air" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="AirAvailInfo" msdata:Prefix="air" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="BookingCodeInfo" msdata:Prefix="air" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:attribute name="BookingCounts" form="unqualified" type="xs:string" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="ProviderCode" form="unqualified" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FlightDetailsRef" msdata:Prefix="air" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="Key" form="unqualified" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Key" form="unqualified" type="xs:string" />
+                  <xs:attribute name="Group" form="unqualified" type="xs:string" />
+                  <xs:attribute name="Carrier" form="unqualified" type="xs:string" />
+                  <xs:attribute name="FlightNumber" form="unqualified" type="xs:string" />
+                  <xs:attribute name="Origin" form="unqualified" type="xs:string" />
+                  <xs:attribute name="Destination" form="unqualified" type="xs:string" />
+                  <xs:attribute name="DepartureTime" form="unqualified" type="xs:string" />
+                  <xs:attribute name="ArrivalTime" form="unqualified" type="xs:string" />
+                  <xs:attribute name="FlightTime" form="unqualified" type="xs:string" />
+                  <xs:attribute name="Distance" form="unqualified" type="xs:string" />
+                  <xs:attribute name="ETicketability" form="unqualified" type="xs:string" />
+                  <xs:attribute name="Equipment" form="unqualified" type="xs:string" />
+                  <xs:attribute name="ChangeOfPlane" form="unqualified" type="xs:string" />
+                  <xs:attribute name="ParticipantLevel" form="unqualified" type="xs:string" />
+                  <xs:attribute name="LinkAvailability" form="unqualified" type="xs:string" />
+                  <xs:attribute name="PolledAvailabilityOption" form="unqualified" type="xs:string" />
+                  <xs:attribute name="OptionalServicesIndicator" form="unqualified" type="xs:string" />
+                  <xs:attribute name="AvailabilitySource" form="unqualified" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FareInfoList" msdata:Prefix="air" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FareInfo" msdata:Prefix="air" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="FareSurcharge" msdata:Prefix="air" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="Key" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Type" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Amount" form="unqualified" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="BaggageAllowance" msdata:Prefix="air" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="MaxWeight" msdata:Prefix="air" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:attribute name="Value" form="unqualified" type="xs:string" />
+                              <xs:attribute name="Unit" form="unqualified" type="xs:string" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FareRuleKey" msdata:Prefix="air" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:simpleContent msdata:Prefix="air" msdata:ColumnName="FareRuleKey_Text" msdata:Ordinal="2">
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="FareInfoRef" form="unqualified" type="xs:string" />
+                            <xs:attribute name="ProviderCode" form="unqualified" type="xs:string" />
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Key" form="unqualified" type="xs:string" />
+                  <xs:attribute name="FareBasis" form="unqualified" type="xs:string" />
+                  <xs:attribute name="PassengerTypeCode" form="unqualified" type="xs:string" />
+                  <xs:attribute name="Origin" form="unqualified" type="xs:string" />
+                  <xs:attribute name="Destination" form="unqualified" type="xs:string" />
+                  <xs:attribute name="EffectiveDate" form="unqualified" type="xs:string" />
+                  <xs:attribute name="DepartureDate" form="unqualified" type="xs:string" />
+                  <xs:attribute name="Amount" form="unqualified" type="xs:string" />
+                  <xs:attribute name="NegotiatedFare" form="unqualified" type="xs:string" />
+                  <xs:attribute name="NotValidBefore" form="unqualified" type="xs:string" />
+                  <xs:attribute name="NotValidAfter" form="unqualified" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RouteList" msdata:Prefix="air" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Route" msdata:Prefix="air" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Leg" msdata:Prefix="air" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="Key" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Group" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Origin" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Destination" form="unqualified" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Key" form="unqualified" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AirPricingSolution" msdata:Prefix="air" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Journey" msdata:Prefix="air" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="AirSegmentRef" msdata:Prefix="air" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="Key" form="unqualified" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="TravelTime" form="unqualified" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="LegRef" msdata:Prefix="air" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="Key" form="unqualified" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="AirPricingInfo" msdata:Prefix="air" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="FareCalc" msdata:Prefix="air" type="xs:string" minOccurs="0" msdata:Ordinal="1" />
+                    <xs:element name="FareInfoRef" msdata:Prefix="air" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="Key" form="unqualified" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="BookingInfo" msdata:Prefix="air" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="BookingCode" form="unqualified" type="xs:string" />
+                        <xs:attribute name="CabinClass" form="unqualified" type="xs:string" />
+                        <xs:attribute name="FareInfoRef" form="unqualified" type="xs:string" />
+                        <xs:attribute name="SegmentRef" form="unqualified" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="TaxInfo" msdata:Prefix="air" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="Category" form="unqualified" type="xs:string" />
+                        <xs:attribute name="Amount" form="unqualified" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="PassengerType" msdata:Prefix="air" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="Code" form="unqualified" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ChangePenalty" msdata:Prefix="air" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Amount" msdata:Prefix="air" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="CancelPenalty" msdata:Prefix="air" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Amount" msdata:Prefix="air" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Key" form="unqualified" type="xs:string" />
+                  <xs:attribute name="TotalPrice" form="unqualified" type="xs:string" />
+                  <xs:attribute name="BasePrice" form="unqualified" type="xs:string" />
+                  <xs:attribute name="ApproximateTotalPrice" form="unqualified" type="xs:string" />
+                  <xs:attribute name="ApproximateBasePrice" form="unqualified" type="xs:string" />
+                  <xs:attribute name="Taxes" form="unqualified" type="xs:string" />
+                  <xs:attribute name="LatestTicketingTime" form="unqualified" type="xs:string" />
+                  <xs:attribute name="PricingMethod" form="unqualified" type="xs:string" />
+                  <xs:attribute name="Refundable" form="unqualified" type="xs:string" />
+                  <xs:attribute name="ETicketability" form="unqualified" type="xs:string" />
+                  <xs:attribute name="PlatingCarrier" form="unqualified" type="xs:string" />
+                  <xs:attribute name="ProviderCode" form="unqualified" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="Key" form="unqualified" type="xs:string" />
+            <xs:attribute name="TotalPrice" form="unqualified" type="xs:string" />
+            <xs:attribute name="BasePrice" form="unqualified" type="xs:string" />
+            <xs:attribute name="ApproximateTotalPrice" form="unqualified" type="xs:string" />
+            <xs:attribute name="ApproximateBasePrice" form="unqualified" type="xs:string" />
+            <xs:attribute name="Taxes" form="unqualified" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="TraceId" form="unqualified" type="xs:string" />
+      <xs:attribute name="TransactionId" form="unqualified" type="xs:string" />
+      <xs:attribute name="ResponseTime" form="unqualified" type="xs:string" />
+      <xs:attribute name="DistanceUnits" form="unqualified" type="xs:string" />
+      <xs:attribute name="CurrencyType" form="unqualified" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msdata:Prefix="air">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="LowFareSearchRsp" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

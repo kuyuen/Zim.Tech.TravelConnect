@@ -1,0 +1,24 @@
+<air:LowFareSearchReq xmlns:com="http://www.travelport.com/schema/common_v25_0" TraceId="trace" AuthorizedBy="user" TargetBranch="P7009887" xmlns:air="http://www.travelport.com/schema/air_v25_0">
+  <com:BillingPointOfSaleInfo OriginApplication="UAPI" />
+  <air:SearchAirLeg>
+    <air:SearchOrigin>
+      <com:Airport Code="HKG" />
+    </air:SearchOrigin>
+    <air:SearchDestination>
+      <com:Airport Code="TPE" />
+    </air:SearchDestination>
+    <air:SearchDepTime PreferredTime="2015-03-24" />
+  </air:SearchAirLeg>
+  <air:SearchAirLeg>
+    <air:SearchOrigin>
+      <com:Airport Code="TPE" />
+    </air:SearchOrigin>
+    <air:SearchDestination>
+      <com:Airport Code="HKG" />
+    </air:SearchDestination>
+    <air:SearchDepTime PreferredTime="2015-03-29" />
+  </air:SearchAirLeg>
+  <air:AirSearchModifiers MaxSolutions="5" />
+  <com:SearchPassenger Code="ADT" BookingTravelerRef="gr8AVWGCR064r57Jt0+8bA==" />
+  <air:AirPricingModifiers CurrencyType="HKD" />
+</air:LowFareSearchReq>

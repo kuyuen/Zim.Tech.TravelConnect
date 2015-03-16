@@ -298,6 +298,28 @@ namespace Zim.Tech.TravelLiker.Common
             */
         }
 
+        
+        public static T DeserializeXmlFromString(string xmlValue, Type [] extraTypes)
+        {
+            T objectDeSerialized = default(T);
+            try
+            {
+                if (string.IsNullOrEmpty(xmlValue) == false)
+                {
+                    XmlSerializer sFormatter = new XmlSerializer(typeof(T), extraTypes);
+                    StringReader sReader = new StringReader(xmlValue);
+                    XmlReader reader = XmlReader.Create(sReader);
+
+                    if (sFormatter.CanDeserialize(reader))
+                        objectDeSerialized = (T)sFormatter.Deserialize(reader);
+                }
+            }
+            catch (IOException err)
+            {
+
+            }
+            return objectDeSerialized;
+        }
 
         public static XElement RemoveAllNamespaces(XElement e)
         {
@@ -320,6 +342,31 @@ namespace Zim.Tech.TravelLiker.Common
                 if (string.IsNullOrEmpty(xmlValue) == false)
                 {
                     XmlSerializer sFormatter = new XmlSerializer(typeof(T));
+                    StringReader sReader = new StringReader(xmlValue);
+                    XmlReader reader = XmlReader.Create(sReader);
+
+                    if (sFormatter.CanDeserialize(reader))
+                        objectDeSerialized = (T)sFormatter.Deserialize(reader);
+                }
+            }
+            catch (IOException err)
+            {
+
+            }
+            return objectDeSerialized;
+        }
+
+
+        public static T DeserializeXmlFromStringWithoutNamespace(string xmlValue, Type[] extraTypes)
+        {
+            T objectDeSerialized = default(T);
+            try
+            {
+                XElement xRoot = XDocument.Parse(xmlValue).Root;
+                xmlValue = RemoveAllNamespaces(xRoot).ToString();
+                if (string.IsNullOrEmpty(xmlValue) == false)
+                {
+                    XmlSerializer sFormatter = new XmlSerializer(typeof(T), extraTypes);
                     StringReader sReader = new StringReader(xmlValue);
                     XmlReader reader = XmlReader.Create(sReader);
 
