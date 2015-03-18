@@ -56,7 +56,6 @@ namespace Zim.Tech.TravelLiker
         }
         #endregion
 
-
         #region Hotel Agnet
         public List<Object> HotelEnquiy(string sCity, DateTime CheckIn, int StayDays, int NoOfRoom, string BedType, decimal maxAmount, out string errorMessage)
         {

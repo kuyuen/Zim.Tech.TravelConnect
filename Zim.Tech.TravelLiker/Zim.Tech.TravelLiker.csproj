@@ -43,8 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\Variables.cs" />
+    <Compile Include="Flight\AirPricingSolution.cs" />
     <Compile Include="Flight\FareQuote.cs" />
     <Compile Include="Common\Serialize.cs" />
+    <Compile Include="Flight\RouteList.cs" />
     <Compile Include="Hotel\IHotel.cs" />
     <Compile Include="Flight\IFlight.cs" />
     <Compile Include="IUniversalApiConnection.cs" />

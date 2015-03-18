@@ -16,7 +16,7 @@ using Zim.Tech.TravelLiker.Common;
 using Zim.Tech.TravelLiker.Travelport.uAPI;
 using uAPIUnit = Zim.Tech.TravelLiker.Travelport.uAPI.Util;
 using uAPIFlight = Zim.Tech.TravelLiker.Travelport.uAPI.Air;
-using uAPIFlightNS = Zim.Tech.TravelLiker.Travelport.uAPI.Air;
+using uAPIFlightNS = Zim.Tech.TravelLiker.Travelport.uAPI.Air.witoutNS;
 using Zim.Tech.TravelLiker.Travelport.uAPI.Air;
 
 namespace Zim.Tech.TravelLiker.UnitTest
@@ -113,24 +113,6 @@ namespace Zim.Tech.TravelLiker.UnitTest
             XElement xRoot = XDocument.Parse(xmlcontents).Root;
             xmlcontents = Serialize<uAPIFlight.LowFareSearchRsp>.RemoveAllNamespaces(xRoot).ToString();
 
-
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(xmlcontents);
-
-
-            XmlNodeList LowFareSearchRsp = xmlDoc.GetElementsByTagName("LowFareSearchRsp");
-            foreach (XmlNode node in LowFareSearchRsp)
-            {
-                foreach (XmlNode childnode in node.ChildNodes)
-                {
-                    if (childnode.Name == "AirSegmentList")
-                    {
-//                        uAPIFlight.typeBaseAirSegment oAirSegmentList = Serialize<uAPIFlight.typeBaseAirSegment>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
-                        uAPIFlightNS.typeBaseAirSegment oAirSegmentList = Serialize<uAPIFlight.typeBaseAirSegment>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
-                        int i = oAirSegmentList.AirAvailInfo.Count();
-                    }
-                }
-            }
             //string xmlFile2 = Path.Combine(sDllPath, "LowFareSearchRsp_withoutNS.xml");
             //File.WriteAllText(xmlFile2, xmlcontents);
 
@@ -158,6 +140,50 @@ namespace Zim.Tech.TravelLiker.UnitTest
                   CurrencyType = xResp.CurrencyType;
                   int i = xResp.FareNoteList.Count();
               }
+        }
+
+
+        [TestMethod]
+        public void DeserializeLowFareSearchResp()
+        {
+            string CurrencyType = string.Empty;
+            string sDllPath = Directory.GetCurrentDirectory();
+            string xmlFile = Path.Combine(sDllPath, "LowFareSearchRsp.xml");
+            string xmlcontents = System.IO.File.ReadAllText(xmlFile);
+
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(xmlcontents);
+
+            List<Flight.AirPricingSolution> AirPricingSolutionList = new List<Flight.AirPricingSolution>();
+            Flight.RouteList oRouteList;
+
+            XmlNodeList LowFareSearchRsp = xmlDoc.GetElementsByTagName("LowFareSearchRsp");
+            foreach (XmlNode node in LowFareSearchRsp)
+            {
+                foreach (XmlNode childnode in node.ChildNodes)
+                {
+                    if (childnode.Name == "AirSegmentList")
+                    {
+                        //                        uAPIFlight.typeBaseAirSegment oAirSegmentList = Serialize<uAPIFlight.typeBaseAirSegment>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
+                        uAPIFlight.typeBaseAirSegment oAirSegmentList = Serialize<uAPIFlight.typeBaseAirSegment>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
+                        int i = oAirSegmentList.AirAvailInfo.Count();
+                    }
+                    if (childnode.Name == "RouteList")
+                    {
+                        uAPIFlight.Route[] oAirSegmentList = Serialize<uAPIFlight.Route[]>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
+                        oRouteList = Serialize<Flight.RouteList>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
+                    }
+                    if (childnode.Name == "AirPricingSolution")
+                    {
+                        //                        uAPIFlight.typeBaseAirSegment oAirSegmentList = Serialize<uAPIFlight.typeBaseAirSegment>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
+                        Flight.AirPricingSolution oAirPricingSolution = Serialize<Flight.AirPricingSolution>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
+                        AirPricingSolutionList.Add(oAirPricingSolution);
+                    }
+
+                }
+            }
+
+            int a = AirPricingSolutionList.Count();
         }
     }
 }
