@@ -113,6 +113,24 @@ namespace Zim.Tech.TravelLiker.UnitTest
             XElement xRoot = XDocument.Parse(xmlcontents).Root;
             xmlcontents = Serialize<uAPIFlight.LowFareSearchRsp>.RemoveAllNamespaces(xRoot).ToString();
 
+
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(xmlcontents);
+
+
+            XmlNodeList LowFareSearchRsp = xmlDoc.GetElementsByTagName("LowFareSearchRsp");
+            foreach (XmlNode node in LowFareSearchRsp)
+            {
+                foreach (XmlNode childnode in node.ChildNodes)
+                {
+                    if (childnode.Name == "AirSegmentList")
+                    {
+//                        uAPIFlight.typeBaseAirSegment oAirSegmentList = Serialize<uAPIFlight.typeBaseAirSegment>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
+                        uAPIFlightNS.typeBaseAirSegment oAirSegmentList = Serialize<uAPIFlight.typeBaseAirSegment>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
+                        int i = oAirSegmentList.AirAvailInfo.Count();
+                    }
+                }
+            }
             //string xmlFile2 = Path.Combine(sDllPath, "LowFareSearchRsp_withoutNS.xml");
             //File.WriteAllText(xmlFile2, xmlcontents);
 
