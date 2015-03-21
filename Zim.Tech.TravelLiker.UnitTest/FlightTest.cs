@@ -155,16 +155,43 @@ namespace Zim.Tech.TravelLiker.UnitTest
             xmlDoc.LoadXml(xmlcontents);
 
             List<Flight.AirPricingSolution> AirPricingSolutionList = new List<Flight.AirPricingSolution>();
-            Flight.RouteList oRouteList;
+            Flight.FlightDetailsList oFlightDetailsList = new Flight.FlightDetailsList();
+            Flight.RouteList oRouteList = new Flight.RouteList();
+            Flight.FareInfoList oFareInfoList = new Flight.FareInfoList();
 
             XmlNodeList LowFareSearchRsp = xmlDoc.GetElementsByTagName("LowFareSearchRsp");
             foreach (XmlNode node in LowFareSearchRsp)
             {
                 foreach (XmlNode childnode in node.ChildNodes)
                 {
+                    if (childnode.Name == "FlightDetailsList")
+                    {
+                        oFlightDetailsList = Serialize<Flight.FlightDetailsList>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
+                        foreach (XmlNode subchildnode in childnode.ChildNodes)
+                        {
+                            if (subchildnode.Name == "FlightDetails")
+                            {
+                                Flight.FlightDetails oFlightDetails = Serialize<Flight.FlightDetails>.DeserializeXmlFromStringWithoutNamespace(subchildnode.OuterXml);
+                            }
+                        }
+                    }
+
+                    if (childnode.Name == "FareInfoList")
+                    {
+                        oFareInfoList = Serialize<Flight.FareInfoList>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
+                        foreach (XmlNode subchildnode in childnode.ChildNodes)
+                        {
+                            if (subchildnode.Name == "FareInfo")
+                            {
+                                Flight.FareInfo oFareInfo = Serialize<Flight.FareInfo>.DeserializeXmlFromStringWithoutNamespace(subchildnode.OuterXml);
+                                //oFareInfoList.FareInfo.Add(oFareInfo);
+                            }
+                        }
+                    }
+                    
                     if (childnode.Name == "AirSegmentList")
                     {
-                        //                        uAPIFlight.typeBaseAirSegment oAirSegmentList = Serialize<uAPIFlight.typeBaseAirSegment>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
+                        //uAPIFlight.typeBaseAirSegment oAirSegmentList = Serialize<uAPIFlight.typeBaseAirSegment>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
                         uAPIFlight.typeBaseAirSegment oAirSegmentList = Serialize<uAPIFlight.typeBaseAirSegment>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
                         int i = oAirSegmentList.AirAvailInfo.Count();
                     }
@@ -175,15 +202,19 @@ namespace Zim.Tech.TravelLiker.UnitTest
                     }
                     if (childnode.Name == "AirPricingSolution")
                     {
-                        //                        uAPIFlight.typeBaseAirSegment oAirSegmentList = Serialize<uAPIFlight.typeBaseAirSegment>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
+                        //uAPIFlight.typeBaseAirSegment oAirSegmentList = Serialize<uAPIFlight.typeBaseAirSegment>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
                         Flight.AirPricingSolution oAirPricingSolution = Serialize<Flight.AirPricingSolution>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
                         AirPricingSolutionList.Add(oAirPricingSolution);
                     }
+                    
 
                 }
             }
 
-            int a = AirPricingSolutionList.Count();
+            int iFlightDetailsCount = oFlightDetailsList.FlightDetails.Count();
+            int iFareInfoCount = oFareInfoList.FareInfo.Count();
+            int iAirPricingSolutionCount = AirPricingSolutionList.Count();
+            int o = 0;
         }
     }
 }
