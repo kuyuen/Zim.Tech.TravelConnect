@@ -67,7 +67,8 @@ namespace Zim.Tech.TravelLiker.Flight
         #endregion
 
         #region Properties Variables
-        private string m_ServiceProvide = string.Empty;
+        private List<FareQuote.AirPricingSolution> airPricingSolutionList = new List<FareQuote.AirPricingSolution>();
+        //private string m_ServiceProvide = string.Empty;
         //private FareInfo m_FlightFare = new FareInfo();
         //private FareInfo m_ChildFlightFare = new FareInfo();
         //private FareInfo m_InfantWOSFlightFare = new FareInfo();
@@ -75,13 +76,14 @@ namespace Zim.Tech.TravelLiker.Flight
         //private List<RulesInfo> m_ChildRulesInfo = new List<RulesInfo>();
         //private List<RulesInfo> m_InfantWOSRulesInfo = new List<RulesInfo>();
 
-        private int _itemIdx = -1;
+        //private int _itemIdx = -1;
 
         //private object m_AvailFlight = new object();
         //private List<Dictionary<string, FlightInfo>> m_AvailFlight = new List<Dictionary<string, FlightInfo>>();
         #endregion
 
         #region Public Properties
+        public List<FareQuote.AirPricingSolution> AirPricingSolutions { get { return airPricingSolutionList; } set { airPricingSolutionList = value; } }
         //public string ServiceProvide { get { return m_ServiceProvide; } set { m_ServiceProvide = value; } } // Service Provide = Galileo / Nanhwa
         //public enum FareType { OneWay = 1, RoundTrip = 2, MultStop = 3 }
         //public FareType FareQuteType = FareType.OneWay;
@@ -112,15 +114,73 @@ namespace Zim.Tech.TravelLiker.Flight
 
         public class AirPricingSolution : Flight.AirPricingSolution
         {
-
-            public AirPricingSolution(Flight.AirPricingSolution oAirPricingSolution)
+            public AirPricingSolution(Flight.AirPricingSolution oAirPricingSolution, Flight.AirSegmentList oAirSegmentList, Flight.RouteList oRouteList, Flight.FareInfoList oFareInfoList, Flight.FlightDetailsList oFlightDetailsList)
             {
-                foreach (FieldInfo prop in oAirPricingSolution.GetType().GetFields())
-                    GetType().GetField(prop.Name).SetValue(this, prop.GetValue(oAirPricingSolution));
+                List<AirSegment> oFareAirSegmentList = new List<AirSegment>();
+                #region AirPricingSolution Properties Values
+                foreach (PropertyInfo prop in oAirPricingSolution.GetType().GetProperties())
+                    GetType().GetProperty(prop.Name).SetValue(this, prop.GetValue(oAirPricingSolution, null), null);
+                #endregion
+
+                #region JourneyList Values
+                foreach (Flight.Journey journey in oAirPricingSolution.Journey)
+                {
+                    foreach (Flight.Journey.typeAirSegmentRef airSegment in journey.AirSegmentRef)
+                    {
+                        var oAirSegment = (from a in oAirSegmentList.AirSegment
+                                           where a.Key == airSegment.Key
+                                           select a).First<Flight.AirSegment>();
+                        if (oAirSegment != null)
+                        {
+
+                            var oFlightDetails = (from f in oFlightDetailsList.FlightDetails
+                                                  where f.Key == oAirSegment.FlightDetailsRef[0].Key
+                                               select f).First<Flight.FlightDetails>();
+
+                            Journey oJourney = new Journey(oAirSegment);
+                            oJourney.AirSegment.FlightDetails = oFlightDetails;
+                            this.JourneyList.Add(oJourney);
+
+                            if (oFareAirSegmentList.Contains(oJourney.AirSegment) == false)
+                                oFareAirSegmentList.Add(oJourney.AirSegment);
+                        }
+                    }
+                }
+                #endregion
+
+                #region RouteLegList Values
+                foreach (Flight.LegRef legref in oAirPricingSolution.LegRef)
+                {
+                    var oRouteLeg = (from r in oRouteList.Route.Leg
+                                       where r.Key == legref.Key
+                                       select r).First<Flight.RouteLeg>();
+                    if (oRouteLeg != null)
+                        this.RouteLegList.Add(oRouteLeg);
+                }
+                #endregion
+
+                #region AirPricingInfo Values
+
+                foreach (Flight.AirPricingInfo airPricingInfo in oAirPricingSolution.AirPricingInfo)
+                {
+                    AirPricingInfo oAirPricingInfo = new AirPricingInfo(airPricingInfo, oFareInfoList, oFareAirSegmentList);
+                    //oAirPricingInfo.
+                    AirPricingInfoList.Add(oAirPricingInfo);
+
+                }
+                #endregion
             }
 
+            #region Hide Base Class Properties
+            //[Obsolete("Don't use this Journey", true)]
+            //new public List<Flight.Journey> Journey { get; set; }
+            [Obsolete("Don't use this LegRef", true)]
+            new public List<Flight.LegRef> LegRef { get; set; }
+            #endregion
+
             private List<RouteLeg> routeLegListField = new List<RouteLeg>();
-            private List<Journey> journeyListField;
+            private List<Journey> journeyListField = new List<Journey>();
+            private List<AirPricingInfo> airPricingInfoListField = new List<AirPricingInfo>();
 
             public List<RouteLeg> RouteLegList
             {
@@ -146,8 +206,28 @@ namespace Zim.Tech.TravelLiker.Flight
                 }
             }
 
+            public List<AirPricingInfo> AirPricingInfoList
+            {
+                get
+                {
+                    return this.airPricingInfoListField;
+                }
+                set
+                {
+                    this.airPricingInfoListField = value;
+                }
+            }
+
             public class Journey : Flight.Journey
             {
+
+                public Journey(Flight.AirSegment oAirSegment)
+                {
+                    //foreach (PropertyInfo prop in oAirSegment.GetType().GetProperties())
+                    //    AirSegment.GetType().GetProperty(prop.Name).SetValue(this, prop.GetValue(oAirSegment, null), null);
+                    this.AirSegment = new AirSegment(oAirSegment);
+                }
+
                 private AirSegment airSegmentField;
                 public AirSegment AirSegment
                 {
@@ -160,11 +240,132 @@ namespace Zim.Tech.TravelLiker.Flight
                         this.airSegmentField = value;
                     }
                 }
+
             }
 
-            public class BookingInfo : Flight.BookingInfo
+            public class AirSegment : Flight.AirSegment
             {
+                public AirSegment(Flight.AirSegment oAirSegment)
+                {
+                    foreach (PropertyInfo prop in oAirSegment.GetType().GetProperties())
+                        GetType().GetProperty(prop.Name).SetValue(this, prop.GetValue(oAirSegment, null), null);
+                }
+
+                public AirSegment(Flight.FlightDetails oFlightDetails)
+                {
+                    this.FlightDetails = oFlightDetails;
+                }
+
+                private Flight.FlightDetails flightDetailsField = new Flight.FlightDetails();
+                public Flight.FlightDetails FlightDetails
+                {
+                    get
+                    {
+                        return this.flightDetailsField;
+                    }
+                    set
+                    {
+                        this.flightDetailsField = value;
+                    }
+                }
+
+            }
+
+            public class AirPricingInfo : Flight.AirPricingInfo
+            {
+                public AirPricingInfo(Flight.AirPricingInfo oAirPricingInfo, Flight.FareInfoList oFareInfoList, List<AirSegment> oAirSegmentList)
+                {
+                    #region AirPricingInfo Properties Values
+                    foreach (PropertyInfo prop in oAirPricingInfo.GetType().GetProperties())
+                        GetType().GetProperty(prop.Name).SetValue(this, prop.GetValue(oAirPricingInfo, null), null);
+                    #endregion
+
+                    #region BookingInfoList Values
+                    foreach (Flight.BookingInfo bookinginfo in oAirPricingInfo.BookingInfo)
+                    {
+                        BookingInfoList.Add(new AirBookingInfo(bookinginfo));
+
+                        var oFareInfo = (from f in oFareInfoList.FareInfo
+                                         where f.Key == bookinginfo.FareInfoRef
+                                         select f).First<Flight.FareInfo>();
+                        if (oFareInfo != null)
+                            this.FareInfoList.Add(oFareInfo);
+
+                        var oAirSegment = (from a in oAirSegmentList
+                                         where a.Key == bookinginfo.SegmentRef
+                                         select a).First<AirSegment>();
+                        if (oAirSegment != null)
+                        {
+                            //AirSegment FareAirSegment = new AirSegment();
+                            this.AirSegmentList.Add(oAirSegment);
+                        }
+                    }
+                    #endregion
+                }
+
+                #region Hide Base Class Properties
+                [Obsolete("Don't use this FareInfoRef", true)]
+                new public List<FareInfoRef> FareInfoRef { get; set; }
+                [Obsolete("Don't use this BookingInfo", true)]
+                new public List<BookingInfo> BookingInfo { get; set; }
+                #endregion
+
+                private List<AirBookingInfo> bookingInfoListField = new List<AirBookingInfo>();
+                private List<FareInfo> fareInfoListField = new List<FareInfo>();
+                private List<AirSegment> airSegmentListField = new List<AirSegment>();
+
+
+                public List<AirBookingInfo> BookingInfoList
+                {
+                    get
+                    {
+                        return this.bookingInfoListField;
+                    }
+                    set
+                    {
+                        this.bookingInfoListField = value;
+                    }
+                }
+
+                public List<FareInfo> FareInfoList
+                {
+                    get
+                    {
+                        return this.fareInfoListField;
+                    }
+                    set
+                    {
+                        this.fareInfoListField = value;
+                    }
+                }
+
+
+                public List<AirSegment> AirSegmentList
+                {
+                    get
+                    {
+                        return this.airSegmentListField;
+                    }
+                    set
+                    {
+                        this.airSegmentListField = value;
+                    }
+                }
+            }
+
+            public class AirBookingInfo : Flight.BookingInfo
+            {
+                public AirBookingInfo(Flight.BookingInfo oBookingInfo)
+                {
+                    #region AirPricingInfo Properties Values
+                    foreach (PropertyInfo prop in oBookingInfo.GetType().GetProperties())
+                        GetType().GetProperty(prop.Name).SetValue(this, prop.GetValue(oBookingInfo, null), null);
+                    #endregion
+                }
+                /*
                 private FareInfo fareInfoField;
+                private AirSegment airSegmentField;
+
                 public FareInfo FareInfo
                 {
                     get
@@ -177,7 +378,6 @@ namespace Zim.Tech.TravelLiker.Flight
                     }
                 }
 
-                private AirSegment airSegmentField;
                 public AirSegment AirSegment
                 {
                     get
@@ -189,8 +389,8 @@ namespace Zim.Tech.TravelLiker.Flight
                         this.airSegmentField = value;
                     }
                 }
+                */
             }
-
         }
 
 

@@ -19,7 +19,7 @@ namespace Zim.Tech.TravelLiker.Flight
         //[System.Xml.Serialization.XmlArrayAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
         //[System.Xml.Serialization.XmlArrayItemAttribute("FareInfo", typeof(FlightDetails), Form = System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable = false)]
         [System.Xml.Serialization.XmlElementAttribute("AirSegment", typeof(AirSegment), Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public List<AirSegment> FareInfo
+        public List<AirSegment> AirSegment
         {
             get
             {
@@ -43,8 +43,8 @@ namespace Zim.Tech.TravelLiker.Flight
     public partial class AirSegment : object
     {
         #region AirSegment private properties
-        private AirAvailInfo[] airAvailInfoField;
-        private FlightDetailsRef[] flightDetailsRefField;
+        private List<AirAvailInfo> airAvailInfoField = new List<AirAvailInfo>();
+        private List<FlightDetailsRef> flightDetailsRefField = new List<FlightDetailsRef>();
         #endregion
         
         #region AirSegment private Attribute
@@ -99,7 +99,7 @@ namespace Zim.Tech.TravelLiker.Flight
         #region FareInfo public properties
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("AirAvailInfo")]
-        public AirAvailInfo[] AirAvailInfo
+        public List<AirAvailInfo> AirAvailInfo
         {
             get
             {
@@ -113,7 +113,7 @@ namespace Zim.Tech.TravelLiker.Flight
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("FlightDetailsRef")]
-        public FlightDetailsRef[] FlightDetailsRef
+        public List<FlightDetailsRef> FlightDetailsRef
         {
             get
             {

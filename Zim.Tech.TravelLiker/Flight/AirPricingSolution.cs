@@ -37,8 +37,8 @@ namespace Zim.Tech.TravelLiker.Flight
 
         #region FareInfo private properties
         private List<Journey> journeyField;
-        private LegRef[] legRefField;
-        private AirPricingInfo[] airPricingInfoField;
+        private List<LegRef> legRefField;
+        private List<AirPricingInfo> airPricingInfoField;
         #endregion
 
         #region FareInfo public properties
@@ -58,7 +58,7 @@ namespace Zim.Tech.TravelLiker.Flight
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("LegRef")]
-        public LegRef[] LegRef
+        public List<LegRef> LegRef
         {
             get
             {
@@ -72,7 +72,7 @@ namespace Zim.Tech.TravelLiker.Flight
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("AirPricingInfo")]
-        public AirPricingInfo[] AirPricingInfo
+        public List<AirPricingInfo> AirPricingInfo
         {
             get
             {
@@ -371,11 +371,11 @@ namespace Zim.Tech.TravelLiker.Flight
     //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/air_v25_0")]
     public partial class AirPricingInfo : object
     {
-        private FareInfoRef[] fareInfoRefField;
-        private BookingInfo[] bookingInfoField;
-        private TaxInfo[] taxInfoField;
+        private List<FareInfoRef> fareInfoRefField;
+        private List<BookingInfo> bookingInfoField;
+        private List<TaxInfo> taxInfoField;
         private string fareCalcField;
-        private PassengerType[] passengerTypeField;
+        private List<PassengerType> passengerTypeField;
         private FarePenalty changePenaltyField;
         private FarePenalty cancelPenaltyField;
 
@@ -395,7 +395,7 @@ namespace Zim.Tech.TravelLiker.Flight
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("FareInfoRef")]
-        public FareInfoRef[] FareInfoRef
+        public List<FareInfoRef> FareInfoRef
         {
             get
             {
@@ -409,7 +409,7 @@ namespace Zim.Tech.TravelLiker.Flight
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("BookingInfo")]
-        public BookingInfo[] BookingInfo
+        public List<BookingInfo> BookingInfo
         {
             get
             {
@@ -423,7 +423,7 @@ namespace Zim.Tech.TravelLiker.Flight
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("TaxInfo")]
-        public TaxInfo[] TaxInfo
+        public List<TaxInfo> TaxInfo
         {
             get
             {
@@ -451,7 +451,7 @@ namespace Zim.Tech.TravelLiker.Flight
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("PassengerType")]
-        public PassengerType[] PassengerType
+        public List<PassengerType> PassengerType
         {
             get
             {

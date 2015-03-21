@@ -220,17 +220,45 @@ namespace Zim.Tech.TravelLiker.UnitTest
             }
 
             int iFlightDetailsCount = oFlightDetailsList.FlightDetails.Count();
-            int iAirSegmentCount = oAirSegmentList.FareInfo.Count();
+            int iAirSegmentCount = oAirSegmentList.AirSegment.Count();
             int iFareInfoCount = oFareInfoList.FareInfo.Count();
             int iRouteLegCount = oRouteList.Route.Leg.Count();
             int iAirPricingSolutionCount = AirPricingSolutionList.Count();
             List<Flight.FareQuote.AirPricingSolution> airs = new List<Flight.FareQuote.AirPricingSolution>();
             foreach(Flight.AirPricingSolution airPricingSolution in AirPricingSolutionList)
             {
-                Flight.FareQuote.AirPricingSolution air = new Flight.FareQuote.AirPricingSolution(airPricingSolution);
+                Flight.FareQuote.AirPricingSolution air = new Flight.FareQuote.AirPricingSolution(airPricingSolution, oAirSegmentList, oRouteList, oFareInfoList, oFlightDetailsList);
                 airs.Add(air);
             }
-            
+
+            airs[0].AirPricingInfoList[0].BookingInfoList.Count();
+            airs[0].AirPricingInfoList[0].FareInfoList.Count();
+            airs[0].AirPricingInfoList[0].AirSegmentList.Count();
+            //airs[0].AirPricingInfoList[0].FareInfoRef.Count();
+
+            Flight.FareQuote oFareQuote = new Flight.FareQuote();
+            oFareQuote.AirPricingSolutions = airs;
+
+            string Result = string.Empty;
+            foreach (Flight.FareQuote.AirPricingSolution airPricingSolution in oFareQuote.AirPricingSolutions)
+            {
+                Result  += string.Format("Price = {0}{1}", airPricingSolution.TotalPrice, Environment.NewLine);
+                foreach (Flight.RouteLeg oRouteLeg in airPricingSolution.RouteLegList)
+                {
+                    Result += string.Format("Origin = {0} Destination {1}{2}", oRouteLeg.Origin, oRouteLeg.Destination, Environment.NewLine);
+                }
+                foreach (Flight.FareQuote.AirPricingSolution.Journey oJourney in airPricingSolution.JourneyList)
+                {
+                    Result += string.Format("Flight = {0}{1} FlightTime = {2} min(s)", oJourney.AirSegment.Carrier, oJourney.AirSegment.FlightNumber, oJourney.AirSegment.FlightTime);
+                    Result += string.Format("From = {0} ({1}) To {2} ({3}) {4}"
+                        , oJourney.AirSegment.Origin, oJourney.AirSegment.FlightDetails.DepartureTime
+                        , oJourney.AirSegment.Destination, oJourney.AirSegment.FlightDetails.ArrivalTime 
+                        , Environment.NewLine);
+                }
+
+                Result += string.Format("{0}", Environment.NewLine);
+            }
+            System.Console.WriteLine(Result);
             int o = 0;
         }
     }
