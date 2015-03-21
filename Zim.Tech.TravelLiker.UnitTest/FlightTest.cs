@@ -156,6 +156,7 @@ namespace Zim.Tech.TravelLiker.UnitTest
 
             List<Flight.AirPricingSolution> AirPricingSolutionList = new List<Flight.AirPricingSolution>();
             Flight.FlightDetailsList oFlightDetailsList = new Flight.FlightDetailsList();
+            Flight.AirSegmentList oAirSegmentList = new Flight.AirSegmentList();
             Flight.RouteList oRouteList = new Flight.RouteList();
             Flight.FareInfoList oFareInfoList = new Flight.FareInfoList();
 
@@ -176,6 +177,19 @@ namespace Zim.Tech.TravelLiker.UnitTest
                         }
                     }
 
+                    if (childnode.Name == "AirSegmentList")
+                    {
+                        oAirSegmentList = Serialize<Flight.AirSegmentList>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
+                        foreach (XmlNode subchildnode in childnode.ChildNodes)
+                        {
+                            if (subchildnode.Name == "AirSegment")
+                            {
+                                Flight.AirSegment oAirSegment = Serialize<Flight.AirSegment>.DeserializeXmlFromStringWithoutNamespace(subchildnode.OuterXml);
+                                //oAirSegmentList.FareInfo.Add(oAirSegment);
+                            }
+                        }
+                    }
+
                     if (childnode.Name == "FareInfoList")
                     {
                         oFareInfoList = Serialize<Flight.FareInfoList>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
@@ -189,15 +203,9 @@ namespace Zim.Tech.TravelLiker.UnitTest
                         }
                     }
                     
-                    if (childnode.Name == "AirSegmentList")
-                    {
-                        //uAPIFlight.typeBaseAirSegment oAirSegmentList = Serialize<uAPIFlight.typeBaseAirSegment>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
-                        uAPIFlight.typeBaseAirSegment oAirSegmentList = Serialize<uAPIFlight.typeBaseAirSegment>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
-                        int i = oAirSegmentList.AirAvailInfo.Count();
-                    }
                     if (childnode.Name == "RouteList")
                     {
-                        uAPIFlight.Route[] oAirSegmentList = Serialize<uAPIFlight.Route[]>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
+                        //uAPIFlight.Route[] oRouteList = Serialize<uAPIFlight.Route[]>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
                         oRouteList = Serialize<Flight.RouteList>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
                     }
                     if (childnode.Name == "AirPricingSolution")
@@ -212,8 +220,17 @@ namespace Zim.Tech.TravelLiker.UnitTest
             }
 
             int iFlightDetailsCount = oFlightDetailsList.FlightDetails.Count();
+            int iAirSegmentCount = oAirSegmentList.FareInfo.Count();
             int iFareInfoCount = oFareInfoList.FareInfo.Count();
+            int iRouteLegCount = oRouteList.Route.Leg.Count();
             int iAirPricingSolutionCount = AirPricingSolutionList.Count();
+            List<Flight.FareQuote.AirPricingSolution> airs = new List<Flight.FareQuote.AirPricingSolution>();
+            foreach(Flight.AirPricingSolution airPricingSolution in AirPricingSolutionList)
+            {
+                Flight.FareQuote.AirPricingSolution air = new Flight.FareQuote.AirPricingSolution(airPricingSolution);
+                airs.Add(air);
+            }
+            
             int o = 0;
         }
     }

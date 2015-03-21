@@ -34,8 +34,6 @@ namespace Zim.Tech.TravelLiker.Flight
 
 
     #region AirSegment Class
- 
-
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
@@ -45,8 +43,8 @@ namespace Zim.Tech.TravelLiker.Flight
     public partial class AirSegment : object
     {
         #region AirSegment private properties
-        //private AirAvailInfo[] airAvailInfoField;
-        //private FlightDetailsRef[] flightDetailsRefField;
+        private AirAvailInfo[] airAvailInfoField;
+        private FlightDetailsRef[] flightDetailsRefField;
         #endregion
         
         #region AirSegment private Attribute
@@ -100,32 +98,32 @@ namespace Zim.Tech.TravelLiker.Flight
 
         #region FareInfo public properties
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("AirAvailInfo", Order = 2)]
-        //public AirAvailInfo[] AirAvailInfo
-        //{
-        //    get
-        //    {
-        //        return this.airAvailInfoField;
-        //    }
-        //    set
-        //    {
-        //        this.airAvailInfoField = value;
-        //    }
-        ////}
+        [System.Xml.Serialization.XmlElementAttribute("AirAvailInfo")]
+        public AirAvailInfo[] AirAvailInfo
+        {
+            get
+            {
+                return this.airAvailInfoField;
+            }
+            set
+            {
+                this.airAvailInfoField = value;
+            }
+        }
 
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlElementAttribute("FlightDetailsRef", Order = 4)]
-        //public FlightDetailsRef[] FlightDetailsRef
-        //{
-        //    get
-        //    {
-        //        return this.flightDetailsRefField;
-        //    }
-        //    set
-        //    {
-        //        this.flightDetailsRefField = value;
-        //    }
-        //}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("FlightDetailsRef")]
+        public FlightDetailsRef[] FlightDetailsRef
+        {
+            get
+            {
+                return this.flightDetailsRefField;
+            }
+            set
+            {
+                this.flightDetailsRefField = value;
+            }
+        }
         #endregion
 
         #region AirSegment private Attribute
@@ -140,294 +138,294 @@ namespace Zim.Tech.TravelLiker.Flight
             }
         }
 
-        ///*
-        //public typeBaseAirSegment()
-        //{
-        //    this.changeOfPlaneField = false;
-        //}
+        /*
+        public typeBaseAirSegment()
+        {
+            this.changeOfPlaneField = false;
+        }
 
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-        //public SponsoredFltInfo SponsoredFltInfo
-        //{
-        //    get
-        //    {
-        //        return this.sponsoredFltInfoField;
-        //    }
-        //    set
-        //    {
-        //        this.sponsoredFltInfoField = value;
-        //    }
-        //}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute()]
+        public SponsoredFltInfo SponsoredFltInfo
+        {
+            get
+            {
+                return this.sponsoredFltInfoField;
+            }
+            set
+            {
+                this.sponsoredFltInfoField = value;
+            }
+        }
 
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-        //public CodeshareInfo CodeshareInfo
-        //{
-        //    get
-        //    {
-        //        return this.codeshareInfoField;
-        //    }
-        //    set
-        //    {
-        //        this.codeshareInfoField = value;
-        //    }
-        //}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute()]
+        public CodeshareInfo CodeshareInfo
+        {
+            get
+            {
+                return this.codeshareInfoField;
+            }
+            set
+            {
+                this.codeshareInfoField = value;
+            }
+        }
 
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlElementAttribute("FlightDetails", Order = 3)]
-        //public FlightDetails[] FlightDetails
-        //{
-        //    get
-        //    {
-        //        return this.flightDetailsField;
-        //    }
-        //    set
-        //    {
-        //        this.flightDetailsField = value;
-        //    }
-        //}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("FlightDetails")]
+        public FlightDetails[] FlightDetails
+        {
+            get
+            {
+                return this.flightDetailsField;
+            }
+            set
+            {
+                this.flightDetailsField = value;
+            }
+        }
 
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlElementAttribute("AlternateLocationDistanceRef", Order = 5)]
-        //public AlternateLocationDistanceRef[] AlternateLocationDistanceRef
-        //{
-        //    get
-        //    {
-        //        return this.alternateLocationDistanceRefField;
-        //    }
-        //    set
-        //    {
-        //        this.alternateLocationDistanceRefField = value;
-        //    }
-        //}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("AlternateLocationDistanceRef")]
+        public AlternateLocationDistanceRef[] AlternateLocationDistanceRef
+        {
+            get
+            {
+                return this.alternateLocationDistanceRefField;
+            }
+            set
+            {
+                this.alternateLocationDistanceRefField = value;
+            }
+        }
 
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlElementAttribute(Order = 6)]
-        //public Connection Connection
-        //{
-        //    get
-        //    {
-        //        return this.connectionField;
-        //    }
-        //    set
-        //    {
-        //        this.connectionField = value;
-        //    }
-        //}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute()]
+        public Connection Connection
+        {
+            get
+            {
+                return this.connectionField;
+            }
+            set
+            {
+                this.connectionField = value;
+            }
+        }
 
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlElementAttribute("SellMessage", Namespace = "http://www.travelport.com/schema/common_v25_0", Order = 7)]
-        //public string[] SellMessage
-        //{
-        //    get
-        //    {
-        //        return this.sellMessageField;
-        //    }
-        //    set
-        //    {
-        //        this.sellMessageField = value;
-        //    }
-        //}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("SellMessage", Namespace = "http://www.travelport.com/schema/common_v25_0")]
+        public string[] SellMessage
+        {
+            get
+            {
+                return this.sellMessageField;
+            }
+            set
+            {
+                this.sellMessageField = value;
+            }
+        }
 
-        ///// <remarks/>
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool OpenSegment
+        {
+            get
+            {
+                return this.openSegmentField;
+            }
+            set
+            {
+                this.openSegmentField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool OpenSegmentSpecified
+        {
+            get
+            {
+                return this.openSegmentFieldSpecified;
+            }
+            set
+            {
+                this.openSegmentFieldSpecified = value;
+            }
+        }
+        */
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int Group
+        {
+            get
+            {
+                return this.groupField;
+            }
+            set
+            {
+                this.groupField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Carrier
+        {
+            get
+            {
+                return this.carrierField;
+            }
+            set
+            {
+                this.carrierField = value;
+            }
+        }
+        /*
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public typeCabinClass CabinClass
+        {
+            get
+            {
+                return this.cabinClassField;
+            }
+            set
+            {
+                this.cabinClassField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CabinClassSpecified
+        {
+            get
+            {
+                return this.cabinClassFieldSpecified;
+            }
+            set
+            {
+                this.cabinClassFieldSpecified = value;
+            }
+        }
+        */
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string FlightNumber
+        {
+            get
+            {
+                return this.flightNumberField;
+            }
+            set
+            {
+                this.flightNumberField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Origin
+        {
+            get
+            {
+                return this.originField;
+            }
+            set
+            {
+                this.originField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Destination
+        {
+            get
+            {
+                return this.destinationField;
+            }
+            set
+            {
+                this.destinationField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DepartureTime
+        {
+            get
+            {
+                return this.departureTimeField;
+            }
+            set
+            {
+                this.departureTimeField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ArrivalTime
+        {
+            get
+            {
+                return this.arrivalTimeField;
+            }
+            set
+            {
+                this.arrivalTimeField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string FlightTime
+        {
+            get
+            {
+                return this.flightTimeField;
+            }
+            set
+            {
+                this.flightTimeField = value;
+            }
+        }
+
+        /// <remarks/>
         //[System.Xml.Serialization.XmlAttributeAttribute()]
-        //public bool OpenSegment
+        //public string TravelTime
         //{
         //    get
         //    {
-        //        return this.openSegmentField;
+        //        return this.travelTimeField;
         //    }
         //    set
         //    {
-        //        this.openSegmentField = value;
+        //        this.travelTimeField = value;
         //    }
         //}
 
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlIgnoreAttribute()]
-        //public bool OpenSegmentSpecified
-        //{
-        //    get
-        //    {
-        //        return this.openSegmentFieldSpecified;
-        //    }
-        //    set
-        //    {
-        //        this.openSegmentFieldSpecified = value;
-        //    }
-        //}
-        //*/
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "integer")]
+        public string Distance
+        {
+            get
+            {
+                return this.distanceField;
+            }
+            set
+            {
+                this.distanceField = value;
+            }
+        }
 
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlAttributeAttribute()]
-        //public int Group
-        //{
-        //    get
-        //    {
-        //        return this.groupField;
-        //    }
-        //    set
-        //    {
-        //        this.groupField = value;
-        //    }
-        //}
-
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlAttributeAttribute()]
-        //public string Carrier
-        //{
-        //    get
-        //    {
-        //        return this.carrierField;
-        //    }
-        //    set
-        //    {
-        //        this.carrierField = value;
-        //    }
-        //}
-        ///*
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlAttributeAttribute()]
-        //public typeCabinClass CabinClass
-        //{
-        //    get
-        //    {
-        //        return this.cabinClassField;
-        //    }
-        //    set
-        //    {
-        //        this.cabinClassField = value;
-        //    }
-        //}
-
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlIgnoreAttribute()]
-        //public bool CabinClassSpecified
-        //{
-        //    get
-        //    {
-        //        return this.cabinClassFieldSpecified;
-        //    }
-        //    set
-        //    {
-        //        this.cabinClassFieldSpecified = value;
-        //    }
-        //}
-        //*/
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlAttributeAttribute()]
-        //public string FlightNumber
-        //{
-        //    get
-        //    {
-        //        return this.flightNumberField;
-        //    }
-        //    set
-        //    {
-        //        this.flightNumberField = value;
-        //    }
-        //}
-
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlAttributeAttribute()]
-        //public string Origin
-        //{
-        //    get
-        //    {
-        //        return this.originField;
-        //    }
-        //    set
-        //    {
-        //        this.originField = value;
-        //    }
-        //}
-
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlAttributeAttribute()]
-        //public string Destination
-        //{
-        //    get
-        //    {
-        //        return this.destinationField;
-        //    }
-        //    set
-        //    {
-        //        this.destinationField = value;
-        //    }
-        //}
-
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlAttributeAttribute()]
-        //public string DepartureTime
-        //{
-        //    get
-        //    {
-        //        return this.departureTimeField;
-        //    }
-        //    set
-        //    {
-        //        this.departureTimeField = value;
-        //    }
-        //}
-
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlAttributeAttribute()]
-        //public string ArrivalTime
-        //{
-        //    get
-        //    {
-        //        return this.arrivalTimeField;
-        //    }
-        //    set
-        //    {
-        //        this.arrivalTimeField = value;
-        //    }
-        //}
-
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlAttributeAttribute()]
-        //public string FlightTime
-        //{
-        //    get
-        //    {
-        //        return this.flightTimeField;
-        //    }
-        //    set
-        //    {
-        //        this.flightTimeField = value;
-        //    }
-        //}
-
-        ///// <remarks/>
-        ////[System.Xml.Serialization.XmlAttributeAttribute()]
-        ////public string TravelTime
-        ////{
-        ////    get
-        ////    {
-        ////        return this.travelTimeField;
-        ////    }
-        ////    set
-        ////    {
-        ////        this.travelTimeField = value;
-        ////    }
-        ////}
-
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlAttributeAttribute(DataType = "integer")]
-        //public string Distance
-        //{
-        //    get
-        //    {
-        //        return this.distanceField;
-        //    }
-        //    set
-        //    {
-        //        this.distanceField = value;
-        //    }
-        //}
-
-        ///// <remarks/>
+        /// <remarks/>
         //[System.Xml.Serialization.XmlAttributeAttribute()]
         //public string ProviderCode
         //{
@@ -438,11 +436,10 @@ namespace Zim.Tech.TravelLiker.Flight
         //    set
         //    {
         //        this.providerCodeField = value;
-        //        this.RaisePropertyChanged("ProviderCode");
         //    }
         //}
 
-        ///// <remarks/>
+        /// <remarks/>
         //[System.Xml.Serialization.XmlAttributeAttribute()]
         //public string SupplierCode
         //{
@@ -453,41 +450,38 @@ namespace Zim.Tech.TravelLiker.Flight
         //    set
         //    {
         //        this.supplierCodeField = value;
-        //        this.RaisePropertyChanged("SupplierCode");
         //    }
         //}
 
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlAttributeAttribute()]
-        //public string ParticipantLevel
-        //{
-        //    get
-        //    {
-        //        return this.participantLevelField;
-        //    }
-        //    set
-        //    {
-        //        this.participantLevelField = value;
-        //        this.RaisePropertyChanged("ParticipantLevel");
-        //    }
-        //}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ParticipantLevel
+        {
+            get
+            {
+                return this.participantLevelField;
+            }
+            set
+            {
+                this.participantLevelField = value;
+            }
+        }
 
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlAttributeAttribute()]
-        //public bool LinkAvailability
-        //{
-        //    get
-        //    {
-        //        return this.linkAvailabilityField;
-        //    }
-        //    set
-        //    {
-        //        this.linkAvailabilityField = value;
-        //        this.RaisePropertyChanged("LinkAvailability");
-        //    }
-        //}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool LinkAvailability
+        {
+            get
+            {
+                return this.linkAvailabilityField;
+            }
+            set
+            {
+                this.linkAvailabilityField = value;
+            }
+        }
 
-        ///// <remarks/>
+        /// <remarks/>
         //[System.Xml.Serialization.XmlIgnoreAttribute()]
         //public bool LinkAvailabilitySpecified
         //{
@@ -498,26 +492,24 @@ namespace Zim.Tech.TravelLiker.Flight
         //    set
         //    {
         //        this.linkAvailabilityFieldSpecified = value;
-        //        this.RaisePropertyChanged("LinkAvailabilitySpecified");
         //    }
         //}
 
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlAttributeAttribute()]
-        //public string PolledAvailabilityOption
-        //{
-        //    get
-        //    {
-        //        return this.polledAvailabilityOptionField;
-        //    }
-        //    set
-        //    {
-        //        this.polledAvailabilityOptionField = value;
-        //        this.RaisePropertyChanged("PolledAvailabilityOption");
-        //    }
-        //}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string PolledAvailabilityOption
+        {
+            get
+            {
+                return this.polledAvailabilityOptionField;
+            }
+            set
+            {
+                this.polledAvailabilityOptionField = value;
+            }
+        }
 
-        ///// <remarks/>
+        /// <remarks/>
         //[System.Xml.Serialization.XmlAttributeAttribute()]
         //public string ClassOfService
         //{
@@ -528,26 +520,24 @@ namespace Zim.Tech.TravelLiker.Flight
         //    set
         //    {
         //        this.classOfServiceField = value;
-        //        this.RaisePropertyChanged("ClassOfService");
         //    }
         //}
 
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlAttributeAttribute()]
-        //public typeEticketability ETicketability
-        //{
-        //    get
-        //    {
-        //        return this.eTicketabilityField;
-        //    }
-        //    set
-        //    {
-        //        this.eTicketabilityField = value;
-        //        this.RaisePropertyChanged("ETicketability");
-        //    }
-        //}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public typeEticketability ETicketability
+        {
+            get
+            {
+                return this.eTicketabilityField;
+            }
+            set
+            {
+                this.eTicketabilityField = value;
+            }
+        }
 
-        ///// <remarks/>
+        /// <remarks/>
         //[System.Xml.Serialization.XmlIgnoreAttribute()]
         //public bool ETicketabilitySpecified
         //{
@@ -558,26 +548,24 @@ namespace Zim.Tech.TravelLiker.Flight
         //    set
         //    {
         //        this.eTicketabilityFieldSpecified = value;
-        //        this.RaisePropertyChanged("ETicketabilitySpecified");
         //    }
         //}
 
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlAttributeAttribute()]
-        //public string Equipment
-        //{
-        //    get
-        //    {
-        //        return this.equipmentField;
-        //    }
-        //    set
-        //    {
-        //        this.equipmentField = value;
-        //        this.RaisePropertyChanged("Equipment");
-        //    }
-        //}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Equipment
+        {
+            get
+            {
+                return this.equipmentField;
+            }
+            set
+            {
+                this.equipmentField = value;
+            }
+        }
 
-        ///// <remarks/>
+        /// <remarks/>
         //[System.Xml.Serialization.XmlAttributeAttribute()]
         //public int MarriageGroup
         //{
@@ -588,11 +576,10 @@ namespace Zim.Tech.TravelLiker.Flight
         //    set
         //    {
         //        this.marriageGroupField = value;
-        //        this.RaisePropertyChanged("MarriageGroup");
         //    }
         //}
 
-        ///// <remarks/>
+        /// <remarks/>
         //[System.Xml.Serialization.XmlIgnoreAttribute()]
         //public bool MarriageGroupSpecified
         //{
@@ -603,11 +590,10 @@ namespace Zim.Tech.TravelLiker.Flight
         //    set
         //    {
         //        this.marriageGroupFieldSpecified = value;
-        //        this.RaisePropertyChanged("MarriageGroupSpecified");
         //    }
         //}
 
-        ///// <remarks/>
+        /// <remarks/>
         //[System.Xml.Serialization.XmlAttributeAttribute()]
         //public int NumberOfStops
         //{
@@ -618,11 +604,10 @@ namespace Zim.Tech.TravelLiker.Flight
         //    set
         //    {
         //        this.numberOfStopsField = value;
-        //        this.RaisePropertyChanged("NumberOfStops");
         //    }
         //}
 
-        ///// <remarks/>
+        /// <remarks/>
         //[System.Xml.Serialization.XmlIgnoreAttribute()]
         //public bool NumberOfStopsSpecified
         //{
@@ -633,11 +618,10 @@ namespace Zim.Tech.TravelLiker.Flight
         //    set
         //    {
         //        this.numberOfStopsFieldSpecified = value;
-        //        this.RaisePropertyChanged("NumberOfStopsSpecified");
         //    }
         //}
 
-        ///// <remarks/>
+        /// <remarks/>
         //[System.Xml.Serialization.XmlAttributeAttribute()]
         //public bool Seamless
         //{
@@ -648,11 +632,10 @@ namespace Zim.Tech.TravelLiker.Flight
         //    set
         //    {
         //        this.seamlessField = value;
-        //        this.RaisePropertyChanged("Seamless");
         //    }
         //}
 
-        ///// <remarks/>
+        /// <remarks/>
         //[System.Xml.Serialization.XmlIgnoreAttribute()]
         //public bool SeamlessSpecified
         //{
@@ -663,27 +646,25 @@ namespace Zim.Tech.TravelLiker.Flight
         //    set
         //    {
         //        this.seamlessFieldSpecified = value;
-        //        this.RaisePropertyChanged("SeamlessSpecified");
         //    }
         //}
 
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlAttributeAttribute()]
-        //[System.ComponentModel.DefaultValueAttribute(false)]
-        //public bool ChangeOfPlane
-        //{
-        //    get
-        //    {
-        //        return this.changeOfPlaneField;
-        //    }
-        //    set
-        //    {
-        //        this.changeOfPlaneField = value;
-        //        this.RaisePropertyChanged("ChangeOfPlane");
-        //    }
-        //}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(false)]
+        public bool ChangeOfPlane
+        {
+            get
+            {
+                return this.changeOfPlaneField;
+            }
+            set
+            {
+                this.changeOfPlaneField = value;
+            }
+        }
 
-        ///// <remarks/>
+        /// <remarks/>
         //[System.Xml.Serialization.XmlAttributeAttribute()]
         //public string GuaranteedPaymentCarrier
         //{
@@ -693,12 +674,11 @@ namespace Zim.Tech.TravelLiker.Flight
         //    }
         //    set
         //    {
-        //        this.guaranteedPaymentCarrierField = value;
-        //        this.RaisePropertyChanged("GuaranteedPaymentCarrier");
+        //        this.guaranteedPaymentCarrierField = value;;
         //    }
         //}
 
-        ///// <remarks/>
+        /// <remarks/>
         //[System.Xml.Serialization.XmlAttributeAttribute()]
         //public string HostTokenRef
         //{
@@ -709,11 +689,10 @@ namespace Zim.Tech.TravelLiker.Flight
         //    set
         //    {
         //        this.hostTokenRefField = value;
-        //        this.RaisePropertyChanged("HostTokenRef");
         //    }
         //}
 
-        ///// <remarks/>
+        /// <remarks/>
         //[System.Xml.Serialization.XmlAttributeAttribute()]
         //public string ProviderReservationInfoRef
         //{
@@ -724,11 +703,10 @@ namespace Zim.Tech.TravelLiker.Flight
         //    set
         //    {
         //        this.providerReservationInfoRefField = value;
-        //        this.RaisePropertyChanged("ProviderReservationInfoRef");
         //    }
         //}
 
-        ///// <remarks/>
+        /// <remarks/>
         //[System.Xml.Serialization.XmlAttributeAttribute()]
         //public string PassiveProviderReservationInfoRef
         //{
@@ -739,26 +717,24 @@ namespace Zim.Tech.TravelLiker.Flight
         //    set
         //    {
         //        this.passiveProviderReservationInfoRefField = value;
-        //        this.RaisePropertyChanged("PassiveProviderReservationInfoRef");
         //    }
         //}
 
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlAttributeAttribute()]
-        //public bool OptionalServicesIndicator
-        //{
-        //    get
-        //    {
-        //        return this.optionalServicesIndicatorField;
-        //    }
-        //    set
-        //    {
-        //        this.optionalServicesIndicatorField = value;
-        //        this.RaisePropertyChanged("OptionalServicesIndicator");
-        //    }
-        //}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool OptionalServicesIndicator
+        {
+            get
+            {
+                return this.optionalServicesIndicatorField;
+            }
+            set
+            {
+                this.optionalServicesIndicatorField = value;
+            }
+        }
 
-        ///// <remarks/>
+        /// <remarks/>
         //[System.Xml.Serialization.XmlIgnoreAttribute()]
         //public bool OptionalServicesIndicatorSpecified
         //{
@@ -769,26 +745,24 @@ namespace Zim.Tech.TravelLiker.Flight
         //    set
         //    {
         //        this.optionalServicesIndicatorFieldSpecified = value;
-        //        this.RaisePropertyChanged("OptionalServicesIndicatorSpecified");
         //    }
         //}
 
-        ///// <remarks/>
-        //[System.Xml.Serialization.XmlAttributeAttribute()]
-        //public typeAvailabilitySource AvailabilitySource
-        //{
-        //    get
-        //    {
-        //        return this.availabilitySourceField;
-        //    }
-        //    set
-        //    {
-        //        this.availabilitySourceField = value;
-        //        this.RaisePropertyChanged("AvailabilitySource");
-        //    }
-        //}
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public typeAvailabilitySource AvailabilitySource
+        {
+            get
+            {
+                return this.availabilitySourceField;
+            }
+            set
+            {
+                this.availabilitySourceField = value;
+            }
+        }
 
-        ///// <remarks/>
+        /// <remarks/>
         //[System.Xml.Serialization.XmlIgnoreAttribute()]
         //public bool AvailabilitySourceSpecified
         //{
@@ -799,11 +773,10 @@ namespace Zim.Tech.TravelLiker.Flight
         //    set
         //    {
         //        this.availabilitySourceFieldSpecified = value;
-        //        this.RaisePropertyChanged("AvailabilitySourceSpecified");
         //    }
         //}
 
-        ///// <remarks/>
+        /// <remarks/>
         //[System.Xml.Serialization.XmlAttributeAttribute()]
         //public string APISRequirementsRef
         //{
@@ -814,11 +787,10 @@ namespace Zim.Tech.TravelLiker.Flight
         //    set
         //    {
         //        this.aPISRequirementsRefField = value;
-        //        this.RaisePropertyChanged("APISRequirementsRef");
         //    }
         //}
 
-        ///// <remarks/>
+        /// <remarks/>
         //[System.Xml.Serialization.XmlAttributeAttribute()]
         //public bool BlackListed
         //{
@@ -829,11 +801,10 @@ namespace Zim.Tech.TravelLiker.Flight
         //    set
         //    {
         //        this.blackListedField = value;
-        //        this.RaisePropertyChanged("BlackListed");
         //    }
         //}
 
-        ///// <remarks/>
+        /// <remarks/>
         //[System.Xml.Serialization.XmlIgnoreAttribute()]
         //public bool BlackListedSpecified
         //{
@@ -844,11 +815,10 @@ namespace Zim.Tech.TravelLiker.Flight
         //    set
         //    {
         //        this.blackListedFieldSpecified = value;
-        //        this.RaisePropertyChanged("BlackListedSpecified");
         //    }
         //}
 
-        ///// <remarks/>
+        /// <remarks/>
         //[System.Xml.Serialization.XmlAttributeAttribute()]
         //public string OperationalStatus
         //{
@@ -859,11 +829,10 @@ namespace Zim.Tech.TravelLiker.Flight
         //    set
         //    {
         //        this.operationalStatusField = value;
-        //        this.RaisePropertyChanged("OperationalStatus");
         //    }
         //}
 
-        ///// <remarks/>
+        /// <remarks/>
         //[System.Xml.Serialization.XmlAttributeAttribute(DataType = "positiveInteger")]
         //public string NumberInParty
         //{
@@ -874,10 +843,246 @@ namespace Zim.Tech.TravelLiker.Flight
         //    set
         //    {
         //        this.numberInPartyField = value;
-        //        this.RaisePropertyChanged("NumberInParty");
         //    }
         //}
         #endregion
+    }
+    
+    
+    #region AirAvailInfo Class
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/air_v25_0")]
+    public partial class AirAvailInfo : object
+    {
+        #region AirAvailInfo private properties
+        private BookingCodeInfo[] bookingCodeInfoField;
+        //private AirAvailInfoFareTokenInfo[] fareTokenInfoField;
+        #endregion
+        
+        #region AirAvailInfo private Attribute
+        private string providerCodeField;
+        private string hostTokenRefField;
+        #endregion
+        
+        #region AirAvailInfo private public
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("BookingCodeInfo")]
+        public BookingCodeInfo[] BookingCodeInfo {
+            get {
+                return this.bookingCodeInfoField;
+            }
+            set {
+                this.bookingCodeInfoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        //[System.Xml.Serialization.XmlElementAttribute("FareTokenInfo")]
+        //public AirAvailInfoFareTokenInfo[] FareTokenInfo {
+        //    get {
+        //        return this.fareTokenInfoField;
+        //    }
+        //    set {
+        //        this.fareTokenInfoField = value;
+        //        this.RaisePropertyChanged("FareTokenInfo");
+        //    }
+        //}
+        #endregion
+        
+        #region AirAvailInfo private public
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ProviderCode {
+            get {
+                return this.providerCodeField;
+            }
+            set {
+                this.providerCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string HostTokenRef {
+            get {
+                return this.hostTokenRefField;
+            }
+            set {
+                this.hostTokenRefField = value;
+            }
+        }
+        #endregion
+        
+    }
+    
+    #region BookingCodeInfo Class
+        /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/air_v25_0")]
+    public partial class BookingCodeInfo : object
+    {
+        #region BookingCodeInfo private properties
+        private typeCabinClass cabinClassField;
+        private bool cabinClassFieldSpecified;
+        private string bookingCountsField;
+        #endregion
+        
+        #region BookingCodeInfo public properties
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public typeCabinClass CabinClass {
+            get {
+                return this.cabinClassField;
+            }
+            set {
+                this.cabinClassField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CabinClassSpecified {
+            get {
+                return this.cabinClassFieldSpecified;
+            }
+            set {
+                this.cabinClassFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string BookingCounts {
+            get {
+                return this.bookingCountsField;
+            }
+            set {
+                this.bookingCountsField = value;
+            }
+        }
+        #endregion
+    }
+    #endregion
+
+    #endregion
+    
+
+    #region FlightDetailsRef Class
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/air_v25_0")]
+    public partial class FlightDetailsRef : object
+    {
+        private string keyField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+            }
+        }
+    }
+    #endregion
+
+    #endregion
+
+    #region AvailabilitySource Class
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    //[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/air_v25_0")]
+    public enum typeAvailabilitySource {
+        
+        /// <remarks/>
+        AvailStatusTTY,
+        
+        /// <remarks/>
+        CacheClosedStatus,
+        
+        /// <remarks/>
+        CacheAVS,
+        
+        /// <remarks/>
+        DirectAccess,
+        
+        /// <remarks/>
+        CacheDirectAccess,
+        
+        /// <remarks/>
+        CacheSellFailures,
+        
+        /// <remarks/>
+        CacheGUI,
+        
+        /// <remarks/>
+        CacheLastSeatAvail,
+        
+        /// <remarks/>
+        CacheP2PJourney,
+        
+        /// <remarks/>
+        CacheP2PMixClass,
+        
+        /// <remarks/>
+        CacheP2PLink,
+        
+        /// <remarks/>
+        LastSeatAvail,
+        
+        /// <remarks/>
+        TEManualSell,
+        
+        /// <remarks/>
+        CacheOtherVendorsResponse,
+        
+        /// <remarks/>
+        StatusOverlaid,
+        
+        /// <remarks/>
+        CacheSeamless,
+        
+        /// <remarks/>
+        Seamless,
+        
+        /// <remarks/>
+        UnknownSource,
+    }
+    #endregion
+
+
+    #region Eticketability Class
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.travelport.com/schema/air_v25_0")]
+    public enum typeEticketability
+    {
+
+        /// <remarks/>
+        Yes,
+
+        /// <remarks/>
+        No,
+
+        /// <remarks/>
+        Required,
+
+        /// <remarks/>
+        Ticketless,
     }
     #endregion
 }

@@ -15,10 +15,12 @@ namespace Zim.Tech.TravelLiker.Flight
     //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/air_v25_0")]
     public partial class AirPricingSolution : object
     {
-        private Journey[] journeyField;
-        private LegRef[] legRefField;
-        private AirPricingInfo[] airPricingInfoField;
+        public AirPricingSolution()
+        {
+            this.completeItineraryField = true;
+        }
 
+        #region FareInfo private Attribute
         private string keyField;
         private bool completeItineraryField;
         private string totalPriceField;
@@ -31,15 +33,18 @@ namespace Zim.Tech.TravelLiker.Flight
         private string servicesField;
         private string approximateTaxesField;
         private string approximateFeesField;
+        #endregion
 
-        public AirPricingSolution()
-        {
-            this.completeItineraryField = true;
-        }
+        #region FareInfo private properties
+        private List<Journey> journeyField;
+        private LegRef[] legRefField;
+        private AirPricingInfo[] airPricingInfoField;
+        #endregion
 
+        #region FareInfo public properties
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("Journey")]
-        public Journey[] Journey
+        public List<Journey> Journey
         {
             get
             {
@@ -48,7 +53,6 @@ namespace Zim.Tech.TravelLiker.Flight
             set
             {
                 this.journeyField = value;
-                this.RaisePropertyChanged("Journey");
             }
         }
 
@@ -63,7 +67,6 @@ namespace Zim.Tech.TravelLiker.Flight
             set
             {
                 this.legRefField = value;
-                this.RaisePropertyChanged("LegRef");
             }
         }
 
@@ -78,10 +81,11 @@ namespace Zim.Tech.TravelLiker.Flight
             set
             {
                 this.airPricingInfoField = value;
-                this.RaisePropertyChanged("AirPricingInfo");
             }
         }
+        #endregion
 
+        #region FareInfo private Attribute
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Key
@@ -93,7 +97,6 @@ namespace Zim.Tech.TravelLiker.Flight
             set
             {
                 this.keyField = value;
-                this.RaisePropertyChanged("Key");
             }
         }
 
@@ -109,7 +112,6 @@ namespace Zim.Tech.TravelLiker.Flight
             set
             {
                 this.completeItineraryField = value;
-                this.RaisePropertyChanged("CompleteItinerary");
             }
         }
 
@@ -124,7 +126,6 @@ namespace Zim.Tech.TravelLiker.Flight
             set
             {
                 this.totalPriceField = value;
-                this.RaisePropertyChanged("TotalPrice");
             }
         }
 
@@ -139,7 +140,6 @@ namespace Zim.Tech.TravelLiker.Flight
             set
             {
                 this.basePriceField = value;
-                this.RaisePropertyChanged("BasePrice");
             }
         }
 
@@ -154,7 +154,6 @@ namespace Zim.Tech.TravelLiker.Flight
             set
             {
                 this.approximateTotalPriceField = value;
-                this.RaisePropertyChanged("ApproximateTotalPrice");
             }
         }
 
@@ -169,7 +168,6 @@ namespace Zim.Tech.TravelLiker.Flight
             set
             {
                 this.approximateBasePriceField = value;
-                this.RaisePropertyChanged("ApproximateBasePrice");
             }
         }
 
@@ -184,7 +182,6 @@ namespace Zim.Tech.TravelLiker.Flight
             set
             {
                 this.equivalentBasePriceField = value;
-                this.RaisePropertyChanged("EquivalentBasePrice");
             }
         }
 
@@ -199,7 +196,6 @@ namespace Zim.Tech.TravelLiker.Flight
             set
             {
                 this.taxesField = value;
-                this.RaisePropertyChanged("Taxes");
             }
         }
 
@@ -214,7 +210,6 @@ namespace Zim.Tech.TravelLiker.Flight
             set
             {
                 this.feesField = value;
-                this.RaisePropertyChanged("Fees");
             }
         }
 
@@ -229,7 +224,6 @@ namespace Zim.Tech.TravelLiker.Flight
             set
             {
                 this.servicesField = value;
-                this.RaisePropertyChanged("Services");
             }
         }
 
@@ -244,7 +238,6 @@ namespace Zim.Tech.TravelLiker.Flight
             set
             {
                 this.approximateTaxesField = value;
-                this.RaisePropertyChanged("ApproximateTaxes");
             }
         }
 
@@ -259,23 +252,14 @@ namespace Zim.Tech.TravelLiker.Flight
             set
             {
                 this.approximateFeesField = value;
-                this.RaisePropertyChanged("ApproximateFees");
             }
         }
+        #endregion
 
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null))
-            {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
     }
 
 
+    #region Journey Class
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
@@ -284,9 +268,7 @@ namespace Zim.Tech.TravelLiker.Flight
     //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/air_v25_0")]
     public partial class Journey : object
     {
-
         private typeAirSegmentRef[] airSegmentRefField;
-
         private string travelTimeField;
 
         /// <remarks/>
@@ -318,6 +300,7 @@ namespace Zim.Tech.TravelLiker.Flight
         }
 
 
+        #region AirSegmentRef Class
         /// <remarks/>
         [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
         [System.SerializableAttribute()]
@@ -344,9 +327,12 @@ namespace Zim.Tech.TravelLiker.Flight
             }
 
         }
+        #endregion
     }
+    #endregion
 
 
+    #region LegRef Class
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
@@ -373,8 +359,10 @@ namespace Zim.Tech.TravelLiker.Flight
         }
 
     }
+    #endregion
+    
 
-
+    #region AirPricingInfo Class
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
@@ -383,13 +371,13 @@ namespace Zim.Tech.TravelLiker.Flight
     //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/air_v25_0")]
     public partial class AirPricingInfo : object
     {
-        private typeFareInfoRef[] fareInfoRefField;
-        private typeBookingInfo[] bookingInfoField;
-        private typeTaxInfo[] taxInfoField;
+        private FareInfoRef[] fareInfoRefField;
+        private BookingInfo[] bookingInfoField;
+        private TaxInfo[] taxInfoField;
         private string fareCalcField;
-        private typePassengerType[] passengerTypeField;
-        private typeFarePenalty changePenaltyField;
-        private typeFarePenalty cancelPenaltyField;
+        private PassengerType[] passengerTypeField;
+        private FarePenalty changePenaltyField;
+        private FarePenalty cancelPenaltyField;
 
         private string keyField;
         private string commandKeyField;
@@ -407,7 +395,7 @@ namespace Zim.Tech.TravelLiker.Flight
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("FareInfoRef")]
-        public typeFareInfoRef[] FareInfoRef
+        public FareInfoRef[] FareInfoRef
         {
             get
             {
@@ -421,7 +409,7 @@ namespace Zim.Tech.TravelLiker.Flight
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("BookingInfo")]
-        public typeBookingInfo[] BookingInfo
+        public BookingInfo[] BookingInfo
         {
             get
             {
@@ -435,7 +423,7 @@ namespace Zim.Tech.TravelLiker.Flight
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("TaxInfo")]
-        public typeTaxInfo[] TaxInfo
+        public TaxInfo[] TaxInfo
         {
             get
             {
@@ -463,7 +451,7 @@ namespace Zim.Tech.TravelLiker.Flight
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("PassengerType")]
-        public typePassengerType[] PassengerType
+        public PassengerType[] PassengerType
         {
             get
             {
@@ -477,7 +465,7 @@ namespace Zim.Tech.TravelLiker.Flight
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute()]
-        public typeFarePenalty ChangePenalty
+        public FarePenalty ChangePenalty
         {
             get
             {
@@ -491,7 +479,7 @@ namespace Zim.Tech.TravelLiker.Flight
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute()]
-        public typeFarePenalty CancelPenalty
+        public FarePenalty CancelPenalty
         {
             get
             {
@@ -687,411 +675,414 @@ namespace Zim.Tech.TravelLiker.Flight
             }
         }
 
-        #region FareInfoRef
-        /// <remarks/>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-        [System.SerializableAttribute()]
-        [System.Diagnostics.DebuggerStepThroughAttribute()]
-        [System.ComponentModel.DesignerCategoryAttribute("code")]
-        //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/air_v25_0")]
-        public partial class typeFareInfoRef : object
-        {
-
-            private string keyField;
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlAttributeAttribute()]
-            public string Key
-            {
-                get
-                {
-                    return this.keyField;
-                }
-                set
-                {
-                    this.keyField = value;
-                }
-            }
-        }
-        #endregion
-
-        #region BookingInfo
-        /// <remarks/>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-        [System.SerializableAttribute()]
-        [System.Diagnostics.DebuggerStepThroughAttribute()]
-        [System.ComponentModel.DesignerCategoryAttribute("code")]
-        //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/air_v25_0")]
-        public partial class typeBookingInfo : object
-        {
-
-            private string bookingCodeField;
-            private typeCabinClass cabinClassField;
-            private bool cabinClassFieldSpecified;
-            private string fareInfoRefField;
-            private string segmentRefField;
-            private string couponRefField;
-            private string airItinerarySolutionRefField;
-            private string hostTokenRefField;
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlAttributeAttribute()]
-            public string BookingCode
-            {
-                get
-                {
-                    return this.bookingCodeField;
-                }
-                set
-                {
-                    this.bookingCodeField = value;
-                }
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlAttributeAttribute()]
-            public typeCabinClass CabinClass
-            {
-                get
-                {
-                    return this.cabinClassField;
-                }
-                set
-                {
-                    this.cabinClassField = value;
-                }
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlIgnoreAttribute()]
-            public bool CabinClassSpecified
-            {
-                get
-                {
-                    return this.cabinClassFieldSpecified;
-                }
-                set
-                {
-                    this.cabinClassFieldSpecified = value;
-                }
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlAttributeAttribute()]
-            public string FareInfoRef
-            {
-                get
-                {
-                    return this.fareInfoRefField;
-                }
-                set
-                {
-                    this.fareInfoRefField = value;
-                }
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlAttributeAttribute()]
-            public string SegmentRef
-            {
-                get
-                {
-                    return this.segmentRefField;
-                }
-                set
-                {
-                    this.segmentRefField = value;
-                }
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlAttributeAttribute()]
-            public string CouponRef
-            {
-                get
-                {
-                    return this.couponRefField;
-                }
-                set
-                {
-                    this.couponRefField = value;
-                }
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlAttributeAttribute()]
-            public string AirItinerarySolutionRef
-            {
-                get
-                {
-                    return this.airItinerarySolutionRefField;
-                }
-                set
-                {
-                    this.airItinerarySolutionRefField = value;
-                }
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlAttributeAttribute()]
-            public string HostTokenRef
-            {
-                get
-                {
-                    return this.hostTokenRefField;
-                }
-                set
-                {
-                    this.hostTokenRefField = value;
-                }
-            }
-
-        }
-        #endregion
-
-        #region TaxInfo
-        /// <remarks/>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-        [System.SerializableAttribute()]
-        [System.Diagnostics.DebuggerStepThroughAttribute()]
-        [System.ComponentModel.DesignerCategoryAttribute("code")]
-        //[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.travelport.com/schema/air_v25_0")]
-        public partial class typeTaxInfo : object
-        {
-            private string categoryField;
-            private string amountField;
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlAttributeAttribute()]
-            public string Category
-            {
-                get
-                {
-                    return this.categoryField;
-                }
-                set
-                {
-                    this.categoryField = value;
-                }
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlAttributeAttribute()]
-            public string Amount
-            {
-                get
-                {
-                    return this.amountField;
-                }
-                set
-                {
-                    this.amountField = value;
-                }
-            }
-
-        }
-        #endregion
-
-        #region PassengerType
-        /// <remarks/>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-        [System.SerializableAttribute()]
-        [System.Diagnostics.DebuggerStepThroughAttribute()]
-        [System.ComponentModel.DesignerCategoryAttribute("code")]
-        [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.travelport.com/schema/common_v25_0")]
-        public partial class typePassengerType : object
-        {
-            private string codeField;
-            private string ageField;
-            private System.DateTime dOBField;
-            private bool dOBFieldSpecified;
-            private string genderField;
-            private bool pricePTCOnlyField;
-            private bool pricePTCOnlyFieldSpecified;
-            private string bookingTravelerRefField;
-            private bool accompaniedPassengerField;
-            private bool residencyTypeFieldSpecified;
-
-            public typePassengerType()
-            {
-                this.accompaniedPassengerField = false;
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlAttributeAttribute()]
-            public string Code
-            {
-                get
-                {
-                    return this.codeField;
-                }
-                set
-                {
-                    this.codeField = value;
-                }
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlAttributeAttribute(DataType = "integer")]
-            public string Age
-            {
-                get
-                {
-                    return this.ageField;
-                }
-                set
-                {
-                    this.ageField = value;
-                }
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlAttributeAttribute(DataType = "date")]
-            public System.DateTime DOB
-            {
-                get
-                {
-                    return this.dOBField;
-                }
-                set
-                {
-                    this.dOBField = value;
-                }
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlIgnoreAttribute()]
-            public bool DOBSpecified
-            {
-                get
-                {
-                    return this.dOBFieldSpecified;
-                }
-                set
-                {
-                    this.dOBFieldSpecified = value;
-                }
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlAttributeAttribute()]
-            public string Gender
-            {
-                get
-                {
-                    return this.genderField;
-                }
-                set
-                {
-                    this.genderField = value;
-                }
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlAttributeAttribute()]
-            public bool PricePTCOnly
-            {
-                get
-                {
-                    return this.pricePTCOnlyField;
-                }
-                set
-                {
-                    this.pricePTCOnlyField = value;
-                }
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlIgnoreAttribute()]
-            public bool PricePTCOnlySpecified
-            {
-                get
-                {
-                    return this.pricePTCOnlyFieldSpecified;
-                }
-                set
-                {
-                    this.pricePTCOnlyFieldSpecified = value;
-                }
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlAttributeAttribute()]
-            public string BookingTravelerRef
-            {
-                get
-                {
-                    return this.bookingTravelerRefField;
-                }
-                set
-                {
-                    this.bookingTravelerRefField = value;
-                }
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlAttributeAttribute()]
-            [System.ComponentModel.DefaultValueAttribute(false)]
-            public bool AccompaniedPassenger
-            {
-                get
-                {
-                    return this.accompaniedPassengerField;
-                }
-                set
-                {
-                    this.accompaniedPassengerField = value;
-                }
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlIgnoreAttribute()]
-            public bool ResidencyTypeSpecified
-            {
-                get
-                {
-                    return this.residencyTypeFieldSpecified;
-                }
-                set
-                {
-                    this.residencyTypeFieldSpecified = value;
-                }
-            }
-
-        }
-        #endregion
-
-        #region typeFarePenalty
-        /// <remarks/>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-        [System.SerializableAttribute()]
-        [System.Diagnostics.DebuggerStepThroughAttribute()]
-        [System.ComponentModel.DesignerCategoryAttribute("code")]
-        //[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.travelport.com/schema/air_v25_0")]
-        public partial class typeFarePenalty
-        {
-
-            private string amountField;
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlElementAttribute()]
-            public string Amount
-            {
-                get
-                {
-                    return this.amountField;
-                }
-                set
-                {
-                    this.amountField = value;
-                }
-            }
-
-        }
-        #endregion
     }
+    #endregion
 
 
+    #region FareInfoRef
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/air_v25_0")]
+    public partial class FareInfoRef : object
+    {
+
+        private string keyField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Key
+        {
+            get
+            {
+                return this.keyField;
+            }
+            set
+            {
+                this.keyField = value;
+            }
+        }
+    }
+    #endregion
+
+    #region BookingInfo
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/air_v25_0")]
+    public partial class BookingInfo : object
+    {
+
+        private string bookingCodeField;
+        private typeCabinClass cabinClassField;
+        private bool cabinClassFieldSpecified;
+        private string fareInfoRefField;
+        private string segmentRefField;
+        private string couponRefField;
+        private string airItinerarySolutionRefField;
+        private string hostTokenRefField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string BookingCode
+        {
+            get
+            {
+                return this.bookingCodeField;
+            }
+            set
+            {
+                this.bookingCodeField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public typeCabinClass CabinClass
+        {
+            get
+            {
+                return this.cabinClassField;
+            }
+            set
+            {
+                this.cabinClassField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CabinClassSpecified
+        {
+            get
+            {
+                return this.cabinClassFieldSpecified;
+            }
+            set
+            {
+                this.cabinClassFieldSpecified = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string FareInfoRef
+        {
+            get
+            {
+                return this.fareInfoRefField;
+            }
+            set
+            {
+                this.fareInfoRefField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string SegmentRef
+        {
+            get
+            {
+                return this.segmentRefField;
+            }
+            set
+            {
+                this.segmentRefField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CouponRef
+        {
+            get
+            {
+                return this.couponRefField;
+            }
+            set
+            {
+                this.couponRefField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string AirItinerarySolutionRef
+        {
+            get
+            {
+                return this.airItinerarySolutionRefField;
+            }
+            set
+            {
+                this.airItinerarySolutionRefField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string HostTokenRef
+        {
+            get
+            {
+                return this.hostTokenRefField;
+            }
+            set
+            {
+                this.hostTokenRefField = value;
+            }
+        }
+
+    }
+    #endregion
+
+    #region TaxInfo
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    //[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.travelport.com/schema/air_v25_0")]
+    public partial class TaxInfo : object
+    {
+        private string categoryField;
+        private string amountField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Category
+        {
+            get
+            {
+                return this.categoryField;
+            }
+            set
+            {
+                this.categoryField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Amount
+        {
+            get
+            {
+                return this.amountField;
+            }
+            set
+            {
+                this.amountField = value;
+            }
+        }
+
+    }
+    #endregion
+
+    #region PassengerType
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.travelport.com/schema/common_v25_0")]
+    public partial class PassengerType : object
+    {
+        private string codeField;
+        private string ageField;
+        private System.DateTime dOBField;
+        private bool dOBFieldSpecified;
+        private string genderField;
+        private bool pricePTCOnlyField;
+        private bool pricePTCOnlyFieldSpecified;
+        private string bookingTravelerRefField;
+        private bool accompaniedPassengerField;
+        private bool residencyTypeFieldSpecified;
+
+        public PassengerType()
+        {
+            this.accompaniedPassengerField = false;
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Code
+        {
+            get
+            {
+                return this.codeField;
+            }
+            set
+            {
+                this.codeField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "integer")]
+        public string Age
+        {
+            get
+            {
+                return this.ageField;
+            }
+            set
+            {
+                this.ageField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "date")]
+        public System.DateTime DOB
+        {
+            get
+            {
+                return this.dOBField;
+            }
+            set
+            {
+                this.dOBField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool DOBSpecified
+        {
+            get
+            {
+                return this.dOBFieldSpecified;
+            }
+            set
+            {
+                this.dOBFieldSpecified = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Gender
+        {
+            get
+            {
+                return this.genderField;
+            }
+            set
+            {
+                this.genderField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool PricePTCOnly
+        {
+            get
+            {
+                return this.pricePTCOnlyField;
+            }
+            set
+            {
+                this.pricePTCOnlyField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool PricePTCOnlySpecified
+        {
+            get
+            {
+                return this.pricePTCOnlyFieldSpecified;
+            }
+            set
+            {
+                this.pricePTCOnlyFieldSpecified = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string BookingTravelerRef
+        {
+            get
+            {
+                return this.bookingTravelerRefField;
+            }
+            set
+            {
+                this.bookingTravelerRefField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(false)]
+        public bool AccompaniedPassenger
+        {
+            get
+            {
+                return this.accompaniedPassengerField;
+            }
+            set
+            {
+                this.accompaniedPassengerField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ResidencyTypeSpecified
+        {
+            get
+            {
+                return this.residencyTypeFieldSpecified;
+            }
+            set
+            {
+                this.residencyTypeFieldSpecified = value;
+            }
+        }
+
+    }
+    #endregion
+
+    #region FarePenalty
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    //[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.travelport.com/schema/air_v25_0")]
+    public partial class FarePenalty
+    {
+
+        private string amountField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute()]
+        public string Amount
+        {
+            get
+            {
+                return this.amountField;
+            }
+            set
+            {
+                this.amountField = value;
+            }
+        }
+
+    }
+    #endregion
+
+    #region typeCabinClass Class
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
@@ -1114,8 +1105,9 @@ namespace Zim.Tech.TravelLiker.Flight
         /// <remarks/>
         PremiumFirst,
     }
+    #endregion
 
-
+    #region typePricingMethod Class
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
@@ -1183,4 +1175,5 @@ namespace Zim.Tech.TravelLiker.Flight
         /// <remarks/>
         GuaranteedUsingAgencyPrivateFare,
     }
+    #endregion
 }

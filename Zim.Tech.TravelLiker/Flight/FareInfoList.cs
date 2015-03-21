@@ -16,10 +16,8 @@ namespace Zim.Tech.TravelLiker.Flight
     {
         private List<FareInfo> fareInfoListField = new List<FareInfo>();
 
-        //[System.Xml.Serialization.XmlArrayAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        //[System.Xml.Serialization.XmlArrayItemAttribute("FareInfo", typeof(FlightDetails), Form = System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable = false)]
         [System.Xml.Serialization.XmlElementAttribute("FareInfo", typeof(FareInfo), Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-          public List<FareInfo> FareInfo
+        public List<FareInfo> FareInfo
         {
             get
             {
