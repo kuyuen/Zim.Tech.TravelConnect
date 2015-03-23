@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using System.Reflection;
+
+using Zim.Tech.TravelLiker.Flight;
 using Zim.Tech.TravelLiker.Common;
 
 namespace Zim.Tech.TravelLiker.Flight
@@ -83,9 +85,9 @@ namespace Zim.Tech.TravelLiker.Flight
         #endregion
 
         #region Public Properties
+        public enum FareType { OneWay = 1, RoundTrip = 2, MultStop = 3 }
         public List<FareQuote.AirPricingSolution> AirPricingSolutions { get { return airPricingSolutionList; } set { airPricingSolutionList = value; } }
         //public string ServiceProvide { get { return m_ServiceProvide; } set { m_ServiceProvide = value; } } // Service Provide = Galileo / Nanhwa
-        //public enum FareType { OneWay = 1, RoundTrip = 2, MultStop = 3 }
         //public FareType FareQuteType = FareType.OneWay;
         //public List<RulesInfo> RulesInfo { get { return m_RulesInfo; } set { m_RulesInfo = value; } }
         //public List<RulesInfo> ChildRulesInfo { get { return m_ChildRulesInfo; } set { m_ChildRulesInfo = value; } }
@@ -112,6 +114,7 @@ namespace Zim.Tech.TravelLiker.Flight
         #endregion
 
 
+        #region AirPricingSolution
         public class AirPricingSolution : Flight.AirPricingSolution
         {
             public AirPricingSolution(Flight.AirPricingSolution oAirPricingSolution, Flight.AirSegmentList oAirSegmentList, Flight.RouteList oRouteList, Flight.FareInfoList oFareInfoList, Flight.FlightDetailsList oFlightDetailsList)
@@ -218,6 +221,7 @@ namespace Zim.Tech.TravelLiker.Flight
                 }
             }
 
+            #region Journey Class
             public class Journey : Flight.Journey
             {
 
@@ -241,8 +245,17 @@ namespace Zim.Tech.TravelLiker.Flight
                     }
                 }
 
-            }
 
+                #region Hide Base Class Properties
+                [Obsolete("Don't use this AirSegmentRef", true)]
+                new public List<typeAirSegmentRef> AirSegmentRef { get; set; }
+                #endregion
+
+            }
+            #endregion
+
+
+            #region AirSegment Class
             public class AirSegment : Flight.AirSegment
             {
                 public AirSegment(Flight.AirSegment oAirSegment)
@@ -269,8 +282,16 @@ namespace Zim.Tech.TravelLiker.Flight
                     }
                 }
 
-            }
 
+                #region Hide Base Class Properties
+                [Obsolete("Don't use this FlightDetailsRef", true)]
+                new public List<FlightDetailsRef> FlightDetailsRef { get; set; }
+                #endregion
+            }
+            #endregion
+
+
+            #region AirPricingInfo Class
             public class AirPricingInfo : Flight.AirPricingInfo
             {
                 public AirPricingInfo(Flight.AirPricingInfo oAirPricingInfo, Flight.FareInfoList oFareInfoList, List<AirSegment> oAirSegmentList)
@@ -352,7 +373,10 @@ namespace Zim.Tech.TravelLiker.Flight
                     }
                 }
             }
+            #endregion
 
+
+            #region AirBookingInfo Class
             public class AirBookingInfo : Flight.BookingInfo
             {
                 public AirBookingInfo(Flight.BookingInfo oBookingInfo)
@@ -362,43 +386,43 @@ namespace Zim.Tech.TravelLiker.Flight
                         GetType().GetProperty(prop.Name).SetValue(this, prop.GetValue(oBookingInfo, null), null);
                     #endregion
                 }
-                /*
-                private FareInfo fareInfoField;
-                private AirSegment airSegmentField;
 
-                public FareInfo FareInfo
-                {
-                    get
-                    {
-                        return this.fareInfoField;
-                    }
-                    set
-                    {
-                        this.fareInfoField = value;
-                    }
-                }
-
-                public AirSegment AirSegment
-                {
-                    get
-                    {
-                        return this.airSegmentField;
-                    }
-                    set
-                    {
-                        this.airSegmentField = value;
-                    }
-                }
-                */
+                #region Hide Base Class Properties
+                [Obsolete("Don't use this FareInfoRef", true)]
+                new public string FareInfoRef { get; set; }
+                [Obsolete("Don't use this SegmentRef", true)]
+                new public string SegmentRef { get; set; }
+                #endregion
             }
+            #endregion
+
         }
+        #endregion
 
 
+        #region SearchInfo
         public class SearchInfo
         {
             #region Constructors
             public SearchInfo()
             {
+            }
+
+            public SearchInfo(string fromCity, string toCity, DateTime frightDate, int adults, int children, bool directFlightOnly, string frightClass, string specifiedAirline)
+                : this(fromCity, toCity, frightDate.ToString(Variables.DATE_FORMAT), adults, children, directFlightOnly, frightClass, specifiedAirline)
+            {
+            }
+
+            public SearchInfo(string fromCity, string toCity, string frightDate, int adults, int children, bool directFlightOnly, string frightClass, string specifiedAirline)
+            {
+                this.m_FromCity = fromCity;
+                this.m_ToCity = toCity;
+                this.m_FrightDate = frightDate;
+                this.m_Adults = adults;
+                this.m_Children = children;
+                this.m_DirectFlightOnly = directFlightOnly;
+                this.m_FrightClass = frightClass;
+                this.m_SpecifiedAirline = specifiedAirline;
             }
             #endregion
 
@@ -408,7 +432,6 @@ namespace Zim.Tech.TravelLiker.Flight
             private string m_FrightDate = string.Empty;
             private int m_Adults = 0;
             private int m_Children = 0;
-            private int m_InfantWOS = 0;
             private bool m_DirectFlightOnly = false;
             private string m_FrightClass = string.Empty;
             private string m_SpecifiedAirline = string.Empty;
@@ -421,7 +444,6 @@ namespace Zim.Tech.TravelLiker.Flight
             public DateTime FrightDate { get { return DateTime.ParseExact(m_FrightDate, Variables.DATE_FORMAT, null); } set { m_FrightDate = value.ToString(Variables.DATE_FORMAT); } }
             public int Adults { get { return m_Adults; } set { m_Adults = value; } }
             public int Children { get { return m_Children; } set { m_Children = value; } }
-            public int InfantWOS { get { return m_InfantWOS; } set { m_InfantWOS = value; } }
             public string FrightClass { get { return m_FrightClass; } set { m_FrightClass = value; } }
             public string SpecifiedAirline { get { return m_SpecifiedAirline; } set { m_SpecifiedAirline = value; } }
             public int TotalSeats { get { return (m_Adults + m_Children); } }
@@ -429,8 +451,7 @@ namespace Zim.Tech.TravelLiker.Flight
             public string DirectFlight { get { return (m_DirectFlightOnly == true) ? Variables.YES : Variables.NO; } }
             #endregion
         }
+        #endregion
     }
 
-    public class RulesInfo
-    { }
 }

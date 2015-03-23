@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml;
 using System.Reflection;
 using System.Configuration;
 using System.Threading.Tasks;
 
 using Zim.Tech.TravelLiker.Flight;
+using Zim.Tech.TravelLiker.Travelport.uAPI.Connection;
+using uAPIUnit = Zim.Tech.TravelLiker.Travelport.uAPI.Util;
+using uAPIFlight = Zim.Tech.TravelLiker.Travelport.uAPI.Air;
 
 namespace Zim.Tech.TravelLiker
 {
-    public class TravelAgent : IFlight, IHotel
+    public class TravelAgent
     {
-        Configuration config;
 
         #region TravelAgent Variables
         private string sUserID = string.Empty;
@@ -23,6 +26,9 @@ namespace Zim.Tech.TravelLiker
         private string sTargetBranch = string.Empty;
         int iWebRequestMaxRetries;
         int iWebRequestTimeout;
+
+        bool Connected = false;
+        private IUniversalApiConnection connection;
         #endregion
 
         #region Constructors
@@ -31,29 +37,51 @@ namespace Zim.Tech.TravelLiker
         /// </summary>
         public TravelAgent()
         {
-            string sDllPath = new Uri(Assembly.GetExecutingAssembly().GetName().CodeBase).LocalPath;
-            config = ConfigurationManager.OpenExeConfiguration(sDllPath);
+            //string sDllPath = new Uri(Assembly.GetExecutingAssembly().GetName().CodeBase).LocalPath;
+            //config = ConfigurationManager.OpenExeConfiguration(sDllPath);
 
-            string sWebRequestMaxRetries = config.AppSettings.Settings["WebRequestMaxRetries"].Value;
+            //string sUserID = config.AppSettings.Settings["UserID"].Value;
+            //string sPassword = config.AppSettings.Settings["Password"].Value;
+            //string sURL = config.AppSettings.Settings["URL"].Value;
+            //string sAuthorizedBy = config.AppSettings.Settings["AuthorizedBy"].Value;
+            //string sTraceId = config.AppSettings.Settings["TraceId"].Value;
+            //string sTargetBranch = config.AppSettings.Settings["TargetBranch"].Value;
+            //string sWebRequestMaxRetries = config.AppSettings.Settings["WebRequestMaxRetries"].Value;
+            //string sWebRequestTimeout = config.AppSettings.Settings["WebRequestTimeout"].Value;
+            //iWebRequestMaxRetries = (string.IsNullOrEmpty(sWebRequestMaxRetries)) ? 3 : Convert.ToInt16(sWebRequestMaxRetries);
+            //iWebRequestTimeout = (string.IsNullOrEmpty(sWebRequestTimeout)) ? 500 : Convert.ToInt16(sWebRequestTimeout);
         }
         #endregion
-        
+
+
         #region Flight Agnet
-        public List<FareQuote> FlightOneWay(string fromCity, string toCity, DateTime frightDate, int adults, int children, int infantWOS, bool directFlightOnly, string frightClass, string specifiedAirline, decimal maxAmount, out string errorMessage)
+        public FareQuote FlightOneWay(string fromCity, string toCity, DateTime frightDate, int adults, int children, bool directFlightOnly, string frightClass, string specifiedAirline, decimal maxAmount, out string errorMessage)
         {
             errorMessage = string.Empty;
-            List<FareQuote> FareQute = new List<FareQuote>();
+            FareQuote FareQute = new FareQuote();
+
+            List<FareQuote.SearchInfo> listSearchInfo = new List<FareQuote.SearchInfo>();
+            listSearchInfo.Add(new FareQuote.SearchInfo(fromCity, toCity, frightDate, adults, children, directFlightOnly, frightClass, specifiedAirline));
+            uApiAgent agent = new uApiAgent();
+            FareQute = agent.LowFareSearch(FareQuote.FareType.OneWay, listSearchInfo, maxAmount);
 
             return FareQute;
         }
 
-        public List<FareQuote> FlightRoundTrip(string fromCity, string toCity, DateTime fromDate, DateTime toDate, int adults, int children, int infantWOS, bool directFlightOnly, string frightClass, string specifiedAirline, decimal maxAmount, out string errorMessage)
+        public FareQuote FlightRoundTrip(string fromCity, string toCity, DateTime fromDate, DateTime toDate, int adults, int children, bool directFlightOnly, string frightClass, string specifiedAirline, decimal maxAmount, out string errorMessage)
         {
             errorMessage = string.Empty;
-            List<FareQuote> FareQute = new List<FareQuote>();
+            FareQuote FareQute = new FareQuote();
+
+            List<FareQuote.SearchInfo> listSearchInfo = new List<FareQuote.SearchInfo>();
+            listSearchInfo.Add(new FareQuote.SearchInfo(fromCity, toCity, fromDate, adults, children, directFlightOnly, frightClass, specifiedAirline));
+            listSearchInfo.Add(new FareQuote.SearchInfo(toCity, fromCity, toDate, adults, children, directFlightOnly, frightClass, specifiedAirline));
+            uApiAgent agent = new uApiAgent();
+            FareQute = agent.LowFareSearch(FareQuote.FareType.RoundTrip, listSearchInfo, maxAmount);
 
             return FareQute;
         }
+
         #endregion
 
         #region Hotel Agnet

@@ -50,8 +50,10 @@
     <Compile Include="Common\Serialize.cs" />
     <Compile Include="Flight\FlightDetailsList.cs" />
     <Compile Include="Flight\RouteList.cs" />
+    <Compile Include="Hotel\HotelQute.cs" />
     <Compile Include="Hotel\IHotel.cs" />
     <Compile Include="Flight\IFlight.cs" />
+    <Compile Include="IuAPI.cs" />
     <Compile Include="IUniversalApiConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\Travelport.uAPI.Air\Reference.cs">
@@ -71,13 +73,16 @@
     </Compile>
     <Compile Include="TravelAgent.cs" />
     <Compile Include="Travelport.uAPI.Air\LowFareSearchRsp_withoutNS.cs" />
+    <Compile Include="uApiAgent.cs" />
     <Compile Include="UniversalApiConnection.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\Travelport.uAPI.Air\Air.xsd">
       <SubType>Designer</SubType>
     </None>

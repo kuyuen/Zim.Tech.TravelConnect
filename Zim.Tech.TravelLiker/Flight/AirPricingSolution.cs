@@ -268,12 +268,12 @@ namespace Zim.Tech.TravelLiker.Flight
     //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/air_v25_0")]
     public partial class Journey : object
     {
-        private typeAirSegmentRef[] airSegmentRefField;
+        private List<typeAirSegmentRef> airSegmentRefField;
         private string travelTimeField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("AirSegmentRef", Order = 0)]
-        public typeAirSegmentRef[] AirSegmentRef
+        public List<typeAirSegmentRef> AirSegmentRef
         {
             get
             {

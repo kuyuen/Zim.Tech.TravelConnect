@@ -41,6 +41,33 @@ namespace Zim.Tech.TravelLiker.UnitTest
         }
 
         [TestMethod]
+        public void SearchOneWay()
+        {
+            DateTime fromDate = new DateTime(2015, 4, 1);
+            decimal maxAmount = 0; // 100000;
+            string specifiedAirline = "";
+            string errorMessage = string.Empty;
+
+            TravelAgent agent = new TravelAgent();
+            Flight.FareQuote oFareQuote = agent.FlightOneWay("HKG", "ITM", fromDate, 1, 0, true, "", specifiedAirline, maxAmount, out errorMessage);
+            int i = oFareQuote.AirPricingSolutions.Count();
+        }
+
+        [TestMethod]
+        public void SearchRoundTrip()
+        {
+            DateTime fromDate = new DateTime(2015, 4, 1);
+            DateTime toDate = new DateTime(2015, 4, 4);
+            decimal maxAmount = 0; // 100000;
+            string specifiedAirline = "";
+            string errorMessage = string.Empty;
+
+            TravelAgent agent = new TravelAgent();
+            Flight.FareQuote oFareQuote = agent.FlightRoundTrip("HKG", "TPE", fromDate, toDate, 1, 0, true, "", specifiedAirline, maxAmount, out errorMessage);
+            int i = oFareQuote.AirPricingSolutions.Count();
+        }
+        
+        [TestMethod]
         public void ReferenceDataRetrieveReq()
         {
             //string test_dir = TestContext.TestDir;
@@ -53,6 +80,8 @@ namespace Zim.Tech.TravelLiker.UnitTest
             xRequest.TargetBranch = "P7009887";
             xRequest.BillingPointOfSaleInfo = new uAPIUnit.BillingPointOfSaleInfo() { OriginApplication = "UAPI" };
             xRequest.TypeCode = "City";
+            xRequest.ReferenceDataSearchModifiers = new uAPIUnit.ReferenceDataSearchModifiers();
+            xRequest.ReferenceDataSearchModifiers.MaxResults = "15000";
         
             string xml = Serialize<uAPIUnit.ReferenceDataRetrieveReq>.SerializeXmlToString("util", "http://www.travelport.com/schema/util_v25_0", xRequest);
             //string xml = Serialize<uAPIUnit.ReferenceDataRetrieveReq>.SerializeXmlToString(xRequest);
@@ -150,6 +179,9 @@ namespace Zim.Tech.TravelLiker.UnitTest
             string sDllPath = Directory.GetCurrentDirectory();
             string xmlFile = Path.Combine(sDllPath, "LowFareSearchRsp.xml");
             string xmlcontents = System.IO.File.ReadAllText(xmlFile);
+
+            XElement xRoot = XDocument.Parse(xmlcontents).Root;
+            xmlcontents = Serialize<uAPIFlight.LowFareSearchRsp>.RemoveAllNamespaces(xRoot).ToString();
 
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.LoadXml(xmlcontents);
@@ -259,6 +291,7 @@ namespace Zim.Tech.TravelLiker.UnitTest
                 Result += string.Format("{0}", Environment.NewLine);
             }
             System.Console.WriteLine(Result);
+            File.WriteAllText(Path.Combine(sDllPath, "LowFareSearchRsp_Result.txt"), Result);
             int o = 0;
         }
     }
