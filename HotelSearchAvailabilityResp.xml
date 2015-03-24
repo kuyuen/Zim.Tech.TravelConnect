@@ -1,0 +1,436 @@
+<hotel:HotelSearchAvailabilityRsp TraceId="trace" TransactionId="482CA7F30A07643C6009AEB265D35F43" ResponseTime="7244" xmlns:hotel="http://www.travelport.com/schema/hotel_v25_0" xmlns:common_v25_0="http://www.travelport.com/schema/common_v25_0">
+  <common_v25_0:NextResultReference ProviderCode="1G">wpSw3uwbmV3ClLDe7BuZXSY+YJ9+CzDYRIG6AYM3Gg/9gJwOq8VsraobuuE6dRwalGcJ35F4MV1YCSYLSuHX7MfqoOWo5AVLE/RSyOZxDf4=</common_v25_0:NextResultReference>
+  <common_v25_0:VendorLocation ProviderCode="1G" VendorCode="YZ" VendorLocationID="83392" Key="Q7k3j0DoTW2365tkUL1YXA==" />
+  <common_v25_0:VendorLocation ProviderCode="1G" VendorCode="HI" VendorLocationID="25337" Key="lx/eNSzoQX61NnG6R38DzQ==" />
+  <common_v25_0:VendorLocation ProviderCode="1G" VendorCode="HI" VendorLocationID="25326" Key="d+MUX1cARVG72Qdvtkeqvw==" />
+  <common_v25_0:VendorLocation ProviderCode="1G" VendorCode="LQ" VendorLocationID="94229" Key="4LHH31jyRhCmFQIVMObZXw==" />
+  <common_v25_0:VendorLocation ProviderCode="1G" VendorCode="HY" VendorLocationID="07320" Key="wFwThZLlQLSaQ87OHEupmA==" />
+  <common_v25_0:VendorLocation ProviderCode="1G" VendorCode="ES" VendorLocationID="52557" Key="RjVbOTNtSPCyvyglioNr7Q==" />
+  <common_v25_0:VendorLocation ProviderCode="1G" VendorCode="RL" VendorLocationID="19030" Key="iRx9IA15Rzq25O+kS5Ustw==" />
+  <common_v25_0:VendorLocation ProviderCode="1G" VendorCode="BW" VendorLocationID="05257" Key="69vDBD+vQayNr7iqO4CtVQ==" />
+  <common_v25_0:VendorLocation ProviderCode="1G" VendorCode="CY" VendorLocationID="86902" Key="MwWXkuN6RwyM7P8k3zlFGA==" />
+  <common_v25_0:VendorLocation ProviderCode="1G" VendorCode="FN" VendorLocationID="70954" Key="yb5cFSboT76lNpwJkF+4rA==" />
+  <hotel:HotelSearchResult>
+    <hotel:HotelProperty HotelChain="YZ" HotelCode="83392" HotelLocation="DEN" Name="STAYBRIDGE SUITES DENVER ARPT" VendorLocationKey="Q7k3j0DoTW2365tkUL1YXA==" HotelTransportation="CourtesyBus" ReserveRequirement="Other" ParticipationLevel="Lowest Public Rate" Availability="Available" FeaturedProperty="true">
+      <hotel:PropertyAddress>
+        <hotel:Address>6951 TOWER ROAD</hotel:Address>
+      </hotel:PropertyAddress>
+      <common_v25_0:Distance Units="MI" Value="6" Direction="W" />
+      <hotel:Amenities>
+        <hotel:Amenity Code="AICO" />
+        <hotel:Amenity Code="CHPR" />
+        <hotel:Amenity Code="HSPI" />
+        <hotel:Amenity Code="BRFT" />
+        <hotel:Amenity Code="COSH" />
+        <hotel:Amenity Code="CSFR" />
+        <hotel:Amenity Code="COBU" />
+        <hotel:Amenity Code="CODE" />
+        <hotel:Amenity Code="ENTR" />
+        <hotel:Amenity Code="FRTR" />
+        <hotel:Amenity Code="GOLF" />
+        <hotel:Amenity Code="HAFA" />
+        <hotel:Amenity Code="HECL" />
+        <hotel:Amenity Code="MIOV" />
+        <hotel:Amenity Code="KTCN" />
+        <hotel:Amenity Code="LAVA" />
+        <hotel:Amenity Code="MEFA" />
+        <hotel:Amenity Code="MOIR" />
+        <hotel:Amenity Code="NSMR" />
+        <hotel:Amenity Code="PARK" />
+        <hotel:Amenity Code="FPRK" />
+        <hotel:Amenity Code="SPAL" />
+        <hotel:Amenity Code="PHSV" />
+        <hotel:Amenity Code="POOL" />
+        <hotel:Amenity Code="INPL" />
+        <hotel:Amenity Code="OUPL" />
+        <hotel:Amenity Code="RFGR" />
+        <hotel:Amenity Code="SADE" />
+        <hotel:Amenity Code="SHWR" />
+        <hotel:Amenity Code="TELV" />
+        <hotel:Amenity Code="CBTV" />
+        <hotel:Amenity Code="PRBT" />
+        <hotel:Amenity Code="FXSV" />
+        <hotel:Amenity Code="SFBD" />
+        <hotel:Amenity Code="PHCO" />
+        <hotel:Amenity Code="BATB" />
+        <hotel:Amenity Code="FSTY" />
+      </hotel:Amenities>
+    </hotel:HotelProperty>
+    <hotel:RateInfo MinimumAmount="USD148.99" ApproximateMinimumAmount="HKD1155.00" MinAmountRateChanged="false" MaximumAmount="USD199.99" ApproximateMaximumAmount="HKD1550.00" MaxAmountRateChanged="false" />
+  </hotel:HotelSearchResult>
+  <hotel:HotelSearchResult>
+    <hotel:HotelProperty HotelChain="HI" HotelCode="25337" HotelLocation="DEN" Name="HOLIDAY INN EXP DENVER AIRPORT" VendorLocationKey="lx/eNSzoQX61NnG6R38DzQ==" HotelTransportation="CourtesyBus" ReserveRequirement="Other" ParticipationLevel="Lowest Public Rate" Availability="Available" FeaturedProperty="true">
+      <hotel:PropertyAddress>
+        <hotel:Address>6910 TOWER ROAD</hotel:Address>
+      </hotel:PropertyAddress>
+      <common_v25_0:Distance Units="MI" Value="6" Direction="W" />
+      <hotel:Amenities>
+        <hotel:Amenity Code="AICO" />
+        <hotel:Amenity Code="CHPR" />
+        <hotel:Amenity Code="HSPI" />
+        <hotel:Amenity Code="BRFT" />
+        <hotel:Amenity Code="COSH" />
+        <hotel:Amenity Code="CSFR" />
+        <hotel:Amenity Code="COBU" />
+        <hotel:Amenity Code="COBR" />
+        <hotel:Amenity Code="FRTR" />
+        <hotel:Amenity Code="GOLF" />
+        <hotel:Amenity Code="HAFA" />
+        <hotel:Amenity Code="HECL" />
+        <hotel:Amenity Code="MIOV" />
+        <hotel:Amenity Code="LAVA" />
+        <hotel:Amenity Code="MEFA" />
+        <hotel:Amenity Code="MTGL" />
+        <hotel:Amenity Code="NSMR" />
+        <hotel:Amenity Code="PARK" />
+        <hotel:Amenity Code="FPRK" />
+        <hotel:Amenity Code="PHSV" />
+        <hotel:Amenity Code="POOL" />
+        <hotel:Amenity Code="INPL" />
+        <hotel:Amenity Code="OUPL" />
+        <hotel:Amenity Code="SADE" />
+        <hotel:Amenity Code="SKII" />
+        <hotel:Amenity Code="WTKI" />
+        <hotel:Amenity Code="TELV" />
+        <hotel:Amenity Code="CBTV" />
+        <hotel:Amenity Code="PRBT" />
+        <hotel:Amenity Code="JGTK" />
+        <hotel:Amenity Code="SFBD" />
+        <hotel:Amenity Code="PHCO" />
+        <hotel:Amenity Code="BATB" />
+        <hotel:Amenity Code="FSTY" />
+      </hotel:Amenities>
+    </hotel:HotelProperty>
+    <hotel:RateInfo MinimumAmount="USD169.00" ApproximateMinimumAmount="HKD1310.00" MinAmountRateChanged="false" MaximumAmount="USD204.00" ApproximateMaximumAmount="HKD1581.00" MaxAmountRateChanged="false" />
+  </hotel:HotelSearchResult>
+  <hotel:HotelSearchResult>
+    <hotel:HotelProperty HotelChain="HI" HotelCode="25326" HotelLocation="DEN" Name="HOLIDAY INN AND SUITES AIRPORT" VendorLocationKey="d+MUX1cARVG72Qdvtkeqvw==" HotelTransportation="CourtesyBus" ReserveRequirement="Other" ParticipationLevel="Lowest Public Rate" Availability="Available" FeaturedProperty="true">
+      <hotel:PropertyAddress>
+        <hotel:Address>6900 TOWER ROAD</hotel:Address>
+      </hotel:PropertyAddress>
+      <common_v25_0:Distance Units="MI" Value="6" Direction="W" />
+      <hotel:Amenities>
+        <hotel:Amenity Code="AICO" />
+        <hotel:Amenity Code="CHPR" />
+        <hotel:Amenity Code="HSPI" />
+        <hotel:Amenity Code="CARE" />
+        <hotel:Amenity Code="CSFR" />
+        <hotel:Amenity Code="COBU" />
+        <hotel:Amenity Code="DINR" />
+        <hotel:Amenity Code="FRTR" />
+        <hotel:Amenity Code="GISH" />
+        <hotel:Amenity Code="GOLF" />
+        <hotel:Amenity Code="HAFA" />
+        <hotel:Amenity Code="HECL" />
+        <hotel:Amenity Code="MIOV" />
+        <hotel:Amenity Code="KTCN" />
+        <hotel:Amenity Code="LAVA" />
+        <hotel:Amenity Code="LNCH" />
+        <hotel:Amenity Code="MEFA" />
+        <hotel:Amenity Code="NSMR" />
+        <hotel:Amenity Code="PARK" />
+        <hotel:Amenity Code="FPRK" />
+        <hotel:Amenity Code="PHSV" />
+        <hotel:Amenity Code="POOL" />
+        <hotel:Amenity Code="INPL" />
+        <hotel:Amenity Code="OUPL" />
+        <hotel:Amenity Code="PTRS" />
+        <hotel:Amenity Code="RTNT" />
+        <hotel:Amenity Code="ROSE" />
+        <hotel:Amenity Code="SADE" />
+        <hotel:Amenity Code="SHWR" />
+        <hotel:Amenity Code="TELV" />
+        <hotel:Amenity Code="CBTV" />
+        <hotel:Amenity Code="PRBT" />
+        <hotel:Amenity Code="SFBD" />
+        <hotel:Amenity Code="PHCO" />
+        <hotel:Amenity Code="BATB" />
+        <hotel:Amenity Code="FSTY" />
+      </hotel:Amenities>
+    </hotel:HotelProperty>
+    <hotel:RateInfo MinimumAmount="USD174.00" ApproximateMinimumAmount="HKD1349.00" MinAmountRateChanged="false" MaximumAmount="USD214.00" ApproximateMaximumAmount="HKD1659.00" MaxAmountRateChanged="false" />
+  </hotel:HotelSearchResult>
+  <hotel:HotelSearchResult>
+    <hotel:HotelProperty HotelChain="LQ" HotelCode="94229" HotelLocation="DEN" Name="LA QUINTA INN STE DEN AP DIA" VendorLocationKey="4LHH31jyRhCmFQIVMObZXw==" HotelTransportation="CourtesyBus" ReserveRequirement="Guarantee" ParticipationLevel="Best Available Rate and Inside Shopper participant" Availability="Available" FeaturedProperty="true">
+      <hotel:PropertyAddress>
+        <hotel:Address>6801 TOWER RD</hotel:Address>
+      </hotel:PropertyAddress>
+      <common_v25_0:Distance Units="MI" Value="6" Direction="W" />
+      <hotel:Amenities>
+        <hotel:Amenity Code="AICO" />
+        <hotel:Amenity Code="HSPI" />
+        <hotel:Amenity Code="BRFT" />
+        <hotel:Amenity Code="CSFR" />
+        <hotel:Amenity Code="CODE" />
+        <hotel:Amenity Code="COBR" />
+        <hotel:Amenity Code="ELEV" />
+        <hotel:Amenity Code="FRTR" />
+        <hotel:Amenity Code="HAFA" />
+        <hotel:Amenity Code="HECL" />
+        <hotel:Amenity Code="MIOV" />
+        <hotel:Amenity Code="LAVA" />
+        <hotel:Amenity Code="MEPL" />
+        <hotel:Amenity Code="MEFA" />
+        <hotel:Amenity Code="MTGL" />
+        <hotel:Amenity Code="NSMR" />
+        <hotel:Amenity Code="PARK" />
+        <hotel:Amenity Code="SPAL" />
+        <hotel:Amenity Code="PHSV" />
+        <hotel:Amenity Code="POOL" />
+        <hotel:Amenity Code="INPL" />
+        <hotel:Amenity Code="RFGR" />
+        <hotel:Amenity Code="SADE" />
+        <hotel:Amenity Code="SHWR" />
+        <hotel:Amenity Code="SPAA" />
+        <hotel:Amenity Code="TELV" />
+        <hotel:Amenity Code="CBTV" />
+        <hotel:Amenity Code="PRBT" />
+        <hotel:Amenity Code="FXSV" />
+        <hotel:Amenity Code="JGTK" />
+        <hotel:Amenity Code="SFBD" />
+        <hotel:Amenity Code="PHCO" />
+        <hotel:Amenity Code="BATB" />
+        <hotel:Amenity Code="FSTY" />
+      </hotel:Amenities>
+    </hotel:HotelProperty>
+    <hotel:RateInfo MinimumAmount="USD109.00" ApproximateMinimumAmount="HKD845.00" MaximumAmount="USD139.00" ApproximateMaximumAmount="HKD1077.00" />
+  </hotel:HotelSearchResult>
+  <hotel:HotelSearchResult>
+    <hotel:HotelProperty HotelChain="HY" HotelCode="07320" HotelLocation="DEN" Name="HYATT HOUSE DENVER AIRPORT" VendorLocationKey="wFwThZLlQLSaQ87OHEupmA==" HotelTransportation="CourtesyBus" ReserveRequirement="Other" ParticipationLevel="Best Available Rate and Inside Shopper participant" Availability="Available">
+      <hotel:PropertyAddress>
+        <hotel:Address>18741 EAST 71ST AVEN</hotel:Address>
+      </hotel:PropertyAddress>
+      <common_v25_0:Distance Units="MI" Value="6" Direction="W" />
+      <hotel:Amenities>
+        <hotel:Amenity Code="AICO" />
+        <hotel:Amenity Code="HSPI" />
+        <hotel:Amenity Code="BRFT" />
+        <hotel:Amenity Code="CSFR" />
+        <hotel:Amenity Code="COBU" />
+        <hotel:Amenity Code="ELEV" />
+        <hotel:Amenity Code="FRTR" />
+        <hotel:Amenity Code="GOLF" />
+        <hotel:Amenity Code="HAFA" />
+        <hotel:Amenity Code="HECL" />
+        <hotel:Amenity Code="MIOV" />
+        <hotel:Amenity Code="KTCN" />
+        <hotel:Amenity Code="LUGE" />
+        <hotel:Amenity Code="MEFA" />
+        <hotel:Amenity Code="MTGL" />
+        <hotel:Amenity Code="NSMR" />
+        <hotel:Amenity Code="PARK" />
+        <hotel:Amenity Code="FPRK" />
+        <hotel:Amenity Code="SPAL" />
+        <hotel:Amenity Code="PHSV" />
+        <hotel:Amenity Code="POOL" />
+        <hotel:Amenity Code="INPL" />
+        <hotel:Amenity Code="RFGR" />
+        <hotel:Amenity Code="SADE" />
+        <hotel:Amenity Code="SCCV" />
+        <hotel:Amenity Code="SHWR" />
+        <hotel:Amenity Code="TELV" />
+        <hotel:Amenity Code="CBTV" />
+        <hotel:Amenity Code="PRBT" />
+        <hotel:Amenity Code="FXSV" />
+        <hotel:Amenity Code="SFBD" />
+        <hotel:Amenity Code="PHCO" />
+        <hotel:Amenity Code="BATB" />
+        <hotel:Amenity Code="FSTY" />
+      </hotel:Amenities>
+    </hotel:HotelProperty>
+    <hotel:RateInfo MinimumAmount="USD151.00" ApproximateMinimumAmount="HKD1170.00" MaximumAmount="USD264.00" ApproximateMaximumAmount="HKD2046.00" />
+  </hotel:HotelSearchResult>
+  <hotel:HotelSearchResult>
+    <hotel:HotelProperty HotelChain="ES" HotelCode="52557" HotelLocation="DEN" Name="EMBASSY SUITES DENVER INTL ARPT" VendorLocationKey="RjVbOTNtSPCyvyglioNr7Q==" ReserveRequirement="Guarantee" ParticipationLevel="Best Available Rate and Inside Shopper participant" Availability="Available">
+      <hotel:PropertyAddress>
+        <hotel:Address>7001 YAMPA STREET</hotel:Address>
+      </hotel:PropertyAddress>
+      <common_v25_0:Distance Units="MI" Value="6" Direction="W" />
+      <hotel:Amenities>
+        <hotel:Amenity Code="AICO" />
+        <hotel:Amenity Code="HSPI" />
+        <hotel:Amenity Code="BRFT" />
+        <hotel:Amenity Code="COSH" />
+        <hotel:Amenity Code="CSFR" />
+        <hotel:Amenity Code="COBU" />
+        <hotel:Amenity Code="FRTR" />
+        <hotel:Amenity Code="GISH" />
+        <hotel:Amenity Code="GOLF" />
+        <hotel:Amenity Code="HECL" />
+        <hotel:Amenity Code="MIOV" />
+        <hotel:Amenity Code="KTCN" />
+        <hotel:Amenity Code="LAVA" />
+        <hotel:Amenity Code="MEPL" />
+        <hotel:Amenity Code="MEFA" />
+        <hotel:Amenity Code="MOIR" />
+        <hotel:Amenity Code="NSMR" />
+        <hotel:Amenity Code="PARK" />
+        <hotel:Amenity Code="FPRK" />
+        <hotel:Amenity Code="PHSV" />
+        <hotel:Amenity Code="POOL" />
+        <hotel:Amenity Code="INPL" />
+        <hotel:Amenity Code="RFGR" />
+        <hotel:Amenity Code="RTNT" />
+        <hotel:Amenity Code="SADE" />
+        <hotel:Amenity Code="SHWR" />
+        <hotel:Amenity Code="CBTV" />
+        <hotel:Amenity Code="WTBR" />
+        <hotel:Amenity Code="FXSV" />
+        <hotel:Amenity Code="SFBD" />
+        <hotel:Amenity Code="PHCO" />
+        <hotel:Amenity Code="FSTY" />
+      </hotel:Amenities>
+    </hotel:HotelProperty>
+    <hotel:RateInfo MinimumAmount="USD199.95" ApproximateMinimumAmount="HKD1550.00" MaximumAmount="USD269.95" ApproximateMaximumAmount="HKD2092.00" />
+  </hotel:HotelSearchResult>
+  <hotel:HotelSearchResult>
+    <hotel:HotelProperty HotelChain="RL" HotelCode="19030" HotelLocation="DEN" Name="RED LION INN AND SUITES DENVER" VendorLocationKey="iRx9IA15Rzq25O+kS5Ustw==" HotelTransportation="CourtesyBus" ReserveRequirement="Other" ParticipationLevel="Lowest Public Rate" Availability="Available">
+      <hotel:PropertyAddress>
+        <hotel:Address>7010 TOWER RD</hotel:Address>
+      </hotel:PropertyAddress>
+      <common_v25_0:Distance Units="MI" Value="6" Direction="W" />
+      <hotel:Amenities>
+        <hotel:Amenity Code="AICO" />
+        <hotel:Amenity Code="HSPI" />
+        <hotel:Amenity Code="BRFT" />
+        <hotel:Amenity Code="CSFR" />
+        <hotel:Amenity Code="COBU" />
+        <hotel:Amenity Code="COBR" />
+        <hotel:Amenity Code="FRTR" />
+        <hotel:Amenity Code="HAFA" />
+        <hotel:Amenity Code="HECL" />
+        <hotel:Amenity Code="MIOV" />
+        <hotel:Amenity Code="LAVA" />
+        <hotel:Amenity Code="MEPL" />
+        <hotel:Amenity Code="MEFA" />
+        <hotel:Amenity Code="NSMR" />
+        <hotel:Amenity Code="PARK" />
+        <hotel:Amenity Code="FPRK" />
+        <hotel:Amenity Code="POOL" />
+        <hotel:Amenity Code="INPL" />
+        <hotel:Amenity Code="SHWR" />
+        <hotel:Amenity Code="TELV" />
+        <hotel:Amenity Code="PHCO" />
+      </hotel:Amenities>
+    </hotel:HotelProperty>
+    <hotel:RateInfo MinimumAmount="USD99.00" ApproximateMinimumAmount="HKD767.00" MinAmountRateChanged="false" MaximumAmount="USD229.00" ApproximateMaximumAmount="HKD1775.00" MaxAmountRateChanged="false" />
+  </hotel:HotelSearchResult>
+  <hotel:HotelSearchResult>
+    <hotel:HotelProperty HotelChain="BW" HotelCode="05257" HotelLocation="DEN" Name="BEST WESTERN PLUS DENVER INTL" VendorLocationKey="69vDBD+vQayNr7iqO4CtVQ==" HotelTransportation="CourtesyBus" ReserveRequirement="Other" ParticipationLevel="Best Available Rate and Inside Shopper participant" Availability="Available">
+      <hotel:PropertyAddress>
+        <hotel:Address>7020 TOWER ROAD</hotel:Address>
+      </hotel:PropertyAddress>
+      <common_v25_0:Distance Units="MI" Value="6" Direction="W" />
+      <hotel:Amenities>
+        <hotel:Amenity Code="AICO" />
+        <hotel:Amenity Code="HSPI" />
+        <hotel:Amenity Code="BRFT" />
+        <hotel:Amenity Code="CSFR" />
+        <hotel:Amenity Code="COBU" />
+        <hotel:Amenity Code="CORO" />
+        <hotel:Amenity Code="ELEV" />
+        <hotel:Amenity Code="FAPL" />
+        <hotel:Amenity Code="FRTR" />
+        <hotel:Amenity Code="HAFA" />
+        <hotel:Amenity Code="HECL" />
+        <hotel:Amenity Code="MIOV" />
+        <hotel:Amenity Code="MEPL" />
+        <hotel:Amenity Code="MTGL" />
+        <hotel:Amenity Code="NSMR" />
+        <hotel:Amenity Code="PARK" />
+        <hotel:Amenity Code="FPRK" />
+        <hotel:Amenity Code="POOL" />
+        <hotel:Amenity Code="INPL" />
+        <hotel:Amenity Code="RFGR" />
+        <hotel:Amenity Code="SAIR" />
+        <hotel:Amenity Code="CBTV" />
+        <hotel:Amenity Code="PRBT" />
+        <hotel:Amenity Code="FXSV" />
+        <hotel:Amenity Code="SFBD" />
+        <hotel:Amenity Code="PHCO" />
+        <hotel:Amenity Code="FSTY" />
+      </hotel:Amenities>
+    </hotel:HotelProperty>
+    <hotel:RateInfo MinimumAmount="USD119.00" ApproximateMinimumAmount="HKD922.00" MaximumAmount="USD139.00" ApproximateMaximumAmount="HKD1077.00" />
+  </hotel:HotelSearchResult>
+  <hotel:HotelSearchResult>
+    <hotel:HotelProperty HotelChain="CY" HotelCode="86902" HotelLocation="DEN" Name="COURTYARD MARRIOTT DENVER ARPT" VendorLocationKey="MwWXkuN6RwyM7P8k3zlFGA==" HotelTransportation="CourtesyBus" ReserveRequirement="Guarantee" ParticipationLevel="Lowest Public Rate" Availability="Available">
+      <hotel:PropertyAddress>
+        <hotel:Address>6901 TOWER ROAD</hotel:Address>
+      </hotel:PropertyAddress>
+      <common_v25_0:Distance Units="MI" Value="6" Direction="W" />
+      <hotel:Amenities>
+        <hotel:Amenity Code="AICO" />
+        <hotel:Amenity Code="HSPI" />
+        <hotel:Amenity Code="CSFR" />
+        <hotel:Amenity Code="COBU" />
+        <hotel:Amenity Code="CORO" />
+        <hotel:Amenity Code="ELEV" />
+        <hotel:Amenity Code="FAPL" />
+        <hotel:Amenity Code="FRTR" />
+        <hotel:Amenity Code="HAFA" />
+        <hotel:Amenity Code="HECL" />
+        <hotel:Amenity Code="LAVA" />
+        <hotel:Amenity Code="LUGE" />
+        <hotel:Amenity Code="LNCH" />
+        <hotel:Amenity Code="MEFA" />
+        <hotel:Amenity Code="MOIR" />
+        <hotel:Amenity Code="NSMR" />
+        <hotel:Amenity Code="FPRK" />
+        <hotel:Amenity Code="PHSV" />
+        <hotel:Amenity Code="POOL" />
+        <hotel:Amenity Code="INPL" />
+        <hotel:Amenity Code="RTNT" />
+        <hotel:Amenity Code="SADE" />
+        <hotel:Amenity Code="SHWR" />
+        <hotel:Amenity Code="TELV" />
+        <hotel:Amenity Code="CBTV" />
+        <hotel:Amenity Code="PRBT" />
+        <hotel:Amenity Code="FXSV" />
+        <hotel:Amenity Code="SFBD" />
+        <hotel:Amenity Code="BATB" />
+        <hotel:Amenity Code="FSTY" />
+      </hotel:Amenities>
+    </hotel:HotelProperty>
+    <hotel:RateInfo MinimumAmount="USD129.00" ApproximateMinimumAmount="HKD1000.00" MaximumAmount="USD269.00" ApproximateMaximumAmount="HKD2085.00" />
+  </hotel:HotelSearchResult>
+  <hotel:HotelSearchResult>
+    <hotel:HotelProperty HotelChain="FN" HotelCode="70954" HotelLocation="DEN" Name="FAIRFIELD INN N STES MARRIOTT" VendorLocationKey="yb5cFSboT76lNpwJkF+4rA==" HotelTransportation="CourtesyBus" ReserveRequirement="Other" ParticipationLevel="Lowest Public Rate" Availability="Available">
+      <hotel:PropertyAddress>
+        <hotel:Address>6851 TOWER ROAD</hotel:Address>
+      </hotel:PropertyAddress>
+      <common_v25_0:Distance Units="MI" Value="6" Direction="W" />
+      <hotel:Amenities>
+        <hotel:Amenity Code="AICO" />
+        <hotel:Amenity Code="HSPI" />
+        <hotel:Amenity Code="CSFR" />
+        <hotel:Amenity Code="COBU" />
+        <hotel:Amenity Code="CORO" />
+        <hotel:Amenity Code="COBR" />
+        <hotel:Amenity Code="ELEV" />
+        <hotel:Amenity Code="FAPL" />
+        <hotel:Amenity Code="FRTR" />
+        <hotel:Amenity Code="HAFA" />
+        <hotel:Amenity Code="HECL" />
+        <hotel:Amenity Code="MIOV" />
+        <hotel:Amenity Code="LAVA" />
+        <hotel:Amenity Code="MEPL" />
+        <hotel:Amenity Code="MEFA" />
+        <hotel:Amenity Code="NSMR" />
+        <hotel:Amenity Code="FPRK" />
+        <hotel:Amenity Code="PHSV" />
+        <hotel:Amenity Code="POOL" />
+        <hotel:Amenity Code="INPL" />
+        <hotel:Amenity Code="RFGR" />
+        <hotel:Amenity Code="SADE" />
+        <hotel:Amenity Code="TELV" />
+        <hotel:Amenity Code="CBTV" />
+        <hotel:Amenity Code="FXSV" />
+        <hotel:Amenity Code="SFBD" />
+        <hotel:Amenity Code="BATB" />
+        <hotel:Amenity Code="FSTY" />
+      </hotel:Amenities>
+    </hotel:HotelProperty>
+    <hotel:RateInfo MinimumAmount="USD81.00" ApproximateMinimumAmount="HKD628.00" MaximumAmount="USD185.00" ApproximateMaximumAmount="HKD1434.00" />
+  </hotel:HotelSearchResult>
+</hotel:HotelSearchAvailabilityRsp>

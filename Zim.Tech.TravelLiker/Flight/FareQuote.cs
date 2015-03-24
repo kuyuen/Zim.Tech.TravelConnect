@@ -110,7 +110,7 @@ namespace Zim.Tech.TravelLiker.Flight
         //public List<FlightInfo> FromFlightList { get { return (m_AvailFlight.Count > 0) ? m_AvailFlight[0].Values.ToList<FlightInfo>() : new List<FlightInfo>(); } }
         //public List<FlightInfo> ToFlightList { get { return ((m_AvailFlight.Count >= 2) ? m_AvailFlight[1].Values.ToList<FlightInfo>() : null); } }
 
-        //public int ItemIdx { get { return _itemIdx; } set { _itemIdx = value; } }
+        public int RresultCount { get { return AirPricingSolutions.Count(); }}
         #endregion
 
 

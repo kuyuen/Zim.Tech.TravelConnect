@@ -1,0 +1,13 @@
+<hot:HotelSearchAvailabilityReq xmlns:com="http://www.travelport.com/schema/common_v25_0" TraceId="trace" AuthorizedBy="user" TargetBranch="P7009887" xmlns:hot="http://www.travelport.com/schema/hotel_v25_0">
+  <com:BillingPointOfSaleInfo OriginApplication="UAPI" />
+  <hot:HotelLocation Location="DEN" />
+  <hot:HotelSearchModifiers NumberOfRooms="1" PreferredCurrency="HKD" AvailableHotelsOnly="true">
+    <com:PermittedProviders>
+      <com:Provider Code="1G" />
+    </com:PermittedProviders>
+  </hot:HotelSearchModifiers>
+  <hot:HotelStay>
+    <hot:CheckinDate>2015-04-01</hot:CheckinDate>
+    <hot:CheckoutDate>2015-04-04</hot:CheckoutDate>
+  </hot:HotelStay>
+</hot:HotelSearchAvailabilityReq>

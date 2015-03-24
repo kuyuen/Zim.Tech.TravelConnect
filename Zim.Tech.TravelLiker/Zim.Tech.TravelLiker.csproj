@@ -51,6 +51,7 @@
     <Compile Include="Flight\FlightDetailsList.cs" />
     <Compile Include="Flight\RouteList.cs" />
     <Compile Include="Hotel\HotelQute.cs" />
+    <Compile Include="Hotel\HotelSearchResult.cs" />
     <Compile Include="Hotel\IHotel.cs" />
     <Compile Include="Flight\IFlight.cs" />
     <Compile Include="IuAPI.cs" />

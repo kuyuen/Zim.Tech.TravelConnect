@@ -7,6 +7,7 @@ using System.Reflection;
 
 namespace Zim.Tech.TravelLiker.Flight
 {
+    #region HotelSearchResult Class
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
@@ -20,7 +21,13 @@ namespace Zim.Tech.TravelLiker.Flight
             this.completeItineraryField = true;
         }
 
-        #region FareInfo private Attribute
+        #region AirPricingSolution private properties
+        private List<Journey> journeyField;
+        private List<LegRef> legRefField;
+        private List<AirPricingInfo> airPricingInfoField;
+        #endregion
+
+        #region AirPricingSolution private Attribute
         private string keyField;
         private bool completeItineraryField;
         private string totalPriceField;
@@ -35,13 +42,7 @@ namespace Zim.Tech.TravelLiker.Flight
         private string approximateFeesField;
         #endregion
 
-        #region FareInfo private properties
-        private List<Journey> journeyField;
-        private List<LegRef> legRefField;
-        private List<AirPricingInfo> airPricingInfoField;
-        #endregion
-
-        #region FareInfo public properties
+        #region AirPricingSolution public properties
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("Journey")]
         public List<Journey> Journey
@@ -85,7 +86,7 @@ namespace Zim.Tech.TravelLiker.Flight
         }
         #endregion
 
-        #region FareInfo private Attribute
+        #region AirPricingSolution public Attribute
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Key
@@ -257,6 +258,7 @@ namespace Zim.Tech.TravelLiker.Flight
         #endregion
 
     }
+    #endregion
 
 
     #region Journey Class

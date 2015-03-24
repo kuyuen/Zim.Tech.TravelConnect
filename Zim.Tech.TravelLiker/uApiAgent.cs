@@ -121,6 +121,17 @@ namespace Zim.Tech.TravelLiker
             try
             {
                 FareQute = DeserializeLowFareSearchResp(responseDocument.OuterXml);
+                if (FareQute.RresultCount > 0)
+                {
+                    //Handle Max Amount
+                    if (maxAmount > 0)
+                    {
+                        var oAirPricingSolution = (from p in FareQute.AirPricingSolutions
+                                                  where Convert.ToDecimal(p.TotalPrice) <= maxAmount
+                                                  select p).ToList();
+                        FareQute.AirPricingSolutions = oAirPricingSolution;
+                    }
+                }
             }
             catch(Exception ex)
             {
@@ -184,7 +195,7 @@ namespace Zim.Tech.TravelLiker
             };
 
             sLowFareSearchReq = Serialize<uAPIFlight.LowFareSearchReq>.SerializeXmlToString(xmlNamespaces, oLowFareSearchReq);
-            File.WriteAllText(Path.Combine(Environment.CurrentDirectory, "LowFareSearchReq.xml"), sLowFareSearchReq);
+            //File.WriteAllText(Path.Combine(Environment.CurrentDirectory, "LowFareSearchReq.xml"), sLowFareSearchReq);
 
             return sLowFareSearchReq;
         }
@@ -193,7 +204,7 @@ namespace Zim.Tech.TravelLiker
         {
             XElement xRoot = XElement.Parse(sXmlContents);
             sXmlContents = Serialize<uAPIFlight.LowFareSearchRsp>.RemoveAllNamespaces(xRoot).ToString();
-            File.WriteAllText(Path.Combine(Environment.CurrentDirectory, "LowFareSearchResp.xml"), sXmlContents);
+            //File.WriteAllText(Path.Combine(Environment.CurrentDirectory, "LowFareSearchResp.xml"), sXmlContents);
 
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.LoadXml(sXmlContents);
