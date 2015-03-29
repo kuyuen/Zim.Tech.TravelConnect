@@ -6,12 +6,155 @@ using System.Threading.Tasks;
 using System.Xml.Serialization;
 using System.Reflection;
 
+using Zim.Tech.TravelLiker.Hotel;
 using Zim.Tech.TravelLiker.Common;
 
 namespace Zim.Tech.TravelLiker.Hotel
 {
     public class HotelQute
     {
+        public string GetValue(string m_Name)
+        {
+            PropertyInfo info = this.GetType().GetProperty(m_Name);
+            if (info != null)
+            {
+                object val = info.GetValue(this, null);
+                return (string)val;
+            }
+            else
+            {
+                return string.Empty;
+            }
+        }
+
+        #region Properties Variables
+        private List<HotelQute.HotelPricingSolution> hotelPricingSolutionList = new List<HotelQute.HotelPricingSolution>();
+        private List<HotelQute.ErrorMessage> errorMessageList = new List<HotelQute.ErrorMessage>();
+        #endregion
+
+        #region Public Properties
+        public List<HotelQute.HotelPricingSolution> HotelPricingSolutions { get { return hotelPricingSolutionList; } set { hotelPricingSolutionList = value; } }
+        public List<HotelQute.ErrorMessage> ErrorMessages { get { return errorMessageList; } set { errorMessageList = value; } }
+
+        public int RresultCount { get { return HotelPricingSolutions.Count(); } }
+        #endregion
+
+
+        #region ErrorMessage
+        public class ErrorMessage : Common.ResponseMessage
+        {
+            public ErrorMessage() { }
+            public ErrorMessage(Common.ResponseMessage oResponseMessage)
+            {
+                #region ErrorMessage Properties Values
+                foreach (PropertyInfo prop in oResponseMessage.GetType().GetProperties())
+                    GetType().GetProperty(prop.Name).SetValue(this, prop.GetValue(oResponseMessage, null), null);
+                #endregion
+            }
+
+            #region Hide Base Class Properties
+            [Obsolete("Don't use this ProviderCode", true)]
+            new public string ProviderCode { get; set; }
+            #endregion
+        }
+        #endregion
+
+
+        #region HotelPricingSolution
+        public class HotelPricingSolution : Hotel.HotelProperty
+        {
+            public HotelPricingSolution(Hotel.HotelProperty oHotelProperty, List<RateInfo> oRateInfoList)
+            {
+                #region HotelPricingSolution Properties Values
+                foreach (PropertyInfo prop in oHotelProperty.GetType().GetProperties())
+                    GetType().GetProperty(prop.Name).SetValue(this, prop.GetValue(oHotelProperty, null), null);
+                #endregion
+
+                if (oRateInfoList.Count > 1)
+                {
+                    this.rateInfoField = oRateInfoList.First();
+                    this.minimumAmountField = this.rateInfoField.MinimumAmount;
+                    this.maximumAmountField = this.rateInfoField.MaximumAmount;
+                }
+
+                if (oHotelProperty.PropertyAddress.Count > 1)
+                    addressField = string.Join(",", oHotelProperty.PropertyAddress.ToArray());
+            }
+
+            private RateInfo rateInfoField = new RateInfo();
+            private MediaItem mediaItemField;
+            private string minimumAmountField;
+            private string maximumAmountField;
+            private string addressField;
+
+            /// <remarks/>
+            //[System.Xml.Serialization.XmlElementAttribute("RateInfo")]
+            //public RateInfo RateInfo
+            //{
+            //    get
+            //    {
+            //        return this.rateInfoField;
+            //    }
+            //    set
+            //    {
+            //        this.rateInfoField = value;
+            //    }
+            //}
+
+            /// <remarks/>
+            [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.travelport.com/schema/common_v29_0", Order = 4)]
+            public MediaItem MediaItem
+            {
+                get
+                {
+                    return this.mediaItemField;
+                }
+                set
+                {
+                    this.mediaItemField = value;
+                }
+            }
+
+            /// <remarks/>
+            [System.Xml.Serialization.XmlAttributeAttribute()]
+            public string MinimumAmount
+            {
+                get
+                {
+                    return this.minimumAmountField;
+                }
+                set
+                {
+                    this.minimumAmountField = value;
+                }
+            }
+
+            /// <remarks/>
+            [System.Xml.Serialization.XmlAttributeAttribute()]
+            public string MaximumAmount
+            {
+                get
+                {
+                    return this.maximumAmountField;
+                }
+                set
+                {
+                    this.maximumAmountField = value;
+                }
+            }
+
+            /// <remarks/>
+            [System.Xml.Serialization.XmlAttributeAttribute()]
+            public string HotelAddress
+            {
+                get
+                {
+                    return this.addressField;
+                }
+            }
+        }
+        #endregion
+
 
         #region SearchInfo
         public class SearchInfo

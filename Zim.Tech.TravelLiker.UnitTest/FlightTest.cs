@@ -44,26 +44,26 @@ namespace Zim.Tech.TravelLiker.UnitTest
         public void SearchOneWay()
         {
             DateTime fromDate = new DateTime(2015, 4, 1);
-            decimal maxAmount = 0; // 100000;
+            decimal maxAmount = 3750; // 100000;
             string specifiedAirline = "";
-            string errorMessage = string.Empty;
 
             TravelAgent agent = new TravelAgent();
-            Flight.FareQuote oFareQuote = agent.FlightOneWay("HKG", "ITM", fromDate, 1, 0, true, "", specifiedAirline, maxAmount, out errorMessage);
+            agent.MaxResult = 20;
+            Flight.FareQuote oFareQuote = agent.FlightOneWay("HKG", "TPE", fromDate, 1, 0, true, "", specifiedAirline, maxAmount);
             int i = oFareQuote.AirPricingSolutions.Count();
         }
 
         [TestMethod]
         public void SearchRoundTrip()
         {
-            DateTime fromDate = new DateTime(2015, 4, 1);
-            DateTime toDate = new DateTime(2015, 4, 4);
-            decimal maxAmount = 0; // 100000;
+            DateTime fromDate = new DateTime(2015, 5, 1);
+            DateTime toDate = new DateTime(2015, 5, 5);
+            decimal maxAmount = 5600; // 100000;
             string specifiedAirline = "";
-            string errorMessage = string.Empty;
 
             TravelAgent agent = new TravelAgent();
-            Flight.FareQuote oFareQuote = agent.FlightRoundTrip("HKG", "TPE", fromDate, toDate, 1, 0, true, "", specifiedAirline, maxAmount, out errorMessage);
+            agent.MaxResult = 20;
+            Flight.FareQuote oFareQuote = agent.FlightRoundTrip("HKG", "TPE", fromDate, toDate, 1, 0, true, "", specifiedAirline, maxAmount);
             int i = oFareQuote.AirPricingSolutions.Count();
         }
         

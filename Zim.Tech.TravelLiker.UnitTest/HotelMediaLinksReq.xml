@@ -1,0 +1,8 @@
+﻿<hot:HotelMediaLinksReq xmlns:hot="http://www.travelport.com/schema/hotel_v29_0" AuthorizedBy="user" Gallery="true" RichMedia="true" TargetBranch="P7009887" TraceId="trace">
+  <com:BillingPointOfSaleInfo xmlns:com="http://www.travelport.com/schema/common_v29_0" OriginApplication="UAPI"/>
+  <hot:HotelProperty Availability="Available" HotelChain="LQ" HotelCode="94229" HotelLocation="DEN" HotelTransportation="CourtesyBus" Name="LA QUINTA INN STE DEN AP DIA" NetTransCommissionInd="C" ParticipationLevel="Best Available Rate and Inside Shopper participant" ReserveRequirement="Guarantee" VendorLocationKey="pVdfuRibSkeR4epM5TuA0g==">
+    <hot:PropertyAddress>
+      <hot:Address>6801 TOWER ROAD</hot:Address>
+    </hot:PropertyAddress>
+  </hot:HotelProperty>
+</hot:HotelMediaLinksReq>

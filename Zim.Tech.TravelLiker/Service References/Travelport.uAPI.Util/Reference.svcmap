@@ -21,15 +21,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="E:\Job\Zim-Tech\Travelpot\Travelport Universal API\Sample\uAPI_SOAP_Demo_Project\uAPI_6.0\util_v25_0\Util.wsdl" Protocol="file" SourceId="1" />
+    <MetadataSource Address="E:\Job\Zim-Tech\Travelpot\TravelLiker\SourceCode\Schema_8.1\util_v30_0\Util.wsdl" Protocol="file" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Util.xsd" MetadataType="Schema" ID="dacb39ff-f107-4b80-9da8-d686e411d1bf" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/Travelport Universal API/Sample/uAPI_SOAP_Demo_Project/uAPI_6.0/util_v25_0/Util.xsd" />
-    <MetadataFile FileName="UtilService.wsdl" MetadataType="Wsdl" ID="4f48d8af-cf61-4529-af9a-f1fecc3fb862" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/Travelport Universal API/Sample/uAPI_SOAP_Demo_Project/uAPI_6.0/util_v25_0/UtilAbstract.wsdl" />
-    <MetadataFile FileName="CommonReqRsp.xsd" MetadataType="Schema" ID="e4c70310-c8eb-4281-a844-0adc31498111" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/Travelport Universal API/Sample/uAPI_SOAP_Demo_Project/uAPI_6.0/common_v25_0/CommonReqRsp.xsd" />
-    <MetadataFile FileName="UtilService1.wsdl" MetadataType="Wsdl" ID="f04a7e25-b0e2-4513-8a0c-2d4ff02966c6" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/Travelport Universal API/Sample/uAPI_SOAP_Demo_Project/uAPI_6.0/util_v25_0/Util.wsdl" />
-    <MetadataFile FileName="Common.xsd" MetadataType="Schema" ID="6240e423-e77e-4b9e-b2f7-4365ceb7fae5" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/Travelport Universal API/Sample/uAPI_SOAP_Demo_Project/uAPI_6.0/common_v25_0/Common.xsd" />
-    <MetadataFile FileName="Air.xsd" MetadataType="Schema" ID="a1f288c7-6716-449d-b524-25ee85db6fa2" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/Travelport Universal API/Sample/uAPI_SOAP_Demo_Project/uAPI_6.0/air_v25_0/Air.xsd" />
+    <MetadataFile FileName="Common.xsd" MetadataType="Schema" ID="f4c2e0fe-f0c5-4db4-a63b-fdf2832f9e7a" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Schema_8.1/common_v30_0/Common.xsd" />
+    <MetadataFile FileName="UtilService.wsdl" MetadataType="Wsdl" ID="861cdfdc-dd77-4c7a-9341-fcdd7732f5e9" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Schema_8.1/util_v30_0/UtilAbstract.wsdl" />
+    <MetadataFile FileName="CommonReqRsp.xsd" MetadataType="Schema" ID="62cae053-5dd5-46f1-8228-b6a90290dfc8" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Schema_8.1/common_v30_0/CommonReqRsp.xsd" />
+    <MetadataFile FileName="UtilService1.wsdl" MetadataType="Wsdl" ID="d3eb1a27-51e1-4dd1-8ad8-6e142ea144a8" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Schema_8.1/util_v30_0/Util.wsdl" />
+    <MetadataFile FileName="Util.xsd" MetadataType="Schema" ID="2c32bcc9-a740-4496-a838-bcc79a4600c2" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Schema_8.1/util_v30_0/Util.xsd" />
+    <MetadataFile FileName="Air.xsd" MetadataType="Schema" ID="1e679ce2-f12f-45b3-a5e2-4caf076a5e71" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Schema_8.1/air_v30_0/Air.xsd" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns="http://www.travelport.com/schema/hotel_v25_0" xmlns:common="http://www.travelport.com/schema/common_v25_0" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.travelport.com/schema/hotel_v25_0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="../common_v25_0/CommonReqRsp.xsd" namespace="http://www.travelport.com/schema/common_v25_0" />
+<xs:schema xmlns="http://www.travelport.com/schema/hotel_v30_0" xmlns:common="http://www.travelport.com/schema/common_v30_0" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.travelport.com/schema/hotel_v30_0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="../common_v30_0/CommonReqRsp.xsd" namespace="http://www.travelport.com/schema/common_v30_0" />
   <xs:include schemaLocation="Hotel.xsd" />
   <xs:annotation>
     <xs:documentation>(c) Travelport GDS 2008 All rights reserved. Proprietary Information of Travelport GDS.</xs:documentation>
@@ -102,7 +102,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="common:BaseSearchReq">
         <xs:sequence>
-          <xs:element minOccurs="0" ref="HotelLocation" />
+          <xs:element minOccurs="0" ref="HotelSearchLocation" />
           <xs:element minOccurs="0" ref="HotelSearchModifiers" />
           <xs:element ref="HotelStay" />
           <xs:element minOccurs="0" ref="common:PointOfSale" />
@@ -119,7 +119,11 @@
     <xs:complexContent mixed="false">
       <xs:extension base="common:BaseSearchRsp">
         <xs:sequence>
-          <xs:element minOccurs="0" maxOccurs="unbounded" ref="common:VendorLocation" />
+          <xs:element minOccurs="0" name="ReferencePoint" type="typeHotelReferencePoint">
+            <xs:annotation>
+              <xs:documentation>Hotel reference point.  Applicable for 1G,1V,1P,1J. </xs:documentation>
+            </xs:annotation>
+          </xs:element>
           <xs:element minOccurs="0" maxOccurs="unbounded" ref="HotelSearchResult" />
           <xs:element minOccurs="0" maxOccurs="1" ref="common:MarketingInformation" />
           <xs:element minOccurs="0" ref="common:HostToken" />
@@ -278,6 +282,18 @@
                                         </xs:documentation>
                   </xs:annotation>
                 </xs:attribute>
+                <xs:attribute name="RulesDetailReqd" use="optional">
+                  <xs:annotation>
+                    <xs:documentation>Request details for Rules, Details, or All.  Default is All. Applicable for 1p/1j.</xs:documentation>
+                  </xs:annotation>
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="Rules" />
+                      <xs:enumeration value="Details" />
+                      <xs:enumeration value="All" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
               </xs:complexType>
             </xs:element>
           </xs:choice>
@@ -307,7 +323,11 @@
                                 </xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element minOccurs="0" ref="HotelType" />
+            <xs:element minOccurs="0" ref="HotelType">
+              <xs:annotation>
+                <xs:documentation>Supported Providers:1G/1V/1P/1J.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
@@ -446,7 +466,7 @@
       <xs:complexContent mixed="false">
         <xs:extension base="common:BaseSearchReq">
           <xs:sequence>
-            <xs:element minOccurs="0" ref="HotelLocation" />
+            <xs:element minOccurs="0" ref="HotelSearchLocation" />
             <xs:element minOccurs="0" ref="HotelSearchModifiers" />
             <xs:element ref="HotelStay" />
             <xs:element minOccurs="0" ref="QuickResponse" />

@@ -36,7 +36,7 @@ namespace Zim.Tech.TravelLiker.Flight
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/air_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/air_v29_0")]
     public partial class FareInfo : object {
 
         #region FareInfo private Attribute
@@ -599,7 +599,7 @@ namespace Zim.Tech.TravelLiker.Flight
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/air_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/air_v29_0")]
     public partial class FareSurcharge : object 
     {
         
@@ -713,7 +713,7 @@ namespace Zim.Tech.TravelLiker.Flight
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/air_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/air_v29_0")]
     public partial class BaggageAllowance : object
     {
         #region FlightDetails private properties
@@ -759,7 +759,7 @@ namespace Zim.Tech.TravelLiker.Flight
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    //[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.travelport.com/schema/air_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.travelport.com/schema/air_v29_0")]
     public partial class typeWeight : object
     {
         #region typeWeight private properties
@@ -818,7 +818,7 @@ namespace Zim.Tech.TravelLiker.Flight
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    //[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.travelport.com/schema/air_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.travelport.com/schema/air_v29_0")]
     public enum typeUnitWeight
     {
 
@@ -838,7 +838,7 @@ namespace Zim.Tech.TravelLiker.Flight
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/air_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/air_v29_0")]
     public partial class FareRuleKey : object
     {
         #region FareRuleKey private properties

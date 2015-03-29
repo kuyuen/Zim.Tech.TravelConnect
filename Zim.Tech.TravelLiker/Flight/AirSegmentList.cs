@@ -39,7 +39,7 @@ namespace Zim.Tech.TravelLiker.Flight
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    //[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.travelport.com/schema/air_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.travelport.com/schema/air_v29_0")]
     public partial class AirSegment : object
     {
         #region AirSegment private properties
@@ -215,7 +215,7 @@ namespace Zim.Tech.TravelLiker.Flight
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("SellMessage", Namespace = "http://www.travelport.com/schema/common_v25_0")]
+        [System.Xml.Serialization.XmlElementAttribute("SellMessage", Namespace = "http://www.travelport.com/schema/common_v29_0")]
         public string[] SellMessage
         {
             get
@@ -855,7 +855,7 @@ namespace Zim.Tech.TravelLiker.Flight
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/air_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/air_v29_0")]
     public partial class AirAvailInfo : object
     {
         #region AirAvailInfo private properties
@@ -925,7 +925,7 @@ namespace Zim.Tech.TravelLiker.Flight
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/air_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/air_v29_0")]
     public partial class BookingCodeInfo : object
     {
         #region BookingCodeInfo private properties
@@ -980,7 +980,7 @@ namespace Zim.Tech.TravelLiker.Flight
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/air_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/air_v29_0")]
     public partial class FlightDetailsRef : object
     {
         private string keyField;
@@ -1004,7 +1004,7 @@ namespace Zim.Tech.TravelLiker.Flight
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    //[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/air_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/air_v29_0")]
     public enum typeAvailabilitySource {
         
         /// <remarks/>
@@ -1068,7 +1068,7 @@ namespace Zim.Tech.TravelLiker.Flight
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.travelport.com/schema/air_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.travelport.com/schema/air_v29_0")]
     public enum typeEticketability
     {
 

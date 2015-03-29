@@ -8,6 +8,7 @@ using System.Configuration;
 using System.Threading.Tasks;
 
 using Zim.Tech.TravelLiker.Flight;
+using Zim.Tech.TravelLiker.Hotel;
 using Zim.Tech.TravelLiker.Travelport.uAPI.Connection;
 using uAPIUnit = Zim.Tech.TravelLiker.Travelport.uAPI.Util;
 using uAPIFlight = Zim.Tech.TravelLiker.Travelport.uAPI.Air;
@@ -16,8 +17,11 @@ namespace Zim.Tech.TravelLiker
 {
     public class TravelAgent
     {
-
         #region TravelAgent Variables
+        public bool DebugMode = false; // Flight Agent Debug Mode 
+        public bool AsyncMode = false; // Flight Agent Request in Async
+        public int MaxResult = 10;
+
         private string sUserID = string.Empty;
         private string sPassword = string.Empty;
         private string sURL = string.Empty;
@@ -55,42 +59,73 @@ namespace Zim.Tech.TravelLiker
 
 
         #region Flight Agnet
-        public FareQuote FlightOneWay(string fromCity, string toCity, DateTime frightDate, int adults, int children, bool directFlightOnly, string frightClass, string specifiedAirline, decimal maxAmount, out string errorMessage)
+        public FareQuote FlightOneWay(string fromCity, string toCity, DateTime frightDate, int adults, int children, bool directFlightOnly, string frightClass, string specifiedAirline, decimal maxAmount)
         {
-            errorMessage = string.Empty;
             FareQuote FareQute = new FareQuote();
 
-            List<FareQuote.SearchInfo> listSearchInfo = new List<FareQuote.SearchInfo>();
-            listSearchInfo.Add(new FareQuote.SearchInfo(fromCity, toCity, frightDate, adults, children, directFlightOnly, frightClass, specifiedAirline));
-            uApiAgent agent = new uApiAgent();
-            FareQute = agent.LowFareSearch(FareQuote.FareType.OneWay, listSearchInfo, maxAmount);
+            if (fromCity == toCity)
+                FareQute.ErrorMessages.Add((new FareQuote.ErrorMessage() { Value = "OneWay searching criteria invalid (From City = To City)" }) );
+            else if (frightDate < DateTime.Today)
+                FareQute.ErrorMessages.Add((new FareQuote.ErrorMessage() { Value = "OneWay searching criteria invalid (frightDate before Today)" }));
+
+            if (FareQute.ErrorMessages.Count == 0)
+            {
+                List<FareQuote.SearchInfo> listSearchInfo = new List<FareQuote.SearchInfo>();
+                listSearchInfo.Add(new FareQuote.SearchInfo(fromCity, toCity, frightDate, adults, children, directFlightOnly, frightClass, specifiedAirline));
+                uApiAgent agent = new uApiAgent();
+                agent.MaxResult = MaxResult;
+                FareQute = agent.LowFareSearch(FareQuote.FareType.OneWay, listSearchInfo, maxAmount);
+            }
 
             return FareQute;
         }
 
-        public FareQuote FlightRoundTrip(string fromCity, string toCity, DateTime fromDate, DateTime toDate, int adults, int children, bool directFlightOnly, string frightClass, string specifiedAirline, decimal maxAmount, out string errorMessage)
+        public FareQuote FlightRoundTrip(string fromCity, string toCity, DateTime fromDate, DateTime toDate, int adults, int children, bool directFlightOnly, string frightClass, string specifiedAirline, decimal maxAmount)
         {
-            errorMessage = string.Empty;
             FareQuote FareQute = new FareQuote();
 
-            List<FareQuote.SearchInfo> listSearchInfo = new List<FareQuote.SearchInfo>();
-            listSearchInfo.Add(new FareQuote.SearchInfo(fromCity, toCity, fromDate, adults, children, directFlightOnly, frightClass, specifiedAirline));
-            listSearchInfo.Add(new FareQuote.SearchInfo(toCity, fromCity, toDate, adults, children, directFlightOnly, frightClass, specifiedAirline));
-            uApiAgent agent = new uApiAgent();
-            FareQute = agent.LowFareSearch(FareQuote.FareType.RoundTrip, listSearchInfo, maxAmount);
+            if (fromCity == toCity)
+                FareQute.ErrorMessages.Add((new FareQuote.ErrorMessage() { Value = "Round Trip searching criteria invalid (From City = To City)" }) );
+            else if (fromDate < DateTime.Today || fromDate >= toDate)
+                FareQute.ErrorMessages.Add((new FareQuote.ErrorMessage() { Value = "Round Trip searching criteria invalid fromDate" }) );
+            else if (toDate < DateTime.Today)
+                FareQute.ErrorMessages.Add((new FareQuote.ErrorMessage() { Value = "Round Trip searching criteria invalid toDate" }) );
 
+            if (FareQute.ErrorMessages.Count == 0)
+            {
+                List<FareQuote.SearchInfo> listSearchInfo = new List<FareQuote.SearchInfo>();
+                listSearchInfo.Add(new FareQuote.SearchInfo(fromCity, toCity, fromDate, adults, children, directFlightOnly, frightClass, specifiedAirline));
+                listSearchInfo.Add(new FareQuote.SearchInfo(toCity, fromCity, toDate, adults, children, directFlightOnly, frightClass, specifiedAirline));
+                uApiAgent agent = new uApiAgent();
+                agent.MaxResult = MaxResult;
+                FareQute = agent.LowFareSearch(FareQuote.FareType.RoundTrip, listSearchInfo, maxAmount);
+            }
             return FareQute;
         }
 
         #endregion
 
         #region Hotel Agnet
-        public List<Object> HotelEnquiy(string sCity, DateTime CheckIn, int StayDays, int NoOfRoom, string BedType, decimal maxAmount, out string errorMessage)
+        public HotelQute HotelEnquiy(string City, DateTime CheckInDate, int StayDays, int NoOfRoom, string BedType, string specifiedHotel, decimal maxAmount)
         {
-            errorMessage = string.Empty;
-            List<Object> HotelResult = new List<Object>();
+            HotelQute HotelQute = new HotelQute();
 
-            return HotelResult;
+            if (string.IsNullOrEmpty(City))
+                HotelQute.ErrorMessages.Add((new HotelQute.ErrorMessage() { Value = "Hotel searching criteria invalid City" }));
+            else if (CheckInDate < DateTime.Today)
+                HotelQute.ErrorMessages.Add((new HotelQute.ErrorMessage() { Value = "Hotel searching criteria invalid CheckInDate" }));
+            else if (StayDays < 1)
+                HotelQute.ErrorMessages.Add((new HotelQute.ErrorMessage() { Value = "Hotel searching criteria invalid StayDays" }));
+
+            if (HotelQute.ErrorMessages.Count == 0)
+            {
+                List<HotelQute.SearchInfo> listSearchInfo = new List<HotelQute.SearchInfo>();
+                listSearchInfo.Add(new HotelQute.SearchInfo(City, "", CheckInDate, StayDays, 0, NoOfRoom, BedType, specifiedHotel));
+                uApiAgent agent = new uApiAgent();
+                agent.MaxResult = MaxResult;
+                HotelQute = agent.HotelSearch(listSearchInfo, maxAmount);
+            }
+            return HotelQute;
         }
         #endregion
     }

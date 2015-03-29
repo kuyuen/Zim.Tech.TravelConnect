@@ -70,49 +70,35 @@ namespace Zim.Tech.TravelLiker.Flight
 
         #region Properties Variables
         private List<FareQuote.AirPricingSolution> airPricingSolutionList = new List<FareQuote.AirPricingSolution>();
-        //private string m_ServiceProvide = string.Empty;
-        //private FareInfo m_FlightFare = new FareInfo();
-        //private FareInfo m_ChildFlightFare = new FareInfo();
-        //private FareInfo m_InfantWOSFlightFare = new FareInfo();
-        //private List<RulesInfo> m_RulesInfo = new List<RulesInfo>();
-        //private List<RulesInfo> m_ChildRulesInfo = new List<RulesInfo>();
-        //private List<RulesInfo> m_InfantWOSRulesInfo = new List<RulesInfo>();
-
-        //private int _itemIdx = -1;
-
-        //private object m_AvailFlight = new object();
-        //private List<Dictionary<string, FlightInfo>> m_AvailFlight = new List<Dictionary<string, FlightInfo>>();
+        private List<FareQuote.ErrorMessage> errorMessageList = new List<FareQuote.ErrorMessage>();
         #endregion
 
         #region Public Properties
         public enum FareType { OneWay = 1, RoundTrip = 2, MultStop = 3 }
         public List<FareQuote.AirPricingSolution> AirPricingSolutions { get { return airPricingSolutionList; } set { airPricingSolutionList = value; } }
-        //public string ServiceProvide { get { return m_ServiceProvide; } set { m_ServiceProvide = value; } } // Service Provide = Galileo / Nanhwa
-        //public FareType FareQuteType = FareType.OneWay;
-        //public List<RulesInfo> RulesInfo { get { return m_RulesInfo; } set { m_RulesInfo = value; } }
-        //public List<RulesInfo> ChildRulesInfo { get { return m_ChildRulesInfo; } set { m_ChildRulesInfo = value; } }
-        //public List<RulesInfo> InfantWOSRulesInfo { get { return m_InfantWOSRulesInfo; } set { m_InfantWOSRulesInfo = value; } }
-        //public FareInfo FlightFare { get { return m_FlightFare; } set { m_FlightFare = value; } }
-        //public FareInfo ChildFlightFare { get { return m_ChildFlightFare; } set { m_ChildFlightFare = value; } }
-        //public FareInfo InfantWOSFlightFare { get { return m_InfantWOSFlightFare; } set { m_InfantWOSFlightFare = value; } }
-        ////public object AvailFlight { get { return m_AvailFlight; } set { m_AvailFlight = value; } }
-        //public List<Dictionary<string, FlightInfo>> AvailFlight { get { return m_AvailFlight; } set { m_AvailFlight = value; } }
-        //public List<List<FlightInfo>> AvailFlightList
-        //{
-        //    get
-        //    {
-        //        List<List<FlightInfo>> tempFlightList = new List<List<FlightInfo>>();
-        //        foreach (Dictionary<string, FlightInfo> tempFlightInfo in m_AvailFlight)
-        //            tempFlightList.Add(tempFlightInfo.Values.ToList<FlightInfo>());
-        //        return tempFlightList;
-        //    }
-        //}
-        //public List<FlightInfo> FromFlightList { get { return (m_AvailFlight.Count > 0) ? m_AvailFlight[0].Values.ToList<FlightInfo>() : new List<FlightInfo>(); } }
-        //public List<FlightInfo> ToFlightList { get { return ((m_AvailFlight.Count >= 2) ? m_AvailFlight[1].Values.ToList<FlightInfo>() : null); } }
+        public List<FareQuote.ErrorMessage> ErrorMessages { get { return errorMessageList; } set { errorMessageList = value; } }
 
         public int RresultCount { get { return AirPricingSolutions.Count(); }}
         #endregion
 
+        #region ErrorMessage
+        public class ErrorMessage : Common.ResponseMessage
+        {
+            public ErrorMessage() { }
+            public ErrorMessage(Common.ResponseMessage oResponseMessage)
+            {
+                #region ErrorMessage Properties Values
+                foreach (PropertyInfo prop in oResponseMessage.GetType().GetProperties())
+                    GetType().GetProperty(prop.Name).SetValue(this, prop.GetValue(oResponseMessage, null), null);
+                #endregion
+            }
+
+            #region Hide Base Class Properties
+            [Obsolete("Don't use this ProviderCode", true)]
+            new public string ProviderCode { get; set; }
+            #endregion
+        }
+        #endregion
 
         #region AirPricingSolution
         public class AirPricingSolution : Flight.AirPricingSolution

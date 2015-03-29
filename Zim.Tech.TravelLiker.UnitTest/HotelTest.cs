@@ -24,6 +24,20 @@ namespace Zim.Tech.TravelLiker.UnitTest
     public class HotelTest
     {
         [TestMethod]
+        public void HotelSearch()
+        {
+            DateTime checkInDate = new DateTime(2015, 5, 1);
+            decimal maxAmount = 3750; // 100000;
+            string specifiedHotel = "";
+
+            TravelAgent agent = new TravelAgent();
+            agent.MaxResult = 20;
+            Hotel.HotelQute oHotelQute = agent.HotelEnquiy("DEN", checkInDate, 5, 1, "", specifiedHotel, maxAmount);
+            int i = oHotelQute.HotelPricingSolutions.Count();
+        }
+
+
+        [TestMethod]
         public void PrepareHotelSearchAvailabilityReq()
         {
             decimal maxAmount = 0; // 100000;
@@ -36,7 +50,7 @@ namespace Zim.Tech.TravelLiker.UnitTest
             oSearchInfoList.Add(oSearchInfo);
 
             uApiAgent agent = new uApiAgent();
-            agent.PrepareHotelSearchAvailabilityReq(oSearchInfoList, maxAmount);
+            //agent.PrepareHotelSearchAvailabilityReq(oSearchInfoList, maxAmount);
         }
 
 
@@ -64,9 +78,38 @@ namespace Zim.Tech.TravelLiker.UnitTest
                 {
                     if (childnode.Name == "HotelSearchResult")
                     {
+                        foreach (XmlNode subchildnode in childnode.ChildNodes)
+                        {
+                            if (subchildnode.Name == "HotelProperty")
+                            {
+
+                                foreach (XmlNode subchildnode2 in subchildnode.ChildNodes)
+                                {
+                                    if (subchildnode2.Name == "Amenities")
+                                    {
+                                        Hotel.Amenities oAmenities = Serialize<Hotel.Amenities>.DeserializeXmlFromStringWithoutNamespace(subchildnode2.OuterXml);
+                                    }
+                                }
+                                Hotel.HotelProperty oHotelProperty = Serialize<Hotel.HotelProperty>.DeserializeXmlFromStringWithoutNamespace(subchildnode.OuterXml);
+
+                            }
+                            if (subchildnode.Name == "RateInfo")
+                            {
+                                Hotel.RateInfo oHotelProperty = Serialize<Hotel.RateInfo>.DeserializeXmlFromStringWithoutNamespace(subchildnode.OuterXml);
+
+                            }
+                        }
                         //uAPIHotel.HotelSearchResult oHotelSearchResult = Serialize<uAPIHotel.HotelSearchResult>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
                         Hotel.HotelSearchResult oHotelSearchResult = Serialize<Hotel.HotelSearchResult>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
                         HotelSearchResultList.Add(oHotelSearchResult);
+                    }
+
+                    if (childnode.Name == "NextResultReference")
+                    {
+                        Hotel.NextResultReference oNextResultReference = Serialize<Hotel.NextResultReference>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
+                    }
+                    if (childnode.Name == "VendorLocation")
+                    {
                     }
                 }
             }

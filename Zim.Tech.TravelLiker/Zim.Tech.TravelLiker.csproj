@@ -49,12 +49,15 @@
     <Compile Include="Flight\FareQuote.cs" />
     <Compile Include="Common\Serialize.cs" />
     <Compile Include="Flight\FlightDetailsList.cs" />
+    <Compile Include="Common\ResponseMessage.cs" />
     <Compile Include="Flight\RouteList.cs" />
     <Compile Include="Hotel\HotelQute.cs" />
     <Compile Include="Hotel\HotelSearchResult.cs" />
     <Compile Include="Hotel\IHotel.cs" />
     <Compile Include="Flight\IFlight.cs" />
-    <Compile Include="IuAPI.cs" />
+    <Compile Include="Hotel\MediaItem.cs" />
+    <Compile Include="Hotel\NextResultReference.cs" />
+    <Compile Include="Hotel\VendorLocation.cs" />
     <Compile Include="IUniversalApiConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\Travelport.uAPI.Air\Reference.cs">
@@ -214,10 +217,16 @@
     <None Include="Service References\Travelport.uAPI.Hotel\Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRulesRsp.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\Travelport.uAPI.Hotel\Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSearchAvailabilityAsynchRsp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\Travelport.uAPI.Hotel\Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSuperShopperRsp.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\Travelport.uAPI.Hotel\Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelUpsellDetailsRsp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.Hotel\Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.RetrieveHotelSearchAvailabilityRsp.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\Travelport.uAPI.Hotel\Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse.datasource">
@@ -242,6 +251,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\Travelport.uAPI.Hotel\Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse7.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.Hotel\Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse8.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.Hotel\Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse9.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\Travelport.uAPI.Util\Air.xsd">

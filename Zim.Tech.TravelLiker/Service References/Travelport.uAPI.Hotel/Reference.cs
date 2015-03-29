@@ -16,7 +16,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class ErrorInfo : typeErrorInfo {
     }
     
@@ -25,7 +25,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeErrorInfo : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string codeField;
@@ -170,7 +170,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class AuxdataEntry : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string reasonField;
@@ -216,34 +216,244 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0")]
-    public partial class typeHotelRateDescription : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class typeFeeInfo : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private string[] textField;
+        private typeFeeInfoTaxInfoRef[] taxInfoRefField;
         
-        private string nameField;
+        private string baseAmountField;
+        
+        private string descriptionField;
+        
+        private string subCodeField;
+        
+        private string keyField;
+        
+        private string amountField;
+        
+        private string codeField;
+        
+        private string feeTokenField;
+        
+        private string paymentRefField;
+        
+        private string bookingTravelerRefField;
+        
+        private string passengerTypeCodeField;
+        
+        private string providerCodeField;
+        
+        private string supplierCodeField;
+        
+        private typeElementStatus elStatField;
+        
+        private bool elStatFieldSpecified;
+        
+        private bool keyOverrideField;
+        
+        private bool keyOverrideFieldSpecified;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Text", Order=0)]
-        public string[] Text {
+        [System.Xml.Serialization.XmlElementAttribute("TaxInfoRef", Order=0)]
+        public typeFeeInfoTaxInfoRef[] TaxInfoRef {
             get {
-                return this.textField;
+                return this.taxInfoRefField;
             }
             set {
-                this.textField = value;
-                this.RaisePropertyChanged("Text");
+                this.taxInfoRefField = value;
+                this.RaisePropertyChanged("TaxInfoRef");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Name {
+        public string BaseAmount {
             get {
-                return this.nameField;
+                return this.baseAmountField;
             }
             set {
-                this.nameField = value;
-                this.RaisePropertyChanged("Name");
+                this.baseAmountField = value;
+                this.RaisePropertyChanged("BaseAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("Description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string SubCode {
+            get {
+                return this.subCodeField;
+            }
+            set {
+                this.subCodeField = value;
+                this.RaisePropertyChanged("SubCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("Key");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Amount {
+            get {
+                return this.amountField;
+            }
+            set {
+                this.amountField = value;
+                this.RaisePropertyChanged("Amount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Code {
+            get {
+                return this.codeField;
+            }
+            set {
+                this.codeField = value;
+                this.RaisePropertyChanged("Code");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string FeeToken {
+            get {
+                return this.feeTokenField;
+            }
+            set {
+                this.feeTokenField = value;
+                this.RaisePropertyChanged("FeeToken");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string PaymentRef {
+            get {
+                return this.paymentRefField;
+            }
+            set {
+                this.paymentRefField = value;
+                this.RaisePropertyChanged("PaymentRef");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string BookingTravelerRef {
+            get {
+                return this.bookingTravelerRefField;
+            }
+            set {
+                this.bookingTravelerRefField = value;
+                this.RaisePropertyChanged("BookingTravelerRef");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string PassengerTypeCode {
+            get {
+                return this.passengerTypeCodeField;
+            }
+            set {
+                this.passengerTypeCodeField = value;
+                this.RaisePropertyChanged("PassengerTypeCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ProviderCode {
+            get {
+                return this.providerCodeField;
+            }
+            set {
+                this.providerCodeField = value;
+                this.RaisePropertyChanged("ProviderCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string SupplierCode {
+            get {
+                return this.supplierCodeField;
+            }
+            set {
+                this.supplierCodeField = value;
+                this.RaisePropertyChanged("SupplierCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public typeElementStatus ElStat {
+            get {
+                return this.elStatField;
+            }
+            set {
+                this.elStatField = value;
+                this.RaisePropertyChanged("ElStat");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ElStatSpecified {
+            get {
+                return this.elStatFieldSpecified;
+            }
+            set {
+                this.elStatFieldSpecified = value;
+                this.RaisePropertyChanged("ElStatSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool KeyOverride {
+            get {
+                return this.keyOverrideField;
+            }
+            set {
+                this.keyOverrideField = value;
+                this.RaisePropertyChanged("KeyOverride");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool KeyOverrideSpecified {
+            get {
+                return this.keyOverrideFieldSpecified;
+            }
+            set {
+                this.keyOverrideFieldSpecified = value;
+                this.RaisePropertyChanged("KeyOverrideSpecified");
             }
         }
         
@@ -262,7 +472,101 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class typeFeeInfoTaxInfoRef : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string keyField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("Key");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public enum typeElementStatus {
+        
+        /// <remarks/>
+        A,
+        
+        /// <remarks/>
+        M,
+        
+        /// <remarks/>
+        C,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class typeTax : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string amountField;
+        
+        private string codeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Amount {
+            get {
+                return this.amountField;
+            }
+            set {
+                this.amountField = value;
+                this.RaisePropertyChanged("Amount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Code {
+            get {
+                return this.codeField;
+            }
+            set {
+                this.codeField = value;
+                this.RaisePropertyChanged("Code");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeProviderReservationDetail : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string providerCodeField;
@@ -308,7 +612,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class BaseAsyncProviderSpecificResponse : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string providerCodeField;
@@ -355,7 +659,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeBookingTransactionsAllowed : object, System.ComponentModel.INotifyPropertyChanged {
         
         private bool bookingEnabledField;
@@ -401,7 +705,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeTransactionsAllowed : typeBookingTransactionsAllowed {
         
         private bool shoppingEnabledField;
@@ -466,7 +770,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeSubKey : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string[] textField;
@@ -526,7 +830,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeKeyword : object, System.ComponentModel.INotifyPropertyChanged {
         
         private typeSubKey[] subKeyField;
@@ -601,7 +905,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeAgencyHierarchyReference : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string profileIDField;
@@ -645,7 +949,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public enum typeAgencyProfileLevel {
         
         /// <remarks/>
@@ -666,7 +970,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeAgencyHierarchyLongReference : typeAgencyHierarchyReference {
         
         private int profileVersionField;
@@ -703,7 +1007,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeDateRange : object, System.ComponentModel.INotifyPropertyChanged {
         
         private System.DateTime startDateField;
@@ -749,7 +1053,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeProfileRef : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string profileEntityIDField;
@@ -793,7 +1097,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public enum typeProfileLevel {
         
         /// <remarks/>
@@ -823,7 +1127,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeLocation : object, System.ComponentModel.INotifyPropertyChanged {
         
         private Location itemField;
@@ -857,7 +1161,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class Airport : Location {
         
         private string codeField;
@@ -880,7 +1184,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class Location : object, System.ComponentModel.INotifyPropertyChanged {
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -898,7 +1202,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class City : Location {
         
         private string codeField;
@@ -921,7 +1225,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class CityOrAirport : Location {
         
         private string codeField;
@@ -963,7 +1267,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class FormattedTextTextType : object, System.ComponentModel.INotifyPropertyChanged {
         
         private bool formattedField;
@@ -1063,7 +1367,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public enum FormattedTextTextTypeTextFormat {
         
         /// <remarks/>
@@ -1078,7 +1382,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeKeyBasedReference : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string keyField;
@@ -1110,7 +1414,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class OptionalServiceApplicationLimitType : object, System.ComponentModel.INotifyPropertyChanged {
         
         private OptionalServiceApplicabilityType applicableLevelField;
@@ -1182,7 +1486,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public enum OptionalServiceApplicabilityType {
         
         /// <remarks/>
@@ -1209,7 +1513,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class ServiceRuleType : object, System.ComponentModel.INotifyPropertyChanged {
         
         private ServiceRuleTypeApplicationRules applicationRulesField;
@@ -1312,7 +1616,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class ServiceRuleTypeApplicationRules : object, System.ComponentModel.INotifyPropertyChanged {
         
         private bool requiredForAllTravelersField;
@@ -1470,7 +1774,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class ServiceRuleTypeApplicationLevel : object, System.ComponentModel.INotifyPropertyChanged {
         
         private OptionalServiceApplicationLimitType[] applicationLimitsField;
@@ -1545,7 +1849,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class ServiceData : object, System.ComponentModel.INotifyPropertyChanged {
         
         private SeatAttribute[] seatAttributesField;
@@ -1709,7 +2013,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class SeatAttribute : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string valueField;
@@ -1741,14 +2045,14 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class CabinClass : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private typeCabinClass typeField;
+        private string typeField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public typeCabinClass Type {
+        public string Type {
             get {
                 return this.typeField;
             }
@@ -1771,31 +2075,9 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
-    public enum typeCabinClass {
-        
-        /// <remarks/>
-        First,
-        
-        /// <remarks/>
-        Business,
-        
-        /// <remarks/>
-        Economy,
-        
-        /// <remarks/>
-        PremiumEconomy,
-        
-        /// <remarks/>
-        PremiumFirst,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class ServiceRuleTypeModifyRules : object, System.ComponentModel.INotifyPropertyChanged {
         
         private ServiceRuleTypeModifyRulesModifyRule[] modifyRuleField;
@@ -1855,7 +2137,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class ServiceRuleTypeModifyRulesModifyRule : object, System.ComponentModel.INotifyPropertyChanged {
         
         private ModificationType modificationField;
@@ -2002,7 +2284,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public enum ModificationType {
         
         /// <remarks/>
@@ -2032,7 +2314,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class ServiceRuleTypeSecondaryTypeRule : object, System.ComponentModel.INotifyPropertyChanged {
         
         private OptionalServiceApplicationLimitType[] applicationLimitField;
@@ -2078,7 +2360,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typePassengerType : object, System.ComponentModel.INotifyPropertyChanged {
         
         private Name nameField;
@@ -2311,7 +2593,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class Name : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string prefixField;
@@ -2413,7 +2695,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class LoyaltyCard : object, System.ComponentModel.INotifyPropertyChanged {
         
         private typeProviderReservationSpecificInfo[] providerReservationSpecificInfoField;
@@ -2613,7 +2895,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeProviderReservationSpecificInfo : object, System.ComponentModel.INotifyPropertyChanged {
         
         private OperatedBy[] operatedByField;
@@ -2715,7 +2997,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class OperatedBy : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string valueField;
@@ -2747,7 +3029,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class ProviderReservationInfoRef : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string keyField;
@@ -2777,7 +3059,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public enum typeProduct {
         
         /// <remarks/>
@@ -2804,7 +3086,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class DiscountCard : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string keyField;
@@ -2932,30 +3214,14 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
-    public enum typeElementStatus {
-        
-        /// <remarks/>
-        A,
-        
-        /// <remarks/>
-        M,
-        
-        /// <remarks/>
-        C,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class PersonalGeography : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string itemField;
         
-        private ItemChoiceType1 itemElementNameField;
+        private ItemChoiceType2 itemElementNameField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("CityCode", typeof(string), Order=0)]
@@ -2975,7 +3241,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public ItemChoiceType1 ItemElementName {
+        public ItemChoiceType2 ItemElementName {
             get {
                 return this.itemElementNameField;
             }
@@ -2998,8 +3264,8 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0", IncludeInSchema=false)]
-    public enum ItemChoiceType1 {
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0", IncludeInSchema=false)]
+    public enum ItemChoiceType2 {
         
         /// <remarks/>
         CityCode,
@@ -3014,7 +3280,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public enum typeResidency {
         
         /// <remarks/>
@@ -3032,7 +3298,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeSpecificTime : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string timeField;
@@ -3065,7 +3331,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeTimeSpec : object, System.ComponentModel.INotifyPropertyChanged {
         
         private object itemField;
@@ -3112,7 +3378,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeTimeRange : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string earliestTimeField;
@@ -3158,7 +3424,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeFlexibleTimeSpec : typeTimeSpec {
         
         private typeFlexibleTimeSpecSearchExtraDays searchExtraDaysField;
@@ -3181,7 +3447,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeFlexibleTimeSpecSearchExtraDays : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int daysBeforeField;
@@ -3255,7 +3521,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeSearchLocation : object, System.ComponentModel.INotifyPropertyChanged {
         
         private Location itemField;
@@ -3305,7 +3571,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class CoordinateLocation : Location {
         
         private float latitudeField;
@@ -3342,7 +3608,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class RailLocation : Location {
         
         private string codeField;
@@ -3365,7 +3631,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class Distance : object, System.ComponentModel.INotifyPropertyChanged {
         
         private DistanceUnits unitsField;
@@ -3428,7 +3694,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public enum DistanceUnits {
         
         /// <remarks/>
@@ -3443,7 +3709,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeRateDescription : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string[] textField;
@@ -3489,7 +3755,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeSearchTimeSpec : object, System.ComponentModel.INotifyPropertyChanged {
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -3507,7 +3773,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeAgentInfo : object, System.ComponentModel.INotifyPropertyChanged {
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -3525,7 +3791,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class Segment : object, System.ComponentModel.INotifyPropertyChanged {
         
         private SegmentRemark[] segmentRemarkField;
@@ -3683,7 +3949,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class SegmentRemark : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string keyField;
@@ -3729,7 +3995,471 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class typeTaxInfo : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private TaxDetail[] taxDetailField;
+        
+        private string keyField;
+        
+        private string categoryField;
+        
+        private string carrierDefinedCategoryField;
+        
+        private string segmentRefField;
+        
+        private string flightDetailsRefField;
+        
+        private string couponRefField;
+        
+        private string amountField;
+        
+        private string originAirportField;
+        
+        private string destinationAirportField;
+        
+        private string countryCodeField;
+        
+        private string fareInfoRefField;
+        
+        private bool taxExemptedField;
+        
+        private bool taxExemptedFieldSpecified;
+        
+        private string providerCodeField;
+        
+        private string supplierCodeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("TaxDetail", Order=0)]
+        public TaxDetail[] TaxDetail {
+            get {
+                return this.taxDetailField;
+            }
+            set {
+                this.taxDetailField = value;
+                this.RaisePropertyChanged("TaxDetail");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("Key");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Category {
+            get {
+                return this.categoryField;
+            }
+            set {
+                this.categoryField = value;
+                this.RaisePropertyChanged("Category");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CarrierDefinedCategory {
+            get {
+                return this.carrierDefinedCategoryField;
+            }
+            set {
+                this.carrierDefinedCategoryField = value;
+                this.RaisePropertyChanged("CarrierDefinedCategory");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string SegmentRef {
+            get {
+                return this.segmentRefField;
+            }
+            set {
+                this.segmentRefField = value;
+                this.RaisePropertyChanged("SegmentRef");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string FlightDetailsRef {
+            get {
+                return this.flightDetailsRefField;
+            }
+            set {
+                this.flightDetailsRefField = value;
+                this.RaisePropertyChanged("FlightDetailsRef");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CouponRef {
+            get {
+                return this.couponRefField;
+            }
+            set {
+                this.couponRefField = value;
+                this.RaisePropertyChanged("CouponRef");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Amount {
+            get {
+                return this.amountField;
+            }
+            set {
+                this.amountField = value;
+                this.RaisePropertyChanged("Amount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string OriginAirport {
+            get {
+                return this.originAirportField;
+            }
+            set {
+                this.originAirportField = value;
+                this.RaisePropertyChanged("OriginAirport");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DestinationAirport {
+            get {
+                return this.destinationAirportField;
+            }
+            set {
+                this.destinationAirportField = value;
+                this.RaisePropertyChanged("DestinationAirport");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CountryCode {
+            get {
+                return this.countryCodeField;
+            }
+            set {
+                this.countryCodeField = value;
+                this.RaisePropertyChanged("CountryCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string FareInfoRef {
+            get {
+                return this.fareInfoRefField;
+            }
+            set {
+                this.fareInfoRefField = value;
+                this.RaisePropertyChanged("FareInfoRef");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool TaxExempted {
+            get {
+                return this.taxExemptedField;
+            }
+            set {
+                this.taxExemptedField = value;
+                this.RaisePropertyChanged("TaxExempted");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool TaxExemptedSpecified {
+            get {
+                return this.taxExemptedFieldSpecified;
+            }
+            set {
+                this.taxExemptedFieldSpecified = value;
+                this.RaisePropertyChanged("TaxExemptedSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ProviderCode {
+            get {
+                return this.providerCodeField;
+            }
+            set {
+                this.providerCodeField = value;
+                this.RaisePropertyChanged("ProviderCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string SupplierCode {
+            get {
+                return this.supplierCodeField;
+            }
+            set {
+                this.supplierCodeField = value;
+                this.RaisePropertyChanged("SupplierCode");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class TaxDetail : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string amountField;
+        
+        private string originAirportField;
+        
+        private string destinationAirportField;
+        
+        private string countryCodeField;
+        
+        private string fareInfoRefField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Amount {
+            get {
+                return this.amountField;
+            }
+            set {
+                this.amountField = value;
+                this.RaisePropertyChanged("Amount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string OriginAirport {
+            get {
+                return this.originAirportField;
+            }
+            set {
+                this.originAirportField = value;
+                this.RaisePropertyChanged("OriginAirport");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DestinationAirport {
+            get {
+                return this.destinationAirportField;
+            }
+            set {
+                this.destinationAirportField = value;
+                this.RaisePropertyChanged("DestinationAirport");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CountryCode {
+            get {
+                return this.countryCodeField;
+            }
+            set {
+                this.countryCodeField = value;
+                this.RaisePropertyChanged("CountryCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string FareInfoRef {
+            get {
+                return this.fareInfoRefField;
+            }
+            set {
+                this.fareInfoRefField = value;
+                this.RaisePropertyChanged("FareInfoRef");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class MCOInformation : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private PassengerInfo[] passengerInfoField;
+        
+        private string mCONumberField;
+        
+        private string statusField;
+        
+        private string mCOTypeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("PassengerInfo", Order=0)]
+        public PassengerInfo[] PassengerInfo {
+            get {
+                return this.passengerInfoField;
+            }
+            set {
+                this.passengerInfoField = value;
+                this.RaisePropertyChanged("PassengerInfo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string MCONumber {
+            get {
+                return this.mCONumberField;
+            }
+            set {
+                this.mCONumberField = value;
+                this.RaisePropertyChanged("MCONumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Status {
+            get {
+                return this.statusField;
+            }
+            set {
+                this.statusField = value;
+                this.RaisePropertyChanged("Status");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string MCOType {
+            get {
+                return this.mCOTypeField;
+            }
+            set {
+                this.mCOTypeField = value;
+                this.RaisePropertyChanged("MCOType");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class PassengerInfo : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private Name nameField;
+        
+        private string bookingTravelerRefField;
+        
+        private string passengerTypeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Name Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("Name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string BookingTravelerRef {
+            get {
+                return this.bookingTravelerRefField;
+            }
+            set {
+                this.bookingTravelerRefField = value;
+                this.RaisePropertyChanged("BookingTravelerRef");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string PassengerType {
+            get {
+                return this.passengerTypeField;
+            }
+            set {
+                this.passengerTypeField = value;
+                this.RaisePropertyChanged("PassengerType");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class BaseReservation : object, System.ComponentModel.INotifyPropertyChanged {
         
         private AccountingRemark[] accountingRemarkField;
@@ -3859,7 +4589,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class AccountingRemark : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string remarkDataField;
@@ -4050,7 +4780,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class GeneralRemark : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string remarkDataField;
@@ -4337,7 +5067,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public enum typeDirection {
         
         /// <remarks/>
@@ -4352,7 +5082,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class Restriction : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string operationField;
@@ -4398,7 +5128,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class PassiveInfo : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string[] ticketNumberField;
@@ -4514,7 +5244,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class Commission : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string keyField;
@@ -4534,6 +5264,12 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         private string percentageField;
         
         private string bookingTravelerRefField;
+        
+        private bool commissionOverrideField;
+        
+        public Commission() {
+            this.commissionOverrideField = false;
+        }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
@@ -4643,6 +5379,19 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(false)]
+        public bool CommissionOverride {
+            get {
+                return this.commissionOverrideField;
+            }
+            set {
+                this.commissionOverrideField = value;
+                this.RaisePropertyChanged("CommissionOverride");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -4656,7 +5405,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public enum typeCommissionLevel {
         
         /// <remarks/>
@@ -4672,7 +5421,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public enum typeCommissionType {
         
         /// <remarks/>
@@ -4688,7 +5437,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public enum typeCommissionModifier {
         
         /// <remarks/>
@@ -4718,7 +5467,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeGuaranteeInformation : object, System.ComponentModel.INotifyPropertyChanged {
         
         private typeGuaranteeInformationType typeField;
@@ -4776,7 +5525,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public enum typeGuaranteeInformationType {
         
         /// <remarks/>
@@ -4789,7 +5538,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public enum typeGuaranteeInformationAgencyType {
         
         /// <remarks/>
@@ -4804,67 +5553,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
-    public partial class typeAgencyPayment : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string agencyBillingIdentifierField;
-        
-        private string agencyBillingNumberField;
-        
-        private string agencyBillingPasswordField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string AgencyBillingIdentifier {
-            get {
-                return this.agencyBillingIdentifierField;
-            }
-            set {
-                this.agencyBillingIdentifierField = value;
-                this.RaisePropertyChanged("AgencyBillingIdentifier");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string AgencyBillingNumber {
-            get {
-                return this.agencyBillingNumberField;
-            }
-            set {
-                this.agencyBillingNumberField = value;
-                this.RaisePropertyChanged("AgencyBillingNumber");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string AgencyBillingPassword {
-            get {
-                return this.agencyBillingPasswordField;
-            }
-            set {
-                this.agencyBillingPasswordField = value;
-                this.RaisePropertyChanged("AgencyBillingPassword");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeVoucherInformation : object, System.ComponentModel.INotifyPropertyChanged {
         
         private typeVoucherType voucherTypeField;
@@ -4936,7 +5625,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public enum typeVoucherType {
         
         /// <remarks/>
@@ -4954,813 +5643,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
-    public partial class typeFormOfPaymentPNRReference : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string keyField;
-        
-        private bool providerReservationLevelField;
-        
-        public typeFormOfPaymentPNRReference() {
-            this.providerReservationLevelField = true;
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Key {
-            get {
-                return this.keyField;
-            }
-            set {
-                this.keyField = value;
-                this.RaisePropertyChanged("Key");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(true)]
-        public bool ProviderReservationLevel {
-            get {
-                return this.providerReservationLevelField;
-            }
-            set {
-                this.providerReservationLevelField = value;
-                this.RaisePropertyChanged("ProviderReservationLevel");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
-    public partial class typeGeneralReference : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string keyField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Key {
-            get {
-                return this.keyField;
-            }
-            set {
-                this.keyField = value;
-                this.RaisePropertyChanged("Key");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(typeCreditCardType))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
-    public partial class typePaymentCard : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private PhoneNumber phoneNumberField;
-        
-        private typeStructuredAddress billingAddressField;
-        
-        private string typeField;
-        
-        private string numberField;
-        
-        private string expDateField;
-        
-        private string nameField;
-        
-        private string cVVField;
-        
-        private string approvalCodeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public PhoneNumber PhoneNumber {
-            get {
-                return this.phoneNumberField;
-            }
-            set {
-                this.phoneNumberField = value;
-                this.RaisePropertyChanged("PhoneNumber");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public typeStructuredAddress BillingAddress {
-            get {
-                return this.billingAddressField;
-            }
-            set {
-                this.billingAddressField = value;
-                this.RaisePropertyChanged("BillingAddress");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-                this.RaisePropertyChanged("Type");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Number {
-            get {
-                return this.numberField;
-            }
-            set {
-                this.numberField = value;
-                this.RaisePropertyChanged("Number");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="gYearMonth")]
-        public string ExpDate {
-            get {
-                return this.expDateField;
-            }
-            set {
-                this.expDateField = value;
-                this.RaisePropertyChanged("ExpDate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-                this.RaisePropertyChanged("Name");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string CVV {
-            get {
-                return this.cVVField;
-            }
-            set {
-                this.cVVField = value;
-                this.RaisePropertyChanged("CVV");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ApprovalCode {
-            get {
-                return this.approvalCodeField;
-            }
-            set {
-                this.approvalCodeField = value;
-                this.RaisePropertyChanged("ApprovalCode");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
-    public partial class PhoneNumber : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private ProviderReservationInfoRef[] providerReservationInfoRefField;
-        
-        private string keyField;
-        
-        private PhoneNumberType typeField;
-        
-        private bool typeFieldSpecified;
-        
-        private string locationField;
-        
-        private string countryCodeField;
-        
-        private string areaCodeField;
-        
-        private string numberField;
-        
-        private string extensionField;
-        
-        private string textField;
-        
-        private typeElementStatus elStatField;
-        
-        private bool elStatFieldSpecified;
-        
-        private bool keyOverrideField;
-        
-        private bool keyOverrideFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("ProviderReservationInfoRef", Order=0)]
-        public ProviderReservationInfoRef[] ProviderReservationInfoRef {
-            get {
-                return this.providerReservationInfoRefField;
-            }
-            set {
-                this.providerReservationInfoRefField = value;
-                this.RaisePropertyChanged("ProviderReservationInfoRef");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Key {
-            get {
-                return this.keyField;
-            }
-            set {
-                this.keyField = value;
-                this.RaisePropertyChanged("Key");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public PhoneNumberType Type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-                this.RaisePropertyChanged("Type");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool TypeSpecified {
-            get {
-                return this.typeFieldSpecified;
-            }
-            set {
-                this.typeFieldSpecified = value;
-                this.RaisePropertyChanged("TypeSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Location {
-            get {
-                return this.locationField;
-            }
-            set {
-                this.locationField = value;
-                this.RaisePropertyChanged("Location");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string CountryCode {
-            get {
-                return this.countryCodeField;
-            }
-            set {
-                this.countryCodeField = value;
-                this.RaisePropertyChanged("CountryCode");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string AreaCode {
-            get {
-                return this.areaCodeField;
-            }
-            set {
-                this.areaCodeField = value;
-                this.RaisePropertyChanged("AreaCode");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Number {
-            get {
-                return this.numberField;
-            }
-            set {
-                this.numberField = value;
-                this.RaisePropertyChanged("Number");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Extension {
-            get {
-                return this.extensionField;
-            }
-            set {
-                this.extensionField = value;
-                this.RaisePropertyChanged("Extension");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Text {
-            get {
-                return this.textField;
-            }
-            set {
-                this.textField = value;
-                this.RaisePropertyChanged("Text");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public typeElementStatus ElStat {
-            get {
-                return this.elStatField;
-            }
-            set {
-                this.elStatField = value;
-                this.RaisePropertyChanged("ElStat");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool ElStatSpecified {
-            get {
-                return this.elStatFieldSpecified;
-            }
-            set {
-                this.elStatFieldSpecified = value;
-                this.RaisePropertyChanged("ElStatSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool KeyOverride {
-            get {
-                return this.keyOverrideField;
-            }
-            set {
-                this.keyOverrideField = value;
-                this.RaisePropertyChanged("KeyOverride");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool KeyOverrideSpecified {
-            get {
-                return this.keyOverrideFieldSpecified;
-            }
-            set {
-                this.keyOverrideFieldSpecified = value;
-                this.RaisePropertyChanged("KeyOverrideSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
-    public enum PhoneNumberType {
-        
-        /// <remarks/>
-        Agency,
-        
-        /// <remarks/>
-        Business,
-        
-        /// <remarks/>
-        Mobile,
-        
-        /// <remarks/>
-        Home,
-        
-        /// <remarks/>
-        Fax,
-        
-        /// <remarks/>
-        Hotel,
-        
-        /// <remarks/>
-        Other,
-        
-        /// <remarks/>
-        None,
-        
-        /// <remarks/>
-        Email,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
-    public partial class typeStructuredAddress : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string addressNameField;
-        
-        private string[] streetField;
-        
-        private string cityField;
-        
-        private State stateField;
-        
-        private string postalCodeField;
-        
-        private string countryField;
-        
-        private ProviderReservationInfoRef[] providerReservationInfoRefField;
-        
-        private string keyField;
-        
-        private typeElementStatus elStatField;
-        
-        private bool elStatFieldSpecified;
-        
-        private bool keyOverrideField;
-        
-        private bool keyOverrideFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string AddressName {
-            get {
-                return this.addressNameField;
-            }
-            set {
-                this.addressNameField = value;
-                this.RaisePropertyChanged("AddressName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Street", Order=1)]
-        public string[] Street {
-            get {
-                return this.streetField;
-            }
-            set {
-                this.streetField = value;
-                this.RaisePropertyChanged("Street");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string City {
-            get {
-                return this.cityField;
-            }
-            set {
-                this.cityField = value;
-                this.RaisePropertyChanged("City");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public State State {
-            get {
-                return this.stateField;
-            }
-            set {
-                this.stateField = value;
-                this.RaisePropertyChanged("State");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string PostalCode {
-            get {
-                return this.postalCodeField;
-            }
-            set {
-                this.postalCodeField = value;
-                this.RaisePropertyChanged("PostalCode");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public string Country {
-            get {
-                return this.countryField;
-            }
-            set {
-                this.countryField = value;
-                this.RaisePropertyChanged("Country");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("ProviderReservationInfoRef", Order=6)]
-        public ProviderReservationInfoRef[] ProviderReservationInfoRef {
-            get {
-                return this.providerReservationInfoRefField;
-            }
-            set {
-                this.providerReservationInfoRefField = value;
-                this.RaisePropertyChanged("ProviderReservationInfoRef");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Key {
-            get {
-                return this.keyField;
-            }
-            set {
-                this.keyField = value;
-                this.RaisePropertyChanged("Key");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public typeElementStatus ElStat {
-            get {
-                return this.elStatField;
-            }
-            set {
-                this.elStatField = value;
-                this.RaisePropertyChanged("ElStat");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool ElStatSpecified {
-            get {
-                return this.elStatFieldSpecified;
-            }
-            set {
-                this.elStatFieldSpecified = value;
-                this.RaisePropertyChanged("ElStatSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool KeyOverride {
-            get {
-                return this.keyOverrideField;
-            }
-            set {
-                this.keyOverrideField = value;
-                this.RaisePropertyChanged("KeyOverride");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool KeyOverrideSpecified {
-            get {
-                return this.keyOverrideFieldSpecified;
-            }
-            set {
-                this.keyOverrideFieldSpecified = value;
-                this.RaisePropertyChanged("KeyOverrideSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
-    public partial class State : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string valueField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public string Value {
-            get {
-                return this.valueField;
-            }
-            set {
-                this.valueField = value;
-                this.RaisePropertyChanged("Value");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
-    public partial class typeCreditCardType : typePaymentCard {
-        
-        private string extendedPaymentField;
-        
-        private string customerReferenceField;
-        
-        private bool acceptanceOverrideField;
-        
-        private bool acceptanceOverrideFieldSpecified;
-        
-        private bool thirdPartyPaymentField;
-        
-        private string bankNameField;
-        
-        private string bankCountryCodeField;
-        
-        private string bankStateCodeField;
-        
-        public typeCreditCardType() {
-            this.thirdPartyPaymentField = false;
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ExtendedPayment {
-            get {
-                return this.extendedPaymentField;
-            }
-            set {
-                this.extendedPaymentField = value;
-                this.RaisePropertyChanged("ExtendedPayment");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string CustomerReference {
-            get {
-                return this.customerReferenceField;
-            }
-            set {
-                this.customerReferenceField = value;
-                this.RaisePropertyChanged("CustomerReference");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool AcceptanceOverride {
-            get {
-                return this.acceptanceOverrideField;
-            }
-            set {
-                this.acceptanceOverrideField = value;
-                this.RaisePropertyChanged("AcceptanceOverride");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool AcceptanceOverrideSpecified {
-            get {
-                return this.acceptanceOverrideFieldSpecified;
-            }
-            set {
-                this.acceptanceOverrideFieldSpecified = value;
-                this.RaisePropertyChanged("AcceptanceOverrideSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(false)]
-        public bool ThirdPartyPayment {
-            get {
-                return this.thirdPartyPaymentField;
-            }
-            set {
-                this.thirdPartyPaymentField = value;
-                this.RaisePropertyChanged("ThirdPartyPayment");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string BankName {
-            get {
-                return this.bankNameField;
-            }
-            set {
-                this.bankNameField = value;
-                this.RaisePropertyChanged("BankName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string BankCountryCode {
-            get {
-                return this.bankCountryCodeField;
-            }
-            set {
-                this.bankCountryCodeField = value;
-                this.RaisePropertyChanged("BankCountryCode");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string BankStateCode {
-            get {
-                return this.bankStateCodeField;
-            }
-            set {
-                this.bankStateCodeField = value;
-                this.RaisePropertyChanged("BankStateCode");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeResultMessage : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string codeField;
@@ -5832,7 +5715,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public enum typeResultMessageType {
         
         /// <remarks/>
@@ -5846,14 +5729,60 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseHotelDetailsRsp))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseSearchRsp))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseHotelSearchRsp))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class typeHotelRateDescription : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string[] textField;
+        
+        private string nameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Text", Order=0)]
+        public string[] Text {
+            get {
+                return this.textField;
+            }
+            set {
+                this.textField = value;
+                this.RaisePropertyChanged("Text");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("Name");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseSearchRsp))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseHotelSearchRsp))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseHotelDetailsRsp))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class BaseRsp : object, System.ComponentModel.INotifyPropertyChanged {
         
         private ResponseMessage[] responseMessageField;
@@ -5941,7 +5870,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class ResponseMessage : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string codeField;
@@ -6041,7 +5970,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public enum ResponseMessageType {
         
         /// <remarks/>
@@ -6055,22 +5984,238 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseHotelSearchRsp))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0")]
-    public partial class BaseHotelDetailsRsp : BaseRsp {
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class BaseSearchRsp : BaseRsp {
         
-        private HotelProperty hotelPropertyField;
+        private NextResultReference[] nextResultReferenceField;
         
-        private HotelDetailItem[] hotelDetailItemField;
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("NextResultReference", Order=0)]
+        public NextResultReference[] NextResultReference {
+            get {
+                return this.nextResultReferenceField;
+            }
+            set {
+                this.nextResultReferenceField = value;
+                this.RaisePropertyChanged("NextResultReference");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class NextResultReference : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private HotelRateDetail[] hotelRateDetailField;
+        private string providerCodeField;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ProviderCode {
+            get {
+                return this.providerCodeField;
+            }
+            set {
+                this.providerCodeField = value;
+                this.RaisePropertyChanged("ProviderCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+                this.RaisePropertyChanged("Value");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class BaseHotelSearchRsp : BaseSearchRsp {
+        
+        private typeHotelReferencePoint referencePointField;
+        
+        private HotelSearchResult[] hotelSearchResultField;
+        
+        private object[] marketingInformationField;
+        
+        private HostToken hostTokenField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public HotelProperty HotelProperty {
+        public typeHotelReferencePoint ReferencePoint {
+            get {
+                return this.referencePointField;
+            }
+            set {
+                this.referencePointField = value;
+                this.RaisePropertyChanged("ReferencePoint");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("HotelSearchResult", Order=1)]
+        public HotelSearchResult[] HotelSearchResult {
+            get {
+                return this.hotelSearchResultField;
+            }
+            set {
+                this.hotelSearchResultField = value;
+                this.RaisePropertyChanged("HotelSearchResult");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Namespace="http://www.travelport.com/schema/common_v30_0", Order=2)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Text", IsNullable=false)]
+        public object[] MarketingInformation {
+            get {
+                return this.marketingInformationField;
+            }
+            set {
+                this.marketingInformationField = value;
+                this.RaisePropertyChanged("MarketingInformation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v30_0", Order=3)]
+        public HostToken HostToken {
+            get {
+                return this.hostTokenField;
+            }
+            set {
+                this.hostTokenField = value;
+                this.RaisePropertyChanged("HostToken");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class typeHotelReferencePoint : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string countryField;
+        
+        private string stateField;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Country {
+            get {
+                return this.countryField;
+            }
+            set {
+                this.countryField = value;
+                this.RaisePropertyChanged("Country");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string State {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("State");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+                this.RaisePropertyChanged("Value");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class HotelSearchResult : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private VendorLocation[] vendorLocationField;
+        
+        private HotelProperty[] hotelPropertyField;
+        
+        private HotelSearchResultHotelSearchError[] hotelSearchErrorField;
+        
+        private CorporateDiscountID[] corporateDiscountIDField;
+        
+        private RateInfo[] rateInfoField;
+        
+        private MediaItem mediaItemField;
+        
+        private HotelType hotelTypeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("VendorLocation", Namespace="http://www.travelport.com/schema/common_v30_0", Order=0)]
+        public VendorLocation[] VendorLocation {
+            get {
+                return this.vendorLocationField;
+            }
+            set {
+                this.vendorLocationField = value;
+                this.RaisePropertyChanged("VendorLocation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("HotelProperty", Order=1)]
+        public HotelProperty[] HotelProperty {
             get {
                 return this.hotelPropertyField;
             }
@@ -6081,26 +6226,71 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("HotelDetailItem", Order=1)]
-        public HotelDetailItem[] HotelDetailItem {
+        [System.Xml.Serialization.XmlElementAttribute("HotelSearchError", Order=2)]
+        public HotelSearchResultHotelSearchError[] HotelSearchError {
             get {
-                return this.hotelDetailItemField;
+                return this.hotelSearchErrorField;
             }
             set {
-                this.hotelDetailItemField = value;
-                this.RaisePropertyChanged("HotelDetailItem");
+                this.hotelSearchErrorField = value;
+                this.RaisePropertyChanged("HotelSearchError");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("HotelRateDetail", Order=2)]
-        public HotelRateDetail[] HotelRateDetail {
+        [System.Xml.Serialization.XmlElementAttribute("CorporateDiscountID", Namespace="http://www.travelport.com/schema/common_v30_0", Order=3)]
+        public CorporateDiscountID[] CorporateDiscountID {
             get {
-                return this.hotelRateDetailField;
+                return this.corporateDiscountIDField;
             }
             set {
-                this.hotelRateDetailField = value;
-                this.RaisePropertyChanged("HotelRateDetail");
+                this.corporateDiscountIDField = value;
+                this.RaisePropertyChanged("CorporateDiscountID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("RateInfo", Order=4)]
+        public RateInfo[] RateInfo {
+            get {
+                return this.rateInfoField;
+            }
+            set {
+                this.rateInfoField = value;
+                this.RaisePropertyChanged("RateInfo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v30_0", Order=5)]
+        public MediaItem MediaItem {
+            get {
+                return this.mediaItemField;
+            }
+            set {
+                this.mediaItemField = value;
+                this.RaisePropertyChanged("MediaItem");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public HotelType HotelType {
+            get {
+                return this.hotelTypeField;
+            }
+            set {
+                this.hotelTypeField = value;
+                this.RaisePropertyChanged("HotelType");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -6110,7 +6300,90 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class VendorLocation : typeVendorLocation {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class typeVendorLocation : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string providerCodeField;
+        
+        private string vendorCodeField;
+        
+        private string vendorLocationIDField;
+        
+        private string keyField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ProviderCode {
+            get {
+                return this.providerCodeField;
+            }
+            set {
+                this.providerCodeField = value;
+                this.RaisePropertyChanged("ProviderCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string VendorCode {
+            get {
+                return this.vendorCodeField;
+            }
+            set {
+                this.vendorCodeField = value;
+                this.RaisePropertyChanged("VendorCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string VendorLocationID {
+            get {
+                return this.vendorLocationIDField;
+            }
+            set {
+                this.vendorLocationIDField = value;
+                this.RaisePropertyChanged("VendorLocationID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("Key");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class HotelProperty : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string[] propertyAddressField;
@@ -6179,7 +6452,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("PhoneNumber", Namespace="http://www.travelport.com/schema/common_v25_0", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("PhoneNumber", Namespace="http://www.travelport.com/schema/common_v30_0", Order=1)]
         public PhoneNumber[] PhoneNumber {
             get {
                 return this.phoneNumberField;
@@ -6191,7 +6464,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v25_0", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v30_0", Order=2)]
         public CoordinateLocation CoordinateLocation {
             get {
                 return this.coordinateLocationField;
@@ -6203,7 +6476,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v25_0", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v30_0", Order=3)]
         public Distance Distance {
             get {
                 return this.distanceField;
@@ -6494,7 +6767,255 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class PhoneNumber : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private ProviderReservationInfoRef[] providerReservationInfoRefField;
+        
+        private string keyField;
+        
+        private PhoneNumberType typeField;
+        
+        private bool typeFieldSpecified;
+        
+        private string locationField;
+        
+        private string countryCodeField;
+        
+        private string areaCodeField;
+        
+        private string numberField;
+        
+        private string extensionField;
+        
+        private string textField;
+        
+        private typeElementStatus elStatField;
+        
+        private bool elStatFieldSpecified;
+        
+        private bool keyOverrideField;
+        
+        private bool keyOverrideFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("ProviderReservationInfoRef", Order=0)]
+        public ProviderReservationInfoRef[] ProviderReservationInfoRef {
+            get {
+                return this.providerReservationInfoRefField;
+            }
+            set {
+                this.providerReservationInfoRefField = value;
+                this.RaisePropertyChanged("ProviderReservationInfoRef");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("Key");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public PhoneNumberType Type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+                this.RaisePropertyChanged("Type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool TypeSpecified {
+            get {
+                return this.typeFieldSpecified;
+            }
+            set {
+                this.typeFieldSpecified = value;
+                this.RaisePropertyChanged("TypeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Location {
+            get {
+                return this.locationField;
+            }
+            set {
+                this.locationField = value;
+                this.RaisePropertyChanged("Location");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CountryCode {
+            get {
+                return this.countryCodeField;
+            }
+            set {
+                this.countryCodeField = value;
+                this.RaisePropertyChanged("CountryCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string AreaCode {
+            get {
+                return this.areaCodeField;
+            }
+            set {
+                this.areaCodeField = value;
+                this.RaisePropertyChanged("AreaCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Number {
+            get {
+                return this.numberField;
+            }
+            set {
+                this.numberField = value;
+                this.RaisePropertyChanged("Number");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Extension {
+            get {
+                return this.extensionField;
+            }
+            set {
+                this.extensionField = value;
+                this.RaisePropertyChanged("Extension");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Text {
+            get {
+                return this.textField;
+            }
+            set {
+                this.textField = value;
+                this.RaisePropertyChanged("Text");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public typeElementStatus ElStat {
+            get {
+                return this.elStatField;
+            }
+            set {
+                this.elStatField = value;
+                this.RaisePropertyChanged("ElStat");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ElStatSpecified {
+            get {
+                return this.elStatFieldSpecified;
+            }
+            set {
+                this.elStatFieldSpecified = value;
+                this.RaisePropertyChanged("ElStatSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool KeyOverride {
+            get {
+                return this.keyOverrideField;
+            }
+            set {
+                this.keyOverrideField = value;
+                this.RaisePropertyChanged("KeyOverride");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool KeyOverrideSpecified {
+            get {
+                return this.keyOverrideFieldSpecified;
+            }
+            set {
+                this.keyOverrideFieldSpecified = value;
+                this.RaisePropertyChanged("KeyOverrideSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public enum PhoneNumberType {
+        
+        /// <remarks/>
+        Agency,
+        
+        /// <remarks/>
+        Business,
+        
+        /// <remarks/>
+        Mobile,
+        
+        /// <remarks/>
+        Home,
+        
+        /// <remarks/>
+        Fax,
+        
+        /// <remarks/>
+        Hotel,
+        
+        /// <remarks/>
+        Other,
+        
+        /// <remarks/>
+        None,
+        
+        /// <remarks/>
+        Email,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class HotelRating : object, System.ComponentModel.INotifyPropertyChanged {
         
         private object[] itemsField;
@@ -6541,7 +7062,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class RatingRange : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string minimumRatingField;
@@ -6587,7 +7108,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class AmenitiesAmenity : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string codeField;
@@ -6617,7 +7138,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public enum typeReserveRequirement {
         
         /// <remarks/>
@@ -6633,7 +7154,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public enum typeHotelAvailability {
         
         /// <remarks/>
@@ -6655,7 +7176,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public enum typeNetTransCommission {
         
         /// <remarks/>
@@ -6679,376 +7200,10 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
-    public partial class HotelDetailItem : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string[] textField;
-        
-        private string nameField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Text", Order=0)]
-        public string[] Text {
-            get {
-                return this.textField;
-            }
-            set {
-                this.textField = value;
-                this.RaisePropertyChanged("Text");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-                this.RaisePropertyChanged("Name");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
-    public partial class HotelRateDetail : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private typeHotelRateDescription[] roomRateDescriptionField;
-        
-        private HotelRateByDate[] hotelRateByDateField;
-        
-        private CorporateDiscountID[] corporateDiscountIDField;
-        
-        private RateMatchIndicator[] rateMatchIndicatorField;
-        
-        private Tax[] taxDetailsField;
-        
-        private MealPlan[] mealPlansField;
-        
-        private CancelInfo cancelInfoField;
-        
-        private GuaranteeInfo guaranteeInfoField;
-        
-        private string ratePlanTypeField;
-        
-        private string baseField;
-        
-        private string taxField;
-        
-        private string totalField;
-        
-        private string surchargeField;
-        
-        private string approximateBaseField;
-        
-        private string approximateTaxField;
-        
-        private string approximateTotalField;
-        
-        private bool rateGuaranteedField;
-        
-        private bool rateGuaranteedFieldSpecified;
-        
-        private bool approximateRateGuaranteedField;
-        
-        private bool approximateRateGuaranteedFieldSpecified;
-        
-        private string rateCategoryField;
-        
-        private string keyField;
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class HotelSearchResultHotelSearchError : typeResultMessage {
         
         private string rateSupplierField;
-        
-        private string rateOfferIdField;
-        
-        private bool inPolicyField;
-        
-        private bool inPolicyFieldSpecified;
-        
-        private int policyCodeField;
-        
-        private bool policyCodeFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("RoomRateDescription", Order=0)]
-        public typeHotelRateDescription[] RoomRateDescription {
-            get {
-                return this.roomRateDescriptionField;
-            }
-            set {
-                this.roomRateDescriptionField = value;
-                this.RaisePropertyChanged("RoomRateDescription");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("HotelRateByDate", Order=1)]
-        public HotelRateByDate[] HotelRateByDate {
-            get {
-                return this.hotelRateByDateField;
-            }
-            set {
-                this.hotelRateByDateField = value;
-                this.RaisePropertyChanged("HotelRateByDate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("CorporateDiscountID", Namespace="http://www.travelport.com/schema/common_v25_0", Order=2)]
-        public CorporateDiscountID[] CorporateDiscountID {
-            get {
-                return this.corporateDiscountIDField;
-            }
-            set {
-                this.corporateDiscountIDField = value;
-                this.RaisePropertyChanged("CorporateDiscountID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("RateMatchIndicator", Order=3)]
-        public RateMatchIndicator[] RateMatchIndicator {
-            get {
-                return this.rateMatchIndicatorField;
-            }
-            set {
-                this.rateMatchIndicatorField = value;
-                this.RaisePropertyChanged("RateMatchIndicator");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=4)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("Tax", IsNullable=false)]
-        public Tax[] TaxDetails {
-            get {
-                return this.taxDetailsField;
-            }
-            set {
-                this.taxDetailsField = value;
-                this.RaisePropertyChanged("TaxDetails");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=5)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("MealPlan", IsNullable=false)]
-        public MealPlan[] MealPlans {
-            get {
-                return this.mealPlansField;
-            }
-            set {
-                this.mealPlansField = value;
-                this.RaisePropertyChanged("MealPlans");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public CancelInfo CancelInfo {
-            get {
-                return this.cancelInfoField;
-            }
-            set {
-                this.cancelInfoField = value;
-                this.RaisePropertyChanged("CancelInfo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
-        public GuaranteeInfo GuaranteeInfo {
-            get {
-                return this.guaranteeInfoField;
-            }
-            set {
-                this.guaranteeInfoField = value;
-                this.RaisePropertyChanged("GuaranteeInfo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string RatePlanType {
-            get {
-                return this.ratePlanTypeField;
-            }
-            set {
-                this.ratePlanTypeField = value;
-                this.RaisePropertyChanged("RatePlanType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Base {
-            get {
-                return this.baseField;
-            }
-            set {
-                this.baseField = value;
-                this.RaisePropertyChanged("Base");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Tax {
-            get {
-                return this.taxField;
-            }
-            set {
-                this.taxField = value;
-                this.RaisePropertyChanged("Tax");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Total {
-            get {
-                return this.totalField;
-            }
-            set {
-                this.totalField = value;
-                this.RaisePropertyChanged("Total");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Surcharge {
-            get {
-                return this.surchargeField;
-            }
-            set {
-                this.surchargeField = value;
-                this.RaisePropertyChanged("Surcharge");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ApproximateBase {
-            get {
-                return this.approximateBaseField;
-            }
-            set {
-                this.approximateBaseField = value;
-                this.RaisePropertyChanged("ApproximateBase");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ApproximateTax {
-            get {
-                return this.approximateTaxField;
-            }
-            set {
-                this.approximateTaxField = value;
-                this.RaisePropertyChanged("ApproximateTax");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ApproximateTotal {
-            get {
-                return this.approximateTotalField;
-            }
-            set {
-                this.approximateTotalField = value;
-                this.RaisePropertyChanged("ApproximateTotal");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool RateGuaranteed {
-            get {
-                return this.rateGuaranteedField;
-            }
-            set {
-                this.rateGuaranteedField = value;
-                this.RaisePropertyChanged("RateGuaranteed");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool RateGuaranteedSpecified {
-            get {
-                return this.rateGuaranteedFieldSpecified;
-            }
-            set {
-                this.rateGuaranteedFieldSpecified = value;
-                this.RaisePropertyChanged("RateGuaranteedSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool ApproximateRateGuaranteed {
-            get {
-                return this.approximateRateGuaranteedField;
-            }
-            set {
-                this.approximateRateGuaranteedField = value;
-                this.RaisePropertyChanged("ApproximateRateGuaranteed");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool ApproximateRateGuaranteedSpecified {
-            get {
-                return this.approximateRateGuaranteedFieldSpecified;
-            }
-            set {
-                this.approximateRateGuaranteedFieldSpecified = value;
-                this.RaisePropertyChanged("ApproximateRateGuaranteedSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string RateCategory {
-            get {
-                return this.rateCategoryField;
-            }
-            set {
-                this.rateCategoryField = value;
-                this.RaisePropertyChanged("RateCategory");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Key {
-            get {
-                return this.keyField;
-            }
-            set {
-                this.keyField = value;
-                this.RaisePropertyChanged("Key");
-            }
-        }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
@@ -7061,75 +7216,6 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
                 this.RaisePropertyChanged("RateSupplier");
             }
         }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string RateOfferId {
-            get {
-                return this.rateOfferIdField;
-            }
-            set {
-                this.rateOfferIdField = value;
-                this.RaisePropertyChanged("RateOfferId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool InPolicy {
-            get {
-                return this.inPolicyField;
-            }
-            set {
-                this.inPolicyField = value;
-                this.RaisePropertyChanged("InPolicy");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool InPolicySpecified {
-            get {
-                return this.inPolicyFieldSpecified;
-            }
-            set {
-                this.inPolicyFieldSpecified = value;
-                this.RaisePropertyChanged("InPolicySpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int PolicyCode {
-            get {
-                return this.policyCodeField;
-            }
-            set {
-                this.policyCodeField = value;
-                this.RaisePropertyChanged("PolicyCode");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool PolicyCodeSpecified {
-            get {
-                return this.policyCodeFieldSpecified;
-            }
-            set {
-                this.policyCodeFieldSpecified = value;
-                this.RaisePropertyChanged("PolicyCodeSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
     }
     
     /// <remarks/>
@@ -7137,151 +7223,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
-    public partial class HotelRateByDate : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string effectiveDateField;
-        
-        private string expireDateField;
-        
-        private string baseField;
-        
-        private string taxField;
-        
-        private string totalField;
-        
-        private string surchargeField;
-        
-        private string approximateBaseField;
-        
-        private string approximateTotalField;
-        
-        private string rateOverrideAmountField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string EffectiveDate {
-            get {
-                return this.effectiveDateField;
-            }
-            set {
-                this.effectiveDateField = value;
-                this.RaisePropertyChanged("EffectiveDate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ExpireDate {
-            get {
-                return this.expireDateField;
-            }
-            set {
-                this.expireDateField = value;
-                this.RaisePropertyChanged("ExpireDate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Base {
-            get {
-                return this.baseField;
-            }
-            set {
-                this.baseField = value;
-                this.RaisePropertyChanged("Base");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Tax {
-            get {
-                return this.taxField;
-            }
-            set {
-                this.taxField = value;
-                this.RaisePropertyChanged("Tax");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Total {
-            get {
-                return this.totalField;
-            }
-            set {
-                this.totalField = value;
-                this.RaisePropertyChanged("Total");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Surcharge {
-            get {
-                return this.surchargeField;
-            }
-            set {
-                this.surchargeField = value;
-                this.RaisePropertyChanged("Surcharge");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ApproximateBase {
-            get {
-                return this.approximateBaseField;
-            }
-            set {
-                this.approximateBaseField = value;
-                this.RaisePropertyChanged("ApproximateBase");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ApproximateTotal {
-            get {
-                return this.approximateTotalField;
-            }
-            set {
-                this.approximateTotalField = value;
-                this.RaisePropertyChanged("ApproximateTotal");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string RateOverrideAmount {
-            get {
-                return this.rateOverrideAmountField;
-            }
-            set {
-                this.rateOverrideAmountField = value;
-                this.RaisePropertyChanged("RateOverrideAmount");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class CorporateDiscountID : object, System.ComponentModel.INotifyPropertyChanged {
         
         private bool negotiatedRateCodeField;
@@ -7341,1078 +7283,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
-    public partial class RateMatchIndicator : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private RateMatchIndicatorType typeField;
-        
-        private RateMatchIndicatorStatus statusField;
-        
-        private string valueField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public RateMatchIndicatorType Type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-                this.RaisePropertyChanged("Type");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public RateMatchIndicatorStatus Status {
-            get {
-                return this.statusField;
-            }
-            set {
-                this.statusField = value;
-                this.RaisePropertyChanged("Status");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Value {
-            get {
-                return this.valueField;
-            }
-            set {
-                this.valueField = value;
-                this.RaisePropertyChanged("Value");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
-    public enum RateMatchIndicatorType {
-        
-        /// <remarks/>
-        RateCategory,
-        
-        /// <remarks/>
-        RoomCount,
-        
-        /// <remarks/>
-        BedType,
-        
-        /// <remarks/>
-        AdultCount,
-        
-        /// <remarks/>
-        ChildCount,
-        
-        /// <remarks/>
-        AdultRollaway,
-        
-        /// <remarks/>
-        ChildRollaway,
-        
-        /// <remarks/>
-        Crib,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
-    public enum RateMatchIndicatorStatus {
-        
-        /// <remarks/>
-        Available,
-        
-        /// <remarks/>
-        NotAvailable,
-        
-        /// <remarks/>
-        SubstituteOffered,
-        
-        /// <remarks/>
-        MaximumExceeded,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
-    public partial class Tax : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private object itemField;
-        
-        private string codeField;
-        
-        private System.DateTime effectiveDateField;
-        
-        private bool effectiveDateFieldSpecified;
-        
-        private System.DateTime expirationDateField;
-        
-        private bool expirationDateFieldSpecified;
-        
-        private string termField;
-        
-        private string collectionFreqField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Amount", typeof(string), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("Percentage", typeof(float), Order=0)]
-        public object Item {
-            get {
-                return this.itemField;
-            }
-            set {
-                this.itemField = value;
-                this.RaisePropertyChanged("Item");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Code {
-            get {
-                return this.codeField;
-            }
-            set {
-                this.codeField = value;
-                this.RaisePropertyChanged("Code");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
-        public System.DateTime EffectiveDate {
-            get {
-                return this.effectiveDateField;
-            }
-            set {
-                this.effectiveDateField = value;
-                this.RaisePropertyChanged("EffectiveDate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool EffectiveDateSpecified {
-            get {
-                return this.effectiveDateFieldSpecified;
-            }
-            set {
-                this.effectiveDateFieldSpecified = value;
-                this.RaisePropertyChanged("EffectiveDateSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
-        public System.DateTime ExpirationDate {
-            get {
-                return this.expirationDateField;
-            }
-            set {
-                this.expirationDateField = value;
-                this.RaisePropertyChanged("ExpirationDate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool ExpirationDateSpecified {
-            get {
-                return this.expirationDateFieldSpecified;
-            }
-            set {
-                this.expirationDateFieldSpecified = value;
-                this.RaisePropertyChanged("ExpirationDateSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Term {
-            get {
-                return this.termField;
-            }
-            set {
-                this.termField = value;
-                this.RaisePropertyChanged("Term");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string CollectionFreq {
-            get {
-                return this.collectionFreqField;
-            }
-            set {
-                this.collectionFreqField = value;
-                this.RaisePropertyChanged("CollectionFreq");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
-    public partial class MealPlan : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string codeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Code {
-            get {
-                return this.codeField;
-            }
-            set {
-                this.codeField = value;
-                this.RaisePropertyChanged("Code");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
-    public partial class CancelInfo : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private bool nonRefundableStayIndicatorField;
-        
-        private bool nonRefundableStayIndicatorFieldSpecified;
-        
-        private System.DateTime cancelDeadlineField;
-        
-        private bool cancelDeadlineFieldSpecified;
-        
-        private bool taxInclusiveField;
-        
-        private bool taxInclusiveFieldSpecified;
-        
-        private bool feeInclusiveField;
-        
-        private bool feeInclusiveFieldSpecified;
-        
-        private string cancelPenaltyAmountField;
-        
-        private string numberOfNightsField;
-        
-        private float cancelPenaltyPercentField;
-        
-        private bool cancelPenaltyPercentFieldSpecified;
-        
-        private string cancelPenaltyPercentAppliesToField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool NonRefundableStayIndicator {
-            get {
-                return this.nonRefundableStayIndicatorField;
-            }
-            set {
-                this.nonRefundableStayIndicatorField = value;
-                this.RaisePropertyChanged("NonRefundableStayIndicator");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool NonRefundableStayIndicatorSpecified {
-            get {
-                return this.nonRefundableStayIndicatorFieldSpecified;
-            }
-            set {
-                this.nonRefundableStayIndicatorFieldSpecified = value;
-                this.RaisePropertyChanged("NonRefundableStayIndicatorSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public System.DateTime CancelDeadline {
-            get {
-                return this.cancelDeadlineField;
-            }
-            set {
-                this.cancelDeadlineField = value;
-                this.RaisePropertyChanged("CancelDeadline");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool CancelDeadlineSpecified {
-            get {
-                return this.cancelDeadlineFieldSpecified;
-            }
-            set {
-                this.cancelDeadlineFieldSpecified = value;
-                this.RaisePropertyChanged("CancelDeadlineSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool TaxInclusive {
-            get {
-                return this.taxInclusiveField;
-            }
-            set {
-                this.taxInclusiveField = value;
-                this.RaisePropertyChanged("TaxInclusive");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool TaxInclusiveSpecified {
-            get {
-                return this.taxInclusiveFieldSpecified;
-            }
-            set {
-                this.taxInclusiveFieldSpecified = value;
-                this.RaisePropertyChanged("TaxInclusiveSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool FeeInclusive {
-            get {
-                return this.feeInclusiveField;
-            }
-            set {
-                this.feeInclusiveField = value;
-                this.RaisePropertyChanged("FeeInclusive");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool FeeInclusiveSpecified {
-            get {
-                return this.feeInclusiveFieldSpecified;
-            }
-            set {
-                this.feeInclusiveFieldSpecified = value;
-                this.RaisePropertyChanged("FeeInclusiveSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string CancelPenaltyAmount {
-            get {
-                return this.cancelPenaltyAmountField;
-            }
-            set {
-                this.cancelPenaltyAmountField = value;
-                this.RaisePropertyChanged("CancelPenaltyAmount");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="nonNegativeInteger")]
-        public string NumberOfNights {
-            get {
-                return this.numberOfNightsField;
-            }
-            set {
-                this.numberOfNightsField = value;
-                this.RaisePropertyChanged("NumberOfNights");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public float CancelPenaltyPercent {
-            get {
-                return this.cancelPenaltyPercentField;
-            }
-            set {
-                this.cancelPenaltyPercentField = value;
-                this.RaisePropertyChanged("CancelPenaltyPercent");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool CancelPenaltyPercentSpecified {
-            get {
-                return this.cancelPenaltyPercentFieldSpecified;
-            }
-            set {
-                this.cancelPenaltyPercentFieldSpecified = value;
-                this.RaisePropertyChanged("CancelPenaltyPercentSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string CancelPenaltyPercentAppliesTo {
-            get {
-                return this.cancelPenaltyPercentAppliesToField;
-            }
-            set {
-                this.cancelPenaltyPercentAppliesToField = value;
-                this.RaisePropertyChanged("CancelPenaltyPercentAppliesTo");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
-    public partial class GuaranteeInfo : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private object itemField;
-        
-        private ItemChoiceType2 itemElementNameField;
-        
-        private GuaranteePaymentType[] guaranteePaymentTypeField;
-        
-        private System.DateTime absoluteDeadlineField;
-        
-        private bool absoluteDeadlineFieldSpecified;
-        
-        private bool credentialsRequiredField;
-        
-        private bool credentialsRequiredFieldSpecified;
-        
-        private string holdTimeField;
-        
-        private GuaranteeInfoGuaranteeType guaranteeTypeField;
-        
-        private bool guaranteeTypeFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("DepositAmount", typeof(DepositAmount), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("DepositNights", typeof(string), DataType="integer", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("DepositPercent", typeof(string), DataType="integer", Order=0)]
-        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
-        public object Item {
-            get {
-                return this.itemField;
-            }
-            set {
-                this.itemField = value;
-                this.RaisePropertyChanged("Item");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public ItemChoiceType2 ItemElementName {
-            get {
-                return this.itemElementNameField;
-            }
-            set {
-                this.itemElementNameField = value;
-                this.RaisePropertyChanged("ItemElementName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("GuaranteePaymentType", Order=2)]
-        public GuaranteePaymentType[] GuaranteePaymentType {
-            get {
-                return this.guaranteePaymentTypeField;
-            }
-            set {
-                this.guaranteePaymentTypeField = value;
-                this.RaisePropertyChanged("GuaranteePaymentType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public System.DateTime AbsoluteDeadline {
-            get {
-                return this.absoluteDeadlineField;
-            }
-            set {
-                this.absoluteDeadlineField = value;
-                this.RaisePropertyChanged("AbsoluteDeadline");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool AbsoluteDeadlineSpecified {
-            get {
-                return this.absoluteDeadlineFieldSpecified;
-            }
-            set {
-                this.absoluteDeadlineFieldSpecified = value;
-                this.RaisePropertyChanged("AbsoluteDeadlineSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool CredentialsRequired {
-            get {
-                return this.credentialsRequiredField;
-            }
-            set {
-                this.credentialsRequiredField = value;
-                this.RaisePropertyChanged("CredentialsRequired");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool CredentialsRequiredSpecified {
-            get {
-                return this.credentialsRequiredFieldSpecified;
-            }
-            set {
-                this.credentialsRequiredFieldSpecified = value;
-                this.RaisePropertyChanged("CredentialsRequiredSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string HoldTime {
-            get {
-                return this.holdTimeField;
-            }
-            set {
-                this.holdTimeField = value;
-                this.RaisePropertyChanged("HoldTime");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public GuaranteeInfoGuaranteeType GuaranteeType {
-            get {
-                return this.guaranteeTypeField;
-            }
-            set {
-                this.guaranteeTypeField = value;
-                this.RaisePropertyChanged("GuaranteeType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool GuaranteeTypeSpecified {
-            get {
-                return this.guaranteeTypeFieldSpecified;
-            }
-            set {
-                this.guaranteeTypeFieldSpecified = value;
-                this.RaisePropertyChanged("GuaranteeTypeSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
-    public partial class DepositAmount : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string approximateDepositAmountField;
-        
-        private string valueField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ApproximateDepositAmount {
-            get {
-                return this.approximateDepositAmountField;
-            }
-            set {
-                this.approximateDepositAmountField = value;
-                this.RaisePropertyChanged("ApproximateDepositAmount");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public string Value {
-            get {
-                return this.valueField;
-            }
-            set {
-                this.valueField = value;
-                this.RaisePropertyChanged("Value");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0", IncludeInSchema=false)]
-    public enum ItemChoiceType2 {
-        
-        /// <remarks/>
-        DepositAmount,
-        
-        /// <remarks/>
-        DepositNights,
-        
-        /// <remarks/>
-        DepositPercent,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
-    public partial class GuaranteePaymentType : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string typeField;
-        
-        private string descriptionField;
-        
-        private string valueField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-                this.RaisePropertyChanged("Type");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Description {
-            get {
-                return this.descriptionField;
-            }
-            set {
-                this.descriptionField = value;
-                this.RaisePropertyChanged("Description");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public string Value {
-            get {
-                return this.valueField;
-            }
-            set {
-                this.valueField = value;
-                this.RaisePropertyChanged("Value");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
-    public enum GuaranteeInfoGuaranteeType {
-        
-        /// <remarks/>
-        Deposit,
-        
-        /// <remarks/>
-        Guarantee,
-        
-        /// <remarks/>
-        Prepayment,
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseHotelSearchRsp))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
-    public partial class BaseSearchRsp : BaseRsp {
-        
-        private NextResultReference[] nextResultReferenceField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("NextResultReference", Order=0)]
-        public NextResultReference[] NextResultReference {
-            get {
-                return this.nextResultReferenceField;
-            }
-            set {
-                this.nextResultReferenceField = value;
-                this.RaisePropertyChanged("NextResultReference");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
-    public partial class NextResultReference : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string providerCodeField;
-        
-        private string valueField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ProviderCode {
-            get {
-                return this.providerCodeField;
-            }
-            set {
-                this.providerCodeField = value;
-                this.RaisePropertyChanged("ProviderCode");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public string Value {
-            get {
-                return this.valueField;
-            }
-            set {
-                this.valueField = value;
-                this.RaisePropertyChanged("Value");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0")]
-    public partial class BaseHotelSearchRsp : BaseSearchRsp {
-        
-        private VendorLocation[] vendorLocationField;
-        
-        private HotelSearchResult[] hotelSearchResultField;
-        
-        private object[] marketingInformationField;
-        
-        private HostToken hostTokenField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("VendorLocation", Namespace="http://www.travelport.com/schema/common_v25_0", Order=0)]
-        public VendorLocation[] VendorLocation {
-            get {
-                return this.vendorLocationField;
-            }
-            set {
-                this.vendorLocationField = value;
-                this.RaisePropertyChanged("VendorLocation");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("HotelSearchResult", Order=1)]
-        public HotelSearchResult[] HotelSearchResult {
-            get {
-                return this.hotelSearchResultField;
-            }
-            set {
-                this.hotelSearchResultField = value;
-                this.RaisePropertyChanged("HotelSearchResult");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Namespace="http://www.travelport.com/schema/common_v25_0", Order=2)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("Text", IsNullable=false)]
-        public object[] MarketingInformation {
-            get {
-                return this.marketingInformationField;
-            }
-            set {
-                this.marketingInformationField = value;
-                this.RaisePropertyChanged("MarketingInformation");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v25_0", Order=3)]
-        public HostToken HostToken {
-            get {
-                return this.hostTokenField;
-            }
-            set {
-                this.hostTokenField = value;
-                this.RaisePropertyChanged("HostToken");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
-    public partial class VendorLocation : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string providerCodeField;
-        
-        private string vendorCodeField;
-        
-        private string vendorLocationIDField;
-        
-        private string keyField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ProviderCode {
-            get {
-                return this.providerCodeField;
-            }
-            set {
-                this.providerCodeField = value;
-                this.RaisePropertyChanged("ProviderCode");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string VendorCode {
-            get {
-                return this.vendorCodeField;
-            }
-            set {
-                this.vendorCodeField = value;
-                this.RaisePropertyChanged("VendorCode");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string VendorLocationID {
-            get {
-                return this.vendorLocationIDField;
-            }
-            set {
-                this.vendorLocationIDField = value;
-                this.RaisePropertyChanged("VendorLocationID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Key {
-            get {
-                return this.keyField;
-            }
-            set {
-                this.keyField = value;
-                this.RaisePropertyChanged("Key");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
-    public partial class HotelSearchResult : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private HotelProperty hotelPropertyField;
-        
-        private typeResultMessage[] hotelSearchErrorField;
-        
-        private CorporateDiscountID[] corporateDiscountIDField;
-        
-        private RateInfo[] rateInfoField;
-        
-        private MediaItem mediaItemField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public HotelProperty HotelProperty {
-            get {
-                return this.hotelPropertyField;
-            }
-            set {
-                this.hotelPropertyField = value;
-                this.RaisePropertyChanged("HotelProperty");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("HotelSearchError", Order=1)]
-        public typeResultMessage[] HotelSearchError {
-            get {
-                return this.hotelSearchErrorField;
-            }
-            set {
-                this.hotelSearchErrorField = value;
-                this.RaisePropertyChanged("HotelSearchError");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("CorporateDiscountID", Namespace="http://www.travelport.com/schema/common_v25_0", Order=2)]
-        public CorporateDiscountID[] CorporateDiscountID {
-            get {
-                return this.corporateDiscountIDField;
-            }
-            set {
-                this.corporateDiscountIDField = value;
-                this.RaisePropertyChanged("CorporateDiscountID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("RateInfo", Order=3)]
-        public RateInfo[] RateInfo {
-            get {
-                return this.rateInfoField;
-            }
-            set {
-                this.rateInfoField = value;
-                this.RaisePropertyChanged("RateInfo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v25_0", Order=4)]
-        public MediaItem MediaItem {
-            get {
-                return this.mediaItemField;
-            }
-            set {
-                this.mediaItemField = value;
-                this.RaisePropertyChanged("MediaItem");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class RateInfo : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string minimumAmountField;
@@ -8764,7 +7635,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public enum typeHotelPaymentType {
         
         /// <remarks/>
@@ -8779,7 +7650,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class MediaItem : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string captionField;
@@ -8895,7 +7766,53 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class HotelType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private bool sourceLinkField;
+        
+        private bool sourceLinkFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool SourceLink {
+            get {
+                return this.sourceLinkField;
+            }
+            set {
+                this.sourceLinkField = value;
+                this.RaisePropertyChanged("SourceLink");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool SourceLinkSpecified {
+            get {
+                return this.sourceLinkFieldSpecified;
+            }
+            set {
+                this.sourceLinkFieldSpecified = value;
+                this.RaisePropertyChanged("SourceLinkSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class HostToken : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string hostField;
@@ -9011,7 +7928,2141 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class BaseHotelDetailsRsp : BaseRsp {
+        
+        private HotelProperty hotelPropertyField;
+        
+        private HotelDetailItem[] hotelDetailItemField;
+        
+        private HotelRateDetail[] hotelRateDetailField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public HotelProperty HotelProperty {
+            get {
+                return this.hotelPropertyField;
+            }
+            set {
+                this.hotelPropertyField = value;
+                this.RaisePropertyChanged("HotelProperty");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("HotelDetailItem", Order=1)]
+        public HotelDetailItem[] HotelDetailItem {
+            get {
+                return this.hotelDetailItemField;
+            }
+            set {
+                this.hotelDetailItemField = value;
+                this.RaisePropertyChanged("HotelDetailItem");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("HotelRateDetail", Order=2)]
+        public HotelRateDetail[] HotelRateDetail {
+            get {
+                return this.hotelRateDetailField;
+            }
+            set {
+                this.hotelRateDetailField = value;
+                this.RaisePropertyChanged("HotelRateDetail");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class HotelDetailItem : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string[] textField;
+        
+        private string nameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Text", Order=0)]
+        public string[] Text {
+            get {
+                return this.textField;
+            }
+            set {
+                this.textField = value;
+                this.RaisePropertyChanged("Text");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("Name");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class HotelRateDetail : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private typeHotelRateDescription[] roomRateDescriptionField;
+        
+        private HotelRateByDate[] hotelRateByDateField;
+        
+        private CorporateDiscountID[] corporateDiscountIDField;
+        
+        private RateMatchIndicator[] rateMatchIndicatorField;
+        
+        private Tax[] taxDetailsField;
+        
+        private MealPlan[] mealPlansField;
+        
+        private CancelInfo cancelInfoField;
+        
+        private GuaranteeInfo guaranteeInfoField;
+        
+        private RoomView roomViewField;
+        
+        private string taxSurchargeInfoField;
+        
+        private string ratePlanTypeField;
+        
+        private string baseField;
+        
+        private string taxField;
+        
+        private string totalField;
+        
+        private string surchargeField;
+        
+        private string approximateBaseField;
+        
+        private string approximateTaxField;
+        
+        private string approximateTotalField;
+        
+        private string approximateSurchargeField;
+        
+        private bool rateGuaranteedField;
+        
+        private bool rateGuaranteedFieldSpecified;
+        
+        private bool approximateRateGuaranteedField;
+        
+        private bool approximateRateGuaranteedFieldSpecified;
+        
+        private string rateCategoryField;
+        
+        private string keyField;
+        
+        private string rateSupplierField;
+        
+        private string rateOfferIdField;
+        
+        private bool inPolicyField;
+        
+        private bool inPolicyFieldSpecified;
+        
+        private int policyCodeField;
+        
+        private bool policyCodeFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("RoomRateDescription", Order=0)]
+        public typeHotelRateDescription[] RoomRateDescription {
+            get {
+                return this.roomRateDescriptionField;
+            }
+            set {
+                this.roomRateDescriptionField = value;
+                this.RaisePropertyChanged("RoomRateDescription");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("HotelRateByDate", Order=1)]
+        public HotelRateByDate[] HotelRateByDate {
+            get {
+                return this.hotelRateByDateField;
+            }
+            set {
+                this.hotelRateByDateField = value;
+                this.RaisePropertyChanged("HotelRateByDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("CorporateDiscountID", Namespace="http://www.travelport.com/schema/common_v30_0", Order=2)]
+        public CorporateDiscountID[] CorporateDiscountID {
+            get {
+                return this.corporateDiscountIDField;
+            }
+            set {
+                this.corporateDiscountIDField = value;
+                this.RaisePropertyChanged("CorporateDiscountID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("RateMatchIndicator", Order=3)]
+        public RateMatchIndicator[] RateMatchIndicator {
+            get {
+                return this.rateMatchIndicatorField;
+            }
+            set {
+                this.rateMatchIndicatorField = value;
+                this.RaisePropertyChanged("RateMatchIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=4)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Tax", IsNullable=false)]
+        public Tax[] TaxDetails {
+            get {
+                return this.taxDetailsField;
+            }
+            set {
+                this.taxDetailsField = value;
+                this.RaisePropertyChanged("TaxDetails");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=5)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("MealPlan", IsNullable=false)]
+        public MealPlan[] MealPlans {
+            get {
+                return this.mealPlansField;
+            }
+            set {
+                this.mealPlansField = value;
+                this.RaisePropertyChanged("MealPlans");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public CancelInfo CancelInfo {
+            get {
+                return this.cancelInfoField;
+            }
+            set {
+                this.cancelInfoField = value;
+                this.RaisePropertyChanged("CancelInfo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public GuaranteeInfo GuaranteeInfo {
+            get {
+                return this.guaranteeInfoField;
+            }
+            set {
+                this.guaranteeInfoField = value;
+                this.RaisePropertyChanged("GuaranteeInfo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public RoomView RoomView {
+            get {
+                return this.roomViewField;
+            }
+            set {
+                this.roomViewField = value;
+                this.RaisePropertyChanged("RoomView");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string TaxSurchargeInfo {
+            get {
+                return this.taxSurchargeInfoField;
+            }
+            set {
+                this.taxSurchargeInfoField = value;
+                this.RaisePropertyChanged("TaxSurchargeInfo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string RatePlanType {
+            get {
+                return this.ratePlanTypeField;
+            }
+            set {
+                this.ratePlanTypeField = value;
+                this.RaisePropertyChanged("RatePlanType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Base {
+            get {
+                return this.baseField;
+            }
+            set {
+                this.baseField = value;
+                this.RaisePropertyChanged("Base");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Tax {
+            get {
+                return this.taxField;
+            }
+            set {
+                this.taxField = value;
+                this.RaisePropertyChanged("Tax");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Total {
+            get {
+                return this.totalField;
+            }
+            set {
+                this.totalField = value;
+                this.RaisePropertyChanged("Total");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Surcharge {
+            get {
+                return this.surchargeField;
+            }
+            set {
+                this.surchargeField = value;
+                this.RaisePropertyChanged("Surcharge");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ApproximateBase {
+            get {
+                return this.approximateBaseField;
+            }
+            set {
+                this.approximateBaseField = value;
+                this.RaisePropertyChanged("ApproximateBase");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ApproximateTax {
+            get {
+                return this.approximateTaxField;
+            }
+            set {
+                this.approximateTaxField = value;
+                this.RaisePropertyChanged("ApproximateTax");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ApproximateTotal {
+            get {
+                return this.approximateTotalField;
+            }
+            set {
+                this.approximateTotalField = value;
+                this.RaisePropertyChanged("ApproximateTotal");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ApproximateSurcharge {
+            get {
+                return this.approximateSurchargeField;
+            }
+            set {
+                this.approximateSurchargeField = value;
+                this.RaisePropertyChanged("ApproximateSurcharge");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool RateGuaranteed {
+            get {
+                return this.rateGuaranteedField;
+            }
+            set {
+                this.rateGuaranteedField = value;
+                this.RaisePropertyChanged("RateGuaranteed");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool RateGuaranteedSpecified {
+            get {
+                return this.rateGuaranteedFieldSpecified;
+            }
+            set {
+                this.rateGuaranteedFieldSpecified = value;
+                this.RaisePropertyChanged("RateGuaranteedSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool ApproximateRateGuaranteed {
+            get {
+                return this.approximateRateGuaranteedField;
+            }
+            set {
+                this.approximateRateGuaranteedField = value;
+                this.RaisePropertyChanged("ApproximateRateGuaranteed");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ApproximateRateGuaranteedSpecified {
+            get {
+                return this.approximateRateGuaranteedFieldSpecified;
+            }
+            set {
+                this.approximateRateGuaranteedFieldSpecified = value;
+                this.RaisePropertyChanged("ApproximateRateGuaranteedSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string RateCategory {
+            get {
+                return this.rateCategoryField;
+            }
+            set {
+                this.rateCategoryField = value;
+                this.RaisePropertyChanged("RateCategory");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("Key");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string RateSupplier {
+            get {
+                return this.rateSupplierField;
+            }
+            set {
+                this.rateSupplierField = value;
+                this.RaisePropertyChanged("RateSupplier");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string RateOfferId {
+            get {
+                return this.rateOfferIdField;
+            }
+            set {
+                this.rateOfferIdField = value;
+                this.RaisePropertyChanged("RateOfferId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool InPolicy {
+            get {
+                return this.inPolicyField;
+            }
+            set {
+                this.inPolicyField = value;
+                this.RaisePropertyChanged("InPolicy");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool InPolicySpecified {
+            get {
+                return this.inPolicyFieldSpecified;
+            }
+            set {
+                this.inPolicyFieldSpecified = value;
+                this.RaisePropertyChanged("InPolicySpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int PolicyCode {
+            get {
+                return this.policyCodeField;
+            }
+            set {
+                this.policyCodeField = value;
+                this.RaisePropertyChanged("PolicyCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool PolicyCodeSpecified {
+            get {
+                return this.policyCodeFieldSpecified;
+            }
+            set {
+                this.policyCodeFieldSpecified = value;
+                this.RaisePropertyChanged("PolicyCodeSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class HotelRateByDate : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string effectiveDateField;
+        
+        private string expireDateField;
+        
+        private string baseField;
+        
+        private string taxField;
+        
+        private string totalField;
+        
+        private string surchargeField;
+        
+        private string approximateBaseField;
+        
+        private string approximateTotalField;
+        
+        private string contentsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string EffectiveDate {
+            get {
+                return this.effectiveDateField;
+            }
+            set {
+                this.effectiveDateField = value;
+                this.RaisePropertyChanged("EffectiveDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ExpireDate {
+            get {
+                return this.expireDateField;
+            }
+            set {
+                this.expireDateField = value;
+                this.RaisePropertyChanged("ExpireDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Base {
+            get {
+                return this.baseField;
+            }
+            set {
+                this.baseField = value;
+                this.RaisePropertyChanged("Base");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Tax {
+            get {
+                return this.taxField;
+            }
+            set {
+                this.taxField = value;
+                this.RaisePropertyChanged("Tax");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Total {
+            get {
+                return this.totalField;
+            }
+            set {
+                this.totalField = value;
+                this.RaisePropertyChanged("Total");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Surcharge {
+            get {
+                return this.surchargeField;
+            }
+            set {
+                this.surchargeField = value;
+                this.RaisePropertyChanged("Surcharge");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ApproximateBase {
+            get {
+                return this.approximateBaseField;
+            }
+            set {
+                this.approximateBaseField = value;
+                this.RaisePropertyChanged("ApproximateBase");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ApproximateTotal {
+            get {
+                return this.approximateTotalField;
+            }
+            set {
+                this.approximateTotalField = value;
+                this.RaisePropertyChanged("ApproximateTotal");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Contents {
+            get {
+                return this.contentsField;
+            }
+            set {
+                this.contentsField = value;
+                this.RaisePropertyChanged("Contents");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class RateMatchIndicator : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private RateMatchIndicatorType typeField;
+        
+        private RateMatchIndicatorStatus statusField;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public RateMatchIndicatorType Type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+                this.RaisePropertyChanged("Type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public RateMatchIndicatorStatus Status {
+            get {
+                return this.statusField;
+            }
+            set {
+                this.statusField = value;
+                this.RaisePropertyChanged("Status");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+                this.RaisePropertyChanged("Value");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public enum RateMatchIndicatorType {
+        
+        /// <remarks/>
+        RateCategory,
+        
+        /// <remarks/>
+        RoomCount,
+        
+        /// <remarks/>
+        BedType,
+        
+        /// <remarks/>
+        AdultCount,
+        
+        /// <remarks/>
+        ChildCount,
+        
+        /// <remarks/>
+        AdultRollaway,
+        
+        /// <remarks/>
+        ChildRollaway,
+        
+        /// <remarks/>
+        Crib,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public enum RateMatchIndicatorStatus {
+        
+        /// <remarks/>
+        Available,
+        
+        /// <remarks/>
+        NotAvailable,
+        
+        /// <remarks/>
+        SubstituteOffered,
+        
+        /// <remarks/>
+        MaximumExceeded,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class Tax : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private object itemField;
+        
+        private string codeField;
+        
+        private System.DateTime effectiveDateField;
+        
+        private bool effectiveDateFieldSpecified;
+        
+        private System.DateTime expirationDateField;
+        
+        private bool expirationDateFieldSpecified;
+        
+        private string termField;
+        
+        private string collectionFreqField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Amount", typeof(string), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("Percentage", typeof(float), Order=0)]
+        public object Item {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
+                this.RaisePropertyChanged("Item");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Code {
+            get {
+                return this.codeField;
+            }
+            set {
+                this.codeField = value;
+                this.RaisePropertyChanged("Code");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
+        public System.DateTime EffectiveDate {
+            get {
+                return this.effectiveDateField;
+            }
+            set {
+                this.effectiveDateField = value;
+                this.RaisePropertyChanged("EffectiveDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool EffectiveDateSpecified {
+            get {
+                return this.effectiveDateFieldSpecified;
+            }
+            set {
+                this.effectiveDateFieldSpecified = value;
+                this.RaisePropertyChanged("EffectiveDateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
+        public System.DateTime ExpirationDate {
+            get {
+                return this.expirationDateField;
+            }
+            set {
+                this.expirationDateField = value;
+                this.RaisePropertyChanged("ExpirationDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ExpirationDateSpecified {
+            get {
+                return this.expirationDateFieldSpecified;
+            }
+            set {
+                this.expirationDateFieldSpecified = value;
+                this.RaisePropertyChanged("ExpirationDateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Term {
+            get {
+                return this.termField;
+            }
+            set {
+                this.termField = value;
+                this.RaisePropertyChanged("Term");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CollectionFreq {
+            get {
+                return this.collectionFreqField;
+            }
+            set {
+                this.collectionFreqField = value;
+                this.RaisePropertyChanged("CollectionFreq");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class MealPlan : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string codeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Code {
+            get {
+                return this.codeField;
+            }
+            set {
+                this.codeField = value;
+                this.RaisePropertyChanged("Code");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class CancelInfo : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private bool nonRefundableStayIndicatorField;
+        
+        private bool nonRefundableStayIndicatorFieldSpecified;
+        
+        private System.DateTime cancelDeadlineField;
+        
+        private bool cancelDeadlineFieldSpecified;
+        
+        private bool taxInclusiveField;
+        
+        private bool taxInclusiveFieldSpecified;
+        
+        private bool feeInclusiveField;
+        
+        private bool feeInclusiveFieldSpecified;
+        
+        private string cancelPenaltyAmountField;
+        
+        private string numberOfNightsField;
+        
+        private float cancelPenaltyPercentField;
+        
+        private bool cancelPenaltyPercentFieldSpecified;
+        
+        private string cancelPenaltyPercentAppliesToField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool NonRefundableStayIndicator {
+            get {
+                return this.nonRefundableStayIndicatorField;
+            }
+            set {
+                this.nonRefundableStayIndicatorField = value;
+                this.RaisePropertyChanged("NonRefundableStayIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool NonRefundableStayIndicatorSpecified {
+            get {
+                return this.nonRefundableStayIndicatorFieldSpecified;
+            }
+            set {
+                this.nonRefundableStayIndicatorFieldSpecified = value;
+                this.RaisePropertyChanged("NonRefundableStayIndicatorSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public System.DateTime CancelDeadline {
+            get {
+                return this.cancelDeadlineField;
+            }
+            set {
+                this.cancelDeadlineField = value;
+                this.RaisePropertyChanged("CancelDeadline");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CancelDeadlineSpecified {
+            get {
+                return this.cancelDeadlineFieldSpecified;
+            }
+            set {
+                this.cancelDeadlineFieldSpecified = value;
+                this.RaisePropertyChanged("CancelDeadlineSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool TaxInclusive {
+            get {
+                return this.taxInclusiveField;
+            }
+            set {
+                this.taxInclusiveField = value;
+                this.RaisePropertyChanged("TaxInclusive");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool TaxInclusiveSpecified {
+            get {
+                return this.taxInclusiveFieldSpecified;
+            }
+            set {
+                this.taxInclusiveFieldSpecified = value;
+                this.RaisePropertyChanged("TaxInclusiveSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool FeeInclusive {
+            get {
+                return this.feeInclusiveField;
+            }
+            set {
+                this.feeInclusiveField = value;
+                this.RaisePropertyChanged("FeeInclusive");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool FeeInclusiveSpecified {
+            get {
+                return this.feeInclusiveFieldSpecified;
+            }
+            set {
+                this.feeInclusiveFieldSpecified = value;
+                this.RaisePropertyChanged("FeeInclusiveSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CancelPenaltyAmount {
+            get {
+                return this.cancelPenaltyAmountField;
+            }
+            set {
+                this.cancelPenaltyAmountField = value;
+                this.RaisePropertyChanged("CancelPenaltyAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="nonNegativeInteger")]
+        public string NumberOfNights {
+            get {
+                return this.numberOfNightsField;
+            }
+            set {
+                this.numberOfNightsField = value;
+                this.RaisePropertyChanged("NumberOfNights");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public float CancelPenaltyPercent {
+            get {
+                return this.cancelPenaltyPercentField;
+            }
+            set {
+                this.cancelPenaltyPercentField = value;
+                this.RaisePropertyChanged("CancelPenaltyPercent");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CancelPenaltyPercentSpecified {
+            get {
+                return this.cancelPenaltyPercentFieldSpecified;
+            }
+            set {
+                this.cancelPenaltyPercentFieldSpecified = value;
+                this.RaisePropertyChanged("CancelPenaltyPercentSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CancelPenaltyPercentAppliesTo {
+            get {
+                return this.cancelPenaltyPercentAppliesToField;
+            }
+            set {
+                this.cancelPenaltyPercentAppliesToField = value;
+                this.RaisePropertyChanged("CancelPenaltyPercentAppliesTo");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class GuaranteeInfo : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private object itemField;
+        
+        private ItemChoiceType1 itemElementNameField;
+        
+        private GuaranteePaymentType[] guaranteePaymentTypeField;
+        
+        private System.DateTime absoluteDeadlineField;
+        
+        private bool absoluteDeadlineFieldSpecified;
+        
+        private bool credentialsRequiredField;
+        
+        private bool credentialsRequiredFieldSpecified;
+        
+        private string holdTimeField;
+        
+        private GuaranteeInfoGuaranteeType guaranteeTypeField;
+        
+        private bool guaranteeTypeFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("DepositAmount", typeof(DepositAmount), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("DepositNights", typeof(string), DataType="integer", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("DepositPercent", typeof(string), DataType="integer", Order=0)]
+        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
+        public object Item {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
+                this.RaisePropertyChanged("Item");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public ItemChoiceType1 ItemElementName {
+            get {
+                return this.itemElementNameField;
+            }
+            set {
+                this.itemElementNameField = value;
+                this.RaisePropertyChanged("ItemElementName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("GuaranteePaymentType", Order=2)]
+        public GuaranteePaymentType[] GuaranteePaymentType {
+            get {
+                return this.guaranteePaymentTypeField;
+            }
+            set {
+                this.guaranteePaymentTypeField = value;
+                this.RaisePropertyChanged("GuaranteePaymentType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public System.DateTime AbsoluteDeadline {
+            get {
+                return this.absoluteDeadlineField;
+            }
+            set {
+                this.absoluteDeadlineField = value;
+                this.RaisePropertyChanged("AbsoluteDeadline");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool AbsoluteDeadlineSpecified {
+            get {
+                return this.absoluteDeadlineFieldSpecified;
+            }
+            set {
+                this.absoluteDeadlineFieldSpecified = value;
+                this.RaisePropertyChanged("AbsoluteDeadlineSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool CredentialsRequired {
+            get {
+                return this.credentialsRequiredField;
+            }
+            set {
+                this.credentialsRequiredField = value;
+                this.RaisePropertyChanged("CredentialsRequired");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CredentialsRequiredSpecified {
+            get {
+                return this.credentialsRequiredFieldSpecified;
+            }
+            set {
+                this.credentialsRequiredFieldSpecified = value;
+                this.RaisePropertyChanged("CredentialsRequiredSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string HoldTime {
+            get {
+                return this.holdTimeField;
+            }
+            set {
+                this.holdTimeField = value;
+                this.RaisePropertyChanged("HoldTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public GuaranteeInfoGuaranteeType GuaranteeType {
+            get {
+                return this.guaranteeTypeField;
+            }
+            set {
+                this.guaranteeTypeField = value;
+                this.RaisePropertyChanged("GuaranteeType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool GuaranteeTypeSpecified {
+            get {
+                return this.guaranteeTypeFieldSpecified;
+            }
+            set {
+                this.guaranteeTypeFieldSpecified = value;
+                this.RaisePropertyChanged("GuaranteeTypeSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class DepositAmount : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string amountField;
+        
+        private string approximateAmountField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Amount {
+            get {
+                return this.amountField;
+            }
+            set {
+                this.amountField = value;
+                this.RaisePropertyChanged("Amount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ApproximateAmount {
+            get {
+                return this.approximateAmountField;
+            }
+            set {
+                this.approximateAmountField = value;
+                this.RaisePropertyChanged("ApproximateAmount");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0", IncludeInSchema=false)]
+    public enum ItemChoiceType1 {
+        
+        /// <remarks/>
+        DepositAmount,
+        
+        /// <remarks/>
+        DepositNights,
+        
+        /// <remarks/>
+        DepositPercent,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class GuaranteePaymentType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string typeField;
+        
+        private string descriptionField;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+                this.RaisePropertyChanged("Type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("Description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+                this.RaisePropertyChanged("Value");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public enum GuaranteeInfoGuaranteeType {
+        
+        /// <remarks/>
+        Deposit,
+        
+        /// <remarks/>
+        Guarantee,
+        
+        /// <remarks/>
+        Prepayment,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class RoomView : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string codeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Code {
+            get {
+                return this.codeField;
+            }
+            set {
+                this.codeField = value;
+                this.RaisePropertyChanged("Code");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class typeGeneralReference : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string keyField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("Key");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class typeFormOfPaymentPNRReference : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string keyField;
+        
+        private bool providerReservationLevelField;
+        
+        public typeFormOfPaymentPNRReference() {
+            this.providerReservationLevelField = true;
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("Key");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(true)]
+        public bool ProviderReservationLevel {
+            get {
+                return this.providerReservationLevelField;
+            }
+            set {
+                this.providerReservationLevelField = value;
+                this.RaisePropertyChanged("ProviderReservationLevel");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class typeAgencyPayment : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string agencyBillingIdentifierField;
+        
+        private string agencyBillingNumberField;
+        
+        private string agencyBillingPasswordField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string AgencyBillingIdentifier {
+            get {
+                return this.agencyBillingIdentifierField;
+            }
+            set {
+                this.agencyBillingIdentifierField = value;
+                this.RaisePropertyChanged("AgencyBillingIdentifier");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string AgencyBillingNumber {
+            get {
+                return this.agencyBillingNumberField;
+            }
+            set {
+                this.agencyBillingNumberField = value;
+                this.RaisePropertyChanged("AgencyBillingNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string AgencyBillingPassword {
+            get {
+                return this.agencyBillingPasswordField;
+            }
+            set {
+                this.agencyBillingPasswordField = value;
+                this.RaisePropertyChanged("AgencyBillingPassword");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(typeCreditCardType))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class typePaymentCard : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private PhoneNumber phoneNumberField;
+        
+        private typeStructuredAddress billingAddressField;
+        
+        private string typeField;
+        
+        private string numberField;
+        
+        private string expDateField;
+        
+        private string nameField;
+        
+        private string cVVField;
+        
+        private string approvalCodeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public PhoneNumber PhoneNumber {
+            get {
+                return this.phoneNumberField;
+            }
+            set {
+                this.phoneNumberField = value;
+                this.RaisePropertyChanged("PhoneNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public typeStructuredAddress BillingAddress {
+            get {
+                return this.billingAddressField;
+            }
+            set {
+                this.billingAddressField = value;
+                this.RaisePropertyChanged("BillingAddress");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+                this.RaisePropertyChanged("Type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Number {
+            get {
+                return this.numberField;
+            }
+            set {
+                this.numberField = value;
+                this.RaisePropertyChanged("Number");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="gYearMonth")]
+        public string ExpDate {
+            get {
+                return this.expDateField;
+            }
+            set {
+                this.expDateField = value;
+                this.RaisePropertyChanged("ExpDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("Name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CVV {
+            get {
+                return this.cVVField;
+            }
+            set {
+                this.cVVField = value;
+                this.RaisePropertyChanged("CVV");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ApprovalCode {
+            get {
+                return this.approvalCodeField;
+            }
+            set {
+                this.approvalCodeField = value;
+                this.RaisePropertyChanged("ApprovalCode");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class typeStructuredAddress : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string addressNameField;
+        
+        private string[] streetField;
+        
+        private string cityField;
+        
+        private State stateField;
+        
+        private string postalCodeField;
+        
+        private string countryField;
+        
+        private ProviderReservationInfoRef[] providerReservationInfoRefField;
+        
+        private string keyField;
+        
+        private typeElementStatus elStatField;
+        
+        private bool elStatFieldSpecified;
+        
+        private bool keyOverrideField;
+        
+        private bool keyOverrideFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string AddressName {
+            get {
+                return this.addressNameField;
+            }
+            set {
+                this.addressNameField = value;
+                this.RaisePropertyChanged("AddressName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Street", Order=1)]
+        public string[] Street {
+            get {
+                return this.streetField;
+            }
+            set {
+                this.streetField = value;
+                this.RaisePropertyChanged("Street");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string City {
+            get {
+                return this.cityField;
+            }
+            set {
+                this.cityField = value;
+                this.RaisePropertyChanged("City");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public State State {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("State");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string PostalCode {
+            get {
+                return this.postalCodeField;
+            }
+            set {
+                this.postalCodeField = value;
+                this.RaisePropertyChanged("PostalCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string Country {
+            get {
+                return this.countryField;
+            }
+            set {
+                this.countryField = value;
+                this.RaisePropertyChanged("Country");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("ProviderReservationInfoRef", Order=6)]
+        public ProviderReservationInfoRef[] ProviderReservationInfoRef {
+            get {
+                return this.providerReservationInfoRefField;
+            }
+            set {
+                this.providerReservationInfoRefField = value;
+                this.RaisePropertyChanged("ProviderReservationInfoRef");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("Key");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public typeElementStatus ElStat {
+            get {
+                return this.elStatField;
+            }
+            set {
+                this.elStatField = value;
+                this.RaisePropertyChanged("ElStat");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ElStatSpecified {
+            get {
+                return this.elStatFieldSpecified;
+            }
+            set {
+                this.elStatFieldSpecified = value;
+                this.RaisePropertyChanged("ElStatSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool KeyOverride {
+            get {
+                return this.keyOverrideField;
+            }
+            set {
+                this.keyOverrideField = value;
+                this.RaisePropertyChanged("KeyOverride");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool KeyOverrideSpecified {
+            get {
+                return this.keyOverrideFieldSpecified;
+            }
+            set {
+                this.keyOverrideFieldSpecified = value;
+                this.RaisePropertyChanged("KeyOverrideSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class State : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+                this.RaisePropertyChanged("Value");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class typeCreditCardType : typePaymentCard {
+        
+        private string extendedPaymentField;
+        
+        private string customerReferenceField;
+        
+        private bool acceptanceOverrideField;
+        
+        private bool acceptanceOverrideFieldSpecified;
+        
+        private bool thirdPartyPaymentField;
+        
+        private string bankNameField;
+        
+        private string bankCountryCodeField;
+        
+        private string bankStateCodeField;
+        
+        private bool enettField;
+        
+        public typeCreditCardType() {
+            this.thirdPartyPaymentField = false;
+            this.enettField = false;
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ExtendedPayment {
+            get {
+                return this.extendedPaymentField;
+            }
+            set {
+                this.extendedPaymentField = value;
+                this.RaisePropertyChanged("ExtendedPayment");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CustomerReference {
+            get {
+                return this.customerReferenceField;
+            }
+            set {
+                this.customerReferenceField = value;
+                this.RaisePropertyChanged("CustomerReference");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool AcceptanceOverride {
+            get {
+                return this.acceptanceOverrideField;
+            }
+            set {
+                this.acceptanceOverrideField = value;
+                this.RaisePropertyChanged("AcceptanceOverride");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool AcceptanceOverrideSpecified {
+            get {
+                return this.acceptanceOverrideFieldSpecified;
+            }
+            set {
+                this.acceptanceOverrideFieldSpecified = value;
+                this.RaisePropertyChanged("AcceptanceOverrideSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(false)]
+        public bool ThirdPartyPayment {
+            get {
+                return this.thirdPartyPaymentField;
+            }
+            set {
+                this.thirdPartyPaymentField = value;
+                this.RaisePropertyChanged("ThirdPartyPayment");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string BankName {
+            get {
+                return this.bankNameField;
+            }
+            set {
+                this.bankNameField = value;
+                this.RaisePropertyChanged("BankName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string BankCountryCode {
+            get {
+                return this.bankCountryCodeField;
+            }
+            set {
+                this.bankCountryCodeField = value;
+                this.RaisePropertyChanged("BankCountryCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string BankStateCode {
+            get {
+                return this.bankStateCodeField;
+            }
+            set {
+                this.bankStateCodeField = value;
+                this.RaisePropertyChanged("BankStateCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(false)]
+        public bool Enett {
+            get {
+                return this.enettField;
+            }
+            set {
+                this.enettField = value;
+                this.RaisePropertyChanged("Enett");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeNonAirReservationRef : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string locatorCodeField;
@@ -9043,7 +10094,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeSegmentRef : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string keyField;
@@ -9075,7 +10126,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeRemark : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string providerReservationInfoRefField;
@@ -9137,7 +10188,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeRemarkWithTravelerRef : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string remarkDataField;
@@ -9212,7 +10263,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeAssociatedRemark : typeRemarkWithTravelerRef {
         
         private string keyField;
@@ -9291,7 +10342,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class typeAssociatedRemarkWithSegmentRef : typeAssociatedRemark {
         
         private string segmentRefField;
@@ -9314,7 +10365,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class SeatAssignment : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string keyField;
@@ -9336,6 +10387,8 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         private bool keyOverrideField;
         
         private bool keyOverrideFieldSpecified;
+        
+        private string railCoachNumberField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
@@ -9457,6 +10510,18 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string RailCoachNumber {
+            get {
+                return this.railCoachNumberField;
+            }
+            set {
+                this.railCoachNumberField = value;
+                this.RaisePropertyChanged("RailCoachNumber");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -9468,24 +10533,25 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseHotelDetailsReq))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseCoreSearchReq))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseReq))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseCreateReservationReq))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseCreateWithFormOfPaymentReq))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseSearchReq))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseHotelSearchReq))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseHotelDetailsReq))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
-    public partial class BaseReq : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class BaseCoreReq : object, System.ComponentModel.INotifyPropertyChanged {
         
         private BillingPointOfSaleInfo billingPointOfSaleInfoField;
         
         private AgentIDOverride[] agentIDOverrideField;
         
         private string terminalSessionInfoField;
-        
-        private OverridePCC overridePCCField;
         
         private string traceIdField;
         
@@ -9498,6 +10564,8 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         private typeLoggingLevel overrideLoggingField;
         
         private bool overrideLoggingFieldSpecified;
+        
+        private string languageCodeField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -9532,18 +10600,6 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
             set {
                 this.terminalSessionInfoField = value;
                 this.RaisePropertyChanged("TerminalSessionInfo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public OverridePCC OverridePCC {
-            get {
-                return this.overridePCCField;
-            }
-            set {
-                this.overridePCCField = value;
-                this.RaisePropertyChanged("OverridePCC");
             }
         }
         
@@ -9619,6 +10675,18 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="language")]
+        public string LanguageCode {
+            get {
+                return this.languageCodeField;
+            }
+            set {
+                this.languageCodeField = value;
+                this.RaisePropertyChanged("LanguageCode");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -9634,7 +10702,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class BillingPointOfSaleInfo : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string originApplicationField;
@@ -9680,7 +10748,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class AgentIDOverride : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string supplierCodeField;
@@ -9738,9 +10806,104 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public enum typeLoggingLevel {
+        
+        /// <remarks/>
+        TRACE,
+        
+        /// <remarks/>
+        DEBUG,
+        
+        /// <remarks/>
+        INFO,
+        
+        /// <remarks/>
+        WARN,
+        
+        /// <remarks/>
+        ERROR,
+        
+        /// <remarks/>
+        FATAL,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class BaseCoreSearchReq : BaseCoreReq {
+        
+        private NextResultReference[] nextResultReferenceField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("NextResultReference", Order=0)]
+        public NextResultReference[] NextResultReference {
+            get {
+                return this.nextResultReferenceField;
+            }
+            set {
+                this.nextResultReferenceField = value;
+                this.RaisePropertyChanged("NextResultReference");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseCreateReservationReq))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseCreateWithFormOfPaymentReq))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseSearchReq))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseHotelSearchReq))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseHotelDetailsReq))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class BaseReq : BaseCoreReq {
+        
+        private OverridePCC overridePCCField;
+        
+        private bool retrieveProviderReservationDetailsField;
+        
+        public BaseReq() {
+            this.retrieveProviderReservationDetailsField = false;
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public OverridePCC OverridePCC {
+            get {
+                return this.overridePCCField;
+            }
+            set {
+                this.overridePCCField = value;
+                this.RaisePropertyChanged("OverridePCC");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(false)]
+        public bool RetrieveProviderReservationDetails {
+            get {
+                return this.retrieveProviderReservationDetailsField;
+            }
+            set {
+                this.retrieveProviderReservationDetailsField = value;
+                this.RaisePropertyChanged("RetrieveProviderReservationDetails");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class OverridePCC : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string providerCodeField;
@@ -9782,614 +10945,12 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
-    public enum typeLoggingLevel {
-        
-        /// <remarks/>
-        TRACE,
-        
-        /// <remarks/>
-        DEBUG,
-        
-        /// <remarks/>
-        INFO,
-        
-        /// <remarks/>
-        WARN,
-        
-        /// <remarks/>
-        ERROR,
-        
-        /// <remarks/>
-        FATAL,
-    }
-    
-    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseCreateWithFormOfPaymentReq))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0")]
-    public partial class BaseHotelDetailsReq : BaseReq {
-        
-        private HotelProperty hotelPropertyField;
-        
-        private HotelDetailsModifiers hotelDetailsModifiersField;
-        
-        private PointOfSale pointOfSaleField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public HotelProperty HotelProperty {
-            get {
-                return this.hotelPropertyField;
-            }
-            set {
-                this.hotelPropertyField = value;
-                this.RaisePropertyChanged("HotelProperty");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public HotelDetailsModifiers HotelDetailsModifiers {
-            get {
-                return this.hotelDetailsModifiersField;
-            }
-            set {
-                this.hotelDetailsModifiersField = value;
-                this.RaisePropertyChanged("HotelDetailsModifiers");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v25_0", Order=2)]
-        public PointOfSale PointOfSale {
-            get {
-                return this.pointOfSaleField;
-            }
-            set {
-                this.pointOfSaleField = value;
-                this.RaisePropertyChanged("PointOfSale");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
-    public partial class HotelDetailsModifiers : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private PermittedProviders permittedProvidersField;
-        
-        private LoyaltyCard[] loyaltyCardField;
-        
-        private CorporateDiscountID[] corporateDiscountIDField;
-        
-        private HotelStay hotelStayField;
-        
-        private NumberOfChildren numberOfChildrenField;
-        
-        private HotelBedding[] hotelBeddingField;
-        
-        private string[] rateCategoryField;
-        
-        private int numberOfAdultsField;
-        
-        private bool numberOfAdultsFieldSpecified;
-        
-        private typeRateRuleDetail rateRuleDetailField;
-        
-        private int numberOfRoomsField;
-        
-        private string rateSupplierField;
-        
-        private string keyField;
-        
-        private string preferredCurrencyField;
-        
-        public HotelDetailsModifiers() {
-            this.rateRuleDetailField = typeRateRuleDetail.None;
-            this.numberOfRoomsField = 1;
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v25_0", Order=0)]
-        public PermittedProviders PermittedProviders {
-            get {
-                return this.permittedProvidersField;
-            }
-            set {
-                this.permittedProvidersField = value;
-                this.RaisePropertyChanged("PermittedProviders");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("LoyaltyCard", Namespace="http://www.travelport.com/schema/common_v25_0", Order=1)]
-        public LoyaltyCard[] LoyaltyCard {
-            get {
-                return this.loyaltyCardField;
-            }
-            set {
-                this.loyaltyCardField = value;
-                this.RaisePropertyChanged("LoyaltyCard");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("CorporateDiscountID", Namespace="http://www.travelport.com/schema/common_v25_0", Order=2)]
-        public CorporateDiscountID[] CorporateDiscountID {
-            get {
-                return this.corporateDiscountIDField;
-            }
-            set {
-                this.corporateDiscountIDField = value;
-                this.RaisePropertyChanged("CorporateDiscountID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public HotelStay HotelStay {
-            get {
-                return this.hotelStayField;
-            }
-            set {
-                this.hotelStayField = value;
-                this.RaisePropertyChanged("HotelStay");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public NumberOfChildren NumberOfChildren {
-            get {
-                return this.numberOfChildrenField;
-            }
-            set {
-                this.numberOfChildrenField = value;
-                this.RaisePropertyChanged("NumberOfChildren");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("HotelBedding", Order=5)]
-        public HotelBedding[] HotelBedding {
-            get {
-                return this.hotelBeddingField;
-            }
-            set {
-                this.hotelBeddingField = value;
-                this.RaisePropertyChanged("HotelBedding");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("RateCategory", Order=6)]
-        public string[] RateCategory {
-            get {
-                return this.rateCategoryField;
-            }
-            set {
-                this.rateCategoryField = value;
-                this.RaisePropertyChanged("RateCategory");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int NumberOfAdults {
-            get {
-                return this.numberOfAdultsField;
-            }
-            set {
-                this.numberOfAdultsField = value;
-                this.RaisePropertyChanged("NumberOfAdults");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool NumberOfAdultsSpecified {
-            get {
-                return this.numberOfAdultsFieldSpecified;
-            }
-            set {
-                this.numberOfAdultsFieldSpecified = value;
-                this.RaisePropertyChanged("NumberOfAdultsSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(typeRateRuleDetail.None)]
-        public typeRateRuleDetail RateRuleDetail {
-            get {
-                return this.rateRuleDetailField;
-            }
-            set {
-                this.rateRuleDetailField = value;
-                this.RaisePropertyChanged("RateRuleDetail");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(1)]
-        public int NumberOfRooms {
-            get {
-                return this.numberOfRoomsField;
-            }
-            set {
-                this.numberOfRoomsField = value;
-                this.RaisePropertyChanged("NumberOfRooms");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string RateSupplier {
-            get {
-                return this.rateSupplierField;
-            }
-            set {
-                this.rateSupplierField = value;
-                this.RaisePropertyChanged("RateSupplier");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Key {
-            get {
-                return this.keyField;
-            }
-            set {
-                this.keyField = value;
-                this.RaisePropertyChanged("Key");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string PreferredCurrency {
-            get {
-                return this.preferredCurrencyField;
-            }
-            set {
-                this.preferredCurrencyField = value;
-                this.RaisePropertyChanged("PreferredCurrency");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
-    public partial class PermittedProviders : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private Provider providerField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public Provider Provider {
-            get {
-                return this.providerField;
-            }
-            set {
-                this.providerField = value;
-                this.RaisePropertyChanged("Provider");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
-    public partial class Provider : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string codeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Code {
-            get {
-                return this.codeField;
-            }
-            set {
-                this.codeField = value;
-                this.RaisePropertyChanged("Code");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
-    public partial class HotelStay : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private System.DateTime checkinDateField;
-        
-        private System.DateTime checkoutDateField;
-        
-        private string keyField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=0)]
-        public System.DateTime CheckinDate {
-            get {
-                return this.checkinDateField;
-            }
-            set {
-                this.checkinDateField = value;
-                this.RaisePropertyChanged("CheckinDate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=1)]
-        public System.DateTime CheckoutDate {
-            get {
-                return this.checkoutDateField;
-            }
-            set {
-                this.checkoutDateField = value;
-                this.RaisePropertyChanged("CheckoutDate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Key {
-            get {
-                return this.keyField;
-            }
-            set {
-                this.keyField = value;
-                this.RaisePropertyChanged("Key");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
-    public partial class NumberOfChildren : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private int[] ageField;
-        
-        private int countField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Age", Order=0)]
-        public int[] Age {
-            get {
-                return this.ageField;
-            }
-            set {
-                this.ageField = value;
-                this.RaisePropertyChanged("Age");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int Count {
-            get {
-                return this.countField;
-            }
-            set {
-                this.countField = value;
-                this.RaisePropertyChanged("Count");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
-    public partial class HotelBedding : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string typeField;
-        
-        private int numberOfBedsField;
-        
-        private bool numberOfBedsFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-                this.RaisePropertyChanged("Type");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public int NumberOfBeds {
-            get {
-                return this.numberOfBedsField;
-            }
-            set {
-                this.numberOfBedsField = value;
-                this.RaisePropertyChanged("NumberOfBeds");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool NumberOfBedsSpecified {
-            get {
-                return this.numberOfBedsFieldSpecified;
-            }
-            set {
-                this.numberOfBedsFieldSpecified = value;
-                this.RaisePropertyChanged("NumberOfBedsSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0")]
-    public enum typeRateRuleDetail {
-        
-        /// <remarks/>
-        None,
-        
-        /// <remarks/>
-        Complete,
-        
-        /// <remarks/>
-        RatePlansOnly,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
-    public partial class PointOfSale : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string providerCodeField;
-        
-        private string pseudoCityCodeField;
-        
-        private string keyField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ProviderCode {
-            get {
-                return this.providerCodeField;
-            }
-            set {
-                this.providerCodeField = value;
-                this.RaisePropertyChanged("ProviderCode");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string PseudoCityCode {
-            get {
-                return this.pseudoCityCodeField;
-            }
-            set {
-                this.pseudoCityCodeField = value;
-                this.RaisePropertyChanged("PseudoCityCode");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Key {
-            get {
-                return this.keyField;
-            }
-            set {
-                this.keyField = value;
-                this.RaisePropertyChanged("Key");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class BaseCreateReservationReq : BaseReq {
         
         private LinkedUniversalRecord[] linkedUniversalRecordField;
@@ -10425,6 +10986,8 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         private InvoiceRemark[] invoiceRemarkField;
         
         private SSR[] sSRField;
+        
+        private EmailNotification emailNotificationField;
         
         private string ruleNameField;
         
@@ -10643,6 +11206,18 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        public EmailNotification EmailNotification {
+            get {
+                return this.emailNotificationField;
+            }
+            set {
+                this.emailNotificationField = value;
+                this.RaisePropertyChanged("EmailNotification");
+            }
+        }
+        
+        /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string RuleName {
             get {
@@ -10720,7 +11295,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class LinkedUniversalRecord : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string locatorCodeField;
@@ -10822,7 +11397,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class BookingTraveler : object, System.ComponentModel.INotifyPropertyChanged {
         
         private BookingTravelerName bookingTravelerNameField;
@@ -10856,6 +11431,8 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         private CustomizedNameData[] customizedNameDataField;
         
         private TravelComplianceData[] travelComplianceDataField;
+        
+        private TravelInfo travelInfoField;
         
         private string keyField;
         
@@ -11078,6 +11655,18 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        public TravelInfo TravelInfo {
+            get {
+                return this.travelInfoField;
+            }
+            set {
+                this.travelInfoField = value;
+                this.RaisePropertyChanged("TravelInfo");
+            }
+        }
+        
+        /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Key {
             get {
@@ -11237,7 +11826,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class BookingTravelerName : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string prefixField;
@@ -11325,7 +11914,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class DeliveryInfo : object, System.ComponentModel.INotifyPropertyChanged {
         
         private DeliveryInfoShippingAddress shippingAddressField;
@@ -11455,7 +12044,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class DeliveryInfoShippingAddress : typeStructuredAddress {
     }
     
@@ -11464,7 +12053,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class Email : object, System.ComponentModel.INotifyPropertyChanged {
         
         private ProviderReservationInfoRef[] providerReservationInfoRefField;
@@ -11608,7 +12197,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class SSR : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string keyField;
@@ -11644,6 +12233,10 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         private bool keyOverrideField;
         
         private bool keyOverrideFieldSpecified;
+        
+        private string profileIDField;
+        
+        private string profileSecureFlightDocKeyField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
@@ -11849,6 +12442,30 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ProfileID {
+            get {
+                return this.profileIDField;
+            }
+            set {
+                this.profileIDField = value;
+                this.RaisePropertyChanged("ProfileID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ProfileSecureFlightDocKey {
+            get {
+                return this.profileSecureFlightDocKeyField;
+            }
+            set {
+                this.profileSecureFlightDocKeyField = value;
+                this.RaisePropertyChanged("ProfileSecureFlightDocKey");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -11864,7 +12481,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class NameRemark : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string remarkDataField;
@@ -11994,7 +12611,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class AirSeatAssignment : SeatAssignment {
     }
     
@@ -12003,7 +12620,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class RailSeatAssignment : object, System.ComponentModel.INotifyPropertyChanged {
         
         private Characteristic[] characteristicField;
@@ -12161,7 +12778,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class Characteristic : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string seatTypeField;
@@ -12235,7 +12852,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class DriversLicense : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string keyField;
@@ -12337,7 +12954,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class AppliedProfile : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string keyField;
@@ -12509,7 +13126,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class CustomizedNameData : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string keyField;
@@ -12569,7 +13186,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class TravelComplianceData : object, System.ComponentModel.INotifyPropertyChanged {
         
         private TravelComplianceDataPolicyCompliance[] policyComplianceField;
@@ -12755,7 +13372,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class TravelComplianceDataPolicyCompliance : object, System.ComponentModel.INotifyPropertyChanged {
         
         private bool inPolicyField;
@@ -12801,7 +13418,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class TravelComplianceDataContractCompliance : object, System.ComponentModel.INotifyPropertyChanged {
         
         private bool inContractField;
@@ -12847,7 +13464,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class TravelComplianceDataPreferredSupplier : object, System.ComponentModel.INotifyPropertyChanged {
         
         private bool preferredField;
@@ -12891,7 +13508,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public enum typeProfileType {
         
         /// <remarks/>
@@ -12924,7 +13541,53 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class TravelInfo : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string tripNameField;
+        
+        private string travelPurposeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string TripName {
+            get {
+                return this.tripNameField;
+            }
+            set {
+                this.tripNameField = value;
+                this.RaisePropertyChanged("TripName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string TravelPurpose {
+            get {
+                return this.travelPurposeField;
+            }
+            set {
+                this.travelPurposeField = value;
+                this.RaisePropertyChanged("TravelPurpose");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class OSI : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string keyField;
@@ -13082,7 +13745,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class XMLRemark : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string keyField;
@@ -13198,7 +13861,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class UnassociatedRemark : typeRemarkWithTravelerRef {
         
         private string keyField;
@@ -13277,7 +13940,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class Postscript : typeRemark {
         
         private string keyField;
@@ -13300,7 +13963,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class ContinuityCheckOverride : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string keyField;
@@ -13346,7 +14009,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class AgencyContactInfo : object, System.ComponentModel.INotifyPropertyChanged {
         
         private PhoneNumber[] phoneNumberField;
@@ -13392,7 +14055,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class CustomerID : typeRemark {
         
         private string keyField;
@@ -13415,7 +14078,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class FileFinishingInfo : object, System.ComponentModel.INotifyPropertyChanged {
         
         private ShopInformation shopInformationField;
@@ -13517,20 +14180,16 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class ShopInformation : object, System.ComponentModel.INotifyPropertyChanged {
         
         private ShopInformationSearchRequest[] searchRequestField;
         
         private ShopInformationFlightsOffered[] flightsOfferedField;
         
-        private typeCabinClass cabinShoppedField;
+        private string cabinShoppedField;
         
-        private bool cabinShoppedFieldSpecified;
-        
-        private typeCabinClass cabinSelectedField;
-        
-        private bool cabinSelectedFieldSpecified;
+        private string cabinSelectedField;
         
         private string lowestFareOfferedField;
         
@@ -13560,7 +14219,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public typeCabinClass CabinShopped {
+        public string CabinShopped {
             get {
                 return this.cabinShoppedField;
             }
@@ -13571,38 +14230,14 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool CabinShoppedSpecified {
-            get {
-                return this.cabinShoppedFieldSpecified;
-            }
-            set {
-                this.cabinShoppedFieldSpecified = value;
-                this.RaisePropertyChanged("CabinShoppedSpecified");
-            }
-        }
-        
-        /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public typeCabinClass CabinSelected {
+        public string CabinSelected {
             get {
                 return this.cabinSelectedField;
             }
             set {
                 this.cabinSelectedField = value;
                 this.RaisePropertyChanged("CabinSelected");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool CabinSelectedSpecified {
-            get {
-                return this.cabinSelectedFieldSpecified;
-            }
-            set {
-                this.cabinSelectedFieldSpecified = value;
-                this.RaisePropertyChanged("CabinSelectedSpecified");
             }
         }
         
@@ -13633,7 +14268,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class ShopInformationSearchRequest : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string originField;
@@ -13707,7 +14342,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class ShopInformationFlightsOffered : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string originField;
@@ -13872,7 +14507,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class PolicyInformation : object, System.ComponentModel.INotifyPropertyChanged {
         
         private PolicyInformationReasonCode reasonCodeField;
@@ -13974,7 +14609,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class PolicyInformationReasonCode : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string outOfPolicyField;
@@ -14034,7 +14669,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class Remark : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string keyField;
@@ -14078,7 +14713,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public enum typePolicy {
         
         /// <remarks/>
@@ -14102,7 +14737,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class AccountInformation : object, System.ComponentModel.INotifyPropertyChanged {
         
         private typeStructuredAddress addressField;
@@ -14162,7 +14797,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class AgencyInformation : object, System.ComponentModel.INotifyPropertyChanged {
         
         private typeStructuredAddress addressField;
@@ -14222,7 +14857,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class TravelerInformation : object, System.ComponentModel.INotifyPropertyChanged {
         
         private TravelerInformationEmergencyContact emergencyContactField;
@@ -14310,7 +14945,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class TravelerInformationEmergencyContact : object, System.ComponentModel.INotifyPropertyChanged {
         
         private PhoneNumber phoneNumberField;
@@ -14370,7 +15005,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class CustomProfileInformation : object, System.ComponentModel.INotifyPropertyChanged {
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -14388,7 +15023,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class CommissionRemark : object, System.ComponentModel.INotifyPropertyChanged {
         
         private object[] itemsField;
@@ -14519,7 +15154,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class CommissionRemarkPassengerTypeLevel : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string travelerTypeField;
@@ -14593,7 +15228,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class CommissionRemarkProviderReservationLevel : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string amountField;
@@ -14653,7 +15288,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class ConsolidatorRemark : object, System.ComponentModel.INotifyPropertyChanged {
         
         private PseudoCityCode[] pseudoCityCodeField;
@@ -14783,7 +15418,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class PseudoCityCode : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string valueField;
@@ -14815,7 +15450,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class InvoiceRemark : typeAssociatedRemark {
         
         private object itemField;
@@ -14855,7 +15490,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0", IncludeInSchema=false)]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0", IncludeInSchema=false)]
     public enum ItemChoiceType {
         
         /// <remarks/>
@@ -14872,12 +15507,1236 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     }
     
     /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class EmailNotification : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string[] emailRefField;
+        
+        private EmailNotificationRecipients recipientsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("EmailRef", Order=0)]
+        public string[] EmailRef {
+            get {
+                return this.emailRefField;
+            }
+            set {
+                this.emailRefField = value;
+                this.RaisePropertyChanged("EmailRef");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public EmailNotificationRecipients Recipients {
+            get {
+                return this.recipientsField;
+            }
+            set {
+                this.recipientsField = value;
+                this.RaisePropertyChanged("Recipients");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public enum EmailNotificationRecipients {
+        
+        /// <remarks/>
+        All,
+        
+        /// <remarks/>
+        Default,
+        
+        /// <remarks/>
+        Specific,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class BaseCreateWithFormOfPaymentReq : BaseCreateReservationReq {
+        
+        private FormOfPayment[] formOfPaymentField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("FormOfPayment", Order=0)]
+        public FormOfPayment[] FormOfPayment {
+            get {
+                return this.formOfPaymentField;
+            }
+            set {
+                this.formOfPaymentField = value;
+                this.RaisePropertyChanged("FormOfPayment");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class FormOfPayment : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private object itemField;
+        
+        private typeFormOfPaymentPNRReference[] providerReservationInfoRefField;
+        
+        private typeGeneralReference[] segmentRefField;
+        
+        private string keyField;
+        
+        private string typeField;
+        
+        private string fulfillmentTypeField;
+        
+        private string fulfillmentLocationField;
+        
+        private typeFulfillmentIDType fulfillmentIDTypeField;
+        
+        private bool fulfillmentIDTypeFieldSpecified;
+        
+        private string fulfillmentIDNumberField;
+        
+        private bool isAgentTypeField;
+        
+        private string agentTextField;
+        
+        private string reuseFOPField;
+        
+        private string externalReferenceField;
+        
+        private bool reusableField;
+        
+        private string profileIDField;
+        
+        private string profileKeyField;
+        
+        private typeElementStatus elStatField;
+        
+        private bool elStatFieldSpecified;
+        
+        private bool keyOverrideField;
+        
+        private bool keyOverrideFieldSpecified;
+        
+        public FormOfPayment() {
+            this.isAgentTypeField = false;
+            this.reusableField = false;
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("AgencyPayment", typeof(typeAgencyPayment), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("AgentVoucher", typeof(AgentVoucher), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("Certificate", typeof(Certificate), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("Check", typeof(Check), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("CreditCard", typeof(CreditCard), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("DebitCard", typeof(DebitCard), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("DirectPayment", typeof(DirectPayment), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("EnettVan", typeof(EnettVan), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("MiscFormOfPayment", typeof(MiscFormOfPayment), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("PaymentAdvice", typeof(PaymentAdvice), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("Requisition", typeof(Requisition), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("TicketNumber", typeof(string), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("UnitedNations", typeof(UnitedNations), Order=0)]
+        public object Item {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
+                this.RaisePropertyChanged("Item");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("ProviderReservationInfoRef", Order=1)]
+        public typeFormOfPaymentPNRReference[] ProviderReservationInfoRef {
+            get {
+                return this.providerReservationInfoRefField;
+            }
+            set {
+                this.providerReservationInfoRefField = value;
+                this.RaisePropertyChanged("ProviderReservationInfoRef");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("SegmentRef", Order=2)]
+        public typeGeneralReference[] SegmentRef {
+            get {
+                return this.segmentRefField;
+            }
+            set {
+                this.segmentRefField = value;
+                this.RaisePropertyChanged("SegmentRef");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("Key");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+                this.RaisePropertyChanged("Type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string FulfillmentType {
+            get {
+                return this.fulfillmentTypeField;
+            }
+            set {
+                this.fulfillmentTypeField = value;
+                this.RaisePropertyChanged("FulfillmentType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string FulfillmentLocation {
+            get {
+                return this.fulfillmentLocationField;
+            }
+            set {
+                this.fulfillmentLocationField = value;
+                this.RaisePropertyChanged("FulfillmentLocation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public typeFulfillmentIDType FulfillmentIDType {
+            get {
+                return this.fulfillmentIDTypeField;
+            }
+            set {
+                this.fulfillmentIDTypeField = value;
+                this.RaisePropertyChanged("FulfillmentIDType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool FulfillmentIDTypeSpecified {
+            get {
+                return this.fulfillmentIDTypeFieldSpecified;
+            }
+            set {
+                this.fulfillmentIDTypeFieldSpecified = value;
+                this.RaisePropertyChanged("FulfillmentIDTypeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string FulfillmentIDNumber {
+            get {
+                return this.fulfillmentIDNumberField;
+            }
+            set {
+                this.fulfillmentIDNumberField = value;
+                this.RaisePropertyChanged("FulfillmentIDNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(false)]
+        public bool IsAgentType {
+            get {
+                return this.isAgentTypeField;
+            }
+            set {
+                this.isAgentTypeField = value;
+                this.RaisePropertyChanged("IsAgentType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string AgentText {
+            get {
+                return this.agentTextField;
+            }
+            set {
+                this.agentTextField = value;
+                this.RaisePropertyChanged("AgentText");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ReuseFOP {
+            get {
+                return this.reuseFOPField;
+            }
+            set {
+                this.reuseFOPField = value;
+                this.RaisePropertyChanged("ReuseFOP");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ExternalReference {
+            get {
+                return this.externalReferenceField;
+            }
+            set {
+                this.externalReferenceField = value;
+                this.RaisePropertyChanged("ExternalReference");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(false)]
+        public bool Reusable {
+            get {
+                return this.reusableField;
+            }
+            set {
+                this.reusableField = value;
+                this.RaisePropertyChanged("Reusable");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ProfileID {
+            get {
+                return this.profileIDField;
+            }
+            set {
+                this.profileIDField = value;
+                this.RaisePropertyChanged("ProfileID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ProfileKey {
+            get {
+                return this.profileKeyField;
+            }
+            set {
+                this.profileKeyField = value;
+                this.RaisePropertyChanged("ProfileKey");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public typeElementStatus ElStat {
+            get {
+                return this.elStatField;
+            }
+            set {
+                this.elStatField = value;
+                this.RaisePropertyChanged("ElStat");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ElStatSpecified {
+            get {
+                return this.elStatFieldSpecified;
+            }
+            set {
+                this.elStatFieldSpecified = value;
+                this.RaisePropertyChanged("ElStatSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool KeyOverride {
+            get {
+                return this.keyOverrideField;
+            }
+            set {
+                this.keyOverrideField = value;
+                this.RaisePropertyChanged("KeyOverride");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool KeyOverrideSpecified {
+            get {
+                return this.keyOverrideFieldSpecified;
+            }
+            set {
+                this.keyOverrideFieldSpecified = value;
+                this.RaisePropertyChanged("KeyOverrideSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class AgentVoucher : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string numberField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Number {
+            get {
+                return this.numberField;
+            }
+            set {
+                this.numberField = value;
+                this.RaisePropertyChanged("Number");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class Certificate : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string numberField;
+        
+        private string amountField;
+        
+        private string discountAmountField;
+        
+        private string discountPercentageField;
+        
+        private System.DateTime notValidBeforeField;
+        
+        private bool notValidBeforeFieldSpecified;
+        
+        private System.DateTime notValidAfterField;
+        
+        private bool notValidAfterFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Number {
+            get {
+                return this.numberField;
+            }
+            set {
+                this.numberField = value;
+                this.RaisePropertyChanged("Number");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Amount {
+            get {
+                return this.amountField;
+            }
+            set {
+                this.amountField = value;
+                this.RaisePropertyChanged("Amount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DiscountAmount {
+            get {
+                return this.discountAmountField;
+            }
+            set {
+                this.discountAmountField = value;
+                this.RaisePropertyChanged("DiscountAmount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="integer")]
+        public string DiscountPercentage {
+            get {
+                return this.discountPercentageField;
+            }
+            set {
+                this.discountPercentageField = value;
+                this.RaisePropertyChanged("DiscountPercentage");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
+        public System.DateTime NotValidBefore {
+            get {
+                return this.notValidBeforeField;
+            }
+            set {
+                this.notValidBeforeField = value;
+                this.RaisePropertyChanged("NotValidBefore");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool NotValidBeforeSpecified {
+            get {
+                return this.notValidBeforeFieldSpecified;
+            }
+            set {
+                this.notValidBeforeFieldSpecified = value;
+                this.RaisePropertyChanged("NotValidBeforeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
+        public System.DateTime NotValidAfter {
+            get {
+                return this.notValidAfterField;
+            }
+            set {
+                this.notValidAfterField = value;
+                this.RaisePropertyChanged("NotValidAfter");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool NotValidAfterSpecified {
+            get {
+                return this.notValidAfterFieldSpecified;
+            }
+            set {
+                this.notValidAfterFieldSpecified = value;
+                this.RaisePropertyChanged("NotValidAfterSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class Check : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string mICRNumberField;
+        
+        private string routingNumberField;
+        
+        private string accountNumberField;
+        
+        private string checkNumberField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string MICRNumber {
+            get {
+                return this.mICRNumberField;
+            }
+            set {
+                this.mICRNumberField = value;
+                this.RaisePropertyChanged("MICRNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string RoutingNumber {
+            get {
+                return this.routingNumberField;
+            }
+            set {
+                this.routingNumberField = value;
+                this.RaisePropertyChanged("RoutingNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string AccountNumber {
+            get {
+                return this.accountNumberField;
+            }
+            set {
+                this.accountNumberField = value;
+                this.RaisePropertyChanged("AccountNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CheckNumber {
+            get {
+                return this.checkNumberField;
+            }
+            set {
+                this.checkNumberField = value;
+                this.RaisePropertyChanged("CheckNumber");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class CreditCard : typeCreditCardType {
+        
+        private string profileIDField;
+        
+        private string keyField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ProfileID {
+            get {
+                return this.profileIDField;
+            }
+            set {
+                this.profileIDField = value;
+                this.RaisePropertyChanged("ProfileID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("Key");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class DebitCard : typePaymentCard {
+        
+        private string issueNumberField;
+        
+        private string profileIDField;
+        
+        private string keyField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string IssueNumber {
+            get {
+                return this.issueNumberField;
+            }
+            set {
+                this.issueNumberField = value;
+                this.RaisePropertyChanged("IssueNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ProfileID {
+            get {
+                return this.profileIDField;
+            }
+            set {
+                this.profileIDField = value;
+                this.RaisePropertyChanged("ProfileID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("Key");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class DirectPayment : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string textField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Text {
+            get {
+                return this.textField;
+            }
+            set {
+                this.textField = value;
+                this.RaisePropertyChanged("Text");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class EnettVan : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string minPercentageField;
+        
+        private string maxPercentageField;
+        
+        private string expiryDaysField;
+        
+        private bool multiUseField;
+        
+        public EnettVan() {
+            this.multiUseField = true;
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="nonNegativeInteger")]
+        public string MinPercentage {
+            get {
+                return this.minPercentageField;
+            }
+            set {
+                this.minPercentageField = value;
+                this.RaisePropertyChanged("MinPercentage");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="nonNegativeInteger")]
+        public string MaxPercentage {
+            get {
+                return this.maxPercentageField;
+            }
+            set {
+                this.maxPercentageField = value;
+                this.RaisePropertyChanged("MaxPercentage");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="duration")]
+        public string ExpiryDays {
+            get {
+                return this.expiryDaysField;
+            }
+            set {
+                this.expiryDaysField = value;
+                this.RaisePropertyChanged("ExpiryDays");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(true)]
+        public bool MultiUse {
+            get {
+                return this.multiUseField;
+            }
+            set {
+                this.multiUseField = value;
+                this.RaisePropertyChanged("MultiUse");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class MiscFormOfPayment : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string creditCardTypeField;
+        
+        private string creditCardNumberField;
+        
+        private string expDateField;
+        
+        private string textField;
+        
+        private string categoryField;
+        
+        private bool acceptanceOverrideField;
+        
+        private bool acceptanceOverrideFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CreditCardType {
+            get {
+                return this.creditCardTypeField;
+            }
+            set {
+                this.creditCardTypeField = value;
+                this.RaisePropertyChanged("CreditCardType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CreditCardNumber {
+            get {
+                return this.creditCardNumberField;
+            }
+            set {
+                this.creditCardNumberField = value;
+                this.RaisePropertyChanged("CreditCardNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="gYearMonth")]
+        public string ExpDate {
+            get {
+                return this.expDateField;
+            }
+            set {
+                this.expDateField = value;
+                this.RaisePropertyChanged("ExpDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Text {
+            get {
+                return this.textField;
+            }
+            set {
+                this.textField = value;
+                this.RaisePropertyChanged("Text");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Category {
+            get {
+                return this.categoryField;
+            }
+            set {
+                this.categoryField = value;
+                this.RaisePropertyChanged("Category");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool AcceptanceOverride {
+            get {
+                return this.acceptanceOverrideField;
+            }
+            set {
+                this.acceptanceOverrideField = value;
+                this.RaisePropertyChanged("AcceptanceOverride");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool AcceptanceOverrideSpecified {
+            get {
+                return this.acceptanceOverrideFieldSpecified;
+            }
+            set {
+                this.acceptanceOverrideFieldSpecified = value;
+                this.RaisePropertyChanged("AcceptanceOverrideSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class PaymentAdvice : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string typeField;
+        
+        private string documentNumberField;
+        
+        private System.DateTime issueDateField;
+        
+        private string issueCityField;
+        
+        private string originalFOPField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+                this.RaisePropertyChanged("Type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string DocumentNumber {
+            get {
+                return this.documentNumberField;
+            }
+            set {
+                this.documentNumberField = value;
+                this.RaisePropertyChanged("DocumentNumber");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
+        public System.DateTime IssueDate {
+            get {
+                return this.issueDateField;
+            }
+            set {
+                this.issueDateField = value;
+                this.RaisePropertyChanged("IssueDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string IssueCity {
+            get {
+                return this.issueCityField;
+            }
+            set {
+                this.issueCityField = value;
+                this.RaisePropertyChanged("IssueCity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string OriginalFOP {
+            get {
+                return this.originalFOPField;
+            }
+            set {
+                this.originalFOPField = value;
+                this.RaisePropertyChanged("OriginalFOP");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class Requisition : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string numberField;
+        
+        private RequisitionCategory categoryField;
+        
+        private bool categoryFieldSpecified;
+        
+        private RequisitionType typeField;
+        
+        private bool typeFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Number {
+            get {
+                return this.numberField;
+            }
+            set {
+                this.numberField = value;
+                this.RaisePropertyChanged("Number");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public RequisitionCategory Category {
+            get {
+                return this.categoryField;
+            }
+            set {
+                this.categoryField = value;
+                this.RaisePropertyChanged("Category");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CategorySpecified {
+            get {
+                return this.categoryFieldSpecified;
+            }
+            set {
+                this.categoryFieldSpecified = value;
+                this.RaisePropertyChanged("CategorySpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public RequisitionType Type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+                this.RaisePropertyChanged("Type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool TypeSpecified {
+            get {
+                return this.typeFieldSpecified;
+            }
+            set {
+                this.typeFieldSpecified = value;
+                this.RaisePropertyChanged("TypeSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public enum RequisitionCategory {
+        
+        /// <remarks/>
+        Government,
+        
+        /// <remarks/>
+        Other,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public enum RequisitionType {
+        
+        /// <remarks/>
+        Cash,
+        
+        /// <remarks/>
+        Credit,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class UnitedNations : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string numberField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Number {
+            get {
+                return this.numberField;
+            }
+            set {
+                this.numberField = value;
+                this.RaisePropertyChanged("Number");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public enum typeFulfillmentIDType {
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("Bahn Card")]
+        BahnCard,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("Credit Card")]
+        CreditCard,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("Euro Cheque Card")]
+        EuroChequeCard,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("Collection Reference")]
+        CollectionReference,
+    }
+    
+    /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(BaseHotelSearchReq))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class BaseSearchReq : BaseReq {
         
         private NextResultReference[] nextResultReferenceField;
@@ -14900,10 +16759,10 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class BaseHotelSearchReq : BaseSearchReq {
         
-        private HotelLocation hotelLocationField;
+        private HotelSearchLocation hotelSearchLocationField;
         
         private HotelSearchModifiers hotelSearchModifiersField;
         
@@ -14913,13 +16772,13 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public HotelLocation HotelLocation {
+        public HotelSearchLocation HotelSearchLocation {
             get {
-                return this.hotelLocationField;
+                return this.hotelSearchLocationField;
             }
             set {
-                this.hotelLocationField = value;
-                this.RaisePropertyChanged("HotelLocation");
+                this.hotelSearchLocationField = value;
+                this.RaisePropertyChanged("HotelSearchLocation");
             }
         }
         
@@ -14948,7 +16807,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v25_0", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v30_0", Order=3)]
         public PointOfSale PointOfSale {
             get {
                 return this.pointOfSaleField;
@@ -14965,21 +16824,49 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
-    public partial class HotelLocation : object, System.ComponentModel.INotifyPropertyChanged {
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class HotelSearchLocation : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private HotelLocation hotelLocationField;
+        
+        private ProviderLocation providerLocationField;
         
         private VendorLocation[] vendorLocationField;
         
-        private string locationField;
+        private typeStructuredAddress hotelAddressField;
         
-        private typeHotelLocation locationTypeField;
+        private typeHotelReferencePoint referencePointField;
         
-        public HotelLocation() {
-            this.locationTypeField = typeHotelLocation.Airport;
+        private CoordinateLocation coordinateLocationField;
+        
+        private Distance distanceField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public HotelLocation HotelLocation {
+            get {
+                return this.hotelLocationField;
+            }
+            set {
+                this.hotelLocationField = value;
+                this.RaisePropertyChanged("HotelLocation");
+            }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("VendorLocation", Namespace="http://www.travelport.com/schema/common_v25_0", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public ProviderLocation ProviderLocation {
+            get {
+                return this.providerLocationField;
+            }
+            set {
+                this.providerLocationField = value;
+                this.RaisePropertyChanged("ProviderLocation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("VendorLocation", Namespace="http://www.travelport.com/schema/common_v30_0", Order=2)]
         public VendorLocation[] VendorLocation {
             get {
                 return this.vendorLocationField;
@@ -14988,6 +16875,80 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
                 this.vendorLocationField = value;
                 this.RaisePropertyChanged("VendorLocation");
             }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public typeStructuredAddress HotelAddress {
+            get {
+                return this.hotelAddressField;
+            }
+            set {
+                this.hotelAddressField = value;
+                this.RaisePropertyChanged("HotelAddress");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public typeHotelReferencePoint ReferencePoint {
+            get {
+                return this.referencePointField;
+            }
+            set {
+                this.referencePointField = value;
+                this.RaisePropertyChanged("ReferencePoint");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v30_0", Order=5)]
+        public CoordinateLocation CoordinateLocation {
+            get {
+                return this.coordinateLocationField;
+            }
+            set {
+                this.coordinateLocationField = value;
+                this.RaisePropertyChanged("CoordinateLocation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v30_0", Order=6)]
+        public Distance Distance {
+            get {
+                return this.distanceField;
+            }
+            set {
+                this.distanceField = value;
+                this.RaisePropertyChanged("Distance");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class HotelLocation : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string locationField;
+        
+        private typeHotelLocation locationTypeField;
+        
+        public HotelLocation() {
+            this.locationTypeField = typeHotelLocation.Airport;
         }
         
         /// <remarks/>
@@ -15028,7 +16989,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public enum typeHotelLocation {
         
         /// <remarks/>
@@ -15043,7 +17004,53 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class ProviderLocation : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string providerCodeField;
+        
+        private string locationField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ProviderCode {
+            get {
+                return this.providerCodeField;
+            }
+            set {
+                this.providerCodeField = value;
+                this.RaisePropertyChanged("ProviderCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Location {
+            get {
+                return this.locationField;
+            }
+            set {
+                this.locationField = value;
+                this.RaisePropertyChanged("Location");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class HotelSearchModifiers : object, System.ComponentModel.INotifyPropertyChanged {
         
         private HotelChain[] permittedChainsField;
@@ -15060,17 +17067,11 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         
         private CorporateDiscountID[] corporateDiscountIDField;
         
-        private Distance distanceField;
-        
         private string[] rateCategoryField;
         
         private HotelRating[] hotelRatingField;
         
         private SearchPriorityCriteria[] searchPriorityField;
-        
-        private typeStructuredAddress hotelAddressField;
-        
-        private string referencePointField;
         
         private HotelBedding[] hotelBeddingField;
         
@@ -15106,6 +17107,14 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         
         private bool availableHotelsOnlyFieldSpecified;
         
+        private string maxWaitField;
+        
+        private bool aggregateResultsField;
+        
+        public HotelSearchModifiers() {
+            this.aggregateResultsField = false;
+        }
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
         [System.Xml.Serialization.XmlArrayItemAttribute("HotelChain", IsNullable=false)]
@@ -15133,7 +17142,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v25_0", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v30_0", Order=2)]
         public PermittedProviders PermittedProviders {
             get {
                 return this.permittedProvidersField;
@@ -15158,7 +17167,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("LoyaltyCard", Namespace="http://www.travelport.com/schema/common_v25_0", Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute("LoyaltyCard", Namespace="http://www.travelport.com/schema/common_v30_0", Order=4)]
         public LoyaltyCard[] LoyaltyCard {
             get {
                 return this.loyaltyCardField;
@@ -15182,7 +17191,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("CorporateDiscountID", Namespace="http://www.travelport.com/schema/common_v25_0", Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute("CorporateDiscountID", Namespace="http://www.travelport.com/schema/common_v30_0", Order=6)]
         public CorporateDiscountID[] CorporateDiscountID {
             get {
                 return this.corporateDiscountIDField;
@@ -15194,19 +17203,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v25_0", Order=7)]
-        public Distance Distance {
-            get {
-                return this.distanceField;
-            }
-            set {
-                this.distanceField = value;
-                this.RaisePropertyChanged("Distance");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("RateCategory", Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute("RateCategory", Order=7)]
         public string[] RateCategory {
             get {
                 return this.rateCategoryField;
@@ -15218,7 +17215,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("HotelRating", Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute("HotelRating", Order=8)]
         public HotelRating[] HotelRating {
             get {
                 return this.hotelRatingField;
@@ -15230,7 +17227,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=10)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=9)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Criteria", IsNullable=false)]
         public SearchPriorityCriteria[] SearchPriority {
             get {
@@ -15243,31 +17240,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
-        public typeStructuredAddress HotelAddress {
-            get {
-                return this.hotelAddressField;
-            }
-            set {
-                this.hotelAddressField = value;
-                this.RaisePropertyChanged("HotelAddress");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v25_0", Order=12)]
-        public string ReferencePoint {
-            get {
-                return this.referencePointField;
-            }
-            set {
-                this.referencePointField = value;
-                this.RaisePropertyChanged("ReferencePoint");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("HotelBedding", Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute("HotelBedding", Order=10)]
         public HotelBedding[] HotelBedding {
             get {
                 return this.hotelBeddingField;
@@ -15279,7 +17252,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=14)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=11)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Amenity", IsNullable=false)]
         public AmenitiesAmenity[] Amenities {
             get {
@@ -15292,7 +17265,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
         public typeHotelPaymentType HotelPaymentType {
             get {
                 return this.hotelPaymentTypeField;
@@ -15316,7 +17289,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
         public NumberOfChildren NumberOfChildren {
             get {
                 return this.numberOfChildrenField;
@@ -15328,7 +17301,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
         public HotelSearchModifiersHotelTransportation HotelTransportation {
             get {
                 return this.hotelTransportationField;
@@ -15471,6 +17444,31 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="positiveInteger")]
+        public string MaxWait {
+            get {
+                return this.maxWaitField;
+            }
+            set {
+                this.maxWaitField = value;
+                this.RaisePropertyChanged("MaxWait");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(false)]
+        public bool AggregateResults {
+            get {
+                return this.aggregateResultsField;
+            }
+            set {
+                this.aggregateResultsField = value;
+                this.RaisePropertyChanged("AggregateResults");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -15486,7 +17484,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class HotelChain : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string codeField;
@@ -15518,7 +17516,71 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class PermittedProviders : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private Provider providerField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public Provider Provider {
+            get {
+                return this.providerField;
+            }
+            set {
+                this.providerField = value;
+                this.RaisePropertyChanged("Provider");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class Provider : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string codeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Code {
+            get {
+                return this.codeField;
+            }
+            set {
+                this.codeField = value;
+                this.RaisePropertyChanged("Code");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class PermittedSuppliersSupplier : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string nameField;
@@ -15550,7 +17612,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class SearchPriorityCriteria : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int orderField;
@@ -15594,7 +17656,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public enum SearchPriorityCriteriaType {
         
         /// <remarks/>
@@ -15627,7 +17689,155 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class HotelBedding : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string typeField;
+        
+        private int numberOfBedsField;
+        
+        private bool numberOfBedsFieldSpecified;
+        
+        private string amountField;
+        
+        private string contentField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+                this.RaisePropertyChanged("Type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int NumberOfBeds {
+            get {
+                return this.numberOfBedsField;
+            }
+            set {
+                this.numberOfBedsField = value;
+                this.RaisePropertyChanged("NumberOfBeds");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool NumberOfBedsSpecified {
+            get {
+                return this.numberOfBedsFieldSpecified;
+            }
+            set {
+                this.numberOfBedsFieldSpecified = value;
+                this.RaisePropertyChanged("NumberOfBedsSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Amount {
+            get {
+                return this.amountField;
+            }
+            set {
+                this.amountField = value;
+                this.RaisePropertyChanged("Amount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Content {
+            get {
+                return this.contentField;
+            }
+            set {
+                this.contentField = value;
+                this.RaisePropertyChanged("Content");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class NumberOfChildren : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int[] ageField;
+        
+        private int countField;
+        
+        private string amountField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Age", Order=0)]
+        public int[] Age {
+            get {
+                return this.ageField;
+            }
+            set {
+                this.ageField = value;
+                this.RaisePropertyChanged("Age");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int Count {
+            get {
+                return this.countField;
+            }
+            set {
+                this.countField = value;
+                this.RaisePropertyChanged("Count");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Amount {
+            get {
+                return this.amountField;
+            }
+            set {
+                this.amountField = value;
+                this.RaisePropertyChanged("Amount");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class HotelSearchModifiersHotelTransportation : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string typeField;
@@ -15654,14 +17864,466 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
     }
     
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class HotelStay : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.DateTime checkinDateField;
+        
+        private System.DateTime checkoutDateField;
+        
+        private string keyField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=0)]
+        public System.DateTime CheckinDate {
+            get {
+                return this.checkinDateField;
+            }
+            set {
+                this.checkinDateField = value;
+                this.RaisePropertyChanged("CheckinDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=1)]
+        public System.DateTime CheckoutDate {
+            get {
+                return this.checkoutDateField;
+            }
+            set {
+                this.checkoutDateField = value;
+                this.RaisePropertyChanged("CheckoutDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("Key");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
+    public partial class PointOfSale : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string providerCodeField;
+        
+        private string pseudoCityCodeField;
+        
+        private string keyField;
+        
+        private string iATAField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ProviderCode {
+            get {
+                return this.providerCodeField;
+            }
+            set {
+                this.providerCodeField = value;
+                this.RaisePropertyChanged("ProviderCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string PseudoCityCode {
+            get {
+                return this.pseudoCityCodeField;
+            }
+            set {
+                this.pseudoCityCodeField = value;
+                this.RaisePropertyChanged("PseudoCityCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("Key");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string IATA {
+            get {
+                return this.iATAField;
+            }
+            set {
+                this.iATAField = value;
+                this.RaisePropertyChanged("IATA");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class BaseHotelDetailsReq : BaseReq {
+        
+        private HotelProperty hotelPropertyField;
+        
+        private HotelDetailsModifiers hotelDetailsModifiersField;
+        
+        private PointOfSale pointOfSaleField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public HotelProperty HotelProperty {
+            get {
+                return this.hotelPropertyField;
+            }
+            set {
+                this.hotelPropertyField = value;
+                this.RaisePropertyChanged("HotelProperty");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public HotelDetailsModifiers HotelDetailsModifiers {
+            get {
+                return this.hotelDetailsModifiersField;
+            }
+            set {
+                this.hotelDetailsModifiersField = value;
+                this.RaisePropertyChanged("HotelDetailsModifiers");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v30_0", Order=2)]
+        public PointOfSale PointOfSale {
+            get {
+                return this.pointOfSaleField;
+            }
+            set {
+                this.pointOfSaleField = value;
+                this.RaisePropertyChanged("PointOfSale");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class HotelDetailsModifiers : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private PermittedProviders permittedProvidersField;
+        
+        private LoyaltyCard[] loyaltyCardField;
+        
+        private CorporateDiscountID[] corporateDiscountIDField;
+        
+        private HotelStay hotelStayField;
+        
+        private NumberOfChildren numberOfChildrenField;
+        
+        private HotelBedding[] hotelBeddingField;
+        
+        private string[] rateCategoryField;
+        
+        private int numberOfAdultsField;
+        
+        private bool numberOfAdultsFieldSpecified;
+        
+        private typeRateRuleDetail rateRuleDetailField;
+        
+        private int numberOfRoomsField;
+        
+        private string rateSupplierField;
+        
+        private string keyField;
+        
+        private string preferredCurrencyField;
+        
+        private int totalOccupantsField;
+        
+        private bool totalOccupantsFieldSpecified;
+        
+        public HotelDetailsModifiers() {
+            this.rateRuleDetailField = typeRateRuleDetail.None;
+            this.numberOfRoomsField = 1;
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v30_0", Order=0)]
+        public PermittedProviders PermittedProviders {
+            get {
+                return this.permittedProvidersField;
+            }
+            set {
+                this.permittedProvidersField = value;
+                this.RaisePropertyChanged("PermittedProviders");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("LoyaltyCard", Namespace="http://www.travelport.com/schema/common_v30_0", Order=1)]
+        public LoyaltyCard[] LoyaltyCard {
+            get {
+                return this.loyaltyCardField;
+            }
+            set {
+                this.loyaltyCardField = value;
+                this.RaisePropertyChanged("LoyaltyCard");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("CorporateDiscountID", Namespace="http://www.travelport.com/schema/common_v30_0", Order=2)]
+        public CorporateDiscountID[] CorporateDiscountID {
+            get {
+                return this.corporateDiscountIDField;
+            }
+            set {
+                this.corporateDiscountIDField = value;
+                this.RaisePropertyChanged("CorporateDiscountID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public HotelStay HotelStay {
+            get {
+                return this.hotelStayField;
+            }
+            set {
+                this.hotelStayField = value;
+                this.RaisePropertyChanged("HotelStay");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public NumberOfChildren NumberOfChildren {
+            get {
+                return this.numberOfChildrenField;
+            }
+            set {
+                this.numberOfChildrenField = value;
+                this.RaisePropertyChanged("NumberOfChildren");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("HotelBedding", Order=5)]
+        public HotelBedding[] HotelBedding {
+            get {
+                return this.hotelBeddingField;
+            }
+            set {
+                this.hotelBeddingField = value;
+                this.RaisePropertyChanged("HotelBedding");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("RateCategory", Order=6)]
+        public string[] RateCategory {
+            get {
+                return this.rateCategoryField;
+            }
+            set {
+                this.rateCategoryField = value;
+                this.RaisePropertyChanged("RateCategory");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int NumberOfAdults {
+            get {
+                return this.numberOfAdultsField;
+            }
+            set {
+                this.numberOfAdultsField = value;
+                this.RaisePropertyChanged("NumberOfAdults");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool NumberOfAdultsSpecified {
+            get {
+                return this.numberOfAdultsFieldSpecified;
+            }
+            set {
+                this.numberOfAdultsFieldSpecified = value;
+                this.RaisePropertyChanged("NumberOfAdultsSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(typeRateRuleDetail.None)]
+        public typeRateRuleDetail RateRuleDetail {
+            get {
+                return this.rateRuleDetailField;
+            }
+            set {
+                this.rateRuleDetailField = value;
+                this.RaisePropertyChanged("RateRuleDetail");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(1)]
+        public int NumberOfRooms {
+            get {
+                return this.numberOfRoomsField;
+            }
+            set {
+                this.numberOfRoomsField = value;
+                this.RaisePropertyChanged("NumberOfRooms");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string RateSupplier {
+            get {
+                return this.rateSupplierField;
+            }
+            set {
+                this.rateSupplierField = value;
+                this.RaisePropertyChanged("RateSupplier");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+                this.RaisePropertyChanged("Key");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string PreferredCurrency {
+            get {
+                return this.preferredCurrencyField;
+            }
+            set {
+                this.preferredCurrencyField = value;
+                this.RaisePropertyChanged("PreferredCurrency");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int TotalOccupants {
+            get {
+                return this.totalOccupantsField;
+            }
+            set {
+                this.totalOccupantsField = value;
+                this.RaisePropertyChanged("TotalOccupants");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool TotalOccupantsSpecified {
+            get {
+                return this.totalOccupantsFieldSpecified;
+            }
+            set {
+                this.totalOccupantsFieldSpecified = value;
+                this.RaisePropertyChanged("TotalOccupantsSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public enum typeRateRuleDetail {
+        
+        /// <remarks/>
+        None,
+        
+        /// <remarks/>
+        Complete,
+        
+        /// <remarks/>
+        RatePlansOnly,
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.travelport.com/service/hotel_v25_0", ConfigurationName="Travelport.uAPI.Hotel.HotelSearchServicePortType")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.travelport.com/service/hotel_v30_0", ConfigurationName="Travelport.uAPI.Hotel.HotelSearchServicePortType")]
     internal interface HotelSearchServicePortType {
         
         // CODEGEN: Generating message contract since the operation service is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8080/kestrel/HotelService", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.ErrorInfo), Action="http://localhost:8080/kestrel/HotelService", Name="ErrorInfo", Namespace="http://www.travelport.com/schema/common_v25_0")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.ErrorInfo), Action="http://localhost:8080/kestrel/HotelService", Name="ErrorInfo", Namespace="http://www.travelport.com/schema/common_v30_0")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeFeeInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeTax))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeProviderReservationDetail))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseAsyncProviderSpecificResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeErrorInfo))]
@@ -15679,19 +18341,20 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeSearchTimeSpec))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeAgentInfo))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Segment))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeTaxInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MCOInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseReservation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeGuaranteeInformation))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeAgencyPayment))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeVoucherInformation))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeFormOfPaymentPNRReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeGeneralReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typePaymentCard))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeResultMessage))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseRsp))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Location))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typePaymentCard))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeRemark))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeRemarkWithTravelerRef))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SeatAssignment))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseReq))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeVendorLocation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Location))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseCoreReq))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HotelChain[]))]
         Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest request);
         
@@ -15704,7 +18367,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class HotelSearchAvailabilityReq : BaseHotelSearchReq {
         
         private string policyReferenceField;
@@ -15728,7 +18391,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     internal partial class serviceRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0", Order=0)]
         public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSearchAvailabilityReq HotelSearchAvailabilityReq;
         
         public serviceRequest() {
@@ -15745,7 +18408,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     internal partial class serviceResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0", Order=0)]
         public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.BaseHotelSearchRsp HotelSearchAvailabilityRsp;
         
         public serviceResponse() {
@@ -15808,13 +18471,15 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.travelport.com/service/hotel_v25_0", ConfigurationName="Travelport.uAPI.Hotel.HotelMediaLinksServicePortType")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.travelport.com/service/hotel_v30_0", ConfigurationName="Travelport.uAPI.Hotel.HotelMediaLinksServicePortType")]
     internal interface HotelMediaLinksServicePortType {
         
         // CODEGEN: Generating message contract since the operation service is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8080/kestrel/HotelService", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.ErrorInfo), Action="http://localhost:8080/kestrel/HotelService", Name="ErrorInfo", Namespace="http://www.travelport.com/schema/common_v25_0")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.ErrorInfo), Action="http://localhost:8080/kestrel/HotelService", Name="ErrorInfo", Namespace="http://www.travelport.com/schema/common_v30_0")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeFeeInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeTax))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeProviderReservationDetail))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseAsyncProviderSpecificResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeErrorInfo))]
@@ -15832,19 +18497,20 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeSearchTimeSpec))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeAgentInfo))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Segment))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeTaxInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MCOInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseReservation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeGuaranteeInformation))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeAgencyPayment))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeVoucherInformation))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeFormOfPaymentPNRReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeGeneralReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typePaymentCard))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeResultMessage))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseRsp))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Location))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typePaymentCard))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeRemark))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeRemarkWithTravelerRef))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SeatAssignment))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseReq))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeVendorLocation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Location))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseCoreReq))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HotelChain[]))]
         Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse1 service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest1 request);
         
@@ -15857,7 +18523,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class HotelMediaLinksReq : BaseReq {
         
         private PermittedProviders permittedProvidersField;
@@ -15880,7 +18546,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v25_0", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v30_0", Order=0)]
         public PermittedProviders PermittedProviders {
             get {
                 return this.permittedProvidersField;
@@ -15961,7 +18627,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class HotelMediaLinksRsp : BaseRsp {
         
         private HotelPropertyWithMediaItems[] hotelPropertyWithMediaItemsField;
@@ -15984,7 +18650,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class HotelPropertyWithMediaItems : object, System.ComponentModel.INotifyPropertyChanged {
         
         private HotelProperty hotelPropertyField;
@@ -16006,7 +18672,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("MediaItem", Namespace="http://www.travelport.com/schema/common_v25_0", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("MediaItem", Namespace="http://www.travelport.com/schema/common_v30_0", Order=1)]
         public MediaItem[] MediaItem {
             get {
                 return this.mediaItemField;
@@ -16045,7 +18711,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     internal partial class serviceRequest1 {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0", Order=0)]
         public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelMediaLinksReq HotelMediaLinksReq;
         
         public serviceRequest1() {
@@ -16062,7 +18728,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     internal partial class serviceResponse1 {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0", Order=0)]
         public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelMediaLinksRsp HotelMediaLinksRsp;
         
         public serviceResponse1() {
@@ -16125,13 +18791,15 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.travelport.com/service/hotel_v25_0", ConfigurationName="Travelport.uAPI.Hotel.HotelDetailsServicePortType")]
-    internal interface HotelDetailsServicePortType {
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.travelport.com/service/hotel_v30_0", ConfigurationName="Travelport.uAPI.Hotel.HotelSearchAvailabilityAsynchServicePortType")]
+    internal interface HotelSearchAvailabilityAsynchServicePortType {
         
         // CODEGEN: Generating message contract since the operation service is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8080/kestrel/HotelService", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.ErrorInfo), Action="http://localhost:8080/kestrel/HotelService", Name="ErrorInfo", Namespace="http://www.travelport.com/schema/common_v25_0")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.ErrorInfo), Action="http://localhost:8080/kestrel/HotelService", Name="ErrorInfo", Namespace="http://www.travelport.com/schema/common_v30_0")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeFeeInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeTax))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeProviderReservationDetail))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseAsyncProviderSpecificResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeErrorInfo))]
@@ -16149,19 +18817,20 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeSearchTimeSpec))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeAgentInfo))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Segment))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeTaxInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MCOInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseReservation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeGuaranteeInformation))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeAgencyPayment))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeVoucherInformation))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeFormOfPaymentPNRReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeGeneralReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typePaymentCard))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeResultMessage))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseRsp))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Location))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typePaymentCard))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeRemark))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeRemarkWithTravelerRef))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SeatAssignment))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseReq))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeVendorLocation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Location))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseCoreReq))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HotelChain[]))]
         Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse2 service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest2 request);
         
@@ -16174,7 +18843,177 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class HotelSearchAvailabilityAsynchRsp : BaseHotelSearchRsp {
+        
+        private BaseAsyncProviderSpecificResponse[] asyncProviderSpecificResponseField;
+        
+        private string searchIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("AsyncProviderSpecificResponse", Order=0)]
+        public BaseAsyncProviderSpecificResponse[] AsyncProviderSpecificResponse {
+            get {
+                return this.asyncProviderSpecificResponseField;
+            }
+            set {
+                this.asyncProviderSpecificResponseField = value;
+                this.RaisePropertyChanged("AsyncProviderSpecificResponse");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string SearchId {
+            get {
+                return this.searchIdField;
+            }
+            set {
+                this.searchIdField = value;
+                this.RaisePropertyChanged("SearchId");
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    internal partial class serviceRequest2 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0", Order=0)]
+        public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.BaseHotelSearchReq HotelSearchAvailabilityAsynchReq;
+        
+        public serviceRequest2() {
+        }
+        
+        public serviceRequest2(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.BaseHotelSearchReq HotelSearchAvailabilityAsynchReq) {
+            this.HotelSearchAvailabilityAsynchReq = HotelSearchAvailabilityAsynchReq;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    internal partial class serviceResponse2 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0", Order=0)]
+        public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSearchAvailabilityAsynchRsp HotelSearchAvailabilityAsynchRsp;
+        
+        public serviceResponse2() {
+        }
+        
+        public serviceResponse2(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSearchAvailabilityAsynchRsp HotelSearchAvailabilityAsynchRsp) {
+            this.HotelSearchAvailabilityAsynchRsp = HotelSearchAvailabilityAsynchRsp;
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    internal interface HotelSearchAvailabilityAsynchServicePortTypeChannel : Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSearchAvailabilityAsynchServicePortType, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    internal partial class HotelSearchAvailabilityAsynchServicePortTypeClient : System.ServiceModel.ClientBase<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSearchAvailabilityAsynchServicePortType>, Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSearchAvailabilityAsynchServicePortType {
+        
+        public HotelSearchAvailabilityAsynchServicePortTypeClient() {
+        }
+        
+        public HotelSearchAvailabilityAsynchServicePortTypeClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public HotelSearchAvailabilityAsynchServicePortTypeClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public HotelSearchAvailabilityAsynchServicePortTypeClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public HotelSearchAvailabilityAsynchServicePortTypeClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse2 Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSearchAvailabilityAsynchServicePortType.service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest2 request) {
+            return base.Channel.service(request);
+        }
+        
+        public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSearchAvailabilityAsynchRsp service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.BaseHotelSearchReq HotelSearchAvailabilityAsynchReq) {
+            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest2 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest2();
+            inValue.HotelSearchAvailabilityAsynchReq = HotelSearchAvailabilityAsynchReq;
+            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse2 retVal = ((Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSearchAvailabilityAsynchServicePortType)(this)).service(inValue);
+            return retVal.HotelSearchAvailabilityAsynchRsp;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse2> Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSearchAvailabilityAsynchServicePortType.serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest2 request) {
+            return base.Channel.serviceAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse2> serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.BaseHotelSearchReq HotelSearchAvailabilityAsynchReq) {
+            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest2 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest2();
+            inValue.HotelSearchAvailabilityAsynchReq = HotelSearchAvailabilityAsynchReq;
+            return ((Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSearchAvailabilityAsynchServicePortType)(this)).serviceAsync(inValue);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.travelport.com/service/hotel_v30_0", ConfigurationName="Travelport.uAPI.Hotel.HotelDetailsServicePortType")]
+    internal interface HotelDetailsServicePortType {
+        
+        // CODEGEN: Generating message contract since the operation service is neither RPC nor document wrapped.
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8080/kestrel/HotelService", ReplyAction="*")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.ErrorInfo), Action="http://localhost:8080/kestrel/HotelService", Name="ErrorInfo", Namespace="http://www.travelport.com/schema/common_v30_0")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeFeeInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeTax))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeProviderReservationDetail))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseAsyncProviderSpecificResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeErrorInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeBookingTransactionsAllowed))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeKeyword))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeAgencyHierarchyReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeDateRange))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeProfileRef))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeLocation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ServiceRuleType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typePassengerType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeTimeSpec))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeSearchLocation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeRateDescription))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeSearchTimeSpec))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeAgentInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Segment))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeTaxInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MCOInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseReservation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeGuaranteeInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeVoucherInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeResultMessage))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseRsp))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typePaymentCard))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeRemark))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeRemarkWithTravelerRef))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SeatAssignment))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeVendorLocation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Location))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseCoreReq))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HotelChain[]))]
+        Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse3 service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest3 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8080/kestrel/HotelService", ReplyAction="*")]
+        System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse3> serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest3 request);
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class HotelDetailsReq : BaseHotelDetailsReq {
         
         private HostToken hostTokenField;
@@ -16193,7 +19032,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v25_0", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v30_0", Order=0)]
         public HostToken HostToken {
             get {
                 return this.hostTokenField;
@@ -16205,7 +19044,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v25_0", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v30_0", Order=1)]
         public NextResultReference NextResultReference {
             get {
                 return this.nextResultReferenceField;
@@ -16260,7 +19099,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class HotelDetailsRsp : BaseRsp {
         
         private NextResultReference nextResultReferenceField;
@@ -16268,7 +19107,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         private object itemField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v25_0", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v30_0", Order=0)]
         public NextResultReference NextResultReference {
             get {
                 return this.nextResultReferenceField;
@@ -16298,7 +19137,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class HotelAlternateProperties : object, System.ComponentModel.INotifyPropertyChanged {
         
         private HotelProperty[] hotelPropertyField;
@@ -16330,7 +19169,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class RequestedHotelDetails : object, System.ComponentModel.INotifyPropertyChanged {
         
         private HotelProperty hotelPropertyField;
@@ -16382,7 +19221,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("MediaItem", Namespace="http://www.travelport.com/schema/common_v25_0", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute("MediaItem", Namespace="http://www.travelport.com/schema/common_v30_0", Order=3)]
         public MediaItem[] MediaItem {
             get {
                 return this.mediaItemField;
@@ -16428,65 +19267,19 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
-    public partial class HotelType : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private bool sourceLinkField;
-        
-        private bool sourceLinkFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public bool SourceLink {
-            get {
-                return this.sourceLinkField;
-            }
-            set {
-                this.sourceLinkField = value;
-                this.RaisePropertyChanged("SourceLink");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool SourceLinkSpecified {
-            get {
-                return this.sourceLinkFieldSpecified;
-            }
-            set {
-                this.sourceLinkFieldSpecified = value;
-                this.RaisePropertyChanged("SourceLinkSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class serviceRequest2 {
+    internal partial class serviceRequest3 {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0", Order=0)]
         public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelDetailsReq HotelDetailsReq;
         
-        public serviceRequest2() {
+        public serviceRequest3() {
         }
         
-        public serviceRequest2(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelDetailsReq HotelDetailsReq) {
+        public serviceRequest3(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelDetailsReq HotelDetailsReq) {
             this.HotelDetailsReq = HotelDetailsReq;
         }
     }
@@ -16495,15 +19288,15 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class serviceResponse2 {
+    internal partial class serviceResponse3 {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0", Order=0)]
         public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelDetailsRsp HotelDetailsRsp;
         
-        public serviceResponse2() {
+        public serviceResponse3() {
         }
         
-        public serviceResponse2(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelDetailsRsp HotelDetailsRsp) {
+        public serviceResponse3(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelDetailsRsp HotelDetailsRsp) {
             this.HotelDetailsRsp = HotelDetailsRsp;
         }
     }
@@ -16536,37 +19329,39 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse2 Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelDetailsServicePortType.service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest2 request) {
+        Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse3 Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelDetailsServicePortType.service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest3 request) {
             return base.Channel.service(request);
         }
         
         public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelDetailsRsp service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelDetailsReq HotelDetailsReq) {
-            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest2 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest2();
+            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest3 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest3();
             inValue.HotelDetailsReq = HotelDetailsReq;
-            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse2 retVal = ((Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelDetailsServicePortType)(this)).service(inValue);
+            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse3 retVal = ((Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelDetailsServicePortType)(this)).service(inValue);
             return retVal.HotelDetailsRsp;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse2> Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelDetailsServicePortType.serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest2 request) {
+        System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse3> Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelDetailsServicePortType.serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest3 request) {
             return base.Channel.serviceAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse2> serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelDetailsReq HotelDetailsReq) {
-            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest2 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest2();
+        public System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse3> serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelDetailsReq HotelDetailsReq) {
+            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest3 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest3();
             inValue.HotelDetailsReq = HotelDetailsReq;
             return ((Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelDetailsServicePortType)(this)).serviceAsync(inValue);
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.travelport.com/service/hotel_v25_0", ConfigurationName="Travelport.uAPI.Hotel.HotelRetrieveServicePortType")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.travelport.com/service/hotel_v30_0", ConfigurationName="Travelport.uAPI.Hotel.HotelRetrieveServicePortType")]
     internal interface HotelRetrieveServicePortType {
         
         // CODEGEN: Generating message contract since the operation service is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8080/kestrel/HotelService", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.ErrorInfo), Action="http://localhost:8080/kestrel/HotelService", Name="ErrorInfo", Namespace="http://www.travelport.com/schema/common_v25_0")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.ErrorInfo), Action="http://localhost:8080/kestrel/HotelService", Name="ErrorInfo", Namespace="http://www.travelport.com/schema/common_v30_0")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeFeeInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeTax))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeProviderReservationDetail))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseAsyncProviderSpecificResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeErrorInfo))]
@@ -16584,24 +19379,25 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeSearchTimeSpec))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeAgentInfo))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Segment))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeTaxInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MCOInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseReservation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeGuaranteeInformation))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeAgencyPayment))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeVoucherInformation))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeFormOfPaymentPNRReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeGeneralReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typePaymentCard))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeResultMessage))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseRsp))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Location))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typePaymentCard))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeRemark))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeRemarkWithTravelerRef))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SeatAssignment))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseReq))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeVendorLocation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Location))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseCoreReq))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HotelChain[]))]
-        Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse3 service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest3 request);
+        Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse4 service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest4 request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8080/kestrel/HotelService", ReplyAction="*")]
-        System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse3> serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest3 request);
+        System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse4> serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest4 request);
     }
     
     /// <remarks/>
@@ -16609,7 +19405,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class HotelRetrieveReq : BaseReq {
         
         private string providerCodeField;
@@ -16646,7 +19442,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class HotelRetrieveRsp : BaseRsp {
         
         private HotelReservation[] hotelReservationField;
@@ -16669,7 +19465,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class HotelReservation : BaseReservation {
         
         private BookingTravelerRef[] bookingTravelerRefField;
@@ -16715,7 +19511,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         private string passiveProviderReservationInfoRefField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("BookingTravelerRef", Namespace="http://www.travelport.com/schema/common_v25_0", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("BookingTravelerRef", Namespace="http://www.travelport.com/schema/common_v30_0", Order=0)]
         public BookingTravelerRef[] BookingTravelerRef {
             get {
                 return this.bookingTravelerRefField;
@@ -16727,7 +19523,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v25_0", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v30_0", Order=1)]
         public ReservationName ReservationName {
             get {
                 return this.reservationNameField;
@@ -16739,7 +19535,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v25_0", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v30_0", Order=2)]
         public ThirdPartyInformation ThirdPartyInformation {
             get {
                 return this.thirdPartyInformationField;
@@ -16799,7 +19595,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v25_0", Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v30_0", Order=7)]
         public Guarantee Guarantee {
             get {
                 return this.guaranteeField;
@@ -16823,7 +19619,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v25_0", Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v30_0", Order=9)]
         public BookingSource BookingSource {
             get {
                 return this.bookingSourceField;
@@ -16871,7 +19667,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("SellMessage", Namespace="http://www.travelport.com/schema/common_v25_0", Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute("SellMessage", Namespace="http://www.travelport.com/schema/common_v30_0", Order=13)]
         public string[] SellMessage {
             get {
                 return this.sellMessageField;
@@ -16972,7 +19768,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class BookingTravelerRef : object, System.ComponentModel.INotifyPropertyChanged {
         
         private LoyaltyCardRef[] loyaltyCardRefField;
@@ -17046,7 +19842,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class LoyaltyCardRef : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string keyField;
@@ -17078,7 +19874,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class DriversLicenseRef : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string keyField;
@@ -17110,7 +19906,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class DiscountCardRef : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string keyField;
@@ -17142,7 +19938,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class ReservationName : object, System.ComponentModel.INotifyPropertyChanged {
         
         private object itemField;
@@ -17175,7 +19971,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class NameOverride : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string firstField;
@@ -17221,7 +20017,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class ThirdPartyInformation : object, System.ComponentModel.INotifyPropertyChanged {
         
         private typeGeneralReference[] segmentRefField;
@@ -17379,7 +20175,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class Guarantee : object, System.ComponentModel.INotifyPropertyChanged {
         
         private object itemField;
@@ -17543,44 +20339,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
-    public partial class CreditCard : typeCreditCardType {
-        
-        private string profileIDField;
-        
-        private string keyField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string ProfileID {
-            get {
-                return this.profileIDField;
-            }
-            set {
-                this.profileIDField = value;
-                this.RaisePropertyChanged("ProfileID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Key {
-            get {
-                return this.keyField;
-            }
-            set {
-                this.keyField = value;
-                this.RaisePropertyChanged("Key");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class OtherGuaranteeInfo : object, System.ComponentModel.INotifyPropertyChanged {
         
         private OtherGuaranteeInfoType typeField;
@@ -17624,7 +20383,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public enum OtherGuaranteeInfoType {
         
         /// <remarks/>
@@ -17646,7 +20405,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public enum GuaranteeType {
         
         /// <remarks/>
@@ -17661,7 +20420,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class PromotionCode : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string keyField;
@@ -17707,7 +20466,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class BookingSource : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string codeField;
@@ -17751,7 +20510,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public enum BookingSourceType {
         
         /// <remarks/>
@@ -17772,12 +20531,14 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class GuestInformation : object, System.ComponentModel.INotifyPropertyChanged {
         
         private NumberOfAdults numberOfAdultsField;
         
         private NumberOfChildren numberOfChildrenField;
+        
+        private GuestInformationExtraChild extraChildField;
         
         private int numberOfRoomsField;
         
@@ -17804,6 +20565,18 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
             set {
                 this.numberOfChildrenField = value;
                 this.RaisePropertyChanged("NumberOfChildren");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public GuestInformationExtraChild ExtraChild {
+            get {
+                return this.extraChildField;
+            }
+            set {
+                this.extraChildField = value;
+                this.RaisePropertyChanged("ExtraChild");
             }
         }
         
@@ -17846,12 +20619,16 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class NumberOfAdults : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int extraAdultsField;
         
         private bool extraAdultsFieldSpecified;
+        
+        private string amountField;
+        
+        private string contentField;
         
         private string valueField;
         
@@ -17876,6 +20653,30 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
             set {
                 this.extraAdultsFieldSpecified = value;
                 this.RaisePropertyChanged("ExtraAdultsSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Amount {
+            get {
+                return this.amountField;
+            }
+            set {
+                this.amountField = value;
+                this.RaisePropertyChanged("Amount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Content {
+            get {
+                return this.contentField;
+            }
+            set {
+                this.contentField = value;
+                this.RaisePropertyChanged("Content");
             }
         }
         
@@ -17906,7 +20707,67 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class GuestInformationExtraChild : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int countField;
+        
+        private bool countFieldSpecified;
+        
+        private string contentField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int Count {
+            get {
+                return this.countField;
+            }
+            set {
+                this.countField = value;
+                this.RaisePropertyChanged("Count");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CountSpecified {
+            get {
+                return this.countFieldSpecified;
+            }
+            set {
+                this.countFieldSpecified = value;
+                this.RaisePropertyChanged("CountSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Content {
+            get {
+                return this.contentField;
+            }
+            set {
+                this.contentField = value;
+                this.RaisePropertyChanged("Content");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class AssociatedRemark : typeAssociatedRemark {
     }
     
@@ -17914,15 +20775,15 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class serviceRequest3 {
+    internal partial class serviceRequest4 {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0", Order=0)]
         public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRetrieveReq HotelRetrieveReq;
         
-        public serviceRequest3() {
+        public serviceRequest4() {
         }
         
-        public serviceRequest3(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRetrieveReq HotelRetrieveReq) {
+        public serviceRequest4(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRetrieveReq HotelRetrieveReq) {
             this.HotelRetrieveReq = HotelRetrieveReq;
         }
     }
@@ -17931,15 +20792,15 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class serviceResponse3 {
+    internal partial class serviceResponse4 {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0", Order=0)]
         public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRetrieveRsp HotelRetrieveRsp;
         
-        public serviceResponse3() {
+        public serviceResponse4() {
         }
         
-        public serviceResponse3(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRetrieveRsp HotelRetrieveRsp) {
+        public serviceResponse4(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRetrieveRsp HotelRetrieveRsp) {
             this.HotelRetrieveRsp = HotelRetrieveRsp;
         }
     }
@@ -17972,37 +20833,39 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse3 Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRetrieveServicePortType.service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest3 request) {
+        Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse4 Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRetrieveServicePortType.service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest4 request) {
             return base.Channel.service(request);
         }
         
         public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRetrieveRsp service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRetrieveReq HotelRetrieveReq) {
-            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest3 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest3();
+            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest4 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest4();
             inValue.HotelRetrieveReq = HotelRetrieveReq;
-            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse3 retVal = ((Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRetrieveServicePortType)(this)).service(inValue);
+            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse4 retVal = ((Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRetrieveServicePortType)(this)).service(inValue);
             return retVal.HotelRetrieveRsp;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse3> Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRetrieveServicePortType.serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest3 request) {
+        System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse4> Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRetrieveServicePortType.serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest4 request) {
             return base.Channel.serviceAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse3> serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRetrieveReq HotelRetrieveReq) {
-            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest3 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest3();
+        public System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse4> serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRetrieveReq HotelRetrieveReq) {
+            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest4 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest4();
             inValue.HotelRetrieveReq = HotelRetrieveReq;
             return ((Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRetrieveServicePortType)(this)).serviceAsync(inValue);
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.travelport.com/service/hotel_v25_0", ConfigurationName="Travelport.uAPI.Hotel.HotelRulesServicePortType")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.travelport.com/service/hotel_v30_0", ConfigurationName="Travelport.uAPI.Hotel.HotelRulesServicePortType")]
     internal interface HotelRulesServicePortType {
         
         // CODEGEN: Generating message contract since the operation service is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8080/kestrel/HotelService", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.ErrorInfo), Action="http://localhost:8080/kestrel/HotelService", Name="ErrorInfo", Namespace="http://www.travelport.com/schema/common_v25_0")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.ErrorInfo), Action="http://localhost:8080/kestrel/HotelService", Name="ErrorInfo", Namespace="http://www.travelport.com/schema/common_v30_0")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeFeeInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeTax))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeProviderReservationDetail))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseAsyncProviderSpecificResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeErrorInfo))]
@@ -18020,24 +20883,25 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeSearchTimeSpec))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeAgentInfo))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Segment))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeTaxInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MCOInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseReservation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeGuaranteeInformation))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeAgencyPayment))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeVoucherInformation))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeFormOfPaymentPNRReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeGeneralReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typePaymentCard))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeResultMessage))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseRsp))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Location))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typePaymentCard))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeRemark))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeRemarkWithTravelerRef))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SeatAssignment))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseReq))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeVendorLocation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Location))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseCoreReq))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HotelChain[]))]
-        Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse4 service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest4 request);
+        Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse5 service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest5 request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8080/kestrel/HotelService", ReplyAction="*")]
-        System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse4> serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest4 request);
+        System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse5> serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest5 request);
     }
     
     /// <remarks/>
@@ -18045,7 +20909,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class HotelRulesReq : BaseReq {
         
         private object itemField;
@@ -18069,7 +20933,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class HotelRulesReqHotelRulesLookup : object, System.ComponentModel.INotifyPropertyChanged {
         
         private HotelProperty hotelPropertyField;
@@ -18081,6 +20945,10 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         private string ratePlanTypeField;
         
         private string baseField;
+        
+        private HotelRulesReqHotelRulesLookupRulesDetailReqd rulesDetailReqdField;
+        
+        private bool rulesDetailReqdFieldSpecified;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -18142,6 +21010,30 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public HotelRulesReqHotelRulesLookupRulesDetailReqd RulesDetailReqd {
+            get {
+                return this.rulesDetailReqdField;
+            }
+            set {
+                this.rulesDetailReqdField = value;
+                this.RaisePropertyChanged("RulesDetailReqd");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool RulesDetailReqdSpecified {
+            get {
+                return this.rulesDetailReqdFieldSpecified;
+            }
+            set {
+                this.rulesDetailReqdFieldSpecified = value;
+                this.RaisePropertyChanged("RulesDetailReqdSpecified");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -18157,7 +21049,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class HotelRulesModifiers : object, System.ComponentModel.INotifyPropertyChanged {
         
         private PermittedProviders permittedProvidersField;
@@ -18174,6 +21066,10 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         
         private int numberOfRoomsField;
         
+        private int totalOccupantsField;
+        
+        private bool totalOccupantsFieldSpecified;
+        
         private string keyField;
         
         public HotelRulesModifiers() {
@@ -18181,7 +21077,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v25_0", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v30_0", Order=0)]
         public PermittedProviders PermittedProviders {
             get {
                 return this.permittedProvidersField;
@@ -18217,7 +21113,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("CorporateDiscountID", Namespace="http://www.travelport.com/schema/common_v25_0", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute("CorporateDiscountID", Namespace="http://www.travelport.com/schema/common_v30_0", Order=3)]
         public CorporateDiscountID[] CorporateDiscountID {
             get {
                 return this.corporateDiscountIDField;
@@ -18267,6 +21163,30 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int TotalOccupants {
+            get {
+                return this.totalOccupantsField;
+            }
+            set {
+                this.totalOccupantsField = value;
+                this.RaisePropertyChanged("TotalOccupants");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool TotalOccupantsSpecified {
+            get {
+                return this.totalOccupantsFieldSpecified;
+            }
+            set {
+                this.totalOccupantsFieldSpecified = value;
+                this.RaisePropertyChanged("TotalOccupantsSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Key {
             get {
                 return this.keyField;
@@ -18290,9 +21210,25 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public enum HotelRulesReqHotelRulesLookupRulesDetailReqd {
+        
+        /// <remarks/>
+        Rules,
+        
+        /// <remarks/>
+        Details,
+        
+        /// <remarks/>
+        All,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class HotelRulesRsp : BaseRsp {
         
         private HotelRateDetail[] hotelRateDetailField;
@@ -18343,7 +21279,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class HotelRuleItem : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string[] textField;
@@ -18388,15 +21324,15 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class serviceRequest4 {
+    internal partial class serviceRequest5 {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0", Order=0)]
         public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRulesReq HotelRulesReq;
         
-        public serviceRequest4() {
+        public serviceRequest5() {
         }
         
-        public serviceRequest4(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRulesReq HotelRulesReq) {
+        public serviceRequest5(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRulesReq HotelRulesReq) {
             this.HotelRulesReq = HotelRulesReq;
         }
     }
@@ -18405,15 +21341,15 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class serviceResponse4 {
+    internal partial class serviceResponse5 {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0", Order=0)]
         public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRulesRsp HotelRulesRsp;
         
-        public serviceResponse4() {
+        public serviceResponse5() {
         }
         
-        public serviceResponse4(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRulesRsp HotelRulesRsp) {
+        public serviceResponse5(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRulesRsp HotelRulesRsp) {
             this.HotelRulesRsp = HotelRulesRsp;
         }
     }
@@ -18446,37 +21382,39 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse4 Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRulesServicePortType.service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest4 request) {
+        Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse5 Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRulesServicePortType.service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest5 request) {
             return base.Channel.service(request);
         }
         
         public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRulesRsp service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRulesReq HotelRulesReq) {
-            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest4 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest4();
+            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest5 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest5();
             inValue.HotelRulesReq = HotelRulesReq;
-            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse4 retVal = ((Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRulesServicePortType)(this)).service(inValue);
+            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse5 retVal = ((Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRulesServicePortType)(this)).service(inValue);
             return retVal.HotelRulesRsp;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse4> Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRulesServicePortType.serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest4 request) {
+        System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse5> Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRulesServicePortType.serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest5 request) {
             return base.Channel.serviceAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse4> serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRulesReq HotelRulesReq) {
-            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest4 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest4();
+        public System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse5> serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRulesReq HotelRulesReq) {
+            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest5 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest5();
             inValue.HotelRulesReq = HotelRulesReq;
             return ((Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelRulesServicePortType)(this)).serviceAsync(inValue);
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.travelport.com/service/hotel_v25_0", ConfigurationName="Travelport.uAPI.Hotel.HotelUpsellSearchServicePortType")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.travelport.com/service/hotel_v30_0", ConfigurationName="Travelport.uAPI.Hotel.HotelUpsellSearchServicePortType")]
     internal interface HotelUpsellSearchServicePortType {
         
         // CODEGEN: Generating message contract since the operation service is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8080/kestrel/HotelService", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.ErrorInfo), Action="http://localhost:8080/kestrel/HotelService", Name="ErrorInfo", Namespace="http://www.travelport.com/schema/common_v25_0")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.ErrorInfo), Action="http://localhost:8080/kestrel/HotelService", Name="ErrorInfo", Namespace="http://www.travelport.com/schema/common_v30_0")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeFeeInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeTax))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeProviderReservationDetail))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseAsyncProviderSpecificResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeErrorInfo))]
@@ -18494,24 +21432,25 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeSearchTimeSpec))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeAgentInfo))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Segment))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeTaxInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MCOInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseReservation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeGuaranteeInformation))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeAgencyPayment))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeVoucherInformation))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeFormOfPaymentPNRReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeGeneralReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typePaymentCard))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeResultMessage))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseRsp))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Location))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typePaymentCard))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeRemark))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeRemarkWithTravelerRef))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SeatAssignment))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseReq))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeVendorLocation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Location))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseCoreReq))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HotelChain[]))]
-        Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse5 service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest5 request);
+        Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse6 service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest6 request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8080/kestrel/HotelService", ReplyAction="*")]
-        System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse5> serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest5 request);
+        System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse6> serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest6 request);
     }
     
     /// <remarks/>
@@ -18519,7 +21458,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class HotelUpsellDetailsReq : BaseReq {
         
         private HotelProperty hotelPropertyField;
@@ -18556,7 +21495,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class HotelUpsellDetailsRsp : BaseHotelDetailsRsp {
     }
     
@@ -18564,15 +21503,15 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class serviceRequest5 {
+    internal partial class serviceRequest6 {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0", Order=0)]
         public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelUpsellDetailsReq HotelUpsellDetailsReq;
         
-        public serviceRequest5() {
+        public serviceRequest6() {
         }
         
-        public serviceRequest5(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelUpsellDetailsReq HotelUpsellDetailsReq) {
+        public serviceRequest6(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelUpsellDetailsReq HotelUpsellDetailsReq) {
             this.HotelUpsellDetailsReq = HotelUpsellDetailsReq;
         }
     }
@@ -18581,15 +21520,15 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class serviceResponse5 {
+    internal partial class serviceResponse6 {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0", Order=0)]
         public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelUpsellDetailsRsp HotelUpsellDetailsRsp;
         
-        public serviceResponse5() {
+        public serviceResponse6() {
         }
         
-        public serviceResponse5(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelUpsellDetailsRsp HotelUpsellDetailsRsp) {
+        public serviceResponse6(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelUpsellDetailsRsp HotelUpsellDetailsRsp) {
             this.HotelUpsellDetailsRsp = HotelUpsellDetailsRsp;
         }
     }
@@ -18622,37 +21561,39 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse5 Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelUpsellSearchServicePortType.service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest5 request) {
+        Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse6 Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelUpsellSearchServicePortType.service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest6 request) {
             return base.Channel.service(request);
         }
         
         public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelUpsellDetailsRsp service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelUpsellDetailsReq HotelUpsellDetailsReq) {
-            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest5 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest5();
+            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest6 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest6();
             inValue.HotelUpsellDetailsReq = HotelUpsellDetailsReq;
-            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse5 retVal = ((Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelUpsellSearchServicePortType)(this)).service(inValue);
+            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse6 retVal = ((Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelUpsellSearchServicePortType)(this)).service(inValue);
             return retVal.HotelUpsellDetailsRsp;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse5> Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelUpsellSearchServicePortType.serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest5 request) {
+        System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse6> Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelUpsellSearchServicePortType.serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest6 request) {
             return base.Channel.serviceAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse5> serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelUpsellDetailsReq HotelUpsellDetailsReq) {
-            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest5 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest5();
+        public System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse6> serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelUpsellDetailsReq HotelUpsellDetailsReq) {
+            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest6 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest6();
             inValue.HotelUpsellDetailsReq = HotelUpsellDetailsReq;
             return ((Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelUpsellSearchServicePortType)(this)).serviceAsync(inValue);
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.travelport.com/service/hotel_v25_0", ConfigurationName="Travelport.uAPI.Hotel.HotelKeywordsServicePortType")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.travelport.com/service/hotel_v30_0", ConfigurationName="Travelport.uAPI.Hotel.HotelKeywordsServicePortType")]
     internal interface HotelKeywordsServicePortType {
         
         // CODEGEN: Generating message contract since the operation service is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8080/kestrel/HotelService", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.ErrorInfo), Action="http://localhost:8080/kestrel/HotelService", Name="ErrorInfo", Namespace="http://www.travelport.com/schema/common_v25_0")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.ErrorInfo), Action="http://localhost:8080/kestrel/HotelService", Name="ErrorInfo", Namespace="http://www.travelport.com/schema/common_v30_0")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeFeeInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeTax))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeProviderReservationDetail))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseAsyncProviderSpecificResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeErrorInfo))]
@@ -18670,24 +21611,25 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeSearchTimeSpec))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeAgentInfo))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Segment))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeTaxInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MCOInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseReservation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeGuaranteeInformation))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeAgencyPayment))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeVoucherInformation))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeFormOfPaymentPNRReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeGeneralReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typePaymentCard))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeResultMessage))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseRsp))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Location))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typePaymentCard))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeRemark))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeRemarkWithTravelerRef))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SeatAssignment))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseReq))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeVendorLocation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Location))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseCoreReq))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HotelChain[]))]
-        Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse6 service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest6 request);
+        Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse7 service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest7 request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8080/kestrel/HotelService", ReplyAction="*")]
-        System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse6> serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest6 request);
+        System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse7> serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest7 request);
     }
     
     /// <remarks/>
@@ -18695,7 +21637,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class HotelKeywordReq : BaseReq {
         
         private Keyword[] keywordField;
@@ -18715,7 +21657,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         private bool returnKeywordListFieldSpecified;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Keyword", Namespace="http://www.travelport.com/schema/common_v25_0", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("Keyword", Namespace="http://www.travelport.com/schema/common_v30_0", Order=0)]
         public Keyword[] Keyword {
             get {
                 return this.keywordField;
@@ -18727,7 +21669,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v25_0", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v30_0", Order=1)]
         public PermittedProviders PermittedProviders {
             get {
                 return this.permittedProvidersField;
@@ -18816,7 +21758,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v30_0")]
     public partial class Keyword : typeKeyword {
         
         private string[] textField;
@@ -18839,7 +21781,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class HotelKeywordRsp : BaseRsp {
         
         private object[] marketingInformationField;
@@ -18847,7 +21789,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         private Keyword[] keywordField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Namespace="http://www.travelport.com/schema/common_v25_0", Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Namespace="http://www.travelport.com/schema/common_v30_0", Order=0)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Text", IsNullable=false)]
         public object[] MarketingInformation {
             get {
@@ -18860,7 +21802,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Keyword", Namespace="http://www.travelport.com/schema/common_v25_0", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("Keyword", Namespace="http://www.travelport.com/schema/common_v30_0", Order=1)]
         public Keyword[] Keyword {
             get {
                 return this.keywordField;
@@ -18876,15 +21818,15 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class serviceRequest6 {
+    internal partial class serviceRequest7 {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0", Order=0)]
         public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelKeywordReq HotelKeywordReq;
         
-        public serviceRequest6() {
+        public serviceRequest7() {
         }
         
-        public serviceRequest6(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelKeywordReq HotelKeywordReq) {
+        public serviceRequest7(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelKeywordReq HotelKeywordReq) {
             this.HotelKeywordReq = HotelKeywordReq;
         }
     }
@@ -18893,15 +21835,15 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class serviceResponse6 {
+    internal partial class serviceResponse7 {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0", Order=0)]
         public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelKeywordRsp HotelKeywordRsp;
         
-        public serviceResponse6() {
+        public serviceResponse7() {
         }
         
-        public serviceResponse6(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelKeywordRsp HotelKeywordRsp) {
+        public serviceResponse7(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelKeywordRsp HotelKeywordRsp) {
             this.HotelKeywordRsp = HotelKeywordRsp;
         }
     }
@@ -18934,37 +21876,39 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse6 Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelKeywordsServicePortType.service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest6 request) {
+        Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse7 Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelKeywordsServicePortType.service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest7 request) {
             return base.Channel.service(request);
         }
         
         public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelKeywordRsp service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelKeywordReq HotelKeywordReq) {
-            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest6 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest6();
+            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest7 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest7();
             inValue.HotelKeywordReq = HotelKeywordReq;
-            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse6 retVal = ((Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelKeywordsServicePortType)(this)).service(inValue);
+            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse7 retVal = ((Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelKeywordsServicePortType)(this)).service(inValue);
             return retVal.HotelKeywordRsp;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse6> Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelKeywordsServicePortType.serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest6 request) {
+        System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse7> Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelKeywordsServicePortType.serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest7 request) {
             return base.Channel.serviceAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse6> serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelKeywordReq HotelKeywordReq) {
-            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest6 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest6();
+        public System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse7> serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelKeywordReq HotelKeywordReq) {
+            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest7 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest7();
             inValue.HotelKeywordReq = HotelKeywordReq;
             return ((Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelKeywordsServicePortType)(this)).serviceAsync(inValue);
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.travelport.com/service/hotel_v25_0", ConfigurationName="Travelport.uAPI.Hotel.HotelSuperShopperServicePortType")]
-    internal interface HotelSuperShopperServicePortType {
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.travelport.com/service/hotel_v30_0", ConfigurationName="Travelport.uAPI.Hotel.RetrieveHotelSearchAvailabilityServicePortType")]
+    internal interface RetrieveHotelSearchAvailabilityServicePortType {
         
         // CODEGEN: Generating message contract since the operation service is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8080/kestrel/HotelService", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.ErrorInfo), Action="http://localhost:8080/kestrel/HotelService", Name="ErrorInfo", Namespace="http://www.travelport.com/schema/common_v25_0")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.ErrorInfo), Action="http://localhost:8080/kestrel/HotelService", Name="ErrorInfo", Namespace="http://www.travelport.com/schema/common_v30_0")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeFeeInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeTax))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeProviderReservationDetail))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseAsyncProviderSpecificResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeErrorInfo))]
@@ -18982,24 +21926,25 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeSearchTimeSpec))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeAgentInfo))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Segment))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeTaxInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MCOInformation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseReservation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeGuaranteeInformation))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeAgencyPayment))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeVoucherInformation))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeFormOfPaymentPNRReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeGeneralReference))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typePaymentCard))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeResultMessage))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseRsp))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Location))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typePaymentCard))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeRemark))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeRemarkWithTravelerRef))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SeatAssignment))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseReq))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeVendorLocation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Location))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseCoreReq))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HotelChain[]))]
-        Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse7 service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest7 request);
+        Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse8 service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest8 request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8080/kestrel/HotelService", ReplyAction="*")]
-        System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse7> serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest7 request);
+        System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse8> serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest8 request);
     }
     
     /// <remarks/>
@@ -19007,10 +21952,203 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class RetrieveHotelSearchAvailabilityReq : BaseReq {
+        
+        private string searchIdField;
+        
+        private string providerCodeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string SearchId {
+            get {
+                return this.searchIdField;
+            }
+            set {
+                this.searchIdField = value;
+                this.RaisePropertyChanged("SearchId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ProviderCode {
+            get {
+                return this.providerCodeField;
+            }
+            set {
+                this.providerCodeField = value;
+                this.RaisePropertyChanged("ProviderCode");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
+    public partial class RetrieveHotelSearchAvailabilityRsp : BaseHotelSearchRsp {
+        
+        private BaseAsyncProviderSpecificResponse[] asyncProviderSpecificResponseField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("AsyncProviderSpecificResponse", Order=0)]
+        public BaseAsyncProviderSpecificResponse[] AsyncProviderSpecificResponse {
+            get {
+                return this.asyncProviderSpecificResponseField;
+            }
+            set {
+                this.asyncProviderSpecificResponseField = value;
+                this.RaisePropertyChanged("AsyncProviderSpecificResponse");
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    internal partial class serviceRequest8 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0", Order=0)]
+        public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.RetrieveHotelSearchAvailabilityReq RetrieveHotelSearchAvailabilityReq;
+        
+        public serviceRequest8() {
+        }
+        
+        public serviceRequest8(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.RetrieveHotelSearchAvailabilityReq RetrieveHotelSearchAvailabilityReq) {
+            this.RetrieveHotelSearchAvailabilityReq = RetrieveHotelSearchAvailabilityReq;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    internal partial class serviceResponse8 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0", Order=0)]
+        public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.RetrieveHotelSearchAvailabilityRsp RetrieveHotelSearchAvailabilityRsp;
+        
+        public serviceResponse8() {
+        }
+        
+        public serviceResponse8(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.RetrieveHotelSearchAvailabilityRsp RetrieveHotelSearchAvailabilityRsp) {
+            this.RetrieveHotelSearchAvailabilityRsp = RetrieveHotelSearchAvailabilityRsp;
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    internal interface RetrieveHotelSearchAvailabilityServicePortTypeChannel : Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.RetrieveHotelSearchAvailabilityServicePortType, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    internal partial class RetrieveHotelSearchAvailabilityServicePortTypeClient : System.ServiceModel.ClientBase<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.RetrieveHotelSearchAvailabilityServicePortType>, Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.RetrieveHotelSearchAvailabilityServicePortType {
+        
+        public RetrieveHotelSearchAvailabilityServicePortTypeClient() {
+        }
+        
+        public RetrieveHotelSearchAvailabilityServicePortTypeClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public RetrieveHotelSearchAvailabilityServicePortTypeClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public RetrieveHotelSearchAvailabilityServicePortTypeClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public RetrieveHotelSearchAvailabilityServicePortTypeClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse8 Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.RetrieveHotelSearchAvailabilityServicePortType.service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest8 request) {
+            return base.Channel.service(request);
+        }
+        
+        public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.RetrieveHotelSearchAvailabilityRsp service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.RetrieveHotelSearchAvailabilityReq RetrieveHotelSearchAvailabilityReq) {
+            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest8 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest8();
+            inValue.RetrieveHotelSearchAvailabilityReq = RetrieveHotelSearchAvailabilityReq;
+            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse8 retVal = ((Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.RetrieveHotelSearchAvailabilityServicePortType)(this)).service(inValue);
+            return retVal.RetrieveHotelSearchAvailabilityRsp;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse8> Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.RetrieveHotelSearchAvailabilityServicePortType.serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest8 request) {
+            return base.Channel.serviceAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse8> serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.RetrieveHotelSearchAvailabilityReq RetrieveHotelSearchAvailabilityReq) {
+            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest8 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest8();
+            inValue.RetrieveHotelSearchAvailabilityReq = RetrieveHotelSearchAvailabilityReq;
+            return ((Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.RetrieveHotelSearchAvailabilityServicePortType)(this)).serviceAsync(inValue);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.travelport.com/service/hotel_v30_0", ConfigurationName="Travelport.uAPI.Hotel.HotelSuperShopperServicePortType")]
+    internal interface HotelSuperShopperServicePortType {
+        
+        // CODEGEN: Generating message contract since the operation service is neither RPC nor document wrapped.
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8080/kestrel/HotelService", ReplyAction="*")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.ErrorInfo), Action="http://localhost:8080/kestrel/HotelService", Name="ErrorInfo", Namespace="http://www.travelport.com/schema/common_v30_0")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeFeeInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeTax))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeProviderReservationDetail))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseAsyncProviderSpecificResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeErrorInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeBookingTransactionsAllowed))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeKeyword))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeAgencyHierarchyReference))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeDateRange))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeProfileRef))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeLocation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ServiceRuleType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typePassengerType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeTimeSpec))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeSearchLocation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeRateDescription))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeSearchTimeSpec))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeAgentInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Segment))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeTaxInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(MCOInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseReservation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeGuaranteeInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeVoucherInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeResultMessage))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseRsp))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typePaymentCard))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeRemark))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeRemarkWithTravelerRef))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(SeatAssignment))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(typeVendorLocation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Location))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BaseCoreReq))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HotelChain[]))]
+        Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse9 service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest9 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost:8080/kestrel/HotelService", ReplyAction="*")]
+        System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse9> serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest9 request);
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class HotelSuperShopperReq : BaseSearchReq {
         
-        private HotelLocation hotelLocationField;
+        private HotelSearchLocation hotelSearchLocationField;
         
         private HotelSearchModifiers hotelSearchModifiersField;
         
@@ -19020,13 +22158,13 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public HotelLocation HotelLocation {
+        public HotelSearchLocation HotelSearchLocation {
             get {
-                return this.hotelLocationField;
+                return this.hotelSearchLocationField;
             }
             set {
-                this.hotelLocationField = value;
-                this.RaisePropertyChanged("HotelLocation");
+                this.hotelSearchLocationField = value;
+                this.RaisePropertyChanged("HotelSearchLocation");
             }
         }
         
@@ -19072,7 +22210,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class QuickResponse : object, System.ComponentModel.INotifyPropertyChanged {
         
         private bool fastResultField;
@@ -19132,7 +22270,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class HotelSuperShopperRsp : BaseSearchRsp {
         
         private VendorLocation[] vendorLocationField;
@@ -19142,7 +22280,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         private QuickResponse quickResponseField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("VendorLocation", Namespace="http://www.travelport.com/schema/common_v25_0", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("VendorLocation", Namespace="http://www.travelport.com/schema/common_v30_0", Order=0)]
         public VendorLocation[] VendorLocation {
             get {
                 return this.vendorLocationField;
@@ -19183,7 +22321,7 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v30_0")]
     public partial class HotelSuperShopperResults : object, System.ComponentModel.INotifyPropertyChanged {
         
         private HotelProperty hotelPropertyField;
@@ -19256,15 +22394,15 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class serviceRequest7 {
+    internal partial class serviceRequest9 {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0", Order=0)]
         public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSuperShopperReq HotelSuperShopperReq;
         
-        public serviceRequest7() {
+        public serviceRequest9() {
         }
         
-        public serviceRequest7(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSuperShopperReq HotelSuperShopperReq) {
+        public serviceRequest9(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSuperShopperReq HotelSuperShopperReq) {
             this.HotelSuperShopperReq = HotelSuperShopperReq;
         }
     }
@@ -19273,15 +22411,15 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    internal partial class serviceResponse7 {
+    internal partial class serviceResponse9 {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.travelport.com/schema/hotel_v30_0", Order=0)]
         public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSuperShopperRsp HotelSuperShopperRsp;
         
-        public serviceResponse7() {
+        public serviceResponse9() {
         }
         
-        public serviceResponse7(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSuperShopperRsp HotelSuperShopperRsp) {
+        public serviceResponse9(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSuperShopperRsp HotelSuperShopperRsp) {
             this.HotelSuperShopperRsp = HotelSuperShopperRsp;
         }
     }
@@ -19314,24 +22452,24 @@ namespace Zim.Tech.TravelLiker.Travelport.uAPI.Hotel {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse7 Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSuperShopperServicePortType.service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest7 request) {
+        Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse9 Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSuperShopperServicePortType.service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest9 request) {
             return base.Channel.service(request);
         }
         
         public Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSuperShopperRsp service(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSuperShopperReq HotelSuperShopperReq) {
-            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest7 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest7();
+            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest9 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest9();
             inValue.HotelSuperShopperReq = HotelSuperShopperReq;
-            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse7 retVal = ((Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSuperShopperServicePortType)(this)).service(inValue);
+            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse9 retVal = ((Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSuperShopperServicePortType)(this)).service(inValue);
             return retVal.HotelSuperShopperRsp;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse7> Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSuperShopperServicePortType.serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest7 request) {
+        System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse9> Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSuperShopperServicePortType.serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest9 request) {
             return base.Channel.serviceAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse7> serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSuperShopperReq HotelSuperShopperReq) {
-            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest7 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest7();
+        public System.Threading.Tasks.Task<Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse9> serviceAsync(Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSuperShopperReq HotelSuperShopperReq) {
+            Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest9 inValue = new Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceRequest9();
             inValue.HotelSuperShopperReq = HotelSuperShopperReq;
             return ((Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.HotelSuperShopperServicePortType)(this)).serviceAsync(inValue);
         }

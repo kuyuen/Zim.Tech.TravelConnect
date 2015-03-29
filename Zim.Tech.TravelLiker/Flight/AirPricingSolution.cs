@@ -13,7 +13,7 @@ namespace Zim.Tech.TravelLiker.Flight
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/air_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/air_v29_0")]
     public partial class AirPricingSolution : object
     {
         public AirPricingSolution()
@@ -267,7 +267,7 @@ namespace Zim.Tech.TravelLiker.Flight
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/air_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/air_v29_0")]
     public partial class Journey : object
     {
         private List<typeAirSegmentRef> airSegmentRefField;
@@ -308,7 +308,7 @@ namespace Zim.Tech.TravelLiker.Flight
         [System.SerializableAttribute()]
         [System.Diagnostics.DebuggerStepThroughAttribute()]
         [System.ComponentModel.DesignerCategoryAttribute("code")]
-        //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/air_v25_0")]
+        //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/air_v29_0")]
         public partial class typeAirSegmentRef : object
         {
 
@@ -340,7 +340,7 @@ namespace Zim.Tech.TravelLiker.Flight
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/air_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/air_v29_0")]
     public partial class LegRef : object
     {
 
@@ -370,7 +370,7 @@ namespace Zim.Tech.TravelLiker.Flight
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/air_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/air_v29_0")]
     public partial class AirPricingInfo : object
     {
         private List<FareInfoRef> fareInfoRefField;
@@ -687,7 +687,7 @@ namespace Zim.Tech.TravelLiker.Flight
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/air_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/air_v29_0")]
     public partial class FareInfoRef : object
     {
 
@@ -715,7 +715,7 @@ namespace Zim.Tech.TravelLiker.Flight
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/air_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/air_v29_0")]
     public partial class BookingInfo : object
     {
 
@@ -849,7 +849,7 @@ namespace Zim.Tech.TravelLiker.Flight
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    //[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.travelport.com/schema/air_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.travelport.com/schema/air_v29_0")]
     public partial class TaxInfo : object
     {
         private string categoryField;
@@ -892,7 +892,7 @@ namespace Zim.Tech.TravelLiker.Flight
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.travelport.com/schema/common_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.travelport.com/schema/common_v29_0")]
     public partial class PassengerType : object
     {
         private string codeField;
@@ -1061,7 +1061,7 @@ namespace Zim.Tech.TravelLiker.Flight
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    //[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.travelport.com/schema/air_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.travelport.com/schema/air_v29_0")]
     public partial class FarePenalty
     {
 
@@ -1088,7 +1088,7 @@ namespace Zim.Tech.TravelLiker.Flight
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    //[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.travelport.com/schema/common_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.travelport.com/schema/common_v29_0")]
     public enum typeCabinClass
     {
 
@@ -1113,7 +1113,7 @@ namespace Zim.Tech.TravelLiker.Flight
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    //[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.travelport.com/schema/air_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.travelport.com/schema/air_v29_0")]
     public enum typePricingMethod
     {
 

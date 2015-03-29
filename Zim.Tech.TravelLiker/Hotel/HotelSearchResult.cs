@@ -14,7 +14,7 @@ namespace Zim.Tech.TravelLiker.Hotel
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/hotel_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/hotel_v29_0")]
     public partial class HotelSearchResult : object
     {
 
@@ -54,7 +54,7 @@ namespace Zim.Tech.TravelLiker.Hotel
         //}
 
         /// <remarks/>
-        //[System.Xml.Serialization.XmlElementAttribute("CorporateDiscountID", Namespace = "http://www.travelport.com/schema/common_v25_0")]
+        //[System.Xml.Serialization.XmlElementAttribute("CorporateDiscountID", Namespace = "http://www.travelport.com/schema/common_v29_0")]
         //public CorporateDiscountID[] CorporateDiscountID
         //{
         //    get
@@ -82,7 +82,7 @@ namespace Zim.Tech.TravelLiker.Hotel
         }
 
         /// <remarks/>
-        //[System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.travelport.com/schema/common_v25_0")]
+        //[System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.travelport.com/schema/common_v29_0")]
         //public MediaItem MediaItem
         //{
         //    get
@@ -106,12 +106,12 @@ namespace Zim.Tech.TravelLiker.Hotel
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v29_0")]
     public partial class HotelProperty : object {
         
         #region HotelProperty private properties
-        //private List<string> propertyAddressField;   
-        //private Distance distanceField;        
+        private List<string> propertyAddressField;   
+        private Distance distanceField;        
         private Amenities amenitiesField;        
         #endregion
 
@@ -143,36 +143,36 @@ namespace Zim.Tech.TravelLiker.Hotel
 
         #region HotelProperty public Attribute
         /// <remarks/>
-        //[System.Xml.Serialization.XmlArrayAttribute()]
-        //[System.Xml.Serialization.XmlArrayItemAttribute("Address", IsNullable = false)]
-        //public List<string> PropertyAddress
-        //{
-        //    get
-        //    {
-        //        return this.propertyAddressField;
-        //    }
-        //    set
-        //    {
-        //        this.propertyAddressField = value;
-        //    }
-        //}
+        [System.Xml.Serialization.XmlArrayAttribute()]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Address")]
+        public List<string> PropertyAddress
+        {
+            get
+            {
+                return this.propertyAddressField;
+            }
+            set
+            {
+                this.propertyAddressField = value;
+            }
+        }
 
-        //[System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.travelport.com/schema/common_v25_0")]
-        //public Distance Distance
-        //{
-        //    get
-        //    {
-        //        return this.distanceField;
-        //    }
-        //    set
-        //    {
-        //        this.distanceField = value;
-        //    }
-        //}
+        //[System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.travelport.com/schema/common_v29_0")]
+        public Distance Distance
+        {
+            get
+            {
+                return this.distanceField;
+            }
+            set
+            {
+                this.distanceField = value;
+            }
+        }
 
         /// <remarks/>
         //[System.Xml.Serialization.XmlArrayAttribute()]
-        //[System.Xml.Serialization.XmlArrayItemAttribute("Amenity", IsNullable = false)]
+        //[System.Xml.Serialization.XmlArrayItemAttribute("Amenity")]
         public Amenities Amenities
         {
             get
@@ -188,7 +188,7 @@ namespace Zim.Tech.TravelLiker.Hotel
 
         #region HotelProperty public properties
         /// <remarks/>
-        //[System.Xml.Serialization.XmlElementAttribute("PhoneNumber", Namespace="http://www.travelport.com/schema/common_v25_0")]
+        //[System.Xml.Serialization.XmlElementAttribute("PhoneNumber", Namespace="http://www.travelport.com/schema/common_v29_0")]
         //public PhoneNumber[] PhoneNumber {
         //    get {
         //        return this.phoneNumberField;
@@ -199,7 +199,7 @@ namespace Zim.Tech.TravelLiker.Hotel
         //}
         
         /// <remarks/>
-        //[System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+        //[System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.travelport.com/schema/common_v29_0")]
         //public CoordinateLocation CoordinateLocation {
         //    get {
         //        return this.coordinateLocationField;
@@ -211,7 +211,7 @@ namespace Zim.Tech.TravelLiker.Hotel
         
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("HotelRating")]
+        //[System.Xml.Serialization.XmlElementAttribute("HotelRating")]
         //public HotelRating[] HotelRating {
         //    get {
         //        return this.hotelRatingField;
@@ -451,7 +451,7 @@ namespace Zim.Tech.TravelLiker.Hotel
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v29_0")]
     public partial class RateInfo : object {
         
         private string minimumAmountField;        
@@ -753,7 +753,7 @@ namespace Zim.Tech.TravelLiker.Hotel
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v29_0")]
     public partial class Distance : object {
         
         private DistanceUnits unitsField;
@@ -803,7 +803,7 @@ namespace Zim.Tech.TravelLiker.Hotel
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/common_v29_0")]
     public enum DistanceUnits {
         
         /// <remarks/>
@@ -845,7 +845,7 @@ namespace Zim.Tech.TravelLiker.Hotel
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v29_0")]
     public partial class Amenity : object
     {
 
@@ -870,12 +870,11 @@ namespace Zim.Tech.TravelLiker.Hotel
     #endregion
 
 
-
     #region ReserveRequirement Class
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    //[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/common_v29_0")]
     public enum typeReserveRequirement {
         
         /// <remarks/>
@@ -894,7 +893,7 @@ namespace Zim.Tech.TravelLiker.Hotel
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    //[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    //[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/hotel_v29_0")]
     public enum typeHotelAvailability {
         
         /// <remarks/>
@@ -919,7 +918,7 @@ namespace Zim.Tech.TravelLiker.Hotel
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/hotel_v25_0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travelport.com/schema/hotel_v29_0")]
     public enum typeHotelPaymentType {
         
         /// <remarks/>

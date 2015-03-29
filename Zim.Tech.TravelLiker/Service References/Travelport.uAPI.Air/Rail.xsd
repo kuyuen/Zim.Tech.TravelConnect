@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns="http://www.travelport.com/schema/rail_v25_0" xmlns:common="http://www.travelport.com/schema/common_v25_0" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.travelport.com/schema/rail_v25_0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="../common_v25_0/Common.xsd" namespace="http://www.travelport.com/schema/common_v25_0" />
+<xs:schema xmlns="http://www.travelport.com/schema/rail_v30_0" xmlns:common="http://www.travelport.com/schema/common_v30_0" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.travelport.com/schema/rail_v30_0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="../common_v30_0/Common.xsd" namespace="http://www.travelport.com/schema/common_v30_0" />
   <xs:annotation>
     <xs:documentation>(c) Travelport GDS 2008 All rights reserved. Proprietary Information of Travelport GDS.</xs:documentation>
   </xs:annotation>
@@ -15,7 +15,6 @@
             <xs:element maxOccurs="9" ref="common:BookingTravelerRef" />
             <xs:element maxOccurs="unbounded" ref="RailJourney" />
             <xs:element minOccurs="0" maxOccurs="unbounded" ref="RailPricingInfo" />
-            <xs:element minOccurs="0" maxOccurs="unbounded" ref="common:FormOfPayment" />
             <xs:element minOccurs="0" maxOccurs="unbounded" ref="common:Payment" />
             <xs:element minOccurs="0" maxOccurs="unbounded" ref="RailTicketInfo" />
             <xs:element minOccurs="0" ref="RailFareNoteList">
@@ -25,6 +24,11 @@
             </xs:element>
             <xs:element minOccurs="0" maxOccurs="unbounded" ref="common:SupplierLocator" />
           </xs:sequence>
+          <xs:attribute name="BookingStatus" type="xs:string" use="required">
+            <xs:annotation>
+              <xs:documentation>The Current Status of the rail booking.</xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
         </xs:extension>
       </xs:complexContent>
     </xs:complexType>
@@ -163,7 +167,7 @@
           </xs:complexType>
         </xs:element>
       </xs:sequence>
-      <xs:attribute name="Class" type="common:typeCabinClass" use="optional" />
+      <xs:attribute name="Class" type="xs:string" use="optional" />
     </xs:complexType>
   </xs:element>
   <xs:element name="RailSegmentList">
@@ -187,6 +191,7 @@
             <xs:element minOccurs="0" maxOccurs="unbounded" ref="RailSegmentInfo" />
             <xs:element minOccurs="0" maxOccurs="1" ref="OperatingCompany" />
             <xs:element minOccurs="0" maxOccurs="9" ref="RailAvailInfo" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="FulFillmentType" />
           </xs:sequence>
           <xs:attribute name="TrainNumber" type="typeTrainNumber" use="optional" />
           <xs:attributeGroup ref="attrRailSegmentOrigDestInfo" />
@@ -285,12 +290,12 @@
         <xs:element maxOccurs="unbounded" ref="RailJourney" />
         <xs:element maxOccurs="unbounded" ref="RailJourneyRef" />
       </xs:choice>
-      <xs:element maxOccurs="unbounded" ref="RailPricingInfo" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="RailPricingInfo" />
     </xs:sequence>
     <xs:attribute name="Key" type="common:typeRef" use="required" />
-    <xs:attribute name="OfferId" type="xs:integer" use="required">
+    <xs:attribute name="OfferId" type="xs:integer" use="optional">
       <xs:annotation>
-        <xs:documentation>Mandatory offer identification for the distributor. ID number cannot be changed.</xs:documentation>
+        <xs:documentation>OfferID must be included if the RailCreateReq contains a price.  If the RailCreateReq is used for the Direct Book function, the OfferID is not included.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attributeGroup ref="common:attrPrices" />
@@ -575,6 +580,7 @@
         </xs:choice>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="FareValidity" />
         <xs:element minOccurs="0" ref="common:HostToken" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="FulFillmentType" />
       </xs:sequence>
       <xs:attribute name="Key" type="common:typeRef" use="required" />
       <xs:attribute name="FareBasis" type="xs:string" use="optional">
@@ -844,8 +850,36 @@
       <xs:documentation>Information about refund.</xs:documentation>
     </xs:annotation>
     <xs:complexType>
-      <xs:attribute name="RefundAmount" type="common:typeMoney" use="required" />
-      <xs:attribute name="CancellationFee" type="common:typeMoney" use="optional" />
+      <xs:attribute name="RefundAmount" type="common:typeMoney" use="optional">
+        <xs:annotation>
+          <xs:documentation>Amount refunded back to customer.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="CancellationFee" type="common:typeMoney" use="optional">
+        <xs:annotation>
+          <xs:documentation>Cancellation penalty imposed by the distributor.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="Refund" type="xs:boolean" use="optional">
+        <xs:annotation>
+          <xs:documentation>Indicates whether vendor offers refund on rail reservation.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="Retain" type="xs:boolean" use="optional">
+        <xs:annotation>
+          <xs:documentation>Indicates whether vendor retains the amount to be used later.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="RetainAmount" type="common:typeMoney" use="optional">
+        <xs:annotation>
+          <xs:documentation>Amount retained by rail vendor for futute exchange/rail book at rail vendor site.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="NetAmount" type="common:typeMoney" use="optional">
+        <xs:annotation>
+          <xs:documentation>Net total amount to be refunded or retained by the vendor.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
     </xs:complexType>
   </xs:element>
   <xs:element name="RailSearchModifiers">
@@ -878,7 +912,7 @@
           <xs:documentation>The direction of travel.</xs:documentation>
         </xs:annotation>
       </xs:attribute>
-      <xs:attribute name="Class" type="common:typeCabinClass" use="optional" />
+      <xs:attribute name="Class" type="xs:string" use="optional" />
       <xs:attribute default="300" name="MaxSolutions" type="xs:integer" use="optional">
         <xs:annotation>
           <xs:documentation>The maximum number of solutions to return. Decreasing this number</xs:documentation>
@@ -1102,5 +1136,17 @@
         </xs:annotation>
       </xs:attribute>
     </xs:complexType>
+  </xs:element>
+  <xs:element name="FulFillmentType">
+    <xs:annotation>
+      <xs:documentation>Fulfillment options for this segment. the options will be one of "Ticket on Departure", "Ticketless", "Ticket By Email", "Travel Agency"
+         </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="0" />
+        <xs:maxLength value="255" />
+      </xs:restriction>
+    </xs:simpleType>
   </xs:element>
 </xs:schema>

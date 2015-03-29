@@ -21,15 +21,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="E:\Job\Zim-Tech\Travelpot\Travelport Universal API\Sample\uAPI_SOAP_Demo_Project\uAPI_6.0\hotel_v25_0\Hotel.wsdl" Protocol="file" SourceId="1" />
+    <MetadataSource Address="E:\Job\Zim-Tech\Travelpot\TravelLiker\SourceCode\Schema_8.1\hotel_v30_0\Hotel.wsdl" Protocol="file" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="HotelReqRsp.xsd" MetadataType="Schema" ID="61a901c5-25ae-4d13-a633-83316c16387d" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/Travelport Universal API/Sample/uAPI_SOAP_Demo_Project/uAPI_6.0/hotel_v25_0/HotelReqRsp.xsd" />
-    <MetadataFile FileName="HotelServices.wsdl" MetadataType="Wsdl" ID="679c7a65-19a6-4b89-91b2-7eafa8292d8e" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/Travelport Universal API/Sample/uAPI_SOAP_Demo_Project/uAPI_6.0/hotel_v25_0/Hotel.wsdl" />
-    <MetadataFile FileName="CommonReqRsp.xsd" MetadataType="Schema" ID="850715c6-58dc-47f0-8e00-7a0599def480" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/Travelport Universal API/Sample/uAPI_SOAP_Demo_Project/uAPI_6.0/common_v25_0/CommonReqRsp.xsd" />
-    <MetadataFile FileName="AbstractHotelServices.wsdl" MetadataType="Wsdl" ID="8f601a97-236e-4999-bf0e-00dfb9609fee" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/Travelport Universal API/Sample/uAPI_SOAP_Demo_Project/uAPI_6.0/hotel_v25_0/HotelAbstract.wsdl" />
-    <MetadataFile FileName="Hotel.xsd" MetadataType="Schema" ID="c5470a2d-c40e-4058-9b5f-55242785f0d4" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/Travelport Universal API/Sample/uAPI_SOAP_Demo_Project/uAPI_6.0/hotel_v25_0/Hotel.xsd" />
-    <MetadataFile FileName="Common.xsd" MetadataType="Schema" ID="de40d101-b83c-4ced-9be2-32f9e4f06fa2" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/Travelport Universal API/Sample/uAPI_SOAP_Demo_Project/uAPI_6.0/common_v25_0/Common.xsd" />
+    <MetadataFile FileName="Common.xsd" MetadataType="Schema" ID="88210edb-7162-4a3c-b9f6-bfb72e64aad0" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Schema_8.1/common_v30_0/Common.xsd" />
+    <MetadataFile FileName="CommonReqRsp.xsd" MetadataType="Schema" ID="69689f01-c25f-4a2a-bf07-6f3373157f70" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Schema_8.1/common_v30_0/CommonReqRsp.xsd" />
+    <MetadataFile FileName="Hotel.xsd" MetadataType="Schema" ID="01ceb326-000a-47cc-b653-24259fb303d6" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Schema_8.1/hotel_v30_0/Hotel.xsd" />
+    <MetadataFile FileName="AbstractHotelServices.wsdl" MetadataType="Wsdl" ID="c1ba240b-a11a-441f-a78d-cc7748319eef" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Schema_8.1/hotel_v30_0/HotelAbstract.wsdl" />
+    <MetadataFile FileName="HotelServices.wsdl" MetadataType="Wsdl" ID="57448ef3-225c-4dbe-aaf1-f6e9bb3fbff9" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Schema_8.1/hotel_v30_0/Hotel.wsdl" />
+    <MetadataFile FileName="HotelReqRsp.xsd" MetadataType="Schema" ID="bd50ed4a-ba09-4fee-a020-fa8511e1746c" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Schema_8.1/hotel_v30_0/HotelReqRsp.xsd" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

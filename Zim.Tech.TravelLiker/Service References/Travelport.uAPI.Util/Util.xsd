@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns="http://www.travelport.com/schema/util_v25_0" xmlns:air="http://www.travelport.com/schema/air_v25_0" xmlns:common="http://www.travelport.com/schema/common_v25_0" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.travelport.com/schema/util_v25_0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="../common_v25_0/CommonReqRsp.xsd" namespace="http://www.travelport.com/schema/common_v25_0" />
-  <xs:import schemaLocation="../common_v25_0/Common.xsd" namespace="http://www.travelport.com/schema/common_v25_0" />
-  <xs:import schemaLocation="../air_v25_0/Air.xsd" namespace="http://www.travelport.com/schema/air_v25_0" />
+<xs:schema xmlns="http://www.travelport.com/schema/util_v30_0" xmlns:air="http://www.travelport.com/schema/air_v30_0" xmlns:common="http://www.travelport.com/schema/common_v30_0" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.travelport.com/schema/util_v30_0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="../common_v30_0/CommonReqRsp.xsd" namespace="http://www.travelport.com/schema/common_v30_0" />
+  <xs:import schemaLocation="../common_v30_0/Common.xsd" namespace="http://www.travelport.com/schema/common_v30_0" />
+  <xs:import schemaLocation="../air_v30_0/Air.xsd" namespace="http://www.travelport.com/schema/air_v30_0" />
   <xs:annotation>
     <xs:documentation>
             (c) Travelport GDS 2008 All rights reserved. Proprietary
@@ -528,7 +528,7 @@
           </xs:sequence>
           <xs:attribute name="TypeCode" type="common:typeTypeCode" use="required">
             <xs:annotation>
-              <xs:documentation>The code of the reference data type. Valid values are 'PaymentType', 'PaymentFormatType', 'MerchandisingOfferType', 'HotelTaxType', 'HotelAmenities','Airport','City','Country','CityAirport','BusinessType','Currency','PosChannel','StateProvince','SupplierType','RoleCategoryType','ResourceCategoryType','PaymentType','EmailType','HotelRateCategory' and 'FulfillmentType'.</xs:documentation>
+              <xs:documentation>The code of the reference data type. Valid values are 'PaymentType', 'PaymentFormatType', 'MerchandisingOfferType', 'HotelTaxType', 'HotelAmenities','Airport','City','Country','CityAirport','BusinessType','Currency','PosChannel','StateProvince','SupplierType','RoleCategoryType','ResourceCategoryType','PaymentType','EmailType','HotelRateCategory','FulfillmentType','HotelRoomViewType', 'HotelMealPlans' , 'GeoPoliticalAreaType', 'AirAndRailMiscType', 'AirAndRailSupplierType', 'HotelMiscType' , 'HotelSupplierType' , 'VehicleMiscType' , 'VehicleSupplierType' , 'AccountingReferenceType' , 'TRMLocation' , 'Title' , 'PassengerTypeCode' , 'Gender' , 'PostalAddressType' , 'AccountingRemarkType' , 'VehicleSpecialEquipment' and 'ReferencePointSearch'.</xs:documentation>
             </xs:annotation>
           </xs:attribute>
         </xs:extension>
@@ -1195,6 +1195,24 @@
   </xs:element>
   <xs:element name="ReferenceDataItem">
     <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="AdditionalInfo">
+          <xs:annotation>
+            <xs:documentation>Any additional information specific to a type of value being returned.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="common:StringLength1to255">
+                <xs:attribute name="Type" type="xs:string" use="optional">
+                  <xs:annotation>
+                    <xs:documentation>This will identify different additionalInfo.</xs:documentation>
+                  </xs:annotation>
+                </xs:attribute>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
       <xs:attributeGroup ref="attrReferenceDataItem" />
       <xs:attribute name="Deprecated" type="xs:boolean" use="required">
         <xs:annotation>
@@ -1217,11 +1235,6 @@
     <xs:attribute name="Description" type="common:StringLength1to255">
       <xs:annotation>
         <xs:documentation>The description of the reference data item.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="AdditionalInfo" type="common:StringLength1to255">
-      <xs:annotation>
-        <xs:documentation>Any additional information specific to a type of value being returned.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:attributeGroup>
@@ -1258,6 +1271,11 @@
             <xs:minInclusive value="0" />
           </xs:restriction>
         </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="ProviderCode" type="common:typeProviderCode" use="optional">
+        <xs:annotation>
+          <xs:documentation>Provider Specific restriction(e.g. 1G, 1P etc) .</xs:documentation>
+        </xs:annotation>
       </xs:attribute>
     </xs:complexType>
   </xs:element>
@@ -1622,7 +1640,7 @@
         <xs:element minOccurs="0" ref="common:AccountCode" />
       </xs:sequence>
       <xs:attribute name="ClassOfService" type="typeClassOfService" use="required" />
-      <xs:attribute name="CabinClass" type="common:typeCabinClass" use="optional" />
+      <xs:attribute name="CabinClass" type="xs:string" use="optional" />
       <xs:attribute name="Key" type="common:typeRef" use="optional" />
       <xs:attributeGroup ref="common:attrElementKeyResults" />
     </xs:complexType>
