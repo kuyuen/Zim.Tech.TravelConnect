@@ -26,7 +26,7 @@ namespace Zim.Tech.TravelLiker
     {
         #region uApiAgent Variables
         private const string AIR_SERVICE = "AirService";
-        private const string HOTEL_SERVICE = "HotelSearchService";
+        private const string HOTEL_SERVICE = "HotelService";
         private string NAMESPACE_AIR = "http://www.travelport.com/schema/air_v30_0";
         private string NAMESPACE_HOTEL = "http://www.travelport.com/schema/hotel_v30_0";
         private string NAMESPACE_COMMON = "http://www.travelport.com/schema/common_v30_0";
@@ -248,7 +248,7 @@ namespace Zim.Tech.TravelLiker
             return sLowFareSearchReq;
         }
 
-        internal FareQuote DeserializeLowFareSearchResp(string sXmlContents)
+        public FareQuote DeserializeLowFareSearchResp(string sXmlContents)
         {
             XElement xRoot = XElement.Parse(sXmlContents);
             sXmlContents = Serialize<uAPIFlight.LowFareSearchRsp>.RemoveAllNamespaces(xRoot).ToString();
@@ -303,16 +303,16 @@ namespace Zim.Tech.TravelLiker
                     if (childnode.Name == "AirSegmentList")
                     {
                         try
-                        { 
+                        {
+                            foreach (XmlNode subchildnode in childnode.ChildNodes)
+                            {
+                                if (subchildnode.Name == "AirSegment")
+                                {
+                                    Flight.AirSegment oAirSegment = Serialize<Flight.AirSegment>.DeserializeXmlFromStringWithoutNamespace(subchildnode.OuterXml);
+                                    //oAirSegmentList.FareInfo.Add(oAirSegment);
+                                }
+                            }
                             oAirSegmentList = Serialize<Flight.AirSegmentList>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
-                            //foreach (XmlNode subchildnode in childnode.ChildNodes)
-                            //{
-                            //    if (subchildnode.Name == "AirSegment")
-                            //    {
-                            //        Flight.AirSegment oAirSegment = Serialize<Flight.AirSegment>.DeserializeXmlFromStringWithoutNamespace(subchildnode.OuterXml);
-                            //        //oAirSegmentList.FareInfo.Add(oAirSegment);
-                            //    }
-                            //}
                         }
                         catch(Exception ex) {}
                     }
@@ -409,7 +409,8 @@ namespace Zim.Tech.TravelLiker
                 //Send Request to uAPI
                 XmlDocument responseDocument = connection.SendRequest(request);
 
-                oHotelQute = DeserializeHotelSearchAvailabilityResp(responseDocument.OuterXml);
+                List<Hotel.HotelSearchResult> HotelSearchResultList = new List<HotelSearchResult>();
+                oHotelQute = DeserializeHotelSearchAvailabilityResp(responseDocument.OuterXml, out HotelSearchResultList);
                 if (oHotelQute.RresultCount > 0)
                 {
                     //Handle Max Amount
@@ -420,6 +421,21 @@ namespace Zim.Tech.TravelLiker
                                                    select p).ToList();
                         oHotelQute.HotelPricingSolutions = oHotelPricingSolution;
                     }
+
+                    foreach (HotelQute.HotelPricingSolution oHotelPricingSolution in oHotelQute.HotelPricingSolutions)
+                    {
+                        var oHotelSearchResult = (from r in HotelSearchResultList where r.HotelProperty.VendorLocationKey == oHotelPricingSolution.VendorLocationKey select r).ToList();
+                        if (oHotelSearchResult.Count() > 0)
+                        {
+                            string sHotelMediaLinksReq = PrepareHotelMediaLinksReq(oHotelSearchResult[0].HotelProperty);
+                            XmlDocument request2 = new XmlDocument();
+                            request2.LoadXml(sHotelMediaLinksReq);
+                            XmlDocument responseDocument2 = connection.SendRequest(request2);
+                            //oHotelQute = DeserializeHotelMediaLinksResp(responseDocument2.OuterXml, out HotelMediaLinksRsp);
+
+                        }
+                    }
+
                 }
             }
             catch (Exception ex)
@@ -430,6 +446,7 @@ namespace Zim.Tech.TravelLiker
             return oHotelQute;
         }
 
+        #region HotelSearchAvailability
         internal string PrepareHotelSearchAvailabilityReq(List<HotelQute.SearchInfo> listSearchInfo, decimal maxAmount)
         {
             string sHotelSearchAvailabilityReq = string.Empty;
@@ -491,7 +508,7 @@ namespace Zim.Tech.TravelLiker
             return sHotelSearchAvailabilityReq;
         }
 
-        internal HotelQute DeserializeHotelSearchAvailabilityResp(string sXmlContents)
+        internal HotelQute DeserializeHotelSearchAvailabilityResp(string sXmlContents, out List<Hotel.HotelSearchResult> HotelSearchResultList)
         {
             XElement xRoot = XDocument.Parse(sXmlContents).Root;
             sXmlContents = Serialize<uAPIHotel.HotelSearchResult>.RemoveAllNamespaces(xRoot).ToString();
@@ -501,7 +518,7 @@ namespace Zim.Tech.TravelLiker
             xmlDoc.LoadXml(sXmlContents);
 
             List<Common.ResponseMessage> oResponseMessageList = new List<Common.ResponseMessage>();
-            List<Hotel.HotelSearchResult> HotelSearchResultList = new List<Hotel.HotelSearchResult>();
+            HotelSearchResultList = new List<Hotel.HotelSearchResult>();
 
             XmlNodeList LowFareSearchRsp = xmlDoc.GetElementsByTagName("HotelSearchAvailabilityRsp");
             foreach (XmlNode node in LowFareSearchRsp)
@@ -575,8 +592,67 @@ namespace Zim.Tech.TravelLiker
                 oHotelQute.ErrorMessages.Add(oErrorMessage);
             }
 
+            List<Hotel.HotelQute.HotelPricingSolution> hotels = new List<Hotel.HotelQute.HotelPricingSolution>();
+            foreach (Hotel.HotelSearchResult hotelSearchResult in HotelSearchResultList)
+            {
+                Hotel.HotelQute.HotelPricingSolution hotel = new Hotel.HotelQute.HotelPricingSolution(hotelSearchResult.HotelProperty, hotelSearchResult.RateInfo);
+                hotels.Add(hotel);
+            }
+            oHotelQute.HotelPricingSolutions = hotels;
             return oHotelQute;
         }
+        #endregion
+
+        #region HotelMediaLinksReq
+        internal string PrepareHotelMediaLinksReq(Hotel.HotelProperty oHotelProperty)
+        {
+            uAPIHotel.HotelMediaLinksReq oHotelMediaLinksReq = PrepareHeader<uAPIHotel.HotelMediaLinksReq>();
+            oHotelMediaLinksReq.BillingPointOfSaleInfo = new uAPIHotel.BillingPointOfSaleInfo() { OriginApplication = "UAPI" };
+            oHotelMediaLinksReq.RichMedia = false;
+            oHotelMediaLinksReq.Gallery = true;
+            string sHotelMediaLinksReq = string.Empty;
+
+            uAPIHotel.HotelProperty newHotelProperty = new uAPIHotel.HotelProperty();
+            #region HotelProperty Properties Values
+            foreach (PropertyInfo prop in oHotelProperty.GetType().GetProperties())
+            {
+                try
+                {
+                    if (prop.PropertyType == typeof(string))
+                    {
+                        string propValue = oHotelProperty.GetValue(prop.Name);
+                        newHotelProperty.GetType().GetProperty(prop.Name).SetValue(newHotelProperty, propValue, null);
+                    }
+                }
+                catch(Exception ex) {}
+            }
+            if (oHotelProperty.PropertyAddress.Count() > 0)
+            {
+                try
+                {
+                    newHotelProperty.PropertyAddress = new string[oHotelProperty.PropertyAddress.Count()];
+                    for (int i = 0; i < oHotelProperty.PropertyAddress.Count(); i++)
+                        newHotelProperty.PropertyAddress[i] = oHotelProperty.PropertyAddress[i];
+                }
+                catch (Exception ex) { }
+            }
+            newHotelProperty.Availability = uAPIHotel.typeHotelAvailability.Available;
+            #endregion
+            oHotelMediaLinksReq.HotelProperty = new uAPIHotel.HotelProperty[1] { newHotelProperty };
+
+
+            List<XmlNamespace> xmlNamespaces = new List<XmlNamespace>() { 
+                (new XmlNamespace() { NameSpace = "hot", Url=NAMESPACE_HOTEL}), 
+                (new XmlNamespace() { NameSpace = "common_v30", Url=NAMESPACE_COMMON})
+            };
+
+            sHotelMediaLinksReq = Serialize<uAPIHotel.HotelMediaLinksReq>.SerializeXmlToString(xmlNamespaces, oHotelMediaLinksReq);
+            File.WriteAllText(Path.Combine(Environment.CurrentDirectory, "HotelMediaLinksReq.xml"), sHotelMediaLinksReq);
+
+            return sHotelMediaLinksReq;
+        }
+        #endregion
+
         #endregion
     }
 }

@@ -70,14 +70,14 @@ namespace Zim.Tech.TravelLiker.Hotel
                     GetType().GetProperty(prop.Name).SetValue(this, prop.GetValue(oHotelProperty, null), null);
                 #endregion
 
-                if (oRateInfoList.Count > 1)
+                if (oRateInfoList.Count > 0)
                 {
                     this.rateInfoField = oRateInfoList.First();
-                    this.minimumAmountField = this.rateInfoField.MinimumAmount;
-                    this.maximumAmountField = this.rateInfoField.MaximumAmount;
+                    this.minimumAmountField = this.rateInfoField.ApproximateMinimumAmount;
+                    this.maximumAmountField = this.rateInfoField.ApproximateMaximumAmount;
                 }
 
-                if (oHotelProperty.PropertyAddress.Count > 1)
+                if (oHotelProperty.PropertyAddress.Count > 0)
                     addressField = string.Join(",", oHotelProperty.PropertyAddress.ToArray());
             }
 

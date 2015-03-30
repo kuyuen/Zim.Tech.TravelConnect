@@ -108,7 +108,21 @@ namespace Zim.Tech.TravelLiker.Hotel
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travelport.com/schema/hotel_v29_0")]
     public partial class HotelProperty : object {
-        
+
+        public string GetValue(string m_Name)
+        {
+            PropertyInfo info = this.GetType().GetProperty(m_Name);
+            if (info != null)
+            {
+                object val = info.GetValue(this, null);
+                return (string)val;
+            }
+            else
+            {
+                return string.Empty;
+            }
+        }
+
         #region HotelProperty private properties
         private List<string> propertyAddressField;   
         private Distance distanceField;        

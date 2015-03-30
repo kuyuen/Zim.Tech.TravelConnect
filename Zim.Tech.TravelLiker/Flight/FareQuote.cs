@@ -112,26 +112,29 @@ namespace Zim.Tech.TravelLiker.Flight
                 #endregion
 
                 #region JourneyList Values
-                foreach (Flight.Journey journey in oAirPricingSolution.Journey)
+                if (oAirSegmentList.AirSegment.Count > 0)
                 {
-                    foreach (Flight.Journey.typeAirSegmentRef airSegment in journey.AirSegmentRef)
+                    foreach (Flight.Journey journey in oAirPricingSolution.Journey)
                     {
-                        var oAirSegment = (from a in oAirSegmentList.AirSegment
-                                           where a.Key == airSegment.Key
-                                           select a).First<Flight.AirSegment>();
-                        if (oAirSegment != null)
+                        foreach (Flight.Journey.typeAirSegmentRef airSegment in journey.AirSegmentRef)
                         {
+                            var oAirSegment = (from a in oAirSegmentList.AirSegment
+                                               where a.Key == airSegment.Key
+                                               select a).First<Flight.AirSegment>();
+                            if (oAirSegment != null)
+                            {
 
-                            var oFlightDetails = (from f in oFlightDetailsList.FlightDetails
-                                                  where f.Key == oAirSegment.FlightDetailsRef[0].Key
-                                               select f).First<Flight.FlightDetails>();
+                                var oFlightDetails = (from f in oFlightDetailsList.FlightDetails
+                                                      where f.Key == oAirSegment.FlightDetailsRef[0].Key
+                                                      select f).First<Flight.FlightDetails>();
 
-                            Journey oJourney = new Journey(oAirSegment);
-                            oJourney.AirSegment.FlightDetails = oFlightDetails;
-                            this.JourneyList.Add(oJourney);
+                                Journey oJourney = new Journey(oAirSegment);
+                                oJourney.AirSegment.FlightDetails = oFlightDetails;
+                                this.JourneyList.Add(oJourney);
 
-                            if (oFareAirSegmentList.Contains(oJourney.AirSegment) == false)
-                                oFareAirSegmentList.Add(oJourney.AirSegment);
+                                if (oFareAirSegmentList.Contains(oJourney.AirSegment) == false)
+                                    oFareAirSegmentList.Add(oJourney.AirSegment);
+                            }
                         }
                     }
                 }
