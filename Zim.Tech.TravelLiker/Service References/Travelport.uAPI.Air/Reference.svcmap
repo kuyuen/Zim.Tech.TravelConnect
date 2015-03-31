@@ -21,16 +21,16 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="E:\Job\Zim-Tech\Travelpot\TravelLiker\SourceCode\Schema_8.1\air_v30_0\Air.wsdl" Protocol="file" SourceId="1" />
+    <MetadataSource Address="E:\Job\Zim-Tech\Travelpot\TravelLiker\SourceCode\Zim.Tech.TravelLiker.GIT\Schema_8.1\air_v30_0\Air.wsdl" Protocol="file" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Common.xsd" MetadataType="Schema" ID="67ea0cda-7955-45f6-a611-a26dfb58f61e" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Schema_8.1/common_v30_0/Common.xsd" />
-    <MetadataFile FileName="AirReqRsp.xsd" MetadataType="Schema" ID="c38bcdcf-0a87-4ee4-8fc9-64845a90e137" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Schema_8.1/air_v30_0/AirReqRsp.xsd" />
-    <MetadataFile FileName="CommonReqRsp.xsd" MetadataType="Schema" ID="a7d80ae8-1632-42f1-bd95-a4e4ffed0c6d" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Schema_8.1/common_v30_0/CommonReqRsp.xsd" />
-    <MetadataFile FileName="Rail.xsd" MetadataType="Schema" ID="08b8250f-d82c-4c2a-aa31-8b2d476cc32b" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Schema_8.1/rail_v30_0/Rail.xsd" />
-    <MetadataFile FileName="Air.xsd" MetadataType="Schema" ID="e2f32a99-a0da-463c-b687-958b3461c96c" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Schema_8.1/air_v30_0/Air.xsd" />
-    <MetadataFile FileName="AirService.wsdl" MetadataType="Wsdl" ID="43ea22bf-08b3-47f9-94ac-41d7958b9cf8" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Schema_8.1/air_v30_0/AirAbstract.wsdl" />
-    <MetadataFile FileName="AirService1.wsdl" MetadataType="Wsdl" ID="e05302f3-880d-451e-bd5e-70f75315ecdc" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Schema_8.1/air_v30_0/Air.wsdl" />
+    <MetadataFile FileName="Rail1.xsd" MetadataType="Schema" ID="0a72f3ac-8bb5-4955-842c-d68acd5ab0c5" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Zim.Tech.TravelLiker.GIT/Schema_8.1/rail_v30_0/Rail.xsd" />
+    <MetadataFile FileName="AirService2.wsdl" MetadataType="Wsdl" ID="9a9f577d-d10e-4cb2-8b1d-901facda48f8" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Zim.Tech.TravelLiker.GIT/Schema_8.1/air_v30_0/Air.wsdl" />
+    <MetadataFile FileName="CommonReqRsp1.xsd" MetadataType="Schema" ID="cc34b77f-7d54-4260-b78d-49c03fb8d165" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Zim.Tech.TravelLiker.GIT/Schema_8.1/common_v30_0/CommonReqRsp.xsd" />
+    <MetadataFile FileName="Common1.xsd" MetadataType="Schema" ID="c979ea71-ae58-49db-9bf0-b1d60352d116" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Zim.Tech.TravelLiker.GIT/Schema_8.1/common_v30_0/Common.xsd" />
+    <MetadataFile FileName="AirReqRsp1.xsd" MetadataType="Schema" ID="49b85885-318c-4b16-ae4a-a36a31b3ff6a" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Zim.Tech.TravelLiker.GIT/Schema_8.1/air_v30_0/AirReqRsp.xsd" />
+    <MetadataFile FileName="AirService21.wsdl" MetadataType="Wsdl" ID="8154d945-9c81-428c-add4-11bdb9d8b1a1" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Zim.Tech.TravelLiker.GIT/Schema_8.1/air_v30_0/AirAbstract.wsdl" />
+    <MetadataFile FileName="Air1.xsd" MetadataType="Schema" ID="e751289d-7908-4d94-88fa-a917dbf21899" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Zim.Tech.TravelLiker.GIT/Schema_8.1/air_v30_0/Air.xsd" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

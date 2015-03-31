@@ -82,7 +82,7 @@ namespace Zim.Tech.TravelLiker.Hotel
             }
 
             private RateInfo rateInfoField = new RateInfo();
-            private MediaItem mediaItemField;
+            private List<MediaItem> mediaItemField = new List<MediaItem>();
             private string minimumAmountField;
             private string maximumAmountField;
             private string addressField;
@@ -102,8 +102,8 @@ namespace Zim.Tech.TravelLiker.Hotel
             //}
 
             /// <remarks/>
-            [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.travelport.com/schema/common_v29_0", Order = 4)]
-            public MediaItem MediaItem
+            //[System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.travelport.com/schema/common_v29_0")]
+            public List<MediaItem> MediaItems
             {
                 get
                 {

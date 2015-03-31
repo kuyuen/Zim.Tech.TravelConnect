@@ -87,21 +87,21 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Travelport.uAPI.Air\Air.xsd">
+    <None Include="Service References\Travelport.uAPI.Air\Air1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Travelport.uAPI.Air\AirReqRsp.xsd">
+    <None Include="Service References\Travelport.uAPI.Air\AirReqRsp1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Travelport.uAPI.Air\AirService.wsdl" />
-    <None Include="Service References\Travelport.uAPI.Air\AirService1.wsdl" />
-    <None Include="Service References\Travelport.uAPI.Air\Common.xsd">
+    <None Include="Service References\Travelport.uAPI.Air\AirService2.wsdl" />
+    <None Include="Service References\Travelport.uAPI.Air\AirService21.wsdl" />
+    <None Include="Service References\Travelport.uAPI.Air\Common1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Travelport.uAPI.Air\CommonReqRsp.xsd">
+    <None Include="Service References\Travelport.uAPI.Air\CommonReqRsp1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Travelport.uAPI.Air\Rail.xsd">
+    <None Include="Service References\Travelport.uAPI.Air\Rail1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\Travelport.uAPI.Air\Zim.Tech.TravelLiker.Travelport.uAPI.Air.serviceResponse.datasource">
@@ -185,20 +185,20 @@
     <None Include="Service References\Travelport.uAPI.Air\Zim.Tech.TravelLiker.Travelport.uAPI.Air.serviceResponse9.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Travelport.uAPI.Hotel\AbstractHotelServices.wsdl" />
-    <None Include="Service References\Travelport.uAPI.Hotel\Common.xsd">
+    <None Include="Service References\Travelport.uAPI.Hotel\AbstractHotelServices1.wsdl" />
+    <None Include="Service References\Travelport.uAPI.Hotel\Common1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Travelport.uAPI.Hotel\CommonReqRsp.xsd">
+    <None Include="Service References\Travelport.uAPI.Hotel\CommonReqRsp1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Travelport.uAPI.Hotel\Hotel.xsd">
+    <None Include="Service References\Travelport.uAPI.Hotel\Hotel1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Travelport.uAPI.Hotel\HotelReqRsp.xsd">
+    <None Include="Service References\Travelport.uAPI.Hotel\HotelReqRsp1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Travelport.uAPI.Hotel\HotelServices.wsdl" />
+    <None Include="Service References\Travelport.uAPI.Hotel\HotelServices1.wsdl" />
     <None Include="Service References\Travelport.uAPI.Hotel\Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.BaseHotelSearchRsp.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -259,20 +259,20 @@
     <None Include="Service References\Travelport.uAPI.Hotel\Zim.Tech.TravelLiker.Travelport.uAPI.Hotel.serviceResponse9.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Travelport.uAPI.Util\Air.xsd">
+    <None Include="Service References\Travelport.uAPI.Util\Air1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Travelport.uAPI.Util\Common.xsd">
+    <None Include="Service References\Travelport.uAPI.Util\Common1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Travelport.uAPI.Util\CommonReqRsp.xsd">
+    <None Include="Service References\Travelport.uAPI.Util\CommonReqRsp1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Travelport.uAPI.Util\Util.xsd">
+    <None Include="Service References\Travelport.uAPI.Util\Util1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Travelport.uAPI.Util\UtilService.wsdl" />
-    <None Include="Service References\Travelport.uAPI.Util\UtilService1.wsdl" />
+    <None Include="Service References\Travelport.uAPI.Util\UtilService2.wsdl" />
+    <None Include="Service References\Travelport.uAPI.Util\UtilService21.wsdl" />
     <None Include="Service References\Travelport.uAPI.Util\Zim.Tech.TravelLiker.Travelport.uAPI.Util.AgencyServiceFeeCreateRsp.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
