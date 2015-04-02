@@ -304,14 +304,14 @@ namespace Zim.Tech.TravelLiker
                     {
                         try
                         {
-                            foreach (XmlNode subchildnode in childnode.ChildNodes)
-                            {
-                                if (subchildnode.Name == "AirSegment")
-                                {
-                                    Flight.AirSegment oAirSegment = Serialize<Flight.AirSegment>.DeserializeXmlFromStringWithoutNamespace(subchildnode.OuterXml);
-                                    //oAirSegmentList.FareInfo.Add(oAirSegment);
-                                }
-                            }
+                            //foreach (XmlNode subchildnode in childnode.ChildNodes)
+                            //{
+                            //    if (subchildnode.Name == "AirSegment")
+                            //    {
+                            //        Flight.AirSegment oAirSegment = Serialize<Flight.AirSegment>.DeserializeXmlFromStringWithoutNamespace(subchildnode.OuterXml);
+                            //        //oAirSegmentList.FareInfo.Add(oAirSegment);
+                            //    }
+                            //}
                             oAirSegmentList = Serialize<Flight.AirSegmentList>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
                         }
                         catch(Exception ex) {}

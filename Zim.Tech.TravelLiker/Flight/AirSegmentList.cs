@@ -87,7 +87,8 @@ namespace Zim.Tech.TravelLiker.Flight
         //private string passiveProviderReservationInfoRefField;
         private bool optionalServicesIndicatorField;
         //private bool optionalServicesIndicatorFieldSpecified;
-        private typeAvailabilitySource availabilitySourceField;
+        private string availabilitySourceField;
+        private string availabilityDisplayTypeField;
         //private bool availabilitySourceFieldSpecified;
         //private string aPISRequirementsRefField;
         //private bool blackListedField;
@@ -733,7 +734,7 @@ namespace Zim.Tech.TravelLiker.Flight
                 this.optionalServicesIndicatorField = value;
             }
         }
-
+        
         /// <remarks/>
         //[System.Xml.Serialization.XmlIgnoreAttribute()]
         //public bool OptionalServicesIndicatorSpecified
@@ -750,7 +751,7 @@ namespace Zim.Tech.TravelLiker.Flight
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public typeAvailabilitySource AvailabilitySource
+        public string AvailabilitySource
         {
             get
             {
@@ -763,18 +764,18 @@ namespace Zim.Tech.TravelLiker.Flight
         }
 
         /// <remarks/>
-        //[System.Xml.Serialization.XmlIgnoreAttribute()]
-        //public bool AvailabilitySourceSpecified
-        //{
-        //    get
-        //    {
-        //        return this.availabilitySourceFieldSpecified;
-        //    }
-        //    set
-        //    {
-        //        this.availabilitySourceFieldSpecified = value;
-        //    }
-        //}
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string AvailabilityDisplayType
+        {
+            get
+            {
+                return this.availabilityDisplayTypeField;
+            }
+            set
+            {
+                this.availabilityDisplayTypeField = value;
+            }
+        }
 
         /// <remarks/>
         //[System.Xml.Serialization.XmlAttributeAttribute()]

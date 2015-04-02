@@ -43,7 +43,7 @@ namespace Zim.Tech.TravelLiker.UnitTest
         [TestMethod]
         public void SearchOneWay()
         {
-            DateTime fromDate = new DateTime(2015, 4, 1);
+            DateTime fromDate = new DateTime(2015, 5, 1);
             decimal maxAmount = 3750; // 100000;
             string specifiedAirline = "";
 
@@ -51,6 +51,9 @@ namespace Zim.Tech.TravelLiker.UnitTest
             agent.MaxResult = 20;
             Flight.FareQuote oFareQuote = agent.FlightOneWay("HKG", "TPE", fromDate, 1, 0, true, "", specifiedAirline, maxAmount);
             int i = oFareQuote.AirPricingSolutions.Count();
+
+            string xml = Serialize<Flight.FareQuote>.SerializeXmlToString(oFareQuote);
+            File.WriteAllText(Path.Combine(Environment.CurrentDirectory, "OneWayFareQuote.xml"), xml);
         }
 
         [TestMethod]
@@ -65,6 +68,9 @@ namespace Zim.Tech.TravelLiker.UnitTest
             agent.MaxResult = 20;
             Flight.FareQuote oFareQuote = agent.FlightRoundTrip("HKG", "TPE", fromDate, toDate, 1, 0, true, "", specifiedAirline, maxAmount);
             int i = oFareQuote.AirPricingSolutions.Count();
+
+            string xml = Serialize<Flight.FareQuote>.SerializeXmlToString(oFareQuote);
+            File.WriteAllText(Path.Combine(Environment.CurrentDirectory, "RoundTripFareQuote.xml"), xml);
         }
         
         [TestMethod]
@@ -177,7 +183,7 @@ namespace Zim.Tech.TravelLiker.UnitTest
         {
             string CurrencyType = string.Empty;
             string sDllPath = Directory.GetCurrentDirectory();
-            string xmlFile = Path.Combine(sDllPath, "LowFareSearchRsp.xml");
+            string xmlFile = Path.Combine(sDllPath, "LowFareSearchResp.xml");
             string xmlcontents = System.IO.File.ReadAllText(xmlFile);
 
             XElement xRoot = XDocument.Parse(xmlcontents).Root;

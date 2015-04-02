@@ -26,14 +26,17 @@ namespace Zim.Tech.TravelLiker.UnitTest
         [TestMethod]
         public void HotelSearch()
         {
-            DateTime checkInDate = new DateTime(2015, 5, 1);
-            decimal maxAmount = 3750; // 100000;
+            DateTime checkInDate = new DateTime(2015, 4, 9);
+            decimal maxAmount = 100000;
             string specifiedHotel = "";
 
             TravelAgent agent = new TravelAgent();
             agent.MaxResult = 20;
-            Hotel.HotelQute oHotelQute = agent.HotelEnquiy("DEN", checkInDate, 5, 1, "", specifiedHotel, maxAmount);
+            Hotel.HotelQute oHotelQute = agent.HotelEnquiy("LHR", checkInDate, 5, 1, "", specifiedHotel, maxAmount);
             int i = oHotelQute.HotelPricingSolutions.Count();
+
+            string xml = Serialize<Hotel.HotelQute>.SerializeXmlToString(oHotelQute);
+            File.WriteAllText(Path.Combine(Environment.CurrentDirectory, "HotelQute.xml"), xml);
         }
 
 

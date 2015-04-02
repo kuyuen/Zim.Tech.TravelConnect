@@ -1,0 +1,841 @@
+<air:LowFareSearchRsp TraceId="trace" TransactionId="7AE562B20A07643BA40D35FEB045C9E9" ResponseTime="20414" DistanceUnits="MI" CurrencyType="HKD" xmlns:air="http://www.travelport.com/schema/air_v30_0" xmlns:common_v30_0="http://www.travelport.com/schema/common_v30_0">
+  <common_v30_0:ResponseMessage Code="4039" Type="Warning" ProviderCode="1G">"Result size exceeded the maximum allowable and some results were discarded. It may be necessary to narrow your search using search modifiers."</common_v30_0:ResponseMessage>
+  <common_v30_0:ResponseMessage Code="14013" Type="Error" ProviderCode="ACH"> [ACH] Provider error: Flights may not be available for Outbound or Inbound journey-No Matches found for requested departure time range</common_v30_0:ResponseMessage>
+  <common_v30_0:ResponseMessage Code="14" Type="Error" ProviderCode="RCH" SupplierCode="BN"> [RCH - BN] Provider error: Only One Way or Round Trip journeys are supported.</common_v30_0:ResponseMessage>
+  <common_v30_0:ResponseMessage Code="14" Type="Error" ProviderCode="RCH" SupplierCode="DB"> [RCH - DB] Provider error: Only One Way or Round Trip journeys are supported.</common_v30_0:ResponseMessage>
+  <common_v30_0:ResponseMessage Code="14" Type="Error" ProviderCode="RCH" SupplierCode="TL"> [RCH - TL] Provider error: Only One Way or Round Trip journeys are supported.</common_v30_0:ResponseMessage>
+  <air:FlightDetailsList>
+    <air:FlightDetails Key="25YsjAumQaKhiMME+V1tOw==" Origin="HKG" Destination="TPE" DepartureTime="2015-05-01T14:15:00.000+08:00" ArrivalTime="2015-05-01T15:55:00.000+08:00" FlightTime="100" TravelTime="100" Equipment="333" OriginTerminal="1" DestinationTerminal="1" />
+    <air:FlightDetails Key="bvDET/AKS72X9KWBTSQKfg==" Origin="TPE" Destination="SIN" DepartureTime="2015-05-05T16:05:00.000+08:00" ArrivalTime="2015-05-05T20:45:00.000+08:00" FlightTime="280" TravelTime="280" Equipment="333" OriginTerminal="1" DestinationTerminal="1" />
+    <air:FlightDetails Key="7VZxq6IBTIW+sOe2VB5HSA==" Origin="SIN" Destination="TPE" DepartureTime="2015-05-10T10:25:00.000+08:00" ArrivalTime="2015-05-10T15:10:00.000+08:00" FlightTime="285" TravelTime="460" Equipment="333" OriginTerminal="1" DestinationTerminal="1" />
+    <air:FlightDetails Key="kxv9O1s5QAKQeoQNnnXvAA==" Origin="TPE" Destination="HKG" DepartureTime="2015-05-10T16:20:00.000+08:00" ArrivalTime="2015-05-10T18:05:00.000+08:00" FlightTime="105" TravelTime="460" Equipment="738" OriginTerminal="1" DestinationTerminal="1" />
+    <air:FlightDetails Key="W7MzWi08RxKDH4vQaBrsjg==" Origin="HKG" Destination="TPE" DepartureTime="2015-05-01T17:35:00.000+08:00" ArrivalTime="2015-05-01T19:15:00.000+08:00" FlightTime="100" TravelTime="100" Equipment="343" OriginTerminal="1" DestinationTerminal="1" />
+    <air:FlightDetails Key="LkXTAzdKTrCZLN76ea4KMA==" Origin="HKG" Destination="TPE" DepartureTime="2015-05-01T15:35:00.000+08:00" ArrivalTime="2015-05-01T17:15:00.000+08:00" FlightTime="100" TravelTime="100" Equipment="333" OriginTerminal="1" DestinationTerminal="1" />
+    <air:FlightDetails Key="EItvgTUmQ5m5THwBlbJFuQ==" Origin="HKG" Destination="TPE" DepartureTime="2015-05-01T21:30:00.000+08:00" ArrivalTime="2015-05-01T23:10:00.000+08:00" FlightTime="100" TravelTime="100" Equipment="333" OriginTerminal="1" DestinationTerminal="1" />
+    <air:FlightDetails Key="PJ9CQwTsT+iOPUAC5QeCGA==" Origin="HKG" Destination="TPE" DepartureTime="2015-05-01T11:05:00.000+08:00" ArrivalTime="2015-05-01T12:45:00.000+08:00" FlightTime="100" TravelTime="100" Equipment="744" OriginTerminal="1" DestinationTerminal="1" />
+    <air:FlightDetails Key="N13XL8BUQ22HnXwTERAepg==" Origin="HKG" Destination="TPE" DepartureTime="2015-05-01T20:10:00.000+08:00" ArrivalTime="2015-05-01T21:50:00.000+08:00" FlightTime="100" TravelTime="100" Equipment="343" OriginTerminal="1" DestinationTerminal="1" />
+    <air:FlightDetails Key="IbzihR0zTrC+vzKCVYSrnQ==" Origin="HKG" Destination="TPE" DepartureTime="2015-05-01T11:40:00.000+08:00" ArrivalTime="2015-05-01T13:20:00.000+08:00" FlightTime="100" TravelTime="100" Equipment="738" OriginTerminal="1" DestinationTerminal="1" />
+    <air:FlightDetails Key="ZAqPL/nERLy2LhTfiP41QA==" Origin="HKG" Destination="TPE" DepartureTime="2015-05-01T13:25:00.000+08:00" ArrivalTime="2015-05-01T15:05:00.000+08:00" FlightTime="100" TravelTime="100" Equipment="333" OriginTerminal="1" DestinationTerminal="1" />
+    <air:FlightDetails Key="rqc8x/MDRXax88+sw9dYVA==" Origin="HKG" Destination="TPE" DepartureTime="2015-05-01T22:15:00.000+08:00" ArrivalTime="2015-05-01T23:55:00.000+08:00" FlightTime="100" TravelTime="100" Equipment="744" OriginTerminal="1" DestinationTerminal="1" />
+    <air:FlightDetails Key="WQDUK36mTaCNs7U9x8h6NQ==" Origin="HKG" Destination="TPE" DepartureTime="2015-05-01T10:15:00.000+08:00" ArrivalTime="2015-05-01T11:55:00.000+08:00" FlightTime="100" TravelTime="100" Equipment="744" OriginTerminal="1" DestinationTerminal="1" />
+    <air:FlightDetails Key="P45xV7FATQaQlySCU+/GQQ==" Origin="HKG" Destination="TPE" DepartureTime="2015-05-01T08:20:00.000+08:00" ArrivalTime="2015-05-01T10:00:00.000+08:00" FlightTime="100" TravelTime="100" Equipment="333" OriginTerminal="1" DestinationTerminal="1" />
+    <air:FlightDetails Key="qUDoS8HhQhmSH5pzc0Ldxw==" Origin="TPE" Destination="SIN" DepartureTime="2015-05-05T08:35:00.000+08:00" ArrivalTime="2015-05-05T13:15:00.000+08:00" FlightTime="280" TravelTime="280" Equipment="333" OriginTerminal="1" DestinationTerminal="1" />
+  </air:FlightDetailsList>
+  <air:AirSegmentList>
+    <air:AirSegment Key="jMKF4al+T0SoIk33ifN0gQ==" Group="0" Carrier="CI" FlightNumber="910" Origin="HKG" Destination="TPE" DepartureTime="2015-05-01T14:15:00.000+08:00" ArrivalTime="2015-05-01T15:55:00.000+08:00" FlightTime="100" Distance="511" ETicketability="Yes" Equipment="333" ChangeOfPlane="false" ParticipantLevel="Secure Sell" LinkAvailability="true" PolledAvailabilityOption="No polled avail exists" OptionalServicesIndicator="false" AvailabilitySource="A" AvailabilityDisplayType="Fare Shop/Optimal Shop">
+      <air:AirAvailInfo ProviderCode="1G">
+        <air:BookingCodeInfo BookingCounts="J4|C4|D4|Y7|B7|M7|K7|V4|T7|R4|Q7|H7|N7|X7|L7|S4|G4" />
+      </air:AirAvailInfo>
+      <air:FlightDetailsRef Key="25YsjAumQaKhiMME+V1tOw==" />
+    </air:AirSegment>
+    <air:AirSegment Key="BrtqKdO6TWu8UzxLfnZKyA==" Group="1" Carrier="CI" FlightNumber="751" Origin="TPE" Destination="SIN" DepartureTime="2015-05-05T16:05:00.000+08:00" ArrivalTime="2015-05-05T20:45:00.000+08:00" FlightTime="280" Distance="2008" ETicketability="Yes" Equipment="333" ChangeOfPlane="false" ParticipantLevel="Secure Sell" LinkAvailability="true" PolledAvailabilityOption="No polled avail exists" OptionalServicesIndicator="false" AvailabilitySource="A" AvailabilityDisplayType="Fare Shop/Optimal Shop">
+      <air:AirAvailInfo ProviderCode="1G">
+        <air:BookingCodeInfo BookingCounts="J4|C4|D4|Y7|B7|M7|K7|V4|T7|R4|Q7|H7|N7|X7|L7|S4|G4" />
+      </air:AirAvailInfo>
+      <air:FlightDetailsRef Key="bvDET/AKS72X9KWBTSQKfg==" />
+    </air:AirSegment>
+    <air:AirSegment Key="7LEwOdrwRAmO8e3yyinn3w==" Group="2" Carrier="CI" FlightNumber="752" Origin="SIN" Destination="TPE" DepartureTime="2015-05-10T10:25:00.000+08:00" ArrivalTime="2015-05-10T15:10:00.000+08:00" FlightTime="285" Distance="2008" ETicketability="Yes" Equipment="333" ChangeOfPlane="false" ParticipantLevel="Secure Sell" LinkAvailability="true" PolledAvailabilityOption="No polled avail exists" OptionalServicesIndicator="false" AvailabilitySource="A" AvailabilityDisplayType="Fare Shop/Optimal Shop">
+      <air:AirAvailInfo ProviderCode="1G">
+        <air:BookingCodeInfo BookingCounts="J4|C4|D4|Y7|B7|M7|K7|V4|T7|R4|Q7|H7|N7|X7|L7|S4|G4" />
+      </air:AirAvailInfo>
+      <air:FlightDetailsRef Key="7VZxq6IBTIW+sOe2VB5HSA==" />
+    </air:AirSegment>
+    <air:AirSegment Key="DE+ATy+6Sty0TiDHBaEDnA==" Group="2" Carrier="CI" FlightNumber="919" Origin="TPE" Destination="HKG" DepartureTime="2015-05-10T16:20:00.000+08:00" ArrivalTime="2015-05-10T18:05:00.000+08:00" FlightTime="105" Distance="511" ETicketability="Yes" Equipment="738" ChangeOfPlane="false" ParticipantLevel="Secure Sell" LinkAvailability="true" PolledAvailabilityOption="No polled avail exists" OptionalServicesIndicator="false" AvailabilitySource="A" AvailabilityDisplayType="Fare Shop/Optimal Shop">
+      <air:AirAvailInfo ProviderCode="1G">
+        <air:BookingCodeInfo BookingCounts="J4|C4|D4|Y7|B7|M7|K7|V4|T7|R4|Q7|H7|N7|X7|L7|S4|G4" />
+      </air:AirAvailInfo>
+      <air:FlightDetailsRef Key="kxv9O1s5QAKQeoQNnnXvAA==" />
+    </air:AirSegment>
+    <air:AirSegment Key="dblURLa+QVe/pEtD69KzoQ==" Group="0" Carrier="CI" FlightNumber="916" Origin="HKG" Destination="TPE" DepartureTime="2015-05-01T17:35:00.000+08:00" ArrivalTime="2015-05-01T19:15:00.000+08:00" FlightTime="100" Distance="511" ETicketability="Yes" Equipment="343" ChangeOfPlane="false" ParticipantLevel="Secure Sell" LinkAvailability="true" PolledAvailabilityOption="No polled avail exists" OptionalServicesIndicator="false" AvailabilitySource="A" AvailabilityDisplayType="Fare Shop/Optimal Shop">
+      <air:AirAvailInfo ProviderCode="1G">
+        <air:BookingCodeInfo BookingCounts="J4|C4|D4|Y7|B7|M7|K7|V4|T7|R4|Q7|H7|N7|X7|L7|S4|G4" />
+      </air:AirAvailInfo>
+      <air:FlightDetailsRef Key="W7MzWi08RxKDH4vQaBrsjg==" />
+    </air:AirSegment>
+    <air:AirSegment Key="bV4FseaETJaMafoHyo5pPg==" Group="0" Carrier="CI" FlightNumber="614" Origin="HKG" Destination="TPE" DepartureTime="2015-05-01T15:35:00.000+08:00" ArrivalTime="2015-05-01T17:15:00.000+08:00" FlightTime="100" Distance="511" ETicketability="Yes" Equipment="333" ChangeOfPlane="false" ParticipantLevel="Secure Sell" LinkAvailability="true" PolledAvailabilityOption="No polled avail exists" OptionalServicesIndicator="false" AvailabilitySource="A" AvailabilityDisplayType="Fare Shop/Optimal Shop">
+      <air:AirAvailInfo ProviderCode="1G">
+        <air:BookingCodeInfo BookingCounts="J4|C4|D4|Y7|B7|M7|K7|V4|T7|R4|Q7|H7|N7|X7|L7|S4|G4" />
+      </air:AirAvailInfo>
+      <air:FlightDetailsRef Key="LkXTAzdKTrCZLN76ea4KMA==" />
+    </air:AirSegment>
+    <air:AirSegment Key="yNfb1LMJR/WSTCy1IMx+jw==" Group="0" Carrier="CI" FlightNumber="924" Origin="HKG" Destination="TPE" DepartureTime="2015-05-01T21:30:00.000+08:00" ArrivalTime="2015-05-01T23:10:00.000+08:00" FlightTime="100" Distance="511" ETicketability="Yes" Equipment="333" ChangeOfPlane="false" ParticipantLevel="Secure Sell" LinkAvailability="true" PolledAvailabilityOption="No polled avail exists" OptionalServicesIndicator="false" AvailabilitySource="A" AvailabilityDisplayType="Fare Shop/Optimal Shop">
+      <air:AirAvailInfo ProviderCode="1G">
+        <air:BookingCodeInfo BookingCounts="J4|C4|D4|Y7|B7|M7|K7|V4|T7|R4|Q7|H7|N7|X7|L7|S4|G4" />
+      </air:AirAvailInfo>
+      <air:FlightDetailsRef Key="EItvgTUmQ5m5THwBlbJFuQ==" />
+    </air:AirSegment>
+    <air:AirSegment Key="/qWFcgJaS+OV1elhCfh+tA==" Group="0" Carrier="CI" FlightNumber="904" Origin="HKG" Destination="TPE" DepartureTime="2015-05-01T11:05:00.000+08:00" ArrivalTime="2015-05-01T12:45:00.000+08:00" FlightTime="100" Distance="511" ETicketability="Yes" Equipment="744" ChangeOfPlane="false" ParticipantLevel="Secure Sell" LinkAvailability="true" PolledAvailabilityOption="No polled avail exists" OptionalServicesIndicator="false" AvailabilitySource="A" AvailabilityDisplayType="Fare Shop/Optimal Shop">
+      <air:AirAvailInfo ProviderCode="1G">
+        <air:BookingCodeInfo BookingCounts="J4|C4|D4|Y7|B7|M7|K7|V4|T7|R4|Q7|H7|N7|X7|L7|S4|G4" />
+      </air:AirAvailInfo>
+      <air:FlightDetailsRef Key="PJ9CQwTsT+iOPUAC5QeCGA==" />
+    </air:AirSegment>
+    <air:AirSegment Key="em+qYuZCTpGtVGsyg1fd5A==" Group="0" Carrier="CI" FlightNumber="920" Origin="HKG" Destination="TPE" DepartureTime="2015-05-01T20:10:00.000+08:00" ArrivalTime="2015-05-01T21:50:00.000+08:00" FlightTime="100" Distance="511" ETicketability="Yes" Equipment="343" ChangeOfPlane="false" ParticipantLevel="Secure Sell" LinkAvailability="true" PolledAvailabilityOption="No polled avail exists" OptionalServicesIndicator="false" AvailabilitySource="A" AvailabilityDisplayType="Fare Shop/Optimal Shop">
+      <air:AirAvailInfo ProviderCode="1G">
+        <air:BookingCodeInfo BookingCounts="J4|C4|D4|Y7|B7|M7|K7|V4|T7|R4|Q7|H7|N7|X7|L7|S4|G4" />
+      </air:AirAvailInfo>
+      <air:FlightDetailsRef Key="N13XL8BUQ22HnXwTERAepg==" />
+    </air:AirSegment>
+    <air:AirSegment Key="mI1Uz9fyQtSwijEQJdbsDg==" Group="0" Carrier="CI" FlightNumber="642" Origin="HKG" Destination="TPE" DepartureTime="2015-05-01T11:40:00.000+08:00" ArrivalTime="2015-05-01T13:20:00.000+08:00" FlightTime="100" Distance="511" ETicketability="Yes" Equipment="738" ChangeOfPlane="false" ParticipantLevel="Secure Sell" LinkAvailability="true" PolledAvailabilityOption="No polled avail exists" OptionalServicesIndicator="false" AvailabilitySource="A" AvailabilityDisplayType="Fare Shop/Optimal Shop">
+      <air:AirAvailInfo ProviderCode="1G">
+        <air:BookingCodeInfo BookingCounts="J4|C4|D4|Y7|B7|M7|K7|V4|T7|R4|Q7|H7|N7|X7|L7|S4|G4" />
+      </air:AirAvailInfo>
+      <air:FlightDetailsRef Key="IbzihR0zTrC+vzKCVYSrnQ==" />
+    </air:AirSegment>
+    <air:AirSegment Key="Pnjc5IiFSbq7IoLwbf+A/g==" Group="0" Carrier="CI" FlightNumber="680" Origin="HKG" Destination="TPE" DepartureTime="2015-05-01T13:25:00.000+08:00" ArrivalTime="2015-05-01T15:05:00.000+08:00" FlightTime="100" Distance="511" ETicketability="Yes" Equipment="333" ChangeOfPlane="false" ParticipantLevel="Secure Sell" LinkAvailability="true" PolledAvailabilityOption="No polled avail exists" OptionalServicesIndicator="false" AvailabilitySource="A" AvailabilityDisplayType="Fare Shop/Optimal Shop">
+      <air:AirAvailInfo ProviderCode="1G">
+        <air:BookingCodeInfo BookingCounts="J4|C4|D4|YL|B7|M7|K7|V4|T7|R4|Q7|H7|N7|X7|L7|S4|G4" />
+      </air:AirAvailInfo>
+      <air:FlightDetailsRef Key="ZAqPL/nERLy2LhTfiP41QA==" />
+    </air:AirSegment>
+    <air:AirSegment Key="MkUoiOcTSPmA9Pp7TDsl0g==" Group="0" Carrier="CI" FlightNumber="928" Origin="HKG" Destination="TPE" DepartureTime="2015-05-01T22:15:00.000+08:00" ArrivalTime="2015-05-01T23:55:00.000+08:00" FlightTime="100" Distance="511" ETicketability="Yes" Equipment="744" ChangeOfPlane="false" ParticipantLevel="Secure Sell" LinkAvailability="true" PolledAvailabilityOption="No polled avail exists" OptionalServicesIndicator="false" AvailabilitySource="A" AvailabilityDisplayType="Fare Shop/Optimal Shop">
+      <air:AirAvailInfo ProviderCode="1G">
+        <air:BookingCodeInfo BookingCounts="J4|C4|D4|Y7|B7|M7|K7|V4|T7|R4|Q7|H7|N7|X7|L7|S4|G4" />
+      </air:AirAvailInfo>
+      <air:FlightDetailsRef Key="rqc8x/MDRXax88+sw9dYVA==" />
+    </air:AirSegment>
+    <air:AirSegment Key="AisDPCNTQAWaX1rMJPHe1g==" Group="0" Carrier="CI" FlightNumber="602" Origin="HKG" Destination="TPE" DepartureTime="2015-05-01T10:15:00.000+08:00" ArrivalTime="2015-05-01T11:55:00.000+08:00" FlightTime="100" Distance="511" ETicketability="Yes" Equipment="744" ChangeOfPlane="false" ParticipantLevel="Secure Sell" LinkAvailability="true" PolledAvailabilityOption="No polled avail exists" OptionalServicesIndicator="false" AvailabilitySource="A" AvailabilityDisplayType="Fare Shop/Optimal Shop">
+      <air:AirAvailInfo ProviderCode="1G">
+        <air:BookingCodeInfo BookingCounts="J4|C4|D4|Y7|B7|M7|K7|V4|T7|R4|Q7|H7|N7|X7|L7|S4|G4" />
+      </air:AirAvailInfo>
+      <air:FlightDetailsRef Key="WQDUK36mTaCNs7U9x8h6NQ==" />
+    </air:AirSegment>
+    <air:AirSegment Key="N81P4G4kTwyKnGwBzcqi0A==" Group="0" Carrier="CI" FlightNumber="678" Origin="HKG" Destination="TPE" DepartureTime="2015-05-01T08:20:00.000+08:00" ArrivalTime="2015-05-01T10:00:00.000+08:00" FlightTime="100" Distance="511" ETicketability="Yes" Equipment="333" ChangeOfPlane="false" ParticipantLevel="Secure Sell" LinkAvailability="true" PolledAvailabilityOption="No polled avail exists" OptionalServicesIndicator="false" AvailabilitySource="A" AvailabilityDisplayType="Fare Shop/Optimal Shop">
+      <air:AirAvailInfo ProviderCode="1G">
+        <air:BookingCodeInfo BookingCounts="J4|C4|D4|Y7|B7|M7|K7|V4|T7|R4|Q7|H7|N7|X7|L7|S4|G4" />
+      </air:AirAvailInfo>
+      <air:FlightDetailsRef Key="P45xV7FATQaQlySCU+/GQQ==" />
+    </air:AirSegment>
+    <air:AirSegment Key="hEDXQhv0QX2FEEjhcjkVCA==" Group="1" Carrier="CI" FlightNumber="753" Origin="TPE" Destination="SIN" DepartureTime="2015-05-05T08:35:00.000+08:00" ArrivalTime="2015-05-05T13:15:00.000+08:00" FlightTime="280" Distance="2008" ETicketability="Yes" Equipment="333" ChangeOfPlane="false" ParticipantLevel="Secure Sell" LinkAvailability="true" PolledAvailabilityOption="No polled avail exists" OptionalServicesIndicator="false" AvailabilitySource="A" AvailabilityDisplayType="Fare Shop/Optimal Shop">
+      <air:AirAvailInfo ProviderCode="1G">
+        <air:BookingCodeInfo BookingCounts="J4|C4|D4|Y7|B7|M7|K7|V4|T7|R4|Q7|H7|N7|X7|L7|S4|G4" />
+      </air:AirAvailInfo>
+      <air:FlightDetailsRef Key="qUDoS8HhQhmSH5pzc0Ldxw==" />
+    </air:AirSegment>
+  </air:AirSegmentList>
+  <air:FareInfoList>
+    <air:FareInfo Key="YDzW9C7SSZajVmkBTxMIpw==" FareBasis="X14DHK" PassengerTypeCode="ADT" Origin="HKG" Destination="SIN" EffectiveDate="2015-04-02T16:10:00.000+00:00" DepartureDate="2015-05-01" Amount="HKD1240" NegotiatedFare="false" NotValidAfter="2015-05-15">
+      <air:BaggageAllowance>
+        <air:MaxWeight Value="20" Unit="Kilograms" />
+      </air:BaggageAllowance>
+      <air:FareRuleKey FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" ProviderCode="1G">gws-eJxNTkEKwzAMe0zRXXYalt0yknUpgVy2wXrZ/58xO71MYAkjITvnrJTIlZr/sOC7lB3jXYABtXnuAxJDFIhtB0gmfGStrWM2RLoxpnmqzFhJVUFs3PR0HDgmt/6w0mvwUj8JC8Lp3kzGrb5ap9olMqRAMy6wt34xcidL</air:FareRuleKey>
+    </air:FareInfo>
+    <air:FareInfo Key="6c5SiEYtRMOPfuL4SAJOUg==" FareBasis="X14DHK" PassengerTypeCode="ADT" Origin="SIN" Destination="HKG" EffectiveDate="2015-04-02T16:10:00.000+00:00" DepartureDate="2015-05-10" Amount="HKD1190" NegotiatedFare="false" NotValidAfter="2015-05-15">
+      <air:BaggageAllowance>
+        <air:MaxWeight Value="20" Unit="Kilograms" />
+      </air:BaggageAllowance>
+      <air:FareRuleKey FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" ProviderCode="1G">gws-eJxNTkEKwzAMe0zRXXYalmNGsi4lkMs2WC/7/zPmuDtMYAkjITvnrJTIlZr/sOCzlB3jVYABtWn9Dokhim8HSCa8Za2twxui0Izh5qnisZKqgti46elM4HB+7ONXKpgnYUFMujWTca3P1ql2iQwp0IwL7K0vK98nSA==</air:FareRuleKey>
+    </air:FareInfo>
+  </air:FareInfoList>
+  <air:RouteList>
+    <air:Route Key="YrrW2VPxRyOpzHdYYZcRIA==">
+      <air:Leg Key="5Tz6RdrYQK+SJVkyAc6ccA==" Group="0" Origin="HKG" Destination="TPE" />
+    </air:Route>
+    <air:Route Key="tfBVlEo6RsyOlYx5oUfcHA==">
+      <air:Leg Key="shp4HJPYQKSTxIMlZzJu5A==" Group="1" Origin="TPE" Destination="SIN" />
+    </air:Route>
+    <air:Route Key="/AnVSNcPQqSsfl9KmaFAJQ==">
+      <air:Leg Key="f3uqHFESQf21CHs/TIUwgw==" Group="2" Origin="SIN" Destination="HKG" />
+    </air:Route>
+  </air:RouteList>
+  <air:AirPricingSolution Key="4RtaBmA3QqujxMISFO5SGQ==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921">
+    <air:Journey TravelTime="P0DT1H40M0S">
+      <air:AirSegmentRef Key="jMKF4al+T0SoIk33ifN0gQ==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT4H40M0S">
+      <air:AirSegmentRef Key="BrtqKdO6TWu8UzxLfnZKyA==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT7H40M0S">
+      <air:AirSegmentRef Key="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:AirSegmentRef Key="DE+ATy+6Sty0TiDHBaEDnA==" />
+    </air:Journey>
+    <air:LegRef Key="5Tz6RdrYQK+SJVkyAc6ccA==" />
+    <air:LegRef Key="shp4HJPYQKSTxIMlZzJu5A==" />
+    <air:LegRef Key="f3uqHFESQf21CHs/TIUwgw==" />
+    <air:AirPricingInfo Key="mUoTkBzyTZCBt6U+tsBywA==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921" LatestTicketingTime="2015-05-01T23:59:00.000+00:00" PricingMethod="Guaranteed" Refundable="true" ETicketability="Yes" PlatingCarrier="HR" ProviderCode="1G">
+      <air:FareInfoRef Key="YDzW9C7SSZajVmkBTxMIpw==" />
+      <air:FareInfoRef Key="6c5SiEYtRMOPfuL4SAJOUg==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="jMKF4al+T0SoIk33ifN0gQ==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="BrtqKdO6TWu8UzxLfnZKyA==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="DE+ATy+6Sty0TiDHBaEDnA==" />
+      <air:TaxInfo Category="HK" Amount="HKD120" />
+      <air:TaxInfo Category="TW" Amount="HKD75" />
+      <air:TaxInfo Category="OO" Amount="HKD45" />
+      <air:TaxInfo Category="OP" Amount="HKD35" />
+      <air:TaxInfo Category="SG" Amount="HKD112" />
+      <air:TaxInfo Category="YQ" Amount="HKD534" />
+      <air:FareCalc>HKG CI TPE Q5.80 CI SIN 153.51X14DHK CI X/TPE CI HKG 153.51X14DHK NUC312.82END ROE7.75183</air:FareCalc>
+      <air:PassengerType Code="ADT" />
+      <air:CancelPenalty>
+        <air:Amount>HKD200.00</air:Amount>
+      </air:CancelPenalty>
+    </air:AirPricingInfo>
+    <air:Connection SegmentIndex="2" />
+  </air:AirPricingSolution>
+  <air:AirPricingSolution Key="t1Ejo5ZcSCu0zlyL6V+MTQ==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921">
+    <air:Journey TravelTime="P0DT1H40M0S">
+      <air:AirSegmentRef Key="dblURLa+QVe/pEtD69KzoQ==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT4H40M0S">
+      <air:AirSegmentRef Key="BrtqKdO6TWu8UzxLfnZKyA==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT7H40M0S">
+      <air:AirSegmentRef Key="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:AirSegmentRef Key="DE+ATy+6Sty0TiDHBaEDnA==" />
+    </air:Journey>
+    <air:LegRef Key="5Tz6RdrYQK+SJVkyAc6ccA==" />
+    <air:LegRef Key="shp4HJPYQKSTxIMlZzJu5A==" />
+    <air:LegRef Key="f3uqHFESQf21CHs/TIUwgw==" />
+    <air:AirPricingInfo Key="NpkGZDN9Rw2sVrgYMVOOOA==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921" LatestTicketingTime="2015-05-01T23:59:00.000+00:00" PricingMethod="Guaranteed" Refundable="true" ETicketability="Yes" PlatingCarrier="HR" ProviderCode="1G">
+      <air:FareInfoRef Key="YDzW9C7SSZajVmkBTxMIpw==" />
+      <air:FareInfoRef Key="6c5SiEYtRMOPfuL4SAJOUg==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="dblURLa+QVe/pEtD69KzoQ==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="BrtqKdO6TWu8UzxLfnZKyA==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="DE+ATy+6Sty0TiDHBaEDnA==" />
+      <air:TaxInfo Category="HK" Amount="HKD120" />
+      <air:TaxInfo Category="TW" Amount="HKD75" />
+      <air:TaxInfo Category="OO" Amount="HKD45" />
+      <air:TaxInfo Category="OP" Amount="HKD35" />
+      <air:TaxInfo Category="SG" Amount="HKD112" />
+      <air:TaxInfo Category="YQ" Amount="HKD534" />
+      <air:FareCalc>HKG CI TPE Q5.80 CI SIN 153.51X14DHK CI X/TPE CI HKG 153.51X14DHK NUC312.82END ROE7.75183</air:FareCalc>
+      <air:PassengerType Code="ADT" />
+      <air:CancelPenalty>
+        <air:Amount>HKD200.00</air:Amount>
+      </air:CancelPenalty>
+    </air:AirPricingInfo>
+    <air:Connection SegmentIndex="2" />
+  </air:AirPricingSolution>
+  <air:AirPricingSolution Key="zF4ilpZgSRSjuopjJE5loA==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921">
+    <air:Journey TravelTime="P0DT1H40M0S">
+      <air:AirSegmentRef Key="bV4FseaETJaMafoHyo5pPg==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT4H40M0S">
+      <air:AirSegmentRef Key="BrtqKdO6TWu8UzxLfnZKyA==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT7H40M0S">
+      <air:AirSegmentRef Key="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:AirSegmentRef Key="DE+ATy+6Sty0TiDHBaEDnA==" />
+    </air:Journey>
+    <air:LegRef Key="5Tz6RdrYQK+SJVkyAc6ccA==" />
+    <air:LegRef Key="shp4HJPYQKSTxIMlZzJu5A==" />
+    <air:LegRef Key="f3uqHFESQf21CHs/TIUwgw==" />
+    <air:AirPricingInfo Key="UITGiuG9Su22mGOU0m6I8Q==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921" LatestTicketingTime="2015-05-01T23:59:00.000+00:00" PricingMethod="Guaranteed" Refundable="true" ETicketability="Yes" PlatingCarrier="HR" ProviderCode="1G">
+      <air:FareInfoRef Key="YDzW9C7SSZajVmkBTxMIpw==" />
+      <air:FareInfoRef Key="6c5SiEYtRMOPfuL4SAJOUg==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="bV4FseaETJaMafoHyo5pPg==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="BrtqKdO6TWu8UzxLfnZKyA==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="DE+ATy+6Sty0TiDHBaEDnA==" />
+      <air:TaxInfo Category="HK" Amount="HKD120" />
+      <air:TaxInfo Category="TW" Amount="HKD75" />
+      <air:TaxInfo Category="OO" Amount="HKD45" />
+      <air:TaxInfo Category="OP" Amount="HKD35" />
+      <air:TaxInfo Category="SG" Amount="HKD112" />
+      <air:TaxInfo Category="YQ" Amount="HKD534" />
+      <air:FareCalc>HKG CI TPE Q5.80 CI SIN 153.51X14DHK CI X/TPE CI HKG 153.51X14DHK NUC312.82END ROE7.75183</air:FareCalc>
+      <air:PassengerType Code="ADT" />
+      <air:CancelPenalty>
+        <air:Amount>HKD200.00</air:Amount>
+      </air:CancelPenalty>
+    </air:AirPricingInfo>
+    <air:Connection SegmentIndex="2" />
+  </air:AirPricingSolution>
+  <air:AirPricingSolution Key="ZjDmmiwhRRix6Gbt5lyPwA==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921">
+    <air:Journey TravelTime="P0DT1H40M0S">
+      <air:AirSegmentRef Key="yNfb1LMJR/WSTCy1IMx+jw==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT4H40M0S">
+      <air:AirSegmentRef Key="BrtqKdO6TWu8UzxLfnZKyA==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT7H40M0S">
+      <air:AirSegmentRef Key="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:AirSegmentRef Key="DE+ATy+6Sty0TiDHBaEDnA==" />
+    </air:Journey>
+    <air:LegRef Key="5Tz6RdrYQK+SJVkyAc6ccA==" />
+    <air:LegRef Key="shp4HJPYQKSTxIMlZzJu5A==" />
+    <air:LegRef Key="f3uqHFESQf21CHs/TIUwgw==" />
+    <air:AirPricingInfo Key="ugO+VVvGRiu1mFuzbEH4Dw==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921" LatestTicketingTime="2015-05-01T23:59:00.000+00:00" PricingMethod="Guaranteed" Refundable="true" ETicketability="Yes" PlatingCarrier="HR" ProviderCode="1G">
+      <air:FareInfoRef Key="YDzW9C7SSZajVmkBTxMIpw==" />
+      <air:FareInfoRef Key="6c5SiEYtRMOPfuL4SAJOUg==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="yNfb1LMJR/WSTCy1IMx+jw==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="BrtqKdO6TWu8UzxLfnZKyA==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="DE+ATy+6Sty0TiDHBaEDnA==" />
+      <air:TaxInfo Category="HK" Amount="HKD120" />
+      <air:TaxInfo Category="TW" Amount="HKD75" />
+      <air:TaxInfo Category="OO" Amount="HKD45" />
+      <air:TaxInfo Category="OP" Amount="HKD35" />
+      <air:TaxInfo Category="SG" Amount="HKD112" />
+      <air:TaxInfo Category="YQ" Amount="HKD534" />
+      <air:FareCalc>HKG CI TPE Q5.80 CI SIN 153.51X14DHK CI X/TPE CI HKG 153.51X14DHK NUC312.82END ROE7.75183</air:FareCalc>
+      <air:PassengerType Code="ADT" />
+      <air:CancelPenalty>
+        <air:Amount>HKD200.00</air:Amount>
+      </air:CancelPenalty>
+    </air:AirPricingInfo>
+    <air:Connection SegmentIndex="2" />
+  </air:AirPricingSolution>
+  <air:AirPricingSolution Key="JYx3DWqpSiWTgXCJ158Bww==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921">
+    <air:Journey TravelTime="P0DT1H40M0S">
+      <air:AirSegmentRef Key="/qWFcgJaS+OV1elhCfh+tA==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT4H40M0S">
+      <air:AirSegmentRef Key="BrtqKdO6TWu8UzxLfnZKyA==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT7H40M0S">
+      <air:AirSegmentRef Key="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:AirSegmentRef Key="DE+ATy+6Sty0TiDHBaEDnA==" />
+    </air:Journey>
+    <air:LegRef Key="5Tz6RdrYQK+SJVkyAc6ccA==" />
+    <air:LegRef Key="shp4HJPYQKSTxIMlZzJu5A==" />
+    <air:LegRef Key="f3uqHFESQf21CHs/TIUwgw==" />
+    <air:AirPricingInfo Key="Uz6o2wteQs+VslI/txoNrw==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921" LatestTicketingTime="2015-05-01T23:59:00.000+00:00" PricingMethod="Guaranteed" Refundable="true" ETicketability="Yes" PlatingCarrier="HR" ProviderCode="1G">
+      <air:FareInfoRef Key="YDzW9C7SSZajVmkBTxMIpw==" />
+      <air:FareInfoRef Key="6c5SiEYtRMOPfuL4SAJOUg==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="/qWFcgJaS+OV1elhCfh+tA==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="BrtqKdO6TWu8UzxLfnZKyA==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="DE+ATy+6Sty0TiDHBaEDnA==" />
+      <air:TaxInfo Category="HK" Amount="HKD120" />
+      <air:TaxInfo Category="TW" Amount="HKD75" />
+      <air:TaxInfo Category="OO" Amount="HKD45" />
+      <air:TaxInfo Category="OP" Amount="HKD35" />
+      <air:TaxInfo Category="SG" Amount="HKD112" />
+      <air:TaxInfo Category="YQ" Amount="HKD534" />
+      <air:FareCalc>HKG CI TPE Q5.80 CI SIN 153.51X14DHK CI X/TPE CI HKG 153.51X14DHK NUC312.82END ROE7.75183</air:FareCalc>
+      <air:PassengerType Code="ADT" />
+      <air:CancelPenalty>
+        <air:Amount>HKD200.00</air:Amount>
+      </air:CancelPenalty>
+    </air:AirPricingInfo>
+    <air:Connection SegmentIndex="2" />
+  </air:AirPricingSolution>
+  <air:AirPricingSolution Key="jzAv7o+DR2KP4hGlYL09oQ==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921">
+    <air:Journey TravelTime="P0DT1H40M0S">
+      <air:AirSegmentRef Key="em+qYuZCTpGtVGsyg1fd5A==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT4H40M0S">
+      <air:AirSegmentRef Key="BrtqKdO6TWu8UzxLfnZKyA==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT7H40M0S">
+      <air:AirSegmentRef Key="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:AirSegmentRef Key="DE+ATy+6Sty0TiDHBaEDnA==" />
+    </air:Journey>
+    <air:LegRef Key="5Tz6RdrYQK+SJVkyAc6ccA==" />
+    <air:LegRef Key="shp4HJPYQKSTxIMlZzJu5A==" />
+    <air:LegRef Key="f3uqHFESQf21CHs/TIUwgw==" />
+    <air:AirPricingInfo Key="9LA6FnJtTBWz26RDMrzB4w==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921" LatestTicketingTime="2015-05-01T23:59:00.000+00:00" PricingMethod="Guaranteed" Refundable="true" ETicketability="Yes" PlatingCarrier="HR" ProviderCode="1G">
+      <air:FareInfoRef Key="YDzW9C7SSZajVmkBTxMIpw==" />
+      <air:FareInfoRef Key="6c5SiEYtRMOPfuL4SAJOUg==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="em+qYuZCTpGtVGsyg1fd5A==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="BrtqKdO6TWu8UzxLfnZKyA==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="DE+ATy+6Sty0TiDHBaEDnA==" />
+      <air:TaxInfo Category="HK" Amount="HKD120" />
+      <air:TaxInfo Category="TW" Amount="HKD75" />
+      <air:TaxInfo Category="OO" Amount="HKD45" />
+      <air:TaxInfo Category="OP" Amount="HKD35" />
+      <air:TaxInfo Category="SG" Amount="HKD112" />
+      <air:TaxInfo Category="YQ" Amount="HKD534" />
+      <air:FareCalc>HKG CI TPE Q5.80 CI SIN 153.51X14DHK CI X/TPE CI HKG 153.51X14DHK NUC312.82END ROE7.75183</air:FareCalc>
+      <air:PassengerType Code="ADT" />
+      <air:CancelPenalty>
+        <air:Amount>HKD200.00</air:Amount>
+      </air:CancelPenalty>
+    </air:AirPricingInfo>
+    <air:Connection SegmentIndex="2" />
+  </air:AirPricingSolution>
+  <air:AirPricingSolution Key="YGaC6PHvQmCZKW7Ry/fp+g==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921">
+    <air:Journey TravelTime="P0DT1H40M0S">
+      <air:AirSegmentRef Key="mI1Uz9fyQtSwijEQJdbsDg==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT4H40M0S">
+      <air:AirSegmentRef Key="BrtqKdO6TWu8UzxLfnZKyA==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT7H40M0S">
+      <air:AirSegmentRef Key="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:AirSegmentRef Key="DE+ATy+6Sty0TiDHBaEDnA==" />
+    </air:Journey>
+    <air:LegRef Key="5Tz6RdrYQK+SJVkyAc6ccA==" />
+    <air:LegRef Key="shp4HJPYQKSTxIMlZzJu5A==" />
+    <air:LegRef Key="f3uqHFESQf21CHs/TIUwgw==" />
+    <air:AirPricingInfo Key="+Pm0WDO/TDyvFb+lTFgzyQ==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921" LatestTicketingTime="2015-05-01T23:59:00.000+00:00" PricingMethod="Guaranteed" Refundable="true" ETicketability="Yes" PlatingCarrier="HR" ProviderCode="1G">
+      <air:FareInfoRef Key="YDzW9C7SSZajVmkBTxMIpw==" />
+      <air:FareInfoRef Key="6c5SiEYtRMOPfuL4SAJOUg==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="mI1Uz9fyQtSwijEQJdbsDg==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="BrtqKdO6TWu8UzxLfnZKyA==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="DE+ATy+6Sty0TiDHBaEDnA==" />
+      <air:TaxInfo Category="HK" Amount="HKD120" />
+      <air:TaxInfo Category="TW" Amount="HKD75" />
+      <air:TaxInfo Category="OO" Amount="HKD45" />
+      <air:TaxInfo Category="OP" Amount="HKD35" />
+      <air:TaxInfo Category="SG" Amount="HKD112" />
+      <air:TaxInfo Category="YQ" Amount="HKD534" />
+      <air:FareCalc>HKG CI TPE Q5.80 CI SIN 153.51X14DHK CI X/TPE CI HKG 153.51X14DHK NUC312.82END ROE7.75183</air:FareCalc>
+      <air:PassengerType Code="ADT" />
+      <air:CancelPenalty>
+        <air:Amount>HKD200.00</air:Amount>
+      </air:CancelPenalty>
+    </air:AirPricingInfo>
+    <air:Connection SegmentIndex="2" />
+  </air:AirPricingSolution>
+  <air:AirPricingSolution Key="Q8bht9veQ+28cwn0w28Svw==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921">
+    <air:Journey TravelTime="P0DT1H40M0S">
+      <air:AirSegmentRef Key="Pnjc5IiFSbq7IoLwbf+A/g==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT4H40M0S">
+      <air:AirSegmentRef Key="BrtqKdO6TWu8UzxLfnZKyA==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT7H40M0S">
+      <air:AirSegmentRef Key="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:AirSegmentRef Key="DE+ATy+6Sty0TiDHBaEDnA==" />
+    </air:Journey>
+    <air:LegRef Key="5Tz6RdrYQK+SJVkyAc6ccA==" />
+    <air:LegRef Key="shp4HJPYQKSTxIMlZzJu5A==" />
+    <air:LegRef Key="f3uqHFESQf21CHs/TIUwgw==" />
+    <air:AirPricingInfo Key="ApWCLTWFSZCIhDRyewfVbA==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921" LatestTicketingTime="2015-05-01T23:59:00.000+00:00" PricingMethod="Guaranteed" Refundable="true" ETicketability="Yes" PlatingCarrier="HR" ProviderCode="1G">
+      <air:FareInfoRef Key="YDzW9C7SSZajVmkBTxMIpw==" />
+      <air:FareInfoRef Key="6c5SiEYtRMOPfuL4SAJOUg==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="Pnjc5IiFSbq7IoLwbf+A/g==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="BrtqKdO6TWu8UzxLfnZKyA==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="DE+ATy+6Sty0TiDHBaEDnA==" />
+      <air:TaxInfo Category="HK" Amount="HKD120" />
+      <air:TaxInfo Category="TW" Amount="HKD75" />
+      <air:TaxInfo Category="OO" Amount="HKD45" />
+      <air:TaxInfo Category="OP" Amount="HKD35" />
+      <air:TaxInfo Category="SG" Amount="HKD112" />
+      <air:TaxInfo Category="YQ" Amount="HKD534" />
+      <air:FareCalc>HKG CI TPE Q5.80 CI SIN 153.51X14DHK CI X/TPE CI HKG 153.51X14DHK NUC312.82END ROE7.75183</air:FareCalc>
+      <air:PassengerType Code="ADT" />
+      <air:CancelPenalty>
+        <air:Amount>HKD200.00</air:Amount>
+      </air:CancelPenalty>
+    </air:AirPricingInfo>
+    <air:Connection SegmentIndex="2" />
+  </air:AirPricingSolution>
+  <air:AirPricingSolution Key="gJ7hQvLnR0yZBZhkeyY4pg==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921">
+    <air:Journey TravelTime="P0DT1H40M0S">
+      <air:AirSegmentRef Key="MkUoiOcTSPmA9Pp7TDsl0g==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT4H40M0S">
+      <air:AirSegmentRef Key="BrtqKdO6TWu8UzxLfnZKyA==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT7H40M0S">
+      <air:AirSegmentRef Key="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:AirSegmentRef Key="DE+ATy+6Sty0TiDHBaEDnA==" />
+    </air:Journey>
+    <air:LegRef Key="5Tz6RdrYQK+SJVkyAc6ccA==" />
+    <air:LegRef Key="shp4HJPYQKSTxIMlZzJu5A==" />
+    <air:LegRef Key="f3uqHFESQf21CHs/TIUwgw==" />
+    <air:AirPricingInfo Key="NvRMF4GTReSCa/y5lUSxhw==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921" LatestTicketingTime="2015-05-01T23:59:00.000+00:00" PricingMethod="Guaranteed" Refundable="true" ETicketability="Yes" PlatingCarrier="HR" ProviderCode="1G">
+      <air:FareInfoRef Key="YDzW9C7SSZajVmkBTxMIpw==" />
+      <air:FareInfoRef Key="6c5SiEYtRMOPfuL4SAJOUg==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="MkUoiOcTSPmA9Pp7TDsl0g==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="BrtqKdO6TWu8UzxLfnZKyA==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="DE+ATy+6Sty0TiDHBaEDnA==" />
+      <air:TaxInfo Category="HK" Amount="HKD120" />
+      <air:TaxInfo Category="TW" Amount="HKD75" />
+      <air:TaxInfo Category="OO" Amount="HKD45" />
+      <air:TaxInfo Category="OP" Amount="HKD35" />
+      <air:TaxInfo Category="SG" Amount="HKD112" />
+      <air:TaxInfo Category="YQ" Amount="HKD534" />
+      <air:FareCalc>HKG CI TPE Q5.80 CI SIN 153.51X14DHK CI X/TPE CI HKG 153.51X14DHK NUC312.82END ROE7.75183</air:FareCalc>
+      <air:PassengerType Code="ADT" />
+      <air:CancelPenalty>
+        <air:Amount>HKD200.00</air:Amount>
+      </air:CancelPenalty>
+    </air:AirPricingInfo>
+    <air:Connection SegmentIndex="2" />
+  </air:AirPricingSolution>
+  <air:AirPricingSolution Key="bBDrWl6oQnyg3uMnogp7Tg==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921">
+    <air:Journey TravelTime="P0DT1H40M0S">
+      <air:AirSegmentRef Key="AisDPCNTQAWaX1rMJPHe1g==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT4H40M0S">
+      <air:AirSegmentRef Key="BrtqKdO6TWu8UzxLfnZKyA==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT7H40M0S">
+      <air:AirSegmentRef Key="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:AirSegmentRef Key="DE+ATy+6Sty0TiDHBaEDnA==" />
+    </air:Journey>
+    <air:LegRef Key="5Tz6RdrYQK+SJVkyAc6ccA==" />
+    <air:LegRef Key="shp4HJPYQKSTxIMlZzJu5A==" />
+    <air:LegRef Key="f3uqHFESQf21CHs/TIUwgw==" />
+    <air:AirPricingInfo Key="DOYOZGGQTHyJSG/IoYge3g==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921" LatestTicketingTime="2015-05-01T23:59:00.000+00:00" PricingMethod="Guaranteed" Refundable="true" ETicketability="Yes" PlatingCarrier="HR" ProviderCode="1G">
+      <air:FareInfoRef Key="YDzW9C7SSZajVmkBTxMIpw==" />
+      <air:FareInfoRef Key="6c5SiEYtRMOPfuL4SAJOUg==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="AisDPCNTQAWaX1rMJPHe1g==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="BrtqKdO6TWu8UzxLfnZKyA==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="DE+ATy+6Sty0TiDHBaEDnA==" />
+      <air:TaxInfo Category="HK" Amount="HKD120" />
+      <air:TaxInfo Category="TW" Amount="HKD75" />
+      <air:TaxInfo Category="OO" Amount="HKD45" />
+      <air:TaxInfo Category="OP" Amount="HKD35" />
+      <air:TaxInfo Category="SG" Amount="HKD112" />
+      <air:TaxInfo Category="YQ" Amount="HKD534" />
+      <air:FareCalc>HKG CI TPE Q5.80 CI SIN 153.51X14DHK CI X/TPE CI HKG 153.51X14DHK NUC312.82END ROE7.75183</air:FareCalc>
+      <air:PassengerType Code="ADT" />
+      <air:CancelPenalty>
+        <air:Amount>HKD200.00</air:Amount>
+      </air:CancelPenalty>
+    </air:AirPricingInfo>
+    <air:Connection SegmentIndex="2" />
+  </air:AirPricingSolution>
+  <air:AirPricingSolution Key="w1Cu8+SSTgGLhgauQUwdcg==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921">
+    <air:Journey TravelTime="P0DT1H40M0S">
+      <air:AirSegmentRef Key="N81P4G4kTwyKnGwBzcqi0A==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT4H40M0S">
+      <air:AirSegmentRef Key="BrtqKdO6TWu8UzxLfnZKyA==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT7H40M0S">
+      <air:AirSegmentRef Key="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:AirSegmentRef Key="DE+ATy+6Sty0TiDHBaEDnA==" />
+    </air:Journey>
+    <air:LegRef Key="5Tz6RdrYQK+SJVkyAc6ccA==" />
+    <air:LegRef Key="shp4HJPYQKSTxIMlZzJu5A==" />
+    <air:LegRef Key="f3uqHFESQf21CHs/TIUwgw==" />
+    <air:AirPricingInfo Key="IX/3mbQlTduH/pc5jv9kRw==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921" LatestTicketingTime="2015-05-01T23:59:00.000+00:00" PricingMethod="Guaranteed" Refundable="true" ETicketability="Yes" PlatingCarrier="HR" ProviderCode="1G">
+      <air:FareInfoRef Key="YDzW9C7SSZajVmkBTxMIpw==" />
+      <air:FareInfoRef Key="6c5SiEYtRMOPfuL4SAJOUg==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="N81P4G4kTwyKnGwBzcqi0A==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="BrtqKdO6TWu8UzxLfnZKyA==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="DE+ATy+6Sty0TiDHBaEDnA==" />
+      <air:TaxInfo Category="HK" Amount="HKD120" />
+      <air:TaxInfo Category="TW" Amount="HKD75" />
+      <air:TaxInfo Category="OO" Amount="HKD45" />
+      <air:TaxInfo Category="OP" Amount="HKD35" />
+      <air:TaxInfo Category="SG" Amount="HKD112" />
+      <air:TaxInfo Category="YQ" Amount="HKD534" />
+      <air:FareCalc>HKG CI TPE Q5.80 CI SIN 153.51X14DHK CI X/TPE CI HKG 153.51X14DHK NUC312.82END ROE7.75183</air:FareCalc>
+      <air:PassengerType Code="ADT" />
+      <air:CancelPenalty>
+        <air:Amount>HKD200.00</air:Amount>
+      </air:CancelPenalty>
+    </air:AirPricingInfo>
+    <air:Connection SegmentIndex="2" />
+  </air:AirPricingSolution>
+  <air:AirPricingSolution Key="8kmGB+o4SXGgqMpilKfGsg==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921">
+    <air:Journey TravelTime="P0DT1H40M0S">
+      <air:AirSegmentRef Key="jMKF4al+T0SoIk33ifN0gQ==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT4H40M0S">
+      <air:AirSegmentRef Key="hEDXQhv0QX2FEEjhcjkVCA==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT7H40M0S">
+      <air:AirSegmentRef Key="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:AirSegmentRef Key="DE+ATy+6Sty0TiDHBaEDnA==" />
+    </air:Journey>
+    <air:LegRef Key="5Tz6RdrYQK+SJVkyAc6ccA==" />
+    <air:LegRef Key="shp4HJPYQKSTxIMlZzJu5A==" />
+    <air:LegRef Key="f3uqHFESQf21CHs/TIUwgw==" />
+    <air:AirPricingInfo Key="ZpaYgj8+QnqGutZh2aN/wA==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921" LatestTicketingTime="2015-05-01T23:59:00.000+00:00" PricingMethod="Guaranteed" Refundable="true" ETicketability="Yes" PlatingCarrier="HR" ProviderCode="1G">
+      <air:FareInfoRef Key="YDzW9C7SSZajVmkBTxMIpw==" />
+      <air:FareInfoRef Key="6c5SiEYtRMOPfuL4SAJOUg==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="jMKF4al+T0SoIk33ifN0gQ==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="hEDXQhv0QX2FEEjhcjkVCA==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="DE+ATy+6Sty0TiDHBaEDnA==" />
+      <air:TaxInfo Category="HK" Amount="HKD120" />
+      <air:TaxInfo Category="TW" Amount="HKD75" />
+      <air:TaxInfo Category="OO" Amount="HKD45" />
+      <air:TaxInfo Category="OP" Amount="HKD35" />
+      <air:TaxInfo Category="SG" Amount="HKD112" />
+      <air:TaxInfo Category="YQ" Amount="HKD534" />
+      <air:FareCalc>HKG CI TPE Q5.80 CI SIN 153.51X14DHK CI X/TPE CI HKG 153.51X14DHK NUC312.82END ROE7.75183</air:FareCalc>
+      <air:PassengerType Code="ADT" />
+      <air:CancelPenalty>
+        <air:Amount>HKD200.00</air:Amount>
+      </air:CancelPenalty>
+    </air:AirPricingInfo>
+    <air:Connection SegmentIndex="2" />
+  </air:AirPricingSolution>
+  <air:AirPricingSolution Key="74otGzZQT0WdbIAn4pRCvg==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921">
+    <air:Journey TravelTime="P0DT1H40M0S">
+      <air:AirSegmentRef Key="dblURLa+QVe/pEtD69KzoQ==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT4H40M0S">
+      <air:AirSegmentRef Key="hEDXQhv0QX2FEEjhcjkVCA==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT7H40M0S">
+      <air:AirSegmentRef Key="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:AirSegmentRef Key="DE+ATy+6Sty0TiDHBaEDnA==" />
+    </air:Journey>
+    <air:LegRef Key="5Tz6RdrYQK+SJVkyAc6ccA==" />
+    <air:LegRef Key="shp4HJPYQKSTxIMlZzJu5A==" />
+    <air:LegRef Key="f3uqHFESQf21CHs/TIUwgw==" />
+    <air:AirPricingInfo Key="BMpp7LK9RieXcZiuhkzZIw==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921" LatestTicketingTime="2015-05-01T23:59:00.000+00:00" PricingMethod="Guaranteed" Refundable="true" ETicketability="Yes" PlatingCarrier="HR" ProviderCode="1G">
+      <air:FareInfoRef Key="YDzW9C7SSZajVmkBTxMIpw==" />
+      <air:FareInfoRef Key="6c5SiEYtRMOPfuL4SAJOUg==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="dblURLa+QVe/pEtD69KzoQ==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="hEDXQhv0QX2FEEjhcjkVCA==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="DE+ATy+6Sty0TiDHBaEDnA==" />
+      <air:TaxInfo Category="HK" Amount="HKD120" />
+      <air:TaxInfo Category="TW" Amount="HKD75" />
+      <air:TaxInfo Category="OO" Amount="HKD45" />
+      <air:TaxInfo Category="OP" Amount="HKD35" />
+      <air:TaxInfo Category="SG" Amount="HKD112" />
+      <air:TaxInfo Category="YQ" Amount="HKD534" />
+      <air:FareCalc>HKG CI TPE Q5.80 CI SIN 153.51X14DHK CI X/TPE CI HKG 153.51X14DHK NUC312.82END ROE7.75183</air:FareCalc>
+      <air:PassengerType Code="ADT" />
+      <air:CancelPenalty>
+        <air:Amount>HKD200.00</air:Amount>
+      </air:CancelPenalty>
+    </air:AirPricingInfo>
+    <air:Connection SegmentIndex="2" />
+  </air:AirPricingSolution>
+  <air:AirPricingSolution Key="XGX0MtjJRrKMZD3zKMn5jA==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921">
+    <air:Journey TravelTime="P0DT1H40M0S">
+      <air:AirSegmentRef Key="bV4FseaETJaMafoHyo5pPg==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT4H40M0S">
+      <air:AirSegmentRef Key="hEDXQhv0QX2FEEjhcjkVCA==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT7H40M0S">
+      <air:AirSegmentRef Key="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:AirSegmentRef Key="DE+ATy+6Sty0TiDHBaEDnA==" />
+    </air:Journey>
+    <air:LegRef Key="5Tz6RdrYQK+SJVkyAc6ccA==" />
+    <air:LegRef Key="shp4HJPYQKSTxIMlZzJu5A==" />
+    <air:LegRef Key="f3uqHFESQf21CHs/TIUwgw==" />
+    <air:AirPricingInfo Key="m4LQhJgqQCqZvSd01w8X6w==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921" LatestTicketingTime="2015-05-01T23:59:00.000+00:00" PricingMethod="Guaranteed" Refundable="true" ETicketability="Yes" PlatingCarrier="HR" ProviderCode="1G">
+      <air:FareInfoRef Key="YDzW9C7SSZajVmkBTxMIpw==" />
+      <air:FareInfoRef Key="6c5SiEYtRMOPfuL4SAJOUg==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="bV4FseaETJaMafoHyo5pPg==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="hEDXQhv0QX2FEEjhcjkVCA==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="DE+ATy+6Sty0TiDHBaEDnA==" />
+      <air:TaxInfo Category="HK" Amount="HKD120" />
+      <air:TaxInfo Category="TW" Amount="HKD75" />
+      <air:TaxInfo Category="OO" Amount="HKD45" />
+      <air:TaxInfo Category="OP" Amount="HKD35" />
+      <air:TaxInfo Category="SG" Amount="HKD112" />
+      <air:TaxInfo Category="YQ" Amount="HKD534" />
+      <air:FareCalc>HKG CI TPE Q5.80 CI SIN 153.51X14DHK CI X/TPE CI HKG 153.51X14DHK NUC312.82END ROE7.75183</air:FareCalc>
+      <air:PassengerType Code="ADT" />
+      <air:CancelPenalty>
+        <air:Amount>HKD200.00</air:Amount>
+      </air:CancelPenalty>
+    </air:AirPricingInfo>
+    <air:Connection SegmentIndex="2" />
+  </air:AirPricingSolution>
+  <air:AirPricingSolution Key="T2ueW82YTFiSveC4fi6YOg==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921">
+    <air:Journey TravelTime="P0DT1H40M0S">
+      <air:AirSegmentRef Key="yNfb1LMJR/WSTCy1IMx+jw==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT4H40M0S">
+      <air:AirSegmentRef Key="hEDXQhv0QX2FEEjhcjkVCA==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT7H40M0S">
+      <air:AirSegmentRef Key="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:AirSegmentRef Key="DE+ATy+6Sty0TiDHBaEDnA==" />
+    </air:Journey>
+    <air:LegRef Key="5Tz6RdrYQK+SJVkyAc6ccA==" />
+    <air:LegRef Key="shp4HJPYQKSTxIMlZzJu5A==" />
+    <air:LegRef Key="f3uqHFESQf21CHs/TIUwgw==" />
+    <air:AirPricingInfo Key="jzbT1MdhQSmmP/A0lHvqYg==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921" LatestTicketingTime="2015-05-01T23:59:00.000+00:00" PricingMethod="Guaranteed" Refundable="true" ETicketability="Yes" PlatingCarrier="HR" ProviderCode="1G">
+      <air:FareInfoRef Key="YDzW9C7SSZajVmkBTxMIpw==" />
+      <air:FareInfoRef Key="6c5SiEYtRMOPfuL4SAJOUg==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="yNfb1LMJR/WSTCy1IMx+jw==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="hEDXQhv0QX2FEEjhcjkVCA==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="DE+ATy+6Sty0TiDHBaEDnA==" />
+      <air:TaxInfo Category="HK" Amount="HKD120" />
+      <air:TaxInfo Category="TW" Amount="HKD75" />
+      <air:TaxInfo Category="OO" Amount="HKD45" />
+      <air:TaxInfo Category="OP" Amount="HKD35" />
+      <air:TaxInfo Category="SG" Amount="HKD112" />
+      <air:TaxInfo Category="YQ" Amount="HKD534" />
+      <air:FareCalc>HKG CI TPE Q5.80 CI SIN 153.51X14DHK CI X/TPE CI HKG 153.51X14DHK NUC312.82END ROE7.75183</air:FareCalc>
+      <air:PassengerType Code="ADT" />
+      <air:CancelPenalty>
+        <air:Amount>HKD200.00</air:Amount>
+      </air:CancelPenalty>
+    </air:AirPricingInfo>
+    <air:Connection SegmentIndex="2" />
+  </air:AirPricingSolution>
+  <air:AirPricingSolution Key="dD2dSPcETOGLimDyK1wxPg==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921">
+    <air:Journey TravelTime="P0DT1H40M0S">
+      <air:AirSegmentRef Key="/qWFcgJaS+OV1elhCfh+tA==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT4H40M0S">
+      <air:AirSegmentRef Key="hEDXQhv0QX2FEEjhcjkVCA==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT7H40M0S">
+      <air:AirSegmentRef Key="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:AirSegmentRef Key="DE+ATy+6Sty0TiDHBaEDnA==" />
+    </air:Journey>
+    <air:LegRef Key="5Tz6RdrYQK+SJVkyAc6ccA==" />
+    <air:LegRef Key="shp4HJPYQKSTxIMlZzJu5A==" />
+    <air:LegRef Key="f3uqHFESQf21CHs/TIUwgw==" />
+    <air:AirPricingInfo Key="l4b91DzsRruQdAtuw1AkzA==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921" LatestTicketingTime="2015-05-01T23:59:00.000+00:00" PricingMethod="Guaranteed" Refundable="true" ETicketability="Yes" PlatingCarrier="HR" ProviderCode="1G">
+      <air:FareInfoRef Key="YDzW9C7SSZajVmkBTxMIpw==" />
+      <air:FareInfoRef Key="6c5SiEYtRMOPfuL4SAJOUg==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="/qWFcgJaS+OV1elhCfh+tA==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="hEDXQhv0QX2FEEjhcjkVCA==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="DE+ATy+6Sty0TiDHBaEDnA==" />
+      <air:TaxInfo Category="HK" Amount="HKD120" />
+      <air:TaxInfo Category="TW" Amount="HKD75" />
+      <air:TaxInfo Category="OO" Amount="HKD45" />
+      <air:TaxInfo Category="OP" Amount="HKD35" />
+      <air:TaxInfo Category="SG" Amount="HKD112" />
+      <air:TaxInfo Category="YQ" Amount="HKD534" />
+      <air:FareCalc>HKG CI TPE Q5.80 CI SIN 153.51X14DHK CI X/TPE CI HKG 153.51X14DHK NUC312.82END ROE7.75183</air:FareCalc>
+      <air:PassengerType Code="ADT" />
+      <air:CancelPenalty>
+        <air:Amount>HKD200.00</air:Amount>
+      </air:CancelPenalty>
+    </air:AirPricingInfo>
+    <air:Connection SegmentIndex="2" />
+  </air:AirPricingSolution>
+  <air:AirPricingSolution Key="fpz9XmhPQEyWytorXnmkNw==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921">
+    <air:Journey TravelTime="P0DT1H40M0S">
+      <air:AirSegmentRef Key="em+qYuZCTpGtVGsyg1fd5A==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT4H40M0S">
+      <air:AirSegmentRef Key="hEDXQhv0QX2FEEjhcjkVCA==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT7H40M0S">
+      <air:AirSegmentRef Key="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:AirSegmentRef Key="DE+ATy+6Sty0TiDHBaEDnA==" />
+    </air:Journey>
+    <air:LegRef Key="5Tz6RdrYQK+SJVkyAc6ccA==" />
+    <air:LegRef Key="shp4HJPYQKSTxIMlZzJu5A==" />
+    <air:LegRef Key="f3uqHFESQf21CHs/TIUwgw==" />
+    <air:AirPricingInfo Key="ha0PrDomQMK03tI7zsX/mw==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921" LatestTicketingTime="2015-05-01T23:59:00.000+00:00" PricingMethod="Guaranteed" Refundable="true" ETicketability="Yes" PlatingCarrier="HR" ProviderCode="1G">
+      <air:FareInfoRef Key="YDzW9C7SSZajVmkBTxMIpw==" />
+      <air:FareInfoRef Key="6c5SiEYtRMOPfuL4SAJOUg==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="em+qYuZCTpGtVGsyg1fd5A==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="hEDXQhv0QX2FEEjhcjkVCA==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="DE+ATy+6Sty0TiDHBaEDnA==" />
+      <air:TaxInfo Category="HK" Amount="HKD120" />
+      <air:TaxInfo Category="TW" Amount="HKD75" />
+      <air:TaxInfo Category="OO" Amount="HKD45" />
+      <air:TaxInfo Category="OP" Amount="HKD35" />
+      <air:TaxInfo Category="SG" Amount="HKD112" />
+      <air:TaxInfo Category="YQ" Amount="HKD534" />
+      <air:FareCalc>HKG CI TPE Q5.80 CI SIN 153.51X14DHK CI X/TPE CI HKG 153.51X14DHK NUC312.82END ROE7.75183</air:FareCalc>
+      <air:PassengerType Code="ADT" />
+      <air:CancelPenalty>
+        <air:Amount>HKD200.00</air:Amount>
+      </air:CancelPenalty>
+    </air:AirPricingInfo>
+    <air:Connection SegmentIndex="2" />
+  </air:AirPricingSolution>
+  <air:AirPricingSolution Key="Lt/WoXnNS12sQan9QldNWQ==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921">
+    <air:Journey TravelTime="P0DT1H40M0S">
+      <air:AirSegmentRef Key="mI1Uz9fyQtSwijEQJdbsDg==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT4H40M0S">
+      <air:AirSegmentRef Key="hEDXQhv0QX2FEEjhcjkVCA==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT7H40M0S">
+      <air:AirSegmentRef Key="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:AirSegmentRef Key="DE+ATy+6Sty0TiDHBaEDnA==" />
+    </air:Journey>
+    <air:LegRef Key="5Tz6RdrYQK+SJVkyAc6ccA==" />
+    <air:LegRef Key="shp4HJPYQKSTxIMlZzJu5A==" />
+    <air:LegRef Key="f3uqHFESQf21CHs/TIUwgw==" />
+    <air:AirPricingInfo Key="rgYEr6/NQESFbd2zptxRoQ==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921" LatestTicketingTime="2015-05-01T23:59:00.000+00:00" PricingMethod="Guaranteed" Refundable="true" ETicketability="Yes" PlatingCarrier="HR" ProviderCode="1G">
+      <air:FareInfoRef Key="YDzW9C7SSZajVmkBTxMIpw==" />
+      <air:FareInfoRef Key="6c5SiEYtRMOPfuL4SAJOUg==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="mI1Uz9fyQtSwijEQJdbsDg==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="hEDXQhv0QX2FEEjhcjkVCA==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="DE+ATy+6Sty0TiDHBaEDnA==" />
+      <air:TaxInfo Category="HK" Amount="HKD120" />
+      <air:TaxInfo Category="TW" Amount="HKD75" />
+      <air:TaxInfo Category="OO" Amount="HKD45" />
+      <air:TaxInfo Category="OP" Amount="HKD35" />
+      <air:TaxInfo Category="SG" Amount="HKD112" />
+      <air:TaxInfo Category="YQ" Amount="HKD534" />
+      <air:FareCalc>HKG CI TPE Q5.80 CI SIN 153.51X14DHK CI X/TPE CI HKG 153.51X14DHK NUC312.82END ROE7.75183</air:FareCalc>
+      <air:PassengerType Code="ADT" />
+      <air:CancelPenalty>
+        <air:Amount>HKD200.00</air:Amount>
+      </air:CancelPenalty>
+    </air:AirPricingInfo>
+    <air:Connection SegmentIndex="2" />
+  </air:AirPricingSolution>
+  <air:AirPricingSolution Key="1nZ0YanxSYSxxU7NWts2lQ==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921">
+    <air:Journey TravelTime="P0DT1H40M0S">
+      <air:AirSegmentRef Key="Pnjc5IiFSbq7IoLwbf+A/g==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT4H40M0S">
+      <air:AirSegmentRef Key="hEDXQhv0QX2FEEjhcjkVCA==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT7H40M0S">
+      <air:AirSegmentRef Key="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:AirSegmentRef Key="DE+ATy+6Sty0TiDHBaEDnA==" />
+    </air:Journey>
+    <air:LegRef Key="5Tz6RdrYQK+SJVkyAc6ccA==" />
+    <air:LegRef Key="shp4HJPYQKSTxIMlZzJu5A==" />
+    <air:LegRef Key="f3uqHFESQf21CHs/TIUwgw==" />
+    <air:AirPricingInfo Key="ZL0Lb/EYSCGcmSQc/IhvoQ==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921" LatestTicketingTime="2015-05-01T23:59:00.000+00:00" PricingMethod="Guaranteed" Refundable="true" ETicketability="Yes" PlatingCarrier="HR" ProviderCode="1G">
+      <air:FareInfoRef Key="YDzW9C7SSZajVmkBTxMIpw==" />
+      <air:FareInfoRef Key="6c5SiEYtRMOPfuL4SAJOUg==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="Pnjc5IiFSbq7IoLwbf+A/g==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="hEDXQhv0QX2FEEjhcjkVCA==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="DE+ATy+6Sty0TiDHBaEDnA==" />
+      <air:TaxInfo Category="HK" Amount="HKD120" />
+      <air:TaxInfo Category="TW" Amount="HKD75" />
+      <air:TaxInfo Category="OO" Amount="HKD45" />
+      <air:TaxInfo Category="OP" Amount="HKD35" />
+      <air:TaxInfo Category="SG" Amount="HKD112" />
+      <air:TaxInfo Category="YQ" Amount="HKD534" />
+      <air:FareCalc>HKG CI TPE Q5.80 CI SIN 153.51X14DHK CI X/TPE CI HKG 153.51X14DHK NUC312.82END ROE7.75183</air:FareCalc>
+      <air:PassengerType Code="ADT" />
+      <air:CancelPenalty>
+        <air:Amount>HKD200.00</air:Amount>
+      </air:CancelPenalty>
+    </air:AirPricingInfo>
+    <air:Connection SegmentIndex="2" />
+  </air:AirPricingSolution>
+  <air:AirPricingSolution Key="ZdZ8JJX6RDeaF7C4KMSvQQ==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921">
+    <air:Journey TravelTime="P0DT1H40M0S">
+      <air:AirSegmentRef Key="MkUoiOcTSPmA9Pp7TDsl0g==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT4H40M0S">
+      <air:AirSegmentRef Key="hEDXQhv0QX2FEEjhcjkVCA==" />
+    </air:Journey>
+    <air:Journey TravelTime="P0DT7H40M0S">
+      <air:AirSegmentRef Key="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:AirSegmentRef Key="DE+ATy+6Sty0TiDHBaEDnA==" />
+    </air:Journey>
+    <air:LegRef Key="5Tz6RdrYQK+SJVkyAc6ccA==" />
+    <air:LegRef Key="shp4HJPYQKSTxIMlZzJu5A==" />
+    <air:LegRef Key="f3uqHFESQf21CHs/TIUwgw==" />
+    <air:AirPricingInfo Key="vHDFOl6TSWSRB3qMAHaRWg==" TotalPrice="HKD3351" BasePrice="HKD2430" ApproximateTotalPrice="HKD3351" ApproximateBasePrice="HKD2430" Taxes="HKD921" LatestTicketingTime="2015-05-01T23:59:00.000+00:00" PricingMethod="Guaranteed" Refundable="true" ETicketability="Yes" PlatingCarrier="HR" ProviderCode="1G">
+      <air:FareInfoRef Key="YDzW9C7SSZajVmkBTxMIpw==" />
+      <air:FareInfoRef Key="6c5SiEYtRMOPfuL4SAJOUg==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="MkUoiOcTSPmA9Pp7TDsl0g==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="YDzW9C7SSZajVmkBTxMIpw==" SegmentRef="hEDXQhv0QX2FEEjhcjkVCA==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="7LEwOdrwRAmO8e3yyinn3w==" />
+      <air:BookingInfo BookingCode="X" CabinClass="Economy" FareInfoRef="6c5SiEYtRMOPfuL4SAJOUg==" SegmentRef="DE+ATy+6Sty0TiDHBaEDnA==" />
+      <air:TaxInfo Category="HK" Amount="HKD120" />
+      <air:TaxInfo Category="TW" Amount="HKD75" />
+      <air:TaxInfo Category="OO" Amount="HKD45" />
+      <air:TaxInfo Category="OP" Amount="HKD35" />
+      <air:TaxInfo Category="SG" Amount="HKD112" />
+      <air:TaxInfo Category="YQ" Amount="HKD534" />
+      <air:FareCalc>HKG CI TPE Q5.80 CI SIN 153.51X14DHK CI X/TPE CI HKG 153.51X14DHK NUC312.82END ROE7.75183</air:FareCalc>
+      <air:PassengerType Code="ADT" />
+      <air:CancelPenalty>
+        <air:Amount>HKD200.00</air:Amount>
+      </air:CancelPenalty>
+    </air:AirPricingInfo>
+    <air:Connection SegmentIndex="2" />
+  </air:AirPricingSolution>
+</air:LowFareSearchRsp>
