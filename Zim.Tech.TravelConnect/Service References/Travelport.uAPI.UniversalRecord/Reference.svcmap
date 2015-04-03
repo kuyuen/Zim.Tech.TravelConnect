@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="23243047-1b1e-4b50-b6d4-e2f79325b227" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="E:\Job\Zim-Tech\Travelpot\TravelLiker\SourceCode\Zim.Tech.TravelConnect\Schema_8.1\universal_v30_0\UniversalRecord.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CommonReqRsp.xsd" MetadataType="Schema" ID="4e8842a2-ec86-4bbe-85af-c5ba98dfbeac" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Zim.Tech.TravelConnect/Schema_8.1/common_v30_0/CommonReqRsp.xsd" />
+    <MetadataFile FileName="Air.xsd" MetadataType="Schema" ID="8a7a82db-1c90-456f-8ad2-ca8ef4437d6b" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Zim.Tech.TravelConnect/Schema_8.1/air_v30_0/Air.xsd" />
+    <MetadataFile FileName="Passive.xsd" MetadataType="Schema" ID="326b53f1-e069-4757-84a0-14492e5c1815" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Zim.Tech.TravelConnect/Schema_8.1/passive_v30_0/Passive.xsd" />
+    <MetadataFile FileName="Cruise.xsd" MetadataType="Schema" ID="ccfeab49-01c6-480d-ad97-aa08acf538d6" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Zim.Tech.TravelConnect/Schema_8.1/cruise_v30_0/Cruise.xsd" />
+    <MetadataFile FileName="Hotel.xsd" MetadataType="Schema" ID="3f6bdb0e-da2a-4d7d-b1d8-2971c6fa2984" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Zim.Tech.TravelConnect/Schema_8.1/hotel_v30_0/Hotel.xsd" />
+    <MetadataFile FileName="Vehicle.xsd" MetadataType="Schema" ID="a9ad964d-ed4d-4b40-854f-259b86f1f3e7" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Zim.Tech.TravelConnect/Schema_8.1/vehicle_v30_0/Vehicle.xsd" />
+    <MetadataFile FileName="UniversalRecordReqRsp.xsd" MetadataType="Schema" ID="6fff69bf-a550-4165-84ac-b8228eb698a8" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Zim.Tech.TravelConnect/Schema_8.1/universal_v30_0/UniversalRecordReqRsp.xsd" />
+    <MetadataFile FileName="AbstractUniversalRecordServices.wsdl" MetadataType="Wsdl" ID="82a10608-1740-4ba9-905f-63c506226867" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Zim.Tech.TravelConnect/Schema_8.1/universal_v30_0/UniversalRecordAbstract.wsdl" />
+    <MetadataFile FileName="UniversalRecordServices.wsdl" MetadataType="Wsdl" ID="1e0d787f-ac3b-41d2-92f9-4d38ab8fcffe" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Zim.Tech.TravelConnect/Schema_8.1/universal_v30_0/UniversalRecord.wsdl" />
+    <MetadataFile FileName="Common.xsd" MetadataType="Schema" ID="7d0c0db0-76a3-4378-92f2-ee9da43f957c" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Zim.Tech.TravelConnect/Schema_8.1/common_v30_0/Common.xsd" />
+    <MetadataFile FileName="Rail.xsd" MetadataType="Schema" ID="e611074e-8d52-4f7c-8ab2-4befb068f839" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Zim.Tech.TravelConnect/Schema_8.1/rail_v30_0/Rail.xsd" />
+    <MetadataFile FileName="UniversalRecord.xsd" MetadataType="Schema" ID="1e62095f-6954-4030-84f1-cfc38f75af96" SourceId="1" SourceUrl="file:///E:/Job/Zim-Tech/Travelpot/TravelLiker/SourceCode/Zim.Tech.TravelConnect/Schema_8.1/universal_v30_0/UniversalRecord.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

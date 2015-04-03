@@ -51,6 +51,7 @@
     <Compile Include="Flight\FlightDetailsList.cs" />
     <Compile Include="Common\ResponseMessage.cs" />
     <Compile Include="Flight\RouteList.cs" />
+    <Compile Include="Flight\TaxInfo.cs" />
     <Compile Include="Hotel\HotelQute.cs" />
     <Compile Include="Hotel\HotelSearchResult.cs" />
     <Compile Include="Hotel\IHotel.cs" />
@@ -66,6 +67,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Service References\Travelport.uAPI.Hotel\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Travelport.uAPI.UniversalRecord\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -259,6 +265,188 @@
     <None Include="Service References\Travelport.uAPI.Hotel\Zim.Tech.TravelConnect.Travelport.uAPI.Hotel.serviceResponse9.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\AbstractUniversalRecordServices.wsdl" />
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Air.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Common.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\CommonReqRsp.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Cruise.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Hotel.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Passive.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Rail.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\UniversalRecord.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\UniversalRecordReqRsp.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\UniversalRecordServices.wsdl" />
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Vehicle.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.AckScheduleChangeRsp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.AirCancelRsp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.AirCreateReservationRsp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.AirMerchandisingFulfillmentRsp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.HotelCancelRsp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.HotelCreateReservationRsp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.PassiveCancelRsp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.PassiveCreateReservationRsp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.ProviderReservationDisplayDetailsRsp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.ProviderReservationDivideRsp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.RailCreateReservationRsp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.RailExchangeRsp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.SavedTripCreateRsp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.SavedTripDeleteRsp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.SavedTripModifyRsp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.SavedTripRetrieveRsp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.SavedTripSearchRsp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.serviceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.serviceResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.serviceResponse10.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.serviceResponse11.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.serviceResponse12.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.serviceResponse13.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.serviceResponse14.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.serviceResponse15.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.serviceResponse16.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.serviceResponse17.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.serviceResponse18.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.serviceResponse19.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.serviceResponse2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.serviceResponse20.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.serviceResponse21.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.serviceResponse22.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.serviceResponse23.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.serviceResponse24.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.serviceResponse3.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.serviceResponse4.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.serviceResponse5.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.serviceResponse6.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.serviceResponse7.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.serviceResponse8.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.serviceResponse9.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.UniversalRecordCancelRsp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.UniversalRecordHistorySearchRsp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.UniversalRecordImportRsp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.UniversalRecordModifyRsp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.UniversalRecordRetrieveRsp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.UniversalRecordSearchRsp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.VehicleCancelRsp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord.VehicleCreateReservationRsp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\Travelport.uAPI.Util\Air1.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -397,6 +585,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\Travelport.uAPI.Air\" />
     <WCFMetadataStorage Include="Service References\Travelport.uAPI.Hotel\" />
+    <WCFMetadataStorage Include="Service References\Travelport.uAPI.UniversalRecord\" />
     <WCFMetadataStorage Include="Service References\Travelport.uAPI.Util\" />
   </ItemGroup>
   <ItemGroup>
@@ -435,7 +624,18 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Travelport.uAPI.UniversalRecord\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

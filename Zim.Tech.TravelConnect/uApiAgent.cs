@@ -17,6 +17,7 @@ using Zim.Tech.TravelConnect.Travelport.uAPI.Connection;
 using uAPIUnit = Zim.Tech.TravelConnect.Travelport.uAPI.Util;
 using uAPIFlight = Zim.Tech.TravelConnect.Travelport.uAPI.Air;
 using uAPIHotel = Zim.Tech.TravelConnect.Travelport.uAPI.Hotel;
+using uAPIBooking = Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord;
 using Zim.Tech.TravelConnect.Flight;
 using Zim.Tech.TravelConnect.Hotel;
 
@@ -30,6 +31,7 @@ namespace Zim.Tech.TravelConnect
         private string NAMESPACE_AIR = "http://www.travelport.com/schema/air_v30_0";
         private string NAMESPACE_HOTEL = "http://www.travelport.com/schema/hotel_v30_0";
         private string NAMESPACE_COMMON = "http://www.travelport.com/schema/common_v30_0";
+        private string NAMESPACE_BOOKING = "http://www.travelport.com/schema/universal_v29_0";
         Configuration config;
 
         private string sUserID = string.Empty;
@@ -211,6 +213,9 @@ namespace Zim.Tech.TravelConnect
                 oSearchAirLeg.SearchDestination = new uAPIFlight.typeSearchLocation[1] { (new uAPIFlight.typeSearchLocation() { Item = new uAPIFlight.Airport() { Code = oSearchInfo.ToCity } }) };
                 oSearchAirLeg.Items = new uAPIFlight.typeFlexibleTimeSpec[1] { (new uAPIFlight.typeFlexibleTimeSpec() { PreferredTime = oSearchInfo.StartDate }) };
                 oSearchAirLegList.Add(oSearchAirLeg);
+
+                //if (oSearchInfo.FrightClass != null)
+                //    oLowFareSearchReq.JourneyData = new uAPIFlight.typeBaseAirSegment[1] { new uAPIFlight.typeBaseAirSegment() { CabinClass = oSearchInfo.FrightClass.ToString() } };
             }
             oLowFareSearchReq.Items = oSearchAirLegList.ToArray();
             #endregion
@@ -390,7 +395,80 @@ namespace Zim.Tech.TravelConnect
         }
         #endregion
 
-        #region HotelSearch
+        #region AirCreateReservation
+        public bool AirCreateReservation(FareQuote.AirPricingSolution oAirPricingSolution)
+        {
+
+            return false;
+        }
+
+        internal string PrepareAirCreateReservationReq(FareQuote.AirPricingSolution oAirPricingSolution)
+        {
+            string sLowFareSearchReq = string.Empty;
+            uAPIBooking.AirCreateReservationReq oAirCreateReservationReq = PrepareHeader<uAPIBooking.AirCreateReservationReq>(); //new uAPIFlight.LowFareSearchReq();
+
+            oAirCreateReservationReq.RetainReservation = uAPIBooking.typeRetainReservation.Both;
+            oAirCreateReservationReq.BillingPointOfSaleInfo = new uAPIBooking.BillingPointOfSaleInfo() { OriginApplication = "UAPI" };
+
+            #region BookingTraveler Properties Values
+            uAPIBooking.BookingTraveler oBookingTraveler = new uAPIBooking.BookingTraveler();
+
+            #region BookingTravelerName BookingTraveler Values
+            oBookingTraveler.BookingTravelerName = new uAPIBooking.BookingTravelerName();
+            oBookingTraveler.BookingTravelerName.Prefix = string.Empty;
+            oBookingTraveler.BookingTravelerName.First = string.Empty;
+            oBookingTraveler.BookingTravelerName.Last = string.Empty;
+            #endregion
+
+            #region Assign PhoneNumber Values
+            uAPIBooking.PhoneNumber oPhoneNumber = new uAPIBooking.PhoneNumber();
+            oPhoneNumber.Type = uAPIBooking.PhoneNumberType.Mobile;
+            //oPhoneNumber.Location = string.Empty;
+            oPhoneNumber.CountryCode = string.Empty;
+            oPhoneNumber.AreaCode = string.Empty;
+            oPhoneNumber.Number = string.Empty;
+            oBookingTraveler.PhoneNumber = new uAPIBooking.PhoneNumber[1] { oPhoneNumber };
+            #endregion
+
+            #region Assign Email Values
+            uAPIBooking.Email oEmail = new uAPIBooking.Email();
+            oEmail.Type = oPhoneNumber.Type.ToString();
+            oEmail.EmailID = string.Empty;
+            oBookingTraveler.Email = new uAPIBooking.Email[1] { oEmail };
+            #endregion
+
+            oAirCreateReservationReq.BookingTraveler = new uAPIBooking.BookingTraveler[1] { oBookingTraveler };
+            #endregion
+
+            #region AirPricingSolution Properties Values
+            oAirCreateReservationReq.AirPricingSolution = new uAPIBooking.AirPricingSolution();
+            foreach (PropertyInfo prop in oAirPricingSolution.GetType().GetProperties())
+            {
+                try
+                {
+                    oAirCreateReservationReq.AirPricingSolution.GetType().GetProperty(prop.Name).SetValue(this, prop.GetValue(oAirPricingSolution, null), null);
+                }
+                catch (Exception ex) { }
+            }
+            #endregion
+
+            //string xml = Serialize<uAPIFlight.LowFareSearchReq>.SerializeXmlToString(oLowFareSearchReq);
+            List<XmlNamespace> xmlNamespaces = new List<XmlNamespace>() { 
+                (new XmlNamespace() { NameSpace = "univ", Url=NAMESPACE_BOOKING}), 
+                (new XmlNamespace() { NameSpace = "air", Url=NAMESPACE_AIR}), 
+                (new XmlNamespace() { NameSpace = "common_v30", Url=NAMESPACE_COMMON})
+            };
+
+            sLowFareSearchReq = Serialize<uAPIBooking.AirCreateReservationReq>.SerializeXmlToString(xmlNamespaces, oAirCreateReservationReq);
+            File.WriteAllText(Path.Combine(Environment.CurrentDirectory, "AirCreateReservationReq.xml"), sLowFareSearchReq);
+
+            return sLowFareSearchReq;
+        }
+
+        #endregion
+
+
+        #region HotelSearchAvailability
         public HotelQute HotelSearch(List<HotelQute.SearchInfo> listSearchInfo, decimal maxAmount)
         {
             HotelQute oHotelQute = new HotelQute();
@@ -450,7 +528,6 @@ namespace Zim.Tech.TravelConnect
             return oHotelQute;
         }
 
-        #region HotelSearchAvailability
         #region PrepareHotelSearchAvailabilityReq
         internal string PrepareHotelSearchAvailabilityReq(List<HotelQute.SearchInfo> listSearchInfo, decimal maxAmount)
         {
@@ -630,7 +707,6 @@ namespace Zim.Tech.TravelConnect
             return oHotelQute;
         }
         #endregion
-        #endregion
 
         #region HotelPropertyWithMediaItems
         #region PrepareHotelMediaLinksReq
@@ -731,7 +807,6 @@ namespace Zim.Tech.TravelConnect
         }
         #endregion
         #endregion
-
         #endregion
     }
 }

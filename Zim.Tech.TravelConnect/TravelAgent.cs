@@ -59,7 +59,7 @@ namespace Zim.Tech.TravelConnect
 
 
         #region Flight Agnet
-        public FareQuote FlightOneWay(string fromCity, string toCity, DateTime frightDate, int adults, int children, bool directFlightOnly, string frightClass, string specifiedAirline, decimal maxAmount)
+        public FareQuote FlightOneWay(string fromCity, string toCity, DateTime frightDate, int adults, int children, bool directFlightOnly, FareQuote.SearchInfo.CabinClass frightClass, string specifiedAirline, decimal maxAmount)
         {
             FareQuote FareQute = new FareQuote();
 
@@ -80,7 +80,7 @@ namespace Zim.Tech.TravelConnect
             return FareQute;
         }
 
-        public FareQuote FlightRoundTrip(string fromCity, string toCity, DateTime fromDate, DateTime toDate, int adults, int children, bool directFlightOnly, string frightClass, string specifiedAirline, decimal maxAmount)
+        public FareQuote FlightRoundTrip(string fromCity, string toCity, DateTime fromDate, DateTime toDate, int adults, int children, bool directFlightOnly, FareQuote.SearchInfo.CabinClass frightClass, string specifiedAirline, decimal maxAmount)
         {
             FareQuote FareQute = new FareQuote();
 

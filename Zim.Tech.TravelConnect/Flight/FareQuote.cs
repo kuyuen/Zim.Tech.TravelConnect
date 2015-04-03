@@ -397,12 +397,12 @@ namespace Zim.Tech.TravelConnect.Flight
             {
             }
 
-            public SearchInfo(string fromCity, string toCity, DateTime frightDate, int adults, int children, bool directFlightOnly, string frightClass, string specifiedAirline)
+            public SearchInfo(string fromCity, string toCity, DateTime frightDate, int adults, int children, bool directFlightOnly, CabinClass frightClass, string specifiedAirline)
                 : this(fromCity, toCity, frightDate.ToString(Variables.DATE_FORMAT), adults, children, directFlightOnly, frightClass, specifiedAirline)
             {
             }
 
-            public SearchInfo(string fromCity, string toCity, string frightDate, int adults, int children, bool directFlightOnly, string frightClass, string specifiedAirline)
+            public SearchInfo(string fromCity, string toCity, string frightDate, int adults, int children, bool directFlightOnly, CabinClass frightClass, string specifiedAirline)
             {
                 this.m_FromCity = fromCity;
                 this.m_ToCity = toCity;
@@ -422,7 +422,7 @@ namespace Zim.Tech.TravelConnect.Flight
             private int m_Adults = 0;
             private int m_Children = 0;
             private bool m_DirectFlightOnly = false;
-            private string m_FrightClass = string.Empty;
+            private CabinClass m_FrightClass = CabinClass.Economy;
             private string m_SpecifiedAirline = string.Empty;
             #endregion
 
@@ -433,12 +433,31 @@ namespace Zim.Tech.TravelConnect.Flight
             public DateTime FrightDate { get { return DateTime.ParseExact(m_FrightDate, Variables.DATE_FORMAT, null); } set { m_FrightDate = value.ToString(Variables.DATE_FORMAT); } }
             public int Adults { get { return m_Adults; } set { m_Adults = value; } }
             public int Children { get { return m_Children; } set { m_Children = value; } }
-            public string FrightClass { get { return m_FrightClass; } set { m_FrightClass = value; } }
+            public CabinClass FrightClass { get { return m_FrightClass; } set { m_FrightClass = value; } }
             public string SpecifiedAirline { get { return m_SpecifiedAirline; } set { m_SpecifiedAirline = value; } }
             public int TotalSeats { get { return (m_Adults + m_Children); } }
             public bool DirectFlightOnly { get { return m_DirectFlightOnly; } set { m_DirectFlightOnly = value; } }
             public string DirectFlight { get { return (m_DirectFlightOnly == true) ? Variables.YES : Variables.NO; } }
             #endregion
+
+            public enum CabinClass
+            {
+
+                /// <remarks/>
+                First,
+
+                /// <remarks/>
+                Business,
+
+                /// <remarks/>
+                Economy,
+
+                /// <remarks/>
+                PremiumEconomy,
+
+                /// <remarks/>
+                PremiumFirst,
+            }
         }
         #endregion
     }

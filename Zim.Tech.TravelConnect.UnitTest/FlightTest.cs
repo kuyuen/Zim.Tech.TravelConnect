@@ -49,7 +49,8 @@ namespace Zim.Tech.TravelConnect.UnitTest
 
             TravelAgent agent = new TravelAgent();
             agent.MaxResult = 20;
-            Flight.FareQuote oFareQuote = agent.FlightOneWay("HKG", "TPE", fromDate, 1, 0, true, "", specifiedAirline, maxAmount);
+            Flight.FareQuote.SearchInfo.CabinClass flightClass = Flight.FareQuote.SearchInfo.CabinClass.Economy;
+            Flight.FareQuote oFareQuote = agent.FlightOneWay("HKG", "TPE", fromDate, 1, 0, true, flightClass, specifiedAirline, maxAmount);
             int i = oFareQuote.AirPricingSolutions.Count();
 
             string xml = Serialize<Flight.FareQuote>.SerializeXmlToString(oFareQuote);
@@ -66,7 +67,8 @@ namespace Zim.Tech.TravelConnect.UnitTest
 
             TravelAgent agent = new TravelAgent();
             agent.MaxResult = 20;
-            Flight.FareQuote oFareQuote = agent.FlightRoundTrip("HKG", "TPE", fromDate, toDate, 1, 0, true, "", specifiedAirline, maxAmount);
+            Flight.FareQuote.SearchInfo.CabinClass flightClass = Flight.FareQuote.SearchInfo.CabinClass.Economy;
+            Flight.FareQuote oFareQuote = agent.FlightRoundTrip("HKG", "TPE", fromDate, toDate, 1, 0, true, flightClass, specifiedAirline, maxAmount);
             int i = oFareQuote.AirPricingSolutions.Count();
 
             string xml = Serialize<Flight.FareQuote>.SerializeXmlToString(oFareQuote);
