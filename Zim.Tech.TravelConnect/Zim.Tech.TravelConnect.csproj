@@ -42,6 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Booking\ActionStatus.cs" />
+    <Compile Include="Booking\AgencyInfo.cs" />
+    <Compile Include="Booking\AirReservation.cs" />
+    <Compile Include="Booking\BookingTraveler.cs" />
+    <Compile Include="Booking\ProviderReservationInfo.cs" />
     <Compile Include="Common\Variables.cs" />
     <Compile Include="Flight\AirPricingSolution.cs" />
     <Compile Include="Flight\AirSegmentList.cs" />
