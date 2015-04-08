@@ -13,10 +13,10 @@ using System.Runtime.Serialization;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Zim.Tech.TravelConnect.Common;
+using Zim.Tech.TravelConnect.Booking;
 using Zim.Tech.TravelConnect.Travelport.uAPI;
 using uAPIUnit = Zim.Tech.TravelConnect.Travelport.uAPI.Util;
 using uAPIFlight = Zim.Tech.TravelConnect.Travelport.uAPI.Air;
-using uAPIFlightNS = Zim.Tech.TravelConnect.Travelport.uAPI.Air.witoutNS;
 using Zim.Tech.TravelConnect.Travelport.uAPI.Air;
 
 namespace Zim.Tech.TravelConnect.UnitTest
@@ -40,6 +40,50 @@ namespace Zim.Tech.TravelConnect.UnitTest
             return xRequest;
         }
 
+
+        #region Booking Serialize & Deserialize
+        [TestMethod]
+        public void PrepareAirCreateReservationReq()
+        {
+            uApiAgent uAgent = new uApiAgent();
+
+            Flight.FareBooking.BookingInfo oBookingInfo = new Flight.FareBooking.BookingInfo();
+            Flight.FareBooking.BookingPassenger oPassenger = new Flight.FareBooking.BookingPassenger();
+            oPassenger.DOB = new DateTime(1969,9, 17);
+            oPassenger.Gender = "M";
+            oPassenger.Nationality = "CH";
+            oPassenger.TravelerType = "ADT";
+            oPassenger.Prefix = "Mr";
+            oPassenger.First = "Jack";
+            oPassenger.Last = "Smith";
+            oPassenger.Email = "kuyuen@gmail.com";
+            oPassenger.PhoneNumber = new Flight.FareBooking.PhoneNumber() { CountryCode = "852", Number = "97880987" };
+            oBookingInfo.Passengers.Add(oPassenger);
+
+            Flight.FareBooking.PaymentInfo oPaymentInfo = new Flight.FareBooking.PaymentInfo();
+            oPaymentInfo.Name = string.Format("{0} {1}", oPassenger.First, oPassenger.Last);
+            oPaymentInfo.Number = oBookingInfo.CreditCardInfo.Number;
+            oPaymentInfo.ExpDate = "2017-05";
+            oPaymentInfo.CVV = "222";
+            oPaymentInfo.Type = "VI";
+            oBookingInfo.CreditCardInfo = oPaymentInfo;
+
+            oBookingInfo.AirPricingSolution = new Flight.FareQuote.AirPricingSolution();
+            string CurrencyType = string.Empty;
+            string sDllPath = Directory.GetCurrentDirectory();
+            string xmlFile = Path.Combine(sDllPath, "LowFareSearchResp.xml");
+            string xmlcontents = System.IO.File.ReadAllText(xmlFile);
+            Flight.FareQuote oFareQuote = uAgent.DeserializeLowFareSearchResp(xmlcontents);
+            if (oFareQuote.AirPricingSolutions.Count() > 0)
+                oBookingInfo.AirPricingSolution = oFareQuote.AirPricingSolutions[0];
+
+            string xml = uAgent.PrepareAirCreateReservationReq(oBookingInfo);
+            xml = xml;
+        }
+        #endregion
+
+        #region Flight
+        #region Fare Seach
         [TestMethod]
         public void SearchOneWay()
         {
@@ -74,7 +118,8 @@ namespace Zim.Tech.TravelConnect.UnitTest
             string xml = Serialize<Flight.FareQuote>.SerializeXmlToString(oFareQuote);
             File.WriteAllText(Path.Combine(Environment.CurrentDirectory, "RoundTripFareQuote.xml"), xml);
         }
-        
+        #endregion
+
         [TestMethod]
         public void ReferenceDataRetrieveReq()
         {
@@ -97,7 +142,7 @@ namespace Zim.Tech.TravelConnect.UnitTest
             File.WriteAllText(xmlFile, xml);
         }
 
-
+        #region Flight Serialize & Deserialize
         [TestMethod]
         public void LowFareSearchReq()
         {
@@ -169,9 +214,9 @@ namespace Zim.Tech.TravelConnect.UnitTest
 
               xmlFile = Path.Combine(sDllPath, "LowFareSearchRsp_withoutNS.xml");
               xmlcontents = System.IO.File.ReadAllText(xmlFile);
-              //uAPIFlight.LowFareSearchRsp xResp2 = Serialize<uAPIFlight.LowFareSearchRsp>.DeserializeXmlFromStringWithoutNamespace(xmlcontents, extraTypes);
+              uAPIFlight.LowFareSearchRsp xResp2 = Serialize<uAPIFlight.LowFareSearchRsp>.DeserializeXmlFromStringWithoutNamespace(xmlcontents, extraTypes);
               //uAPIFlightNS.LowFareSearchRsp xResp2 = Serialize<uAPIFlightNS.LowFareSearchRsp>.DeserializeXmlFromString(xmlcontents, extraTypes);
-              uAPIFlightNS.LowFareSearchRsp xResp2 = Serialize<uAPIFlightNS.LowFareSearchRsp>.DeserializeXmlFromStringWithoutNamespace(xmlcontents);
+              //uAPIFlightNS.LowFareSearchRsp xResp2 = Serialize<uAPIFlightNS.LowFareSearchRsp>.DeserializeXmlFromStringWithoutNamespace(xmlcontents);
               if (xResp2 != null)
               {
                   CurrencyType = xResp.CurrencyType;
@@ -217,5 +262,7 @@ namespace Zim.Tech.TravelConnect.UnitTest
             File.WriteAllText(Path.Combine(sDllPath, "LowFareSearchRsp_Result.txt"), Result);
             int o = 0;
         }
+        #endregion
+        #endregion
     }
 }

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace Zim.Tech.TravelConnect.Common
 {
-    public class Variables
+    public static class Variables
     {
         public const string YES = "Y";
         public const string NO = "N";
@@ -15,5 +16,31 @@ namespace Zim.Tech.TravelConnect.Common
         public const string TIME_FORMAT = "HHmm";
         public const string START_TIME = "0000"; // Start Tmie 00:00
         public const string END_TIME = "2359"; // Start Tmie 23:59
+
+        public static T CopyObject<S, T>(S sourceObject, T destObject)
+        {
+            if (sourceObject == null || destObject == null)
+                return destObject;
+
+            //  Get the type of each object
+            Type sourceType = sourceObject.GetType();
+            Type targetType = destObject.GetType();
+
+            //  Loop through the source properties
+            foreach (PropertyInfo sourceProp in sourceType.GetProperties())
+            {
+                //  Get the matching property in the destination object
+                PropertyInfo destProp = targetType.GetProperty(sourceProp.Name);
+                //  If there is none, skip
+                if (destProp == null)
+                    continue;
+
+                //  Set the value in the destination
+                object value = sourceProp.GetValue(sourceObject, null);
+                destProp.SetValue(destObject, value, null);
+            }
+
+            return destObject;
+        }
     }
 }

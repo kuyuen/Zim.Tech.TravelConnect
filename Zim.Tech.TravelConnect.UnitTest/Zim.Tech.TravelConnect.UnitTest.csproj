@@ -58,6 +58,7 @@
     <Compile Include="HotelTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AirCreateReservationReq.xml" />
     <Content Include="HotelMediaLinksReq.xml" />
     <Content Include="HotelMediaLinksResp.xml" />
   </ItemGroup>

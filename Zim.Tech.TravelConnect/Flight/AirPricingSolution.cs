@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace Zim.Tech.TravelConnect.Flight
 {
-    #region HotelSearchResult Class
+    #region AirPricingSolution Class
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]

@@ -103,6 +103,8 @@ namespace Zim.Tech.TravelConnect.Flight
         #region AirPricingSolution
         public class AirPricingSolution : Flight.AirPricingSolution
         {
+            public AirPricingSolution() {}
+
             public AirPricingSolution(Flight.AirPricingSolution oAirPricingSolution, Flight.AirSegmentList oAirSegmentList, Flight.RouteList oRouteList, Flight.FareInfoList oFareInfoList, Flight.FlightDetailsList oFlightDetailsList)
             {
                 List<AirSegment> oFareAirSegmentList = new List<AirSegment>();

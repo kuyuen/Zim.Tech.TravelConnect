@@ -395,14 +395,54 @@ namespace Zim.Tech.TravelConnect
         }
         #endregion
 
-        #region AirCreateReservation
-        public bool AirCreateReservation(FareQuote.AirPricingSolution oAirPricingSolution)
+        #region AirCreateReservation (Fare Booking)
+        public FareBooking AirCreateReservation(FareBooking.BookingInfo oBookingInfo)
         {
+            FareBooking oFareBooking = new FareBooking();
+            if (string.IsNullOrEmpty(ErrorMessage) == false)
+                oFareBooking.ErrorMessages.Add((new FareQuote.ErrorMessage() { Type = ResponseMessageType.Error, Value = ErrorMessage }));
+            else
+                oFareBooking.ErrorMessages = CheckConfigure();
+            if (oFareBooking.ErrorMessages.Count == 0)
+            {
+                string sAirCreateReservationReq = PrepareAirCreateReservationReq(oBookingInfo);
 
-            return false;
+                #region UAPI Handling
+                try
+                {
+                    XmlDocument request = new XmlDocument();
+                    request.LoadXml(sAirCreateReservationReq);
+
+                    if (Connected == false)
+                        OpenConnection();
+
+                    connection.Uri = new Uri(connection.Uri, AIR_SERVICE);
+                    //Send Request to uAPI
+                    XmlDocument responseDocument = connection.SendRequest(request);
+
+                    //oFareBooking = DeserializeLowFareSearchResp(responseDocument.OuterXml);
+                    //if (oFareBooking.RresultCount > 0)
+                    //{
+                    //    //Handle Max Amount
+                    //    if (maxAmount > 0)
+                    //    {
+                    //        var oAirPricingSolution = (from p in oFareBooking.AirPricingSolutions
+                    //                                   where Convert.ToDecimal(p.TotalPrice.Replace("HKD", "")) <= maxAmount
+                    //                                   select p).ToList();
+                    //        oFareBooking.AirPricingSolutions = oAirPricingSolution;
+                    //    }
+                    //}
+                }
+                catch (Exception ex)
+                {
+
+                }
+                #endregion
+            }
+            return oFareBooking;
         }
 
-        internal string PrepareAirCreateReservationReq(FareQuote.AirPricingSolution oAirPricingSolution)
+        public string PrepareAirCreateReservationReq(FareBooking.BookingInfo oBookingInfo)
         {
             string sLowFareSearchReq = string.Empty;
             uAPIBooking.AirCreateReservationReq oAirCreateReservationReq = PrepareHeader<uAPIBooking.AirCreateReservationReq>(); //new uAPIFlight.LowFareSearchReq();
@@ -411,45 +451,107 @@ namespace Zim.Tech.TravelConnect
             oAirCreateReservationReq.BillingPointOfSaleInfo = new uAPIBooking.BillingPointOfSaleInfo() { OriginApplication = "UAPI" };
 
             #region BookingTraveler Properties Values
-            uAPIBooking.BookingTraveler oBookingTraveler = new uAPIBooking.BookingTraveler();
+            List<uAPIBooking.BookingTraveler> oBookingTravelerList = new List<uAPIBooking.BookingTraveler>();
+            foreach (FareBooking.BookingPassenger oPassenger in oBookingInfo.Passengers)
+            {
+                uAPIBooking.BookingTraveler oBookingTraveler = new uAPIBooking.BookingTraveler();
+                oBookingTraveler.DOB = oPassenger.DOB;
+                oBookingTraveler.Gender = oPassenger.Gender;
+                oBookingTraveler.Nationality = oPassenger.Nationality;
+                oBookingTraveler.TravelerType = oPassenger.TravelerType;
+                //foreach (PropertyInfo prop in oPassenger.GetType().GetProperties())
+                //{
+                //    try
+                //    {
+                //        #region BookingTraveler Values
+                //        PropertyInfo oTraveler = oBookingTraveler.GetType().GetProperty(prop.Name);
+                //        if (oTraveler != null)
+                //            oTraveler.SetValue(this, prop.GetValue(oPassenger, null), null);
+                //        #endregion
+                //    }
+                //    catch (Exception ex) { }
+                //}
 
-            #region BookingTravelerName BookingTraveler Values
-            oBookingTraveler.BookingTravelerName = new uAPIBooking.BookingTravelerName();
-            oBookingTraveler.BookingTravelerName.Prefix = string.Empty;
-            oBookingTraveler.BookingTravelerName.First = string.Empty;
-            oBookingTraveler.BookingTravelerName.Last = string.Empty;
-            #endregion
+                #region BookingTravelerName BookingTraveler Values
+                oBookingTraveler.BookingTravelerName = new uAPIBooking.BookingTravelerName();
+                oBookingTraveler.BookingTravelerName.Prefix = oPassenger.Prefix;
+                oBookingTraveler.BookingTravelerName.First = oPassenger.First;
+                oBookingTraveler.BookingTravelerName.Last = oPassenger.Last;
+                #endregion
 
-            #region Assign PhoneNumber Values
-            uAPIBooking.PhoneNumber oPhoneNumber = new uAPIBooking.PhoneNumber();
-            oPhoneNumber.Type = uAPIBooking.PhoneNumberType.Mobile;
-            //oPhoneNumber.Location = string.Empty;
-            oPhoneNumber.CountryCode = string.Empty;
-            oPhoneNumber.AreaCode = string.Empty;
-            oPhoneNumber.Number = string.Empty;
-            oBookingTraveler.PhoneNumber = new uAPIBooking.PhoneNumber[1] { oPhoneNumber };
-            #endregion
+                #region Assign PhoneNumber Values
+                uAPIBooking.PhoneNumber oPhoneNumber = new uAPIBooking.PhoneNumber();
+                oPhoneNumber.Type = uAPIBooking.PhoneNumberType.Mobile;
+                //oPhoneNumber.Location = string.Empty;
+                oPhoneNumber.CountryCode = oPassenger.PhoneNumber.CountryCode;
+                oPhoneNumber.AreaCode = oPassenger.PhoneNumber.AreaCode;
+                oPhoneNumber.Number = oPassenger.PhoneNumber.Number;
+                oBookingTraveler.PhoneNumber = new uAPIBooking.PhoneNumber[1] { oPhoneNumber };
+                #endregion
 
-            #region Assign Email Values
-            uAPIBooking.Email oEmail = new uAPIBooking.Email();
-            oEmail.Type = oPhoneNumber.Type.ToString();
-            oEmail.EmailID = string.Empty;
-            oBookingTraveler.Email = new uAPIBooking.Email[1] { oEmail };
-            #endregion
+                #region Assign Email Values
+                uAPIBooking.Email oEmail = new uAPIBooking.Email();
+                oEmail.Type = oPhoneNumber.Type.ToString();
+                oEmail.EmailID = oPassenger.Email;
+                oBookingTraveler.Email = new uAPIBooking.Email[1] { oEmail };
+                #endregion
 
-            oAirCreateReservationReq.BookingTraveler = new uAPIBooking.BookingTraveler[1] { oBookingTraveler };
+                oBookingTravelerList.Add(oBookingTraveler);
+            }
+            oAirCreateReservationReq.BookingTraveler = oBookingTravelerList.ToArray();
             #endregion
 
             #region AirPricingSolution Properties Values
             oAirCreateReservationReq.AirPricingSolution = new uAPIBooking.AirPricingSolution();
-            foreach (PropertyInfo prop in oAirPricingSolution.GetType().GetProperties())
-            {
-                try
-                {
-                    oAirCreateReservationReq.AirPricingSolution.GetType().GetProperty(prop.Name).SetValue(this, prop.GetValue(oAirPricingSolution, null), null);
-                }
-                catch (Exception ex) { }
-            }
+            Variables.CopyObject<Flight.FareQuote.AirPricingSolution, uAPIBooking.AirPricingSolution>(oBookingInfo.AirPricingSolution, oAirCreateReservationReq.AirPricingSolution);
+            //foreach (PropertyInfo prop in oBookingInfo.AirPricingSolution.GetType().GetProperties())
+            //{
+            //    try
+            //    {
+            //        PropertyInfo oAirPricing = oAirCreateReservationReq.AirPricingSolution.GetType().GetProperty(prop.Name);
+            //        object propValue = prop.GetValue(prop.Name);
+            //        if (oAirPricing != null)
+            //            oAirPricing.GetType().GetProperty(prop.Name).SetValue(oAirPricing, propValue, null);
+            //    }
+            //    catch (Exception ex) { }
+            //}
+
+            #endregion
+
+            #region ActionStatus Properties Values
+            uAPIBooking.ActionStatus oActionStatus = new uAPIBooking.ActionStatus();
+            oActionStatus.ProviderCode = "1G";
+            oActionStatus.TicketDate = DateTime.Now.ToString();
+            oActionStatus.Type = uAPIBooking.ActionStatusType.TAW;
+            oAirCreateReservationReq.ActionStatus = new uAPIBooking.ActionStatus[1] { oActionStatus };
+            #endregion
+
+            #region FormOfPayment Properties Values
+            uAPIBooking.FormOfPayment oFormOfPayment = new uAPIBooking.FormOfPayment();
+            oFormOfPayment.Type = "Credit";
+            #region FormOfPayment CreditCard Properties Values
+            uAPIBooking.CreditCard oCreditCard = new uAPIBooking.CreditCard();
+            oCreditCard.Name = oBookingInfo.CreditCardInfo.Name;
+            oCreditCard.Number = oBookingInfo.CreditCardInfo.Number;
+            oCreditCard.ExpDate = oBookingInfo.CreditCardInfo.ExpDate;
+            oCreditCard.CVV = oBookingInfo.CreditCardInfo.CVV;
+            oCreditCard.Type = oBookingInfo.CreditCardInfo.Type;
+            //foreach (PropertyInfo prop in oBookingInfo.CreditCardInfo.GetType().GetProperties())
+            //{
+            //    try
+            //    {
+            //        #region BookingTraveler Values
+            //        PropertyInfo pptCreditCard = oCreditCard.GetType().GetProperty(prop.Name);
+            //        if (pptCreditCard != null)
+            //            pptCreditCard.SetValue(pptCreditCard, prop.GetValue(oBookingInfo.CreditCardInfo, null), null);
+            //        #endregion
+            //    }
+            //    catch (Exception ex) { }
+            //}
+            oFormOfPayment.Item = oCreditCard;
+            #endregion
+
+            oAirCreateReservationReq.FormOfPayment = new uAPIBooking.FormOfPayment[1] { oFormOfPayment };
             #endregion
 
             //string xml = Serialize<uAPIFlight.LowFareSearchReq>.SerializeXmlToString(oLowFareSearchReq);
