@@ -17,6 +17,15 @@ namespace Zim.Tech.TravelConnect.Common
         public const string START_TIME = "0000"; // Start Tmie 00:00
         public const string END_TIME = "2359"; // Start Tmie 23:59
 
+        public static string NewUUID()
+        {
+            string uuid = string.Empty;
+            System.Guid guid = System.Guid.NewGuid();
+            uuid = Convert.ToBase64String(guid.ToByteArray());
+
+            return uuid;
+        }
+
         public static T CopyObject<S, T>(S sourceObject, T destObject)
         {
             if (sourceObject == null || destObject == null)
@@ -29,18 +38,28 @@ namespace Zim.Tech.TravelConnect.Common
             //  Loop through the source properties
             foreach (PropertyInfo sourceProp in sourceType.GetProperties())
             {
-                //  Get the matching property in the destination object
-                PropertyInfo destProp = targetType.GetProperty(sourceProp.Name);
-                //  If there is none, skip
-                if (destProp == null)
-                    continue;
+                try
+                {
+                    //  Get the matching property in the destination object
+                    PropertyInfo destProp = targetType.GetProperty(sourceProp.Name);
+                    //  If there is none, skip
+                    if (destProp == null && destProp.CanWrite == false)
+                        continue;
+                    else if (sourceProp.CanRead == false)
+                        continue;
 
-                //  Set the value in the destination
-                object value = sourceProp.GetValue(sourceObject, null);
-                destProp.SetValue(destObject, value, null);
+                    //  Set the value in the destination
+                    object value = sourceProp.GetValue(sourceObject, null);
+                    destProp.SetValue(destObject, value, null);
+                }
+                catch (Exception ex)
+                {
+                    string errorMessage = ex.Message;
+                }
             }
 
             return destObject;
         }
+
     }
 }

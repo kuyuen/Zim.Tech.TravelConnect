@@ -101,6 +101,7 @@ namespace Zim.Tech.TravelConnect.Flight
         #endregion
 
         #region AirPricingSolution
+
         public class AirPricingSolution : Flight.AirPricingSolution
         {
             public AirPricingSolution() {}

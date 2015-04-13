@@ -112,13 +112,13 @@ namespace Zim.Tech.TravelConnect
             T xRequest = new T();
             string PropertieName = "AuthorizedBy";
             if (xRequest.GetType().GetProperties().Any(p => p.Name == PropertieName))
-                xRequest.GetType().GetProperty(PropertieName).SetValue(xRequest, "user", null); //Universal API/uAPI6768275016-96b0fd84
+                xRequest.GetType().GetProperty(PropertieName).SetValue(xRequest, sAuthorizedBy, null); //Universal API/uAPI6768275016-96b0fd84
             PropertieName = "TraceId";
             if (xRequest.GetType().GetProperties().Any(p => p.Name == PropertieName))
-                xRequest.GetType().GetProperty(PropertieName).SetValue(xRequest, "trace", null);
+                xRequest.GetType().GetProperty(PropertieName).SetValue(xRequest, sTraceId, null);
             PropertieName = "TargetBranch";
             if (xRequest.GetType().GetProperties().Any(p => p.Name == PropertieName))
-                xRequest.GetType().GetProperty(PropertieName).SetValue(xRequest, "P7009887", null);
+                xRequest.GetType().GetProperty(PropertieName).SetValue(xRequest, sTargetBranch, null);
 
             return xRequest;
         }
@@ -444,7 +444,7 @@ namespace Zim.Tech.TravelConnect
 
         public string PrepareAirCreateReservationReq(FareBooking.BookingInfo oBookingInfo)
         {
-            string sLowFareSearchReq = string.Empty;
+            string sAirCreateReservationReq = string.Empty;
             uAPIBooking.AirCreateReservationReq oAirCreateReservationReq = PrepareHeader<uAPIBooking.AirCreateReservationReq>(); //new uAPIFlight.LowFareSearchReq();
 
             oAirCreateReservationReq.RetainReservation = uAPIBooking.typeRetainReservation.Both;
@@ -455,22 +455,11 @@ namespace Zim.Tech.TravelConnect
             foreach (FareBooking.BookingPassenger oPassenger in oBookingInfo.Passengers)
             {
                 uAPIBooking.BookingTraveler oBookingTraveler = new uAPIBooking.BookingTraveler();
+                oBookingTraveler.Key = Variables.NewUUID();
                 oBookingTraveler.DOB = oPassenger.DOB;
                 oBookingTraveler.Gender = oPassenger.Gender;
                 oBookingTraveler.Nationality = oPassenger.Nationality;
                 oBookingTraveler.TravelerType = oPassenger.TravelerType;
-                //foreach (PropertyInfo prop in oPassenger.GetType().GetProperties())
-                //{
-                //    try
-                //    {
-                //        #region BookingTraveler Values
-                //        PropertyInfo oTraveler = oBookingTraveler.GetType().GetProperty(prop.Name);
-                //        if (oTraveler != null)
-                //            oTraveler.SetValue(this, prop.GetValue(oPassenger, null), null);
-                //        #endregion
-                //    }
-                //    catch (Exception ex) { }
-                //}
 
                 #region BookingTravelerName BookingTraveler Values
                 oBookingTraveler.BookingTravelerName = new uAPIBooking.BookingTravelerName();
@@ -501,21 +490,95 @@ namespace Zim.Tech.TravelConnect
             oAirCreateReservationReq.BookingTraveler = oBookingTravelerList.ToArray();
             #endregion
 
-            #region AirPricingSolution Properties Values
+            #region AirPricingSolution Properties Value
             oAirCreateReservationReq.AirPricingSolution = new uAPIBooking.AirPricingSolution();
-            Variables.CopyObject<Flight.FareQuote.AirPricingSolution, uAPIBooking.AirPricingSolution>(oBookingInfo.AirPricingSolution, oAirCreateReservationReq.AirPricingSolution);
-            //foreach (PropertyInfo prop in oBookingInfo.AirPricingSolution.GetType().GetProperties())
-            //{
-            //    try
-            //    {
-            //        PropertyInfo oAirPricing = oAirCreateReservationReq.AirPricingSolution.GetType().GetProperty(prop.Name);
-            //        object propValue = prop.GetValue(prop.Name);
-            //        if (oAirPricing != null)
-            //            oAirPricing.GetType().GetProperty(prop.Name).SetValue(oAirPricing, propValue, null);
-            //    }
-            //    catch (Exception ex) { }
-            //}
+            try
+            {
+                #region Copy AirPricingSolution Properties
+                Variables.CopyObject<Flight.FareQuote.AirPricingSolution, uAPIBooking.AirPricingSolution>(oBookingInfo.AirPricingSolution, oAirCreateReservationReq.AirPricingSolution);
+                #endregion
+                
+                #region Copy AirPricingSolution.AirPricingInfoList Properties
+                List<uAPIBooking.AirPricingInfo> newAirPricingInfoList = new List<uAPIBooking.AirPricingInfo>();
+                List<uAPIBooking.typeBaseAirSegment> newBaseAirSegmentList = new List<uAPIBooking.typeBaseAirSegment>();
+                foreach (FareQuote.AirPricingSolution.AirPricingInfo oAirPricingInfo in oBookingInfo.AirPricingSolution.AirPricingInfoList)
+                {
+                    uAPIBooking.AirPricingInfo newAirPricingInfo = new uAPIBooking.AirPricingInfo();
+                    Variables.CopyObject<Flight.FareQuote.AirPricingSolution.AirPricingInfo, uAPIBooking.AirPricingInfo>(oAirPricingInfo, newAirPricingInfo);
 
+
+                    #region Copy AirPricingInfo AirSegment Properties
+                    foreach (FareQuote.AirPricingSolution.AirSegment oAirSegment in oAirPricingInfo.AirSegmentList)
+                    {
+                        uAPIBooking.typeBaseAirSegment newBaseAirSegment = new uAPIBooking.typeBaseAirSegment();
+                        Variables.CopyObject<FareQuote.AirPricingSolution.AirSegment, uAPIBooking.typeBaseAirSegment>(oAirSegment, newBaseAirSegment);
+                        if (newBaseAirSegmentList.Contains(newBaseAirSegment) == false)
+                            newBaseAirSegmentList.Add(newBaseAirSegment);
+                    }
+                    #endregion
+
+
+                    #region Copy AirPricingInfo FareInfo Properties
+                    List<uAPIBooking.FareInfo> newFareInfoList = new List<uAPIBooking.FareInfo>();
+                    foreach (Flight.FareInfo oFareInfo in oAirPricingInfo.FareInfoList)
+                    {
+                        uAPIBooking.FareInfo newFareInfo = new uAPIBooking.FareInfo();
+                        Variables.CopyObject<Flight.FareInfo, uAPIBooking.FareInfo>(oFareInfo, newFareInfo);
+                        if (newFareInfoList.Contains(newFareInfo) == false)
+                            newFareInfoList.Add(newFareInfo);
+                    }
+                    newAirPricingInfo.FareInfo = newFareInfoList.ToArray();
+                    #endregion
+
+                    #region Copy AirPricingInfo BookingInfo Properties
+                    List<uAPIBooking.BookingInfo> newBookingInfoList = new List<uAPIBooking.BookingInfo>();
+                    foreach (FareQuote.AirPricingSolution.AirBookingInfo oAirBookingInfo in oAirPricingInfo.BookingInfoList)
+                    {
+                        uAPIBooking.BookingInfo newBookingInfo = new uAPIBooking.BookingInfo();
+                        Variables.CopyObject<FareQuote.AirPricingSolution.AirBookingInfo, uAPIBooking.BookingInfo>(oAirBookingInfo, newBookingInfo);
+                        if (oAirBookingInfo.CabinClassSpecified)
+                            newBookingInfo.CabinClass = oAirBookingInfo.CabinClass.ToString();
+                        if (newBookingInfoList.Contains(newBookingInfo) == false)
+                            newBookingInfoList.Add(newBookingInfo);
+                    }
+                    newAirPricingInfo.BookingInfo = newBookingInfoList.ToArray();
+                    #endregion
+
+                    #region Copy AirPricingInfo TaxInfo Properties
+                    List<uAPIBooking.typeTaxInfo> newTaxInfoList = new List<uAPIBooking.typeTaxInfo>();
+                    foreach (Flight.TaxInfo oTaxInfo in oAirPricingInfo.TaxInfo)
+                    {
+                        uAPIBooking.typeTaxInfo newTaxInfo = new uAPIBooking.typeTaxInfo();
+                        Variables.CopyObject<Flight.TaxInfo, uAPIBooking.typeTaxInfo>(oTaxInfo, newTaxInfo);
+                        newTaxInfo.Key = Variables.NewUUID();
+                        if (newTaxInfoList.Contains(newTaxInfo) == false)
+                            newTaxInfoList.Add(newTaxInfo);
+                    }
+                    newAirPricingInfo.TaxInfo = newTaxInfoList.ToArray();
+                    #endregion
+
+                    #region Assign PassengerType Properties Value refer to BookingTraveler
+                    List<uAPIBooking.PassengerType> newPassengerTypeList = new List<uAPIBooking.PassengerType>();
+                    foreach (uAPIBooking.BookingTraveler oBookingTraveler in oBookingTravelerList)
+                    {
+                        uAPIBooking.PassengerType newPassengerType = new uAPIBooking.PassengerType();
+                        newPassengerType.BookingTravelerRef = oBookingTraveler.Key;
+                        newPassengerType.Code = oBookingTraveler.TravelerType;
+                        newPassengerTypeList.Add(newPassengerType);
+                    }
+                    newAirPricingInfo.PassengerType = newPassengerTypeList.ToArray();
+                    #endregion
+
+
+                    newAirPricingInfoList.Add(newAirPricingInfo);
+                }
+                oAirCreateReservationReq.AirPricingSolution.AirPricingInfo = newAirPricingInfoList.ToArray();
+                oAirCreateReservationReq.AirPricingSolution.AirSegment = newBaseAirSegmentList.ToArray();
+                #endregion
+            }
+            catch (Exception ex) {
+                string errorMessage = ex.Message;
+            }
             #endregion
 
             #region ActionStatus Properties Values
@@ -560,13 +623,106 @@ namespace Zim.Tech.TravelConnect
                 (new XmlNamespace() { NameSpace = "air", Url=NAMESPACE_AIR}), 
                 (new XmlNamespace() { NameSpace = "common_v30", Url=NAMESPACE_COMMON})
             };
+            //xmlNamespaces.Add(new XmlNamespace() { NameSpace = "univ", Url = NAMESPACE_BOOKING });
 
-            sLowFareSearchReq = Serialize<uAPIBooking.AirCreateReservationReq>.SerializeXmlToString(xmlNamespaces, oAirCreateReservationReq);
-            File.WriteAllText(Path.Combine(Environment.CurrentDirectory, "AirCreateReservationReq.xml"), sLowFareSearchReq);
+            sAirCreateReservationReq = Serialize<uAPIBooking.AirCreateReservationReq>.SerializeXmlToString(xmlNamespaces, oAirCreateReservationReq);
+            File.WriteAllText(Path.Combine(Environment.CurrentDirectory, "AirCreateReservationReq.xml"), sAirCreateReservationReq);
 
-            return sLowFareSearchReq;
+            return sAirCreateReservationReq;
         }
 
+        public FareBooking DeserializeAirCreateReservationResp(string sXmlContents)
+        {
+            
+            XElement xRoot = XElement.Parse(sXmlContents);
+            sXmlContents = Serialize<uAPIFlight.LowFareSearchRsp>.RemoveAllNamespaces(xRoot).ToString();
+            File.WriteAllText(Path.Combine(Environment.CurrentDirectory, "LowFareSearchResp.xml"), sXmlContents);
+
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(sXmlContents);
+
+            List<Common.ResponseMessage> oResponseMessageList = new List<Common.ResponseMessage>();
+            Booking.ActionStatus oActionStatus = new Booking.ActionStatus();
+            Booking.ProviderReservationInfo oProviderReservationInfo = new Booking.ProviderReservationInfo();
+            Booking.AirReservation oAirReservation = new Booking.AirReservation();
+            Booking.AgencyInfo oAgencyInfo = new Booking.AgencyInfo();
+
+            XmlNodeList LowFareSearchRsp = xmlDoc.GetElementsByTagName("AirCreateReservationRsp");
+            foreach (XmlNode node in LowFareSearchRsp)
+            {
+                foreach (XmlNode childnode in node.ChildNodes)
+                {
+                    #region ResponseMessage Handling
+                    if (childnode.Name == "ResponseMessage")
+                    {
+                        try
+                        {
+                            Common.ResponseMessage oResponseMessage = Serialize<Common.ResponseMessage>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
+                            oResponseMessageList.Add(oResponseMessage);
+                        }
+                        catch (Exception ex) { }
+                    }
+                    #endregion
+
+                    #region ActionStatus Handling
+                    if (childnode.Name == "ActionStatus")
+                    {
+                        try
+                        {
+                            oActionStatus = Serialize<Booking.ActionStatus>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
+                        }
+                        catch (Exception ex) { }
+                    }
+                    #endregion
+
+                    #region ProviderReservationInfo Handling
+                    if (childnode.Name == "ProviderReservationInfo")
+                    {
+                        try
+                        {
+                            oProviderReservationInfo = Serialize<Booking.ProviderReservationInfo>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
+                        }
+                        catch (Exception ex) { }
+                    }
+                    #endregion
+                    
+                    #region AirReservation Handling
+                    if (childnode.Name == "AirReservation")
+                    {
+                        try
+                        {
+                            oAirReservation = Serialize<Booking.AirReservation>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
+                        }
+                        catch (Exception ex) { }
+                    }
+                    #endregion
+
+                    #region AgencyInfo Handling
+                    if (childnode.Name == "AgencyInfo")
+                    {
+                        try
+                        {
+                            oAgencyInfo = Serialize<Booking.AgencyInfo>.DeserializeXmlFromStringWithoutNamespace(childnode.OuterXml);
+                        }
+                        catch (Exception ex) { }
+                    }
+                    #endregion
+                }
+            }
+
+            FareBooking oFareBooking = new FareBooking();
+
+            var ErrorMessageList = from e in oResponseMessageList
+                                   where e.Type == ResponseMessageType.Error
+                                   select e;
+            foreach (Common.ResponseMessage oResponseMessage in ErrorMessageList)
+            {
+                FareQuote.ErrorMessage oErrorMessage = new FareQuote.ErrorMessage(oResponseMessage);
+                oFareBooking.ErrorMessages.Add(oErrorMessage);
+            }
+
+            return oFareBooking;
+        }
         #endregion
 
 

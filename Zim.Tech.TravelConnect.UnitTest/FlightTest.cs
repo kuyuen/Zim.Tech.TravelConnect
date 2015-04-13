@@ -40,6 +40,12 @@ namespace Zim.Tech.TravelConnect.UnitTest
             return xRequest;
         }
 
+        [TestMethod]
+        public void NewUUID()
+        {
+            string uuid = Variables.NewUUID();
+            int length = uuid.Length;
+        }
 
         #region Booking Serialize & Deserialize
         [TestMethod]
@@ -79,6 +85,12 @@ namespace Zim.Tech.TravelConnect.UnitTest
 
             string xml = uAgent.PrepareAirCreateReservationReq(oBookingInfo);
             xml = xml;
+        }
+
+        [TestMethod]
+        public void DeserializeAirCreateReservationResp()
+        {
+
         }
         #endregion
 
