@@ -8,6 +8,7 @@ using System.Reflection;
 
 using Zim.Tech.TravelConnect.Flight;
 using Zim.Tech.TravelConnect.Common;
+using Zim.Tech.TravelConnect.Booking;
 
 namespace Zim.Tech.TravelConnect.Flight
 {
@@ -35,10 +36,18 @@ namespace Zim.Tech.TravelConnect.Flight
 
         
         #region Properties Variables
+        private AirReservation oAirReservation = new AirReservation();
+        private ActionStatus oActionStatus = new ActionStatus();
+        private AgencyInfo oAgencyInfo = new AgencyInfo();
+        
+        
         private List<FareQuote.ErrorMessage> errorMessageList = new List<FareQuote.ErrorMessage>();
         #endregion
 
         #region Public Properties
+        public AirReservation FareReservation { get { return oAirReservation; } set { oAirReservation = value; } }
+        public ActionStatus ActionStatus { get { return oActionStatus; } set { oActionStatus = value; } }
+        public AgencyInfo AgencyInfo { get { return oAgencyInfo; } set { oAgencyInfo = value; } }
         public List<FareQuote.ErrorMessage> ErrorMessages { get { return errorMessageList; } set { errorMessageList = value; } }
 
         #endregion
@@ -59,6 +68,79 @@ namespace Zim.Tech.TravelConnect.Flight
             [Obsolete("Don't use this ProviderCode", true)]
             new public string ProviderCode { get; set; }
             #endregion
+        }
+        #endregion
+
+        #region AirPricingSolution
+        public class AirReservation : Booking.AirReservation
+        {
+            public AirReservation() { }
+
+            public void AddBookingTraveler(BookingTraveler oBookingTraveler)
+            {
+                if (this.BookingTravelerRef != null)
+                {
+                    foreach (Booking.BookingTravelerRef oBookingTravelerRef in this.BookingTravelerRef)
+                    {
+                        if (oBookingTravelerRef.Key == oBookingTraveler.Key)
+                        {
+                            if (this.BookingTravelerList.Contains(oBookingTraveler) == false)
+                                this.BookingTravelerList.Add(oBookingTraveler);
+                        }
+                    }
+                }
+            }
+
+            public void AddProviderReservationInfo(ProviderReservationInfo oProviderReservationInfo)
+            {
+                if (this.ProviderReservationInfoRef != null)
+                {
+                    foreach (Booking.ProviderReservationInfoRef oProviderReservationInfoRef in this.ProviderReservationInfoRef)
+                    {
+                        if (oProviderReservationInfoRef.Key == oProviderReservationInfo.Key)
+                        {
+                            if (this.ProviderReservationInfoList.Contains(oProviderReservationInfo) == false)
+                                this.ProviderReservationInfoList.Add(oProviderReservationInfo);
+                        }
+                    }
+                }
+            }
+
+            private List<BookingTraveler> bookingTravelerListField = new List<BookingTraveler>();
+            private List<ProviderReservationInfo> providerReservationInfoListField = new List<ProviderReservationInfo>();
+
+
+            public List<BookingTraveler> BookingTravelerList
+            {
+                get
+                {
+                    return this.bookingTravelerListField;
+                }
+                set
+                {
+                    this.bookingTravelerListField = value;
+                }
+            }
+
+            public List<ProviderReservationInfo> ProviderReservationInfoList
+            {
+                get
+                {
+                    return this.providerReservationInfoListField;
+                }
+                set
+                {
+                    this.providerReservationInfoListField = value;
+                }
+            }
+
+
+            //#region Hide Base Class Properties
+            //[Obsolete("Don't use this BookingTravelerRef", true)]
+            //new public List<Booking.BookingTravelerRef> BookingTravelerRef { get; set; }
+            //[Obsolete("Don't use this ProviderReservationInfoRef", true)]
+            //new public List<Booking.ProviderReservationInfoRef> ProviderReservationInfoRef { get; set; }
+            //#endregion
         }
         #endregion
 

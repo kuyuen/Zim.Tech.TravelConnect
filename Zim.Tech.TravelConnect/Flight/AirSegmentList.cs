@@ -44,12 +44,13 @@ namespace Zim.Tech.TravelConnect.Flight
     {
         #region AirSegment private properties
         private List<AirAvailInfo> airAvailInfoField = new List<AirAvailInfo>();
+        private List<FlightDetails> flightDetailsField = new List<FlightDetails>();
         private List<FlightDetailsRef> flightDetailsRefField = new List<FlightDetailsRef>();
+        private List<string> sellMessageField;
         #endregion
         
         #region AirSegment private Attribute
         private string keyField;
-        //private string[] sellMessageField;
         //private bool openSegmentField;
         //private bool openSegmentFieldSpecified;
         private int groupField;
@@ -64,8 +65,8 @@ namespace Zim.Tech.TravelConnect.Flight
         private string flightTimeField;
         //private string travelTimeField;
         private string distanceField;
-        //private string providerCodeField;
-        //private string supplierCodeField;
+        private string providerCodeField;
+        private string supplierCodeField;
         private string participantLevelField;
         private bool linkAvailabilityField;
         //private bool linkAvailabilityFieldSpecified;
@@ -139,6 +140,32 @@ namespace Zim.Tech.TravelConnect.Flight
             }
         }
 
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("FlightDetails")]
+        public List<FlightDetails> FlightDetails
+        {
+            get
+            {
+                return this.flightDetailsField;
+            }
+            set
+            {
+                this.flightDetailsField = value;
+            }
+        }
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("SellMessage")]
+        public List<string> SellMessage
+        {
+            get
+            {
+                return this.sellMessageField;
+            }
+            set
+            {
+                this.sellMessageField = value;
+            }
+        }
         /*
         public typeBaseAirSegment()
         {
@@ -173,19 +200,6 @@ namespace Zim.Tech.TravelConnect.Flight
             }
         }
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("FlightDetails")]
-        public FlightDetails[] FlightDetails
-        {
-            get
-            {
-                return this.flightDetailsField;
-            }
-            set
-            {
-                this.flightDetailsField = value;
-            }
-        }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("AlternateLocationDistanceRef")]
@@ -212,20 +226,6 @@ namespace Zim.Tech.TravelConnect.Flight
             set
             {
                 this.connectionField = value;
-            }
-        }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("SellMessage", Namespace = "http://www.travelport.com/schema/common_v29_0")]
-        public string[] SellMessage
-        {
-            get
-            {
-                return this.sellMessageField;
-            }
-            set
-            {
-                this.sellMessageField = value;
             }
         }
 
@@ -427,32 +427,32 @@ namespace Zim.Tech.TravelConnect.Flight
         }
 
         /// <remarks/>
-        //[System.Xml.Serialization.XmlAttributeAttribute()]
-        //public string ProviderCode
-        //{
-        //    get
-        //    {
-        //        return this.providerCodeField;
-        //    }
-        //    set
-        //    {
-        //        this.providerCodeField = value;
-        //    }
-        //}
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ProviderCode
+        {
+            get
+            {
+                return this.providerCodeField;
+            }
+            set
+            {
+                this.providerCodeField = value;
+            }
+        }
 
         /// <remarks/>
-        //[System.Xml.Serialization.XmlAttributeAttribute()]
-        //public string SupplierCode
-        //{
-        //    get
-        //    {
-        //        return this.supplierCodeField;
-        //    }
-        //    set
-        //    {
-        //        this.supplierCodeField = value;
-        //    }
-        //}
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string SupplierCode
+        {
+            get
+            {
+                return this.supplierCodeField;
+            }
+            set
+            {
+                this.supplierCodeField = value;
+            }
+        }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]

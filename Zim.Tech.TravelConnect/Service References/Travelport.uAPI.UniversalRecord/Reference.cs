@@ -22992,7 +22992,7 @@ namespace Zim.Tech.TravelConnect.Travelport.uAPI.UniversalRecord {
         private bool keyOverrideFieldSpecified;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("ProviderReservationInfoRef", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("ProviderReservationInfoRef")]
         public ProviderReservationInfoRef[] ProviderReservationInfoRef {
             get {
                 return this.providerReservationInfoRefField;

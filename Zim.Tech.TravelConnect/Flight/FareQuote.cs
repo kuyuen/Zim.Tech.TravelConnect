@@ -114,29 +114,37 @@ namespace Zim.Tech.TravelConnect.Flight
                     GetType().GetProperty(prop.Name).SetValue(this, prop.GetValue(oAirPricingSolution, null), null);
                 #endregion
 
-                #region JourneyList Values
+                #region AirSegment List Values
                 if (oAirSegmentList.AirSegment.Count > 0)
                 {
                     foreach (Flight.Journey journey in oAirPricingSolution.Journey)
                     {
                         foreach (Flight.Journey.typeAirSegmentRef airSegment in journey.AirSegmentRef)
                         {
-                            var oAirSegment = (from a in oAirSegmentList.AirSegment
-                                               where a.Key == airSegment.Key
-                                               select a).First<Flight.AirSegment>();
-                            if (oAirSegment != null)
+                            try
                             {
+                                var oAirSegment = (from a in oAirSegmentList.AirSegment
+                                                   where a.Key == airSegment.Key
+                                                   select a).First<Flight.AirSegment>();
+                                if (oAirSegment != null)
+                                {
+                                    if (oAirSegment.AirAvailInfo.Count > 0)
+                                        oAirSegment.ProviderCode = oAirSegment.AirAvailInfo[0].ProviderCode;
+                                    var oFlightDetails = (from f in oFlightDetailsList.FlightDetails
+                                                          where f.Key == oAirSegment.FlightDetailsRef[0].Key
+                                                          select f).First<Flight.FlightDetails>();
 
-                                var oFlightDetails = (from f in oFlightDetailsList.FlightDetails
-                                                      where f.Key == oAirSegment.FlightDetailsRef[0].Key
-                                                      select f).First<Flight.FlightDetails>();
+                                    Journey oJourney = new Journey(oAirSegment);
+                                    oJourney.AirSegment.FlightDetails.Add(oFlightDetails);
+                                    this.JourneyList.Add(oJourney);
 
-                                Journey oJourney = new Journey(oAirSegment);
-                                oJourney.AirSegment.FlightDetails = oFlightDetails;
-                                this.JourneyList.Add(oJourney);
-
-                                if (oFareAirSegmentList.Contains(oJourney.AirSegment) == false)
-                                    oFareAirSegmentList.Add(oJourney.AirSegment);
+                                    if (oFareAirSegmentList.Contains(oJourney.AirSegment) == false)
+                                        oFareAirSegmentList.Add(oJourney.AirSegment);
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                  string errorMessage = ex.Message;
                             }
                         }
                     }
@@ -250,29 +258,40 @@ namespace Zim.Tech.TravelConnect.Flight
             #region AirSegment Class
             public class AirSegment : Flight.AirSegment
             {
+                public AirSegment() { }
+
                 public AirSegment(Flight.AirSegment oAirSegment)
                 {
                     foreach (PropertyInfo prop in oAirSegment.GetType().GetProperties())
-                        GetType().GetProperty(prop.Name).SetValue(this, prop.GetValue(oAirSegment, null), null);
-                }
-
-                public AirSegment(Flight.FlightDetails oFlightDetails)
-                {
-                    this.FlightDetails = oFlightDetails;
-                }
-
-                private Flight.FlightDetails flightDetailsField = new Flight.FlightDetails();
-                public Flight.FlightDetails FlightDetails
-                {
-                    get
                     {
-                        return this.flightDetailsField;
-                    }
-                    set
-                    {
-                        this.flightDetailsField = value;
+                        try
+                        {
+                            GetType().GetProperty(prop.Name).SetValue(this, prop.GetValue(oAirSegment, null), null);
+                        }
+                        catch (Exception ex)
+                        {
+                            string errorMessage = ex.Message;
+                        }
                     }
                 }
+
+                //public AirSegment(Flight.FlightDetails oFlightDetails)
+                //{
+                //    this.FlightDetails = oFlightDetails;
+                //}
+
+                //private Flight.FlightDetails flightDetailsField = new Flight.FlightDetails();
+                //public Flight.FlightDetails FlightDetails
+                //{
+                //    get
+                //    {
+                //        return this.flightDetailsField;
+                //    }
+                //    set
+                //    {
+                //        this.flightDetailsField = value;
+                //    }
+                //}
 
 
                 #region Hide Base Class Properties

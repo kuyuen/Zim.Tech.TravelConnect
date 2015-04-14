@@ -15,17 +15,22 @@ namespace Zim.Tech.TravelConnect.Booking
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class AirReservation : uAPIBooking.BaseReservation
+    public partial class AirReservation
     {
+        #region AirReservation private Properties
+        //private List<TicketingModifiers> ticketingModifiersField;
+        private List<SupplierLocator> supplierLocatorField;
+        protected List<BookingTravelerRef> bookingTravelerRefField;
+        protected List<ProviderReservationInfoRef> providerReservationInfoRefField;
+        private List<Flight.AirSegment> airSegmentListField;
+        #endregion
         #region AirReservation private Attribute
-        private TicketingModifiers[] ticketingModifiersField;
+        private string locatorCodeField;
+        private string createDateField;
+        private string modifiedDateField;
         //private OptionalServices optionalServicesField;
-        //private SupplierLocator[] supplierLocatorField;
         //private ThirdPartyInformation[] thirdPartyInformationField;
         //private DocumentInfo documentInfoField;
-        //private BookingTravelerRef[] bookingTravelerRefField;
-        //private ProviderReservationInfoRef[] providerReservationInfoRefField;
-        //private typeBaseAirSegment[] airSegmentField;
         //private AirPricingInfo[] airPricingInfoField;
         //private Payment[] paymentField;
         //private CreditCardAuth[] creditCardAuthField;
@@ -36,21 +41,126 @@ namespace Zim.Tech.TravelConnect.Booking
         //private PocketItineraryRemark[] pocketItineraryRemarkField;
         #endregion
 
-        #region AirReservation public Attribute
+        #region AirReservation public Properties
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("TicketingModifiers")]
-        public TicketingModifiers[] TicketingModifiers
+        //[System.Xml.Serialization.XmlElementAttribute("TicketingModifiers")]
+        //public List<TicketingModifiers> TicketingModifiers
+        //{
+        //    get
+        //    {
+        //        return this.ticketingModifiersField;
+        //    }
+        //    set
+        //    {
+        //        this.ticketingModifiersField = value;
+
+        //    }
+        //}
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("AirSegment", typeof(Flight.AirSegment), Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public List<Flight.AirSegment> AirSegment
         {
             get
             {
-                return this.ticketingModifiersField;
+                return this.airSegmentListField;
             }
             set
             {
-                this.ticketingModifiersField = value;
+                this.airSegmentListField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("SupplierLocator")]
+        public List<SupplierLocator> SupplierLocator
+        {
+            get
+            {
+                return this.supplierLocatorField;
+            }
+            set
+            {
+                this.supplierLocatorField = value;
 
             }
         }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("BookingTravelerRef")]
+        public List<BookingTravelerRef> BookingTravelerRef
+        {
+            get
+            {
+                return this.bookingTravelerRefField;
+            }
+            set
+            {
+                this.bookingTravelerRefField = value;
+
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("ProviderReservationInfoRef")]
+        public List<ProviderReservationInfoRef> ProviderReservationInfoRef
+        {
+            get
+            {
+                return this.providerReservationInfoRefField;
+            }
+            set
+            {
+                this.providerReservationInfoRefField = value;
+
+            }
+        }
+
+        #endregion
+
+        #region AirReservation public Attribute
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string LocatorCode
+        {
+            get
+            {
+                return this.locatorCodeField;
+            }
+            set
+            {
+                this.locatorCodeField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CreateDate
+        {
+            get
+            {
+                return this.createDateField;
+            }
+            set
+            {
+                this.createDateField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ModifiedDate
+        {
+            get
+            {
+                return this.modifiedDateField;
+            }
+            set
+            {
+                this.modifiedDateField = value;
+            }
+        }
+
         /*
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
@@ -67,20 +177,6 @@ namespace Zim.Tech.TravelConnect.Booking
             }
         }
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("SupplierLocator")]
-        public SupplierLocator[] SupplierLocator
-        {
-            get
-            {
-                return this.supplierLocatorField;
-            }
-            set
-            {
-                this.supplierLocatorField = value;
-
-            }
-        }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("ThirdPartyInformation")]
@@ -111,52 +207,7 @@ namespace Zim.Tech.TravelConnect.Booking
 
             }
         }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("BookingTravelerRef")]
-        public BookingTravelerRef[] BookingTravelerRef
-        {
-            get
-            {
-                return this.bookingTravelerRefField;
-            }
-            set
-            {
-                this.bookingTravelerRefField = value;
-
-            }
-        }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("ProviderReservationInfoRef")]
-        public ProviderReservationInfoRef[] ProviderReservationInfoRef
-        {
-            get
-            {
-                return this.providerReservationInfoRefField;
-            }
-            set
-            {
-                this.providerReservationInfoRefField = value;
-
-            }
-        }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("AirSegment")]
-        public typeBaseAirSegment[] AirSegment
-        {
-            get
-            {
-                return this.airSegmentField;
-            }
-            set
-            {
-                this.airSegmentField = value;
-
-            }
-        }
-
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("AirPricingInfo")]
         public AirPricingInfo[] AirPricingInfo
@@ -629,5 +680,204 @@ namespace Zim.Tech.TravelConnect.Booking
         #endregion
     }
     #endregion
- 
+     
+
+    #region SupplierLocator Class
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/common_v30_0")]
+    public partial class SupplierLocator : object
+    {
+
+        #region SupplierLocator public Attribute
+        private string supplierCodeField;
+        private string supplierLocatorCodeField;
+        private string providerReservationInfoRefField;
+        private System.DateTime createDateTimeField;
+        //private bool createDateTimeFieldSpecified;
+        #endregion
+
+        #region SupplierLocator public Attribute
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string SupplierCode
+        {
+            get
+            {
+                return this.supplierCodeField;
+            }
+            set
+            {
+                this.supplierCodeField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string SupplierLocatorCode
+        {
+            get
+            {
+                return this.supplierLocatorCodeField;
+            }
+            set
+            {
+                this.supplierLocatorCodeField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string ProviderReservationInfoRef
+        {
+            get
+            {
+                return this.providerReservationInfoRefField;
+            }
+            set
+            {
+                this.providerReservationInfoRefField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public System.DateTime CreateDateTime
+        {
+            get
+            {
+                return this.createDateTimeField;
+            }
+            set
+            {
+                this.createDateTimeField = value;
+            }
+        }
+
+        /// <remarks/>
+        //[System.Xml.Serialization.XmlIgnoreAttribute()]
+        //public bool CreateDateTimeSpecified
+        //{
+        //    get
+        //    {
+        //        return this.createDateTimeFieldSpecified;
+        //    }
+        //    set
+        //    {
+        //        this.createDateTimeFieldSpecified = value;
+        //    }
+        //}
+        #endregion
+    }
+
+    #endregion
+
+
+    #region BookingTravelerRef Class
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/common_v30_0")]
+    public partial class BookingTravelerRef : object
+    {
+
+        //private LoyaltyCardRef[] loyaltyCardRefField;
+        //private DriversLicenseRef driversLicenseRefField;
+        //private DiscountCardRef[] discountCardRefField;
+        private string keyField;
+
+        /*
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("LoyaltyCardRef")]
+        public LoyaltyCardRef[] LoyaltyCardRef
+        {
+            get
+            {
+                return this.loyaltyCardRefField;
+            }
+            set
+            {
+                this.loyaltyCardRefField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute()]
+        public DriversLicenseRef DriversLicenseRef
+        {
+            get
+            {
+                return this.driversLicenseRefField;
+            }
+            set
+            {
+                this.driversLicenseRefField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("DiscountCardRef")]
+        public DiscountCardRef[] DiscountCardRef
+        {
+            get
+            {
+                return this.discountCardRefField;
+            }
+            set
+            {
+                this.discountCardRefField = value;
+            }
+        }
+        */
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Key
+        {
+            get
+            {
+                return this.keyField;
+            }
+            set
+            {
+                this.keyField = value;
+            }
+        }
+
+    }
+    #endregion
+
+    #region ProviderReservationInfoRef Class
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    //[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.travelport.com/schema/common_v30_0")]
+    public partial class ProviderReservationInfoRef : object
+    {
+
+        private string keyField;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Key
+        {
+            get
+            {
+                return this.keyField;
+            }
+            set
+            {
+                this.keyField = value;
+            }
+        }
+    }
+    #endregion
+    
 }

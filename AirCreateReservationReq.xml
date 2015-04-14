@@ -1,0 +1,27 @@
+<univ:AirCreateReservationReq xmlns:common_v30="http://www.travelport.com/schema/common_v30_0" xmlns:air="http://www.travelport.com/schema/air_v30_0" TraceId="trace" AuthorizedBy="user" TargetBranch="P7004226" RetainReservation="Both" xmlns:univ="http://www.travelport.com/schema/universal_v29_0">
+  <common_v30:BillingPointOfSaleInfo OriginApplication="UAPI" />
+  <common_v30:BookingTraveler Key="Ph7PY/3L2E2H8FRVhZDOLQ==" TravelerType="ADT" Gender="M" Nationality="CH">
+    <common_v30:BookingTravelerName Prefix="Mr" First="Jack" Last="Smith" />
+    <common_v30:PhoneNumber CountryCode="852" Number="97880987" />
+    <common_v30:Email Type="Mobile" EmailID="kuyuen@gmail.com" />
+  </common_v30:BookingTraveler>
+  <common_v30:FormOfPayment Type="Credit">
+    <common_v30:CreditCard Type="VI" ExpDate="2017-05" Name="Jack Smith" CVV="222" />
+  </common_v30:FormOfPayment>
+  <air:AirPricingSolution Key="k34ubRobSam9WWWX/DgwVQ==" TotalPrice="HKD1597" BasePrice="HKD1240" ApproximateTotalPrice="HKD1597" ApproximateBasePrice="HKD1240" Taxes="HKD357">
+    <air:AirSegment Key="gzvHN2gWSPWkp5yiiYB8Qw==" AvailabilitySource="E" Equipment="333" ParticipantLevel="Secure Sell" AvailabilityDisplayType="Fare Shop/Optimal Shop" Group="0" Carrier="HX" FlightNumber="282" Origin="HKG" Destination="TPE" DepartureTime="2015-05-01T17:40:00.000+08:00" ArrivalTime="2015-05-01T19:30:00.000+08:00" FlightTime="110" Distance="511" PolledAvailabilityOption="Cache status used. No polled avail exists." />
+    <air:AirSegment Key="xCkuU7F0TBmvX6U2/+uk7Q==" AvailabilitySource="E" Equipment="333" ParticipantLevel="Secure Sell" AvailabilityDisplayType="Fare Shop/Optimal Shop" Group="1" Carrier="HX" FlightNumber="253" Origin="TPE" Destination="HKG" DepartureTime="2015-05-05T12:45:00.000+08:00" ArrivalTime="2015-05-05T14:20:00.000+08:00" FlightTime="95" Distance="511" PolledAvailabilityOption="Cache status used. No polled avail exists." />
+    <air:AirPricingInfo LatestTicketingTime="2015-05-01T23:59:00.000+00:00" PricingMethod="Guaranteed" PlatingCarrier="HX" Taxes="HKD357" Key="r0wDQ2ANQvmlIou/vnIBwA==" TotalPrice="HKD1597" BasePrice="HKD1240" ApproximateTotalPrice="HKD1597" ApproximateBasePrice="HKD1240" ProviderCode="1G">
+      <air:FareInfo Amount="HKD640" DepartureDate="2015-05-01" EffectiveDate="2015-04-02T17:41:00.000+00:00" Destination="TPE" Origin="HKG" PassengerTypeCode="ADT" FareBasis="NRT14HKB" Key="qhWZ9RLDQHKJpHhBIQufgQ==" />
+      <air:FareInfo Amount="HKD600" DepartureDate="2015-05-05" EffectiveDate="2015-04-02T17:41:00.000+00:00" Destination="HKG" Origin="TPE" PassengerTypeCode="ADT" FareBasis="NRT14HKB" Key="a+PHcuppTueHdhlQnwyw1Q==" />
+      <air:BookingInfo BookingCode="N" CabinClass="Economy" FareInfoRef="qhWZ9RLDQHKJpHhBIQufgQ==" SegmentRef="gzvHN2gWSPWkp5yiiYB8Qw==" />
+      <air:BookingInfo BookingCode="N" CabinClass="Economy" FareInfoRef="a+PHcuppTueHdhlQnwyw1Q==" SegmentRef="xCkuU7F0TBmvX6U2/+uk7Q==" />
+      <air:TaxInfo Key="wYINB95M7kynEAXjX+f9fg==" Category="HK" Amount="HKD120" />
+      <air:TaxInfo Key="1vqMKbYCF0+hFfNjKnGUXw==" Category="TW" Amount="HKD75" />
+      <air:TaxInfo Key="ynjgjJYAA0miFu7civQ+wQ==" Category="YR" Amount="HKD162" />
+      <air:FareCalc>HKG HX TPE Q5.80 76.75NRT14HKB HX HKG 76.75NRT14HKB NUC159.30END ROE7.75183</air:FareCalc>
+      <air:PassengerType Code="ADT" BookingTravelerRef="Ph7PY/3L2E2H8FRVhZDOLQ==" />
+    </air:AirPricingInfo>
+  </air:AirPricingSolution>
+  <common_v30:ActionStatus Type="TAW" TicketDate="4/14/2015 2:01:23 AM" ProviderCode="1G" />
+</univ:AirCreateReservationReq>

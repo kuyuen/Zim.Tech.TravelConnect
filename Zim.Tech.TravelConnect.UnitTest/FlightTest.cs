@@ -47,15 +47,12 @@ namespace Zim.Tech.TravelConnect.UnitTest
             int length = uuid.Length;
         }
 
-        #region Booking Serialize & Deserialize
-        [TestMethod]
-        public void PrepareAirCreateReservationReq()
+        #region Booking
+        Flight.FareBooking.BookingInfo PrepareBooking(uApiAgent uAgent)
         {
-            uApiAgent uAgent = new uApiAgent();
-
             Flight.FareBooking.BookingInfo oBookingInfo = new Flight.FareBooking.BookingInfo();
             Flight.FareBooking.BookingPassenger oPassenger = new Flight.FareBooking.BookingPassenger();
-            oPassenger.DOB = new DateTime(1969,9, 17);
+            oPassenger.DOB = new DateTime(1969, 9, 17);
             oPassenger.Gender = "M";
             oPassenger.Nationality = "CH";
             oPassenger.TravelerType = "ADT";
@@ -68,9 +65,9 @@ namespace Zim.Tech.TravelConnect.UnitTest
 
             Flight.FareBooking.PaymentInfo oPaymentInfo = new Flight.FareBooking.PaymentInfo();
             oPaymentInfo.Name = string.Format("{0} {1}", oPassenger.First, oPassenger.Last);
-            oPaymentInfo.Number = oBookingInfo.CreditCardInfo.Number;
+            oPaymentInfo.Number = "5123456789012346";
             oPaymentInfo.ExpDate = "2017-05";
-            oPaymentInfo.CVV = "222";
+            oPaymentInfo.CVV = "100";
             oPaymentInfo.Type = "VI";
             oBookingInfo.CreditCardInfo = oPaymentInfo;
 
@@ -83,6 +80,27 @@ namespace Zim.Tech.TravelConnect.UnitTest
             if (oFareQuote.AirPricingSolutions.Count() > 0)
                 oBookingInfo.AirPricingSolution = oFareQuote.AirPricingSolutions[0];
 
+            return oBookingInfo;
+        }
+
+        [TestMethod]
+        public void FareBook()
+        {
+            uApiAgent uAgent = new uApiAgent();
+
+            Flight.FareBooking.BookingInfo oBookingInfo = PrepareBooking(uAgent);
+            Flight.FareBooking oFareBooking = uAgent.AirCreateReservation(oBookingInfo);
+            string sTicketDate = oFareBooking.ActionStatus.TicketDate;
+            string sCreateDate = oFareBooking.FareReservation.CreateDate;
+        }
+        #region Booking Serialize & Deserialize
+        [TestMethod]
+        public void PrepareAirCreateReservationReq()
+        {
+            uApiAgent uAgent = new uApiAgent();
+
+            Flight.FareBooking.BookingInfo oBookingInfo = PrepareBooking(uAgent);
+
             string xml = uAgent.PrepareAirCreateReservationReq(oBookingInfo);
             xml = xml;
         }
@@ -90,8 +108,18 @@ namespace Zim.Tech.TravelConnect.UnitTest
         [TestMethod]
         public void DeserializeAirCreateReservationResp()
         {
+            uApiAgent uAgent = new uApiAgent();
+
+            string CurrencyType = string.Empty;
+            string sDllPath = Directory.GetCurrentDirectory();
+            string xmlFile = Path.Combine(sDllPath, "AirCreateReservationResp.xml");
+            string xmlcontents = System.IO.File.ReadAllText(xmlFile);
+
+            Flight.FareBooking oFareBooking = uAgent.DeserializeAirCreateReservationResp(xmlcontents);
+            int o = 0;
 
         }
+        #endregion
         #endregion
 
         #region Flight
@@ -263,8 +291,8 @@ namespace Zim.Tech.TravelConnect.UnitTest
                 {
                     Result += string.Format("Flight = {0}{1} FlightTime = {2} min(s)", oJourney.AirSegment.Carrier, oJourney.AirSegment.FlightNumber, oJourney.AirSegment.FlightTime);
                     Result += string.Format("From = {0} ({1}) To {2} ({3}) {4}"
-                        , oJourney.AirSegment.Origin, oJourney.AirSegment.FlightDetails.DepartureTime
-                        , oJourney.AirSegment.Destination, oJourney.AirSegment.FlightDetails.ArrivalTime 
+                        , oJourney.AirSegment.Origin, oJourney.AirSegment.FlightDetails[0].DepartureTime
+                        , oJourney.AirSegment.Destination, oJourney.AirSegment.FlightDetails[0].ArrivalTime 
                         , Environment.NewLine);
                 }
 
